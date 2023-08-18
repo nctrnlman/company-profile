@@ -79,19 +79,19 @@
   <body>
     <div class="body">
 		<?php include 'navbar.php'; ?>
-
+    <!-- data-bg-src="img/demos/business-consulting-3/backgrounds/background-5.jpg" -->
       <div role="main" class="main">
         <section
           class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload"
-          data-bg-src="img/demos/business-consulting-3/backgrounds/background-5.jpg"
-          style="background-size: cover; background-position: center"
+      
+          style="background-size: cover; background-position: center;background-color: #af2a25;"
         >
           <div class="container pb-5 my-3">
             <div class="row mb-4">
               <div
                 class="col-md-12 align-self-center p-static order-2 text-center"
               >
-                <h1 class="font-weight-bold text-color-dark text-10">
+                <h1 class="font-weight-bold text-color-white text-10">
                   Gallery
                 </h1>
               </div>
@@ -123,364 +123,140 @@
         </section>
 
         <div class="container pt-4 pb-5 my-5">
-          <div class="row">
-            <div
-              class="col-lg-8 mb-5 mb-lg-0 appear-animation"
-              data-appear-animation="fadeInUpShorter"
-              data-appear-animation-delay="1600"
-            >
-              <article class="mb-5">
-                <div
-                  class="card bg-transparent border-0 custom-border-radius-1"
-                >
-                  <div class="card-body p-0 z-index-1">
-                    <a
-                      href="demo-business-consulting-3-blog-post.html"
-                      data-cursor-effect-hover="plus"
-                    >
-                      <img
-                        class="card-img-top custom-border-radius-1 mb-2"
-                        src="img/demos/business-consulting-3/blog/blog-1.jpg"
-                        alt="Card Image"
-                      />
-                    </a>
-                    <p class="text-uppercase text-color-default text-1 my-2">
-                      <time pubdate datetime="2023-01-10">10 Jan 2023</time>
-                      <span class="opacity-3 d-inline-block px-2">|</span>
-                      3 Comments
-                      <span class="opacity-3 d-inline-block px-2">|</span>
-                      John Doe
-                    </p>
-                    <div class="card-body p-0">
-                      <h4 class="card-title text-5 font-weight-bold pb-1 mb-2">
-                        <a
-                          class="text-color-dark text-color-hover-primary text-decoration-none"
-                          href="demo-business-consulting-3-blog-post.html"
-                          >An Interview with John Doe</a
-                        >
-                      </h4>
-                      <p class="card-text mb-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nunc viverra lorem , consectetur adipiscing elit...
-                      </p>
-                      <a
-                        href="demo-business-consulting-3-blog-post.html"
-                        class="text-decoration-none custom-link-hover-effects"
-                      >
-                        <span
-                          class="custom-view-more d-inline-flex font-weight-medium text-color-primary"
-                        >
-                          Read More
-                          <img
-                            width="27"
-                            height="27"
-                            src="img/demos/business-consulting-3/icons/arrow-right.svg"
-                            alt=""
-                            data-icon
-                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"
-                            style="width: 27px"
-                          />
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
+        <div class="container ">
+					<div class="row">
+						<div class="col">
 
-              <article class="mb-5">
-                <div
-                  class="card bg-transparent border-0 custom-border-radius-1"
-                >
-                  <div class="card-body p-0 z-index-1">
-                    <a
-                      href="demo-business-consulting-3-blog-post.html"
-                      data-cursor-effect-hover="plus"
-                    >
-                      <img
-                        class="card-img-top custom-border-radius-1 mb-2"
-                        src="img/demos/business-consulting-3/blog/blog-2.jpg"
-                        alt="Card Image"
-                      />
-                    </a>
-                    <p class="text-uppercase text-color-default text-1 my-2">
-                      <time pubdate datetime="2023-01-10">10 Jan 2023</time>
-                      <span class="opacity-3 d-inline-block px-2">|</span>
-                      3 Comments
-                      <span class="opacity-3 d-inline-block px-2">|</span>
-                      John Doe
-                    </p>
-                    <div class="card-body p-0">
-                      <h4 class="card-title text-5 font-weight-bold pb-1 mb-2">
-                        <a
-                          class="text-color-dark text-color-hover-primary text-decoration-none"
-                          href="demo-business-consulting-3-blog-post.html"
-                          >How to Grow your Business</a
-                        >
-                      </h4>
-                      <p class="card-text mb-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nunc viverra lorem , consectetur adipiscing elit...
-                      </p>
-                      <a
-                        href="demo-business-consulting-3-blog-post.html"
-                        class="text-decoration-none custom-link-hover-effects"
-                      >
-                        <span
-                          class="custom-view-more d-inline-flex font-weight-medium text-color-primary"
-                        >
-                          Read More
-                          <img
-                            width="27"
-                            height="27"
-                            src="img/demos/business-consulting-3/icons/arrow-right.svg"
-                            alt=""
-                            data-icon
-                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"
-                            style="width: 27px"
-                          />
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
+							<h2 class="font-weight-bold text-color-dark text-9 mb-4">Our Projects</h2>
+							<p class="text-4-5 line-height-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec velit magna, consectetur at suscipit eu, dapibus vel odio. Mauris ac nulla at ligula interdum ullamcorper. Nunc mattis eros nec eros dictum, nec molestie metus auctor. Nulla placerat nunc velit, a dictum lectus finibus quis. Nunc leo mauris, cursus vel tempor eu, tempus sed turpis.</p>
+							<p class="text-3-5 line-height-9 mb-4">Cras mattis nisl auctor tellus maximus, id consectetur nulla suscipit. Praesent consequat elit vitae ipsum porttitor, at facilisis enim hendrerit. Morbi tincidunt ornare scelerisque. Maecenas et iaculis libero, in volutpat arcu. Vestibulum ac sagittis felis. Aenean tempor tellus id felis finibus, quis aliquam sem pretium. </p>
 
-              <ul
-                class="custom-pagination-style-1 pagination pagination-rounded pagination-md justify-content-center"
-              >
-                <li class="page-item">
-                  <a class="page-link" href="#" data-cursor-effect-hover="fit"
-                    ><i class="fas fa-angle-left"></i
-                  ></a>
-                </li>
-                <li class="page-item active">
-                  <a class="page-link" href="#" data-cursor-effect-hover="fit"
-                    >1</a
-                  >
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#" data-cursor-effect-hover="fit"
-                    >2</a
-                  >
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#" data-cursor-effect-hover="fit"
-                    >3</a
-                  >
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#" data-cursor-effect-hover="fit"
-                    ><i class="fas fa-angle-right"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="blog-sidebar col-lg-4 pt-4 pt-lg-0 appear-animation"
-              data-appear-animation="fadeInUpShorter"
-              data-appear-animation-delay="1800"
-            >
-              <aside class="sidebar">
-                <div class="px-3 mb-4">
-                  <h3
-                    class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0 mb-3"
-                  >
-                    About The Blog
-                  </h3>
-                  <p class="m-0">
-                    Lorem ipsum dolor sit amet, conse elit porta. Vestibulum
-                    ante justo, volutpat quis porta diam.
-                  </p>
-                </div>
-                <div class="py-1 clearfix">
-                  <hr class="my-2" />
-                </div>
-                <div class="px-3 mt-4">
-                  <form action="page-search-results.html" method="get">
-                    <div class="input-group mb-3 pb-1">
-                      <input
-                        class="form-control box-shadow-none text-1 border-0 bg-color-grey"
-                        placeholder="Search..."
-                        name="s"
-                        id="s"
-                        type="text"
-                      />
-                      <button
-                        type="submit"
-                        class="btn bg-color-grey text-1 p-2"
-                      >
-                        <i class="fas fa-search m-2"></i>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-                <div class="py-1 clearfix">
-                  <hr class="my-2" />
-                </div>
-                <div class="px-3 mt-4">
-                  <h3
-                    class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0 mb-3"
-                  >
-                    Recent Posts
-                  </h3>
-                  <div class="pb-2 mb-1">
-                    <a
-                      href="#"
-                      class="text-color-default text-uppercase text-1 mb-0 d-block text-decoration-none"
-                      >10 Jan 2023
-                      <span class="opacity-3 d-inline-block px-2">|</span> 3
-                      Comments
-                      <span class="opacity-3 d-inline-block px-2">|</span> John
-                      Doe</a
-                    >
-                    <a
-                      href="#"
-                      class="text-color-dark text-hover-primary font-weight-bold text-3 d-block pb-3 line-height-4"
-                      >Lorem ipsum dolor sit amet</a
-                    >
-                    <a
-                      href="#"
-                      class="text-color-default text-uppercase text-1 mb-0 d-block text-decoration-none"
-                      >10 Jan 2023
-                      <span class="opacity-3 d-inline-block px-2">|</span> 3
-                      Comments
-                      <span class="opacity-3 d-inline-block px-2">|</span> John
-                      Doe</a
-                    >
-                    <a
-                      href="#"
-                      class="text-color-dark text-hover-primary font-weight-bold text-3 d-block pb-3 line-height-4"
-                      >Consectetur adipiscing elit</a
-                    >
-                    <a
-                      href="#"
-                      class="text-color-default text-uppercase text-1 mb-0 d-block text-decoration-none"
-                      >10 Jan 2023
-                      <span class="opacity-3 d-inline-block px-2">|</span> 3
-                      Comments
-                      <span class="opacity-3 d-inline-block px-2">|</span> John
-                      Doe</a
-                    >
-                    <a
-                      href="#"
-                      class="text-color-dark text-hover-primary font-weight-bold text-3 d-block pb-3 line-height-4"
-                      >Vivamus sollicitudin nibh luctus</a
-                    >
-                  </div>
-                </div>
-                <div class="py-1 clearfix">
-                  <hr class="my-2" />
-                </div>
-                <div class="px-3 mt-4">
-                  <h3
-                    class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0 mb-3"
-                  >
-                    Recent Comments
-                  </h3>
-                  <div class="pb-2 mb-1">
-                    <a
-                      href="#"
-                      class="text-color-default text-2 mb-0 d-block text-decoration-none line-height-4"
-                      >Admin on
-                      <strong class="text-color-dark text-hover-primary text-4"
-                        >Vivamus sollicitudin</strong
-                      >
-                      <span class="text-uppercase text-1 d-block pt-1 pb-3"
-                        >10 Jan 2023</span
-                      ></a
-                    >
-                    <a
-                      href="#"
-                      class="text-color-default text-2 mb-0 d-block text-decoration-none line-height-4"
-                      >John Doe on
-                      <strong class="text-color-dark text-hover-primary text-4"
-                        >Lorem ipsum dolor</strong
-                      >
-                      <span class="text-uppercase text-1 d-block pt-1 pb-3"
-                        >10 Jan 2023</span
-                      ></a
-                    >
-                    <a
-                      href="#"
-                      class="text-color-default text-2 mb-0 d-block text-decoration-none line-height-4"
-                      >Admin on
-                      <strong class="text-color-dark text-hover-primary text-4"
-                        >Consectetur adipiscing</strong
-                      >
-                      <span class="text-uppercase text-1 d-block pt-1 pb-3"
-                        >10 Jan 2023</span
-                      ></a
-                    >
-                  </div>
-                </div>
-                <div class="py-1 clearfix">
-                  <hr class="my-2" />
-                </div>
-                <div class="px-3 mt-4">
-                  <h3
-                    class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0"
-                  >
-                    Categories
-                  </h3>
-                  <ul
-                    class="nav nav-list flex-column mt-2 mb-0 p-relative right-9"
-                  >
-                    <li class="nav-item">
-                      <a class="nav-link bg-transparent border-0" href="#"
-                        >Design (2)</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link bg-transparent border-0 active"
-                        href="#"
-                        >Photos (4)</a
-                      >
-                      <ul>
-                        <li class="nav-item">
-                          <a class="nav-link bg-transparent border-0" href="#"
-                            >Animals</a
-                          >
-                        </li>
-                        <li class="nav-item">
-                          <a
-                            class="nav-link bg-transparent border-0 active"
-                            href="#"
-                            >Business</a
-                          >
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link bg-transparent border-0" href="#"
-                            >Sports</a
-                          >
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link bg-transparent border-0" href="#"
-                            >People</a
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link bg-transparent border-0" href="#"
-                        >Videos (3)</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link bg-transparent border-0" href="#"
-                        >Lifestyle (2)</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link bg-transparent border-0" href="#"
-                        >Technology (1)</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </aside>
-            </div>
-          </div>
+							<ul class="nav nav-pills sort-source sort-source-style-3 custom-sort-source mt-4" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'packery', 'filter': '*'}">
+								<li class="nav-item active" data-option-value="*"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase active" href="#">Show All</a></li>
+								<li class="nav-item" data-option-value=".websites"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Websites</a></li>
+								<li class="nav-item" data-option-value=".logos"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Logos</a></li>
+								<li class="nav-item" data-option-value=".brands"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Brands</a></li>
+								<li class="nav-item" data-option-value=".medias"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Medias</a></li>
+							</ul>
+
+							<div class="sort-destination-loader sort-destination-loader-showing mt-4 pt-2">
+								<div class="row portfolio-list sort-destination" data-sort-id="portfolio">
+
+									<div class="col-sm-6 col-lg-6 isotope-item websites">
+										<div class="portfolio-item">
+											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
+												<div class="thumb-info-wrapper rounded-0">
+													<img src="img/demos/digital-agency/projects/project-1.jpg" class="img-fluid rounded-0" alt="" />
+													<div class="thumb-info-action">
+														<a href="portfolio-single-wide-slider.html" aria-label="">
+															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
+											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
+												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
+											</h3>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-6 isotope-item logos">
+										<div class="portfolio-item">
+											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
+												<div class="thumb-info-wrapper rounded-0">
+													<img src="img/demos/digital-agency/projects/project-2.jpg" class="img-fluid rounded-0" alt="" />
+													<div class="thumb-info-action">
+														<a href="portfolio-single-wide-slider.html" aria-label="">
+															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
+											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
+												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
+											</h3>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-6 isotope-item brands">
+										<div class="portfolio-item">
+											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
+												<div class="thumb-info-wrapper rounded-0">
+													<img src="img/demos/digital-agency/projects/project-3.jpg" class="img-fluid rounded-0" alt="" />
+													<div class="thumb-info-action">
+														<a href="portfolio-single-wide-slider.html" aria-label="">
+															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
+											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
+												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
+											</h3>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-6 isotope-item medias">
+										<div class="portfolio-item">
+											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
+												<div class="thumb-info-wrapper rounded-0">
+													<img src="img/demos/digital-agency/projects/project-4.jpg" class="img-fluid rounded-0" alt="" />
+													<div class="thumb-info-action">
+														<a href="portfolio-single-wide-slider.html" aria-label="">
+															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
+											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
+												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
+											</h3>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-6 isotope-item websites">
+										<div class="portfolio-item">
+											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
+												<div class="thumb-info-wrapper rounded-0">
+													<img src="img/demos/digital-agency/projects/project-5.jpg" class="img-fluid rounded-0" alt="" />
+													<div class="thumb-info-action">
+														<a href="portfolio-single-wide-slider.html" aria-label="">
+															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
+											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
+												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
+											</h3>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-6 isotope-item websites">
+										<div class="portfolio-item">
+											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
+												<div class="thumb-info-wrapper rounded-0">
+													<img src="img/demos/digital-agency/projects/project-6.jpg" class="img-fluid rounded-0" alt="" />
+													<div class="thumb-info-action">
+														<a href="portfolio-single-wide-slider.html" aria-label="">
+															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
+											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
+												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
+											</h3>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
         </div>
       </div>
 

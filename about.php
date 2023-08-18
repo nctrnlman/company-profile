@@ -132,40 +132,35 @@
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="250"
               >
-                We deliver the most advanced strategies for your business
+              Fostering Business Excellence through Innovative Strategies
               </h2>
               <p
                 class="text-3-5 appear-animation"
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="500"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur vulputate posuere tortor luctus vulputate. Cras
-                laoreet pretium blandit. Vestibulum luctus laoreet lacinia.
-                Maecenas luctus arcu ut orci lacinia ultrices. Praesent semper
-                porta interdum. Etiam cursus, tortor at interdum rutrum, metus
-                nibh tincidunt purus, non tincidunt odio arcu quis erat.
+              PT Mineral Alam Abadi is the Holding Company of several companies that focus on Mining
+Investment, Nickel & Stone Mining, Mining Contracting, Nickel & Coal Trading, Construction
+Services, and Sea Transportation Services. Along with the increasing market demand, PT Mineral
+Alam Abadi is committed to continuing to contribute in meeting the needs of local and global
+markets by providing the best performance and quality in providing services. 
               </p>
               <p
                 class="mb-5 appear-animation"
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="750"
               >
-                Curabitur vulputate posuere tortor luctus vulputate. Cras
-                laoreet pretium blandit. Vestibulum luctus laoreet lacinia.
-                Maecenas luctus arcu ut orci lacinia ultrices. Praesent semper
-                porta interdum. Etiam cursus, tortor at interdum rutrum, metus
-                nibh tincidunt purus, non tincidunt odio arcu quis erat. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                vulputate posuere tortor luctus vulputate. Cras laoreet pretium
-                blandit. Vestibulum luctus laoreet lacinia.
+              PT Mineral Alam Abadi
+has several operational locations, namely the Head Office of PT Mineral Alam Abadi which is
+domiciled in Jakarta, as well as mine locations in Central Sulawesi, Southeast Sulawesi, and South
+Halmahera
               </p>
             </div>
           </div>
           <div class="row row-gutter-sm">
             <div class="col-sm-6 mb-4 mb-sm-0">
               <img
-                src="img/demos/business-consulting-3/generic/generic-5.jpg"
+                src="img/demos/business-consulting-3/backgrounds/MMP OBI- 10.jpg"
                 class="img-fluid box-shadow-5 appear-animation"
                 data-appear-animation="fadeInRightShorter"
                 data-appear-animation-delay="800"
@@ -174,7 +169,7 @@
             </div>
             <div class="col-6 col-sm-3">
               <img
-                src="img/demos/business-consulting-3/generic/generic-1.jpg"
+                src="img/demos/business-consulting-3/backgrounds/MMP OBI- 17.jpg"
                 class="img-fluid box-shadow-5 appear-animation"
                 data-appear-animation="fadeInRightShorter"
                 data-appear-animation-delay="600"
@@ -183,14 +178,14 @@
             </div>
             <div class="col-6 col-sm-3">
               <img
-                src="img/demos/business-consulting-3/generic/generic-2.jpg"
+                src="img/demos/business-consulting-3/backgrounds/DJI_0874.JPG"
                 class="img-fluid box-shadow-5 mb-4 appear-animation"
                 data-appear-animation="fadeInRightShorter"
                 data-appear-animation-delay="200"
                 alt=""
               />
               <img
-                src="img/demos/business-consulting-3/generic/generic-3.jpg"
+                src="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg"
                 class="img-fluid box-shadow-5 appear-animation"
                 data-appear-animation="fadeInRightShorter"
                 data-appear-animation-delay="400"
@@ -314,11 +309,11 @@
               preserveAspectRatio="xMinYMin"
             >
               <polygon
-                fill="#c6a265"
+              fill="#c6a265"
                 points="0,90 221,60 563,88 931,35 1408,93 1920,41 1920,-1 0,-1 "
               />
               <polygon
-                fill="#fff"
+                fill="#fff2"
                 points="0,75 219,44 563,72 930,19 1408,77 1920,25 1920,-1 0,-1 "
               />
             </svg>
@@ -326,8 +321,13 @@
         </section>
 
         <div class="container py-5 mb-5">
-          <div class="row">
-            <div class="col">
+          <div class="row mb-2">
+          <h2
+                  class="text-9 line-height-3 text-transform-none text-center font-weight-semibold mb-4 text-color-dark "
+                >
+                  CORE VALUES 
+                </h2>
+            <div class="col mt-5">
               <div
                 class="tabs tabs-bottom tabs-center tabs-simple custom-tabs-style-1"
               >
@@ -337,7 +337,7 @@
                       class="nav-link active"
                       href="#tabsNavigationManifesto"
                       data-bs-toggle="tab"
-                      >Manifesto</a
+                      >Open Minded</a
                     >
                   </li>
                   <li class="nav-item">
@@ -345,7 +345,7 @@
                       class="nav-link"
                       href="#tabsNavigationVision"
                       data-bs-toggle="tab"
-                      >Vision</a
+                      >Sharing</a
                     >
                   </li>
                   <li class="nav-item">
@@ -353,7 +353,15 @@
                       class="nav-link"
                       href="#tabsNavigationMission"
                       data-bs-toggle="tab"
-                      >Mission</a
+                      >Responsibility</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="#tabsNavigationInnovative"
+                      data-bs-toggle="tab"
+                      >Innovative</a
                     >
                   </li>
                 </ul>
@@ -361,67 +369,63 @@
                   <div class="tab-pane active" id="tabsNavigationManifesto">
                     <div class="text-center">
                       <p class="text-3-5">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Curabitur vulputate posuere tortor luctus vulputate.
-                        Cras laoreet pretium blandit. Vestibulum luctus laoreet
-                        lacinia. Maecenas luctus arcu ut orci lacinia ultrices.
-                        Praesent semper porta interdum. Etiam cursus, tortor at
-                        interdum rutrum, metus nibh tincidunt purus, non
-                        tincidunt odio arcu quis erat.
+                      Pemikiran yang terbuka terhadap perubahan, ide, gagasan, tidak memandang perbedaan serta bersikap adil
+
+
                       </p>
-                      <p class="text-3">
-                        Curabitur vulputate posuere tortor luctus vulputate.
-                        Cras laoreet pretium blandit. Vestibulum luctus laoreet
-                        lacinia. Maecenas luctus arcu ut orci lacinia ultrices.
-                        Praesent semper porta interdum. Etiam cursus, tortor at
-                        interdum rutrum, metus nibh tincidunt purus, non
-                        tincidunt odio arcu quis erat. Lorem ipsum dolor sit
-                        amet, consectetur adipiscing elit. Curabitur vulputate
-                        posuere tortor luctus vulputate. Cras laoreet pretium
-                        blandit. Vestibulum luctus laoreet lacinia.
-                      </p>
+                      <!-- <div class="text-3">
+  <p>- Terbuka terhadap ide, pendapat, informasi, dan hal-hal baru</p>
+  <p>- Menunjukkan empati, memahami, dan menghormati perbedaan antar satu sama lain</p>
+  <p>- Mempertimbangkan perbedaan pendapat untuk membuat keputusan yang baik demi kepentingan bersama</p>
+  <p>- Mau menerima kritik atau masukan dari orang lain</p>
+</div> -->
+
+
+
                     </div>
                   </div>
                   <div class="tab-pane" id="tabsNavigationVision">
                     <div class="text-center">
                       <p class="text-3-5">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Curabitur vulputate posuere tortor luctus vulputate.
-                        Cras laoreet pretium blandit. Vestibulum luctus laoreet
-                        lacinia. Maecenas luctus arcu ut orci lacinia ultrices.
-                        Praesent semper porta interdum. Etiam cursus, tortor at
-                        interdum rutrum, metus nibh tincidunt purus, non
-                        tincidunt odio arcu quis erat.
+                      Menciptakan ekosistem kerja dengan semangat berbagi dan bekerjasama 
+
                       </p>
-                      <p class="text-3">
-                        Curabitur vulputate posuere tortor luctus vulputate.
-                        Cras laoreet pretium blandit. Vestibulum luctus laoreet
-                        lacinia. Maecenas luctus arcu ut orci lacinia ultrices.
-                        Cras laoreet pretium blandit. Vestibulum luctus laoreet
-                        lacinia.
-                      </p>
+                      <!-- <div class="text-3"> -->
+  <!-- <p>- Memberikan kontribusi berarti dalam melaksanakan tugas</p>
+  <p>- Mencari solusi terbaik saat menghadapi permasalahan demi kepentingan perusahaan</p>
+  <p>- Meminta pertolongan kepada rekan kerja / atasan dengan rendah hati pada saat mengalami kesulitan serta saling membantu sesama rekan kerja</p>
+  <p>- Merayakan kesuksesan bersama dan mampu membalikkan keadaan secara bersama-sama dalam menghadapi kemunduran</p>
+</div> -->
+
                     </div>
                   </div>
                   <div class="tab-pane" id="tabsNavigationMission">
                     <div class="text-center">
                       <p class="text-3-5">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Curabitur vulputate posuere tortor luctus vulputate.
-                        Praesent semper porta interdum. Etiam cursus, tortor at
-                        interdum rutrum, metus nibh tincidunt purus, non
-                        tincidunt odio arcu quis erat.
+                      Berdedikasi, mengemban tanggung jawab, membangun kepercayaan terhadap rekan kerja, masyarakat dan lingkungan
                       </p>
-                      <p class="text-3">
-                        Curabitur vulputate posuere tortor luctus vulputate.
-                        Cras laoreet pretium blandit. Vestibulum luctus laoreet
-                        lacinia. Maecenas luctus arcu ut orci lacinia ultrices.
-                        Praesent semper porta interdum. Etiam cursus, tortor at
-                        interdum rutrum, metus nibh tincidunt purus, non
-                        tincidunt odio arcu quis erat. Lorem ipsum dolor sit
-                        amet, consectetur adipiscing elit. Curabitur vulputate
-                        posuere tortor luctus vulputate. Cras laoreet pretium
-                        blandit. Vestibulum luctus laoreet lacinia.
+                      <!-- <div class="text-3">
+  <p>- Penuh semangat dalam menjalankan pekerjaan, menunjukkan usaha yang optimal, berorientasi pada tugas dan hasil</p>
+  <p>- Disiplin dalam memanfaatkan waktu kerja untuk melaksanakan kegiatan yang produktif</p>
+  <p>- Menjaga nama baik / aset / informasi perusahaan dengan sebaik-baiknya, tidak akan pernah memberikannya kepada pihak manapun yang tidak berkepentingan</p>
+  <p>- Berani mengambil risiko atas kesalahan / kegagalan, berupaya untuk tidak mengulangi kesalahan serta fokus pada solusi</p>
+</div> -->
+
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tabsNavigationInnovative">
+                    <div class="text-center">
+                      <p class="text-3-5">
+                      Terus mengeksplorasi dan merevolusi diri dengan tetap menjaga vitalitas dan efektivitas tim, berani keluar dari zona nyaman 
+
                       </p>
+                      <!-- <div class="text-3">
+  <p>- Berpikir inovatif, terus mengembangkan pengetahuan profesional dan kompetensi</p>
+  <p>- Terus-menerus melakukan perbaikan, mengikuti perkembangan teknologi dan tantangan perubahan zaman</p>
+  <p>- Melaksanakan pengembangan inisiatif baru yang dapat meningkatkan kinerja individu, unit kerja, dan perusahaan</p>
+  <p>- Kemampuan mengerjakan sesuatu yang baru, mencari peluang, mengembangkan ide, dan sumber daya</p>
+</div> -->
+
                     </div>
                   </div>
                 </div>

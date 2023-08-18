@@ -150,10 +150,10 @@ if (basename($_SERVER['PHP_SELF']) == 'contact.php') {
           <a href="contact.php" class="btn btn-primary custom-btn-style-1 font-weight-semibold text-3-5 btn-px-3 py-2 ws-nowrap ms-4 d-none d-lg-block" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Contact Us</span></a>
 								<div class="header-nav-features header-nav-features-no-border">
 									<div class="header-nav-feature header-nav-features-search d-inline-flex">
-										<a href="#" class="header-nav-features-toggle text-decoration-none" data-focus="headerSearch" aria-label="Search">
+										<!-- <a href="#" class="header-nav-features-toggle text-decoration-none" data-focus="headerSearch" aria-label="Search">
 											<i class="icons icon-magnifier header-nav-top-icon text-3-5 text-color-dark text-color-hover-primary font-weight-semibold top-3"></i>
-										</a>
-										<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0" id="headerTopSearchDropdown">
+										</a> -->
+										<!-- <div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0" id="headerTopSearchDropdown">
 											<form role="search" action="page-search-results.html" method="get">			
 												<div class="simple-search input-group">
 													<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
@@ -162,12 +162,12 @@ if (basename($_SERVER['PHP_SELF']) == 'contact.php') {
 													</button>
 												</div>
 											</form>
-										</div>
+										</div> -->
 									</div>
 								</div>
-								<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse" data-bs-target=".header-nav-main nav">
-									<i class="fas fa-bars"></i>
-								</button>
+                  <!-- <button class="btn header-btn-collapse-nav" data-bs-toggle="collapse" data-bs-target=".header-nav-main nav">
+                    <i class="fas fa-bars"></i>
+                  </button> -->
                 <?php
 } else {
     ?>
@@ -179,7 +179,7 @@ if (basename($_SERVER['PHP_SELF']) == 'contact.php') {
             ><span>Contact Us</span></a
           >
           <div class="header-nav-features header-nav-features-no-border">
-            <div
+            <!-- <div
               class="header-nav-feature header-nav-features-search d-inline-flex"
             >
               <a
@@ -191,8 +191,8 @@ if (basename($_SERVER['PHP_SELF']) == 'contact.php') {
                 <i
                   class="icons icon-magnifier header-nav-top-icon text-3-5 text-color-dark text-color-hover-primary font-weight-semibold top-3"
                 ></i>
-              </a>
-              <div
+              </a> -->
+              <!-- <div
                 class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0"
                 id="headerTopSearchDropdown"
               >
@@ -217,7 +217,7 @@ if (basename($_SERVER['PHP_SELF']) == 'contact.php') {
                     </button>
                   </div>
                 </form>
-              </div>
+              </div> -->
             </div>
           </div>
           <button

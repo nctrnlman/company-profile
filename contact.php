@@ -85,11 +85,11 @@
 	<?php include 'navbar.php'; ?>
 			<div role="main" class="main">
 
-				<section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" data-bg-src="img/demos/business-consulting-3/backgrounds/background-5.jpg" style="background-size: cover; background-position: center;">
+				<section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload"  style="background-size: cover; background-position: center; background-color: #af2a25">
 					<div class="container pb-5 my-3">
 						<div class="row mb-4">
 							<div class="col-md-12 align-self-center p-static order-2 text-center">
-								<h1 class="font-weight-bold text-color-dark text-10">Contact Us</h1>
+								<h1 class="font-weight-bold text-color-white text-10">Contact Us</h1>
 							</div>
 						</div>
 					</div>
@@ -109,9 +109,9 @@
 									<div class="d-flex flex-column justify-content-center p-5 h-100 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
 										<div class="pb-5 mb-4 mt-5 mt-lg-0">
 											<div class="d-flex flex-column flex-md-row align-items-center justify-content-center pe-lg-4">
-												<img width="105" height="105" src="img/demos/business-consulting-3/icons/map-pin.svg" alt="Location" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mb-4 mb-md-0'}" style="width: 105px;" />
+												<img width="140" height="70" src="img/demos/business-consulting-3/logo-MAA-component.png" alt="Location"   />
 												<div class="text-center text-md-start ps-md-3">
-													<h2 class="font-weight-semibold text-6 mb-1">Porto Business</h2>
+													<h2 class="font-weight-semibold text-6 mb-1">MAA GROUP</h2>
 													<p class="text-3-5 mb-0">12345 Porto Blvd,<br>Suite 1500<br>Los Angeles, California 9000</p>
 												</div>
 											</div>
@@ -189,8 +189,8 @@
 
 				
 
+			</div>
 			<?php include 'footer.php'; ?>
-		</div>
 
 		<!-- Vendor -->
 		<script src="vendor/plugins/js/plugins.min.js"></script>

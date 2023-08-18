@@ -17,16 +17,6 @@
                 PT MINERAL ALAM ABADI
               </h2>
             </div>
-            <div class="col-auto">
-              <a
-                href="demo-business-consulting-3-contact.html"
-                class="btn btn-primary custom-btn-style-1 font-weight-medium btn-px-4 btn-py-2 text-4"
-                data-cursor-effect-hover="plus"
-                data-cursor-effect-hover-color="light"
-              >
-                <span class="text-color-light">Contact Us</span>
-              </a>
-            </div>
           </div>
           <hr class="bg-color-light opacity-1 my-0" />
           <div class="row pt-3 mt-5">
@@ -79,7 +69,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-lg-3 mb-4 mb-lg-0">
+            <div class="col-lg-4 mb-4 mb-lg-0">
               <ul class="list list-icons list-icons-lg">
                 <li class="d-flex px-0 mb-1">
                   <img
@@ -123,7 +113,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="col-lg-5 mb-4 mb-lg-0">
               <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
               <div
                 id="googlemaps"

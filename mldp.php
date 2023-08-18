@@ -84,15 +84,15 @@
       <div role="main" class="main">
         <section
           class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload"
-          data-bg-src="img/demos/business-consulting-3/backgrounds/background-5.jpg"
-          style="background-size: cover; background-position: center"
+          
+          style="background-size: cover; background-position: center;background-color: #af2a25;"
         >
           <div class="container pb-5 my-3">
             <div class="row mb-4">
               <div
                 class="col-md-12 align-self-center p-static order-2 text-center"
               >
-                <h1 class="font-weight-bold text-color-dark text-10">MLDP</h1>
+                <h1 class="font-weight-bold text-color-white text-10">MLDP</h1>
               </div>
               <div class="col-md-12 align-self-center order-1"></div>
             </div>

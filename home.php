@@ -14,6 +14,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"> -->
 
     <!-- Mobile Metas -->
     <meta
@@ -59,7 +62,7 @@
     <!-- Demo CSS -->
     <link rel="stylesheet" href="css/demos/demo-business-consulting-3.css" />
 
-    <!-- Demo CSS -->
+  
     <link rel="stylesheet" href="css/demos/demo-construction.css" />
 
     <!-- Skin CSS -->
@@ -69,136 +72,96 @@
       href="css/skins/skin-business-consulting-3.css"
     />
 
-    <!-- Theme Custom CSS -->
+    <!-- Theme Custom CSS --> 
     <link rel="stylesheet" href="css/custom.css" />
+
+    
 
     <!-- Head Libs -->
     <script src="vendor/modernizr/modernizr.min.js"></script>
   </head>
 
   <body>
+  <div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content custom-modal-content" style="">
+            <div class="modal-header custom-modal-header" style="background-color: #f5f5f5; ">
+                <img
+                    alt="Porto"
+                    width="150"
+                    src="img/demos/business-consulting-3/logo-MAA.png"
+                />
+                <button type="button" class="close custom-close-button" aria-label="Close" style="background: none; border: none; font-size: 24px;">
+                    <span aria-hidden="true" id="confirmButton" style="color: #af2a25;">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body custom-modal-body" style="padding: 20px; color: #f5f5f5;">
+                <p class="text-center" style="font-size: 24px; margin-bottom: 20px;">
+                    <strong>WASPADAI PENIPUAN REKRUTMEN KARYAWAN</strong>
+                </p>
+                <p style="text-align: justify;">
+    PT Mineral Alam Abadi tidak memungut biaya apapun dan tidak pernah bekerja sama dengan agen perjalanan atau pihak ketiga dalam proses rekrutmen. Proses rekrutmen di perusahaan kami sepenuhnya transparan.<br><br> Hindari penipuan dengan mencermati email, pesan, dan web yang digunakan untuk lowongan pekerjaan. Jika Anda atau seseorang yang Anda kenal mengalami penipuan atau situasi tidak etis sehubungan dengan proses rekrutmen di perusahaan kami, laporkan kepada kami melalui email <strong>recruitment@mineralalamabadi.co.id</strong> dengan subject "Pelaporan" atau bisa juga melalui sosial media kami.
+</p>
+
+            </div>
+            <div class="modal-footer custom-modal-footer" style="background-color: #f5f5f5;">
+                <!-- Tambahkan tombol atau konten footer sesuai kebutuhan Anda -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <div class="body">
       <?php include 'navbar.php'; ?>
 
       <div role="main" class="main">
-        <section
-          class="section section-height-3 section-with-shape-divider position-relative border-0 m-0"
-          data-plugin-parallax
-          data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}"
-          data-image-src="img/demos/business-consulting-3/backgrounds/background-1.jpg"
-        >
-          <img
-            src="img/demos/business-consulting-3/backgrounds/tes-bg.png"
-            class="img-fluid position-absolute top-0 right-0 d-none d-md-block appear-animation"
-            data-appear-animation="fadeInUpShorter"
-            data-appear-animation-delay="1100"
-            alt=""
-          />
-          <div class="container pb-5 pb-xl-0 mt-md-3 mb-5">
-            <div class="row">
-              <div class="col-md-7 col-lg-12">
-                <div
-                  class="appear-animation"
-                  data-appear-animation="fadeInUpShorter"
-                  data-appear-animation-delay="0"
-                >
-                  <h1
-                    class="custom-text-background custom-big-font-size-1 text-14 font-weight-bold float-xl-end clearfix line-height-1 custom-ws-mobile-wrap ws-nowrap pb-2 mb-3 mb-xl-5"
-                    style="
-                      background-image: url(img/demos/business-consulting-3/backgrounds/text-background.jpg);
-                    "
-                  >
-                    MINERAL ALAM ABADI
-                  </h1>
-                </div>
-              </div>
-            </div>
-            <div class="row pb-5 mb-5">
-              <div class="col-md-7 col-xl-5 pb-5 pb-xl-0 mb-5">
-                <strong
-                  class="d-block font-weight-semibold text-color-dark text-5-5 line-height-4 mb-3 pb-1 appear-animation"
-                  data-appear-animation="fadeInUpShorter"
-                  data-appear-animation-delay="500"
-                  >Accelerate Strategy Execution and Consistency in
-                  <span class="custom-highlight-text-1 font-weight-bold"
-                    >Revenue Growth!</span
-                  ></strong
-                >
-                <p
-                  class="text-3-5 mb-4 appear-animation"
-                  data-appear-animation="fadeInUpShorter"
-                  data-appear-animation-delay="750"
-                >
-                  Cras a elit sit amet leo accumsan volutpat. Suspendisse
-                  hendrerit vehicula leo, vel efficitur felis ultrices non.
-                </p>
-                <a
-                  href="#aboutus"
-                  data-hash
-                  data-hash-offset="0"
-                  data-hash-offset-lg="100"
-                  class="d-inline-flex align-items-center text-decoration-none appear-animation"
-                  data-appear-animation="fadeInUpShorter"
-                  data-appear-animation-delay="1000"
-                >
-                  <img
-                    width="30"
-                    height="30"
-                    src="img/demos/business-consulting-3/icons/mouse.svg"
-                    alt=""
-                    data-icon
-                    data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary me-2'}"
-                  />
-                  Scroll Down
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="shape-divider shape-divider-bottom" style="height: 212px">
-            <div
-              class="shape-divider-horizontal-animation shape-divider-horizontal-animation-to-left"
-            >
-              <svg
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px"
-                y="0px"
-                viewBox="0 0 1920 212"
-                preserveAspectRatio="xMinYMin"
-              >
-                <polygon
-                  fill="#c6a265"
-                  points="0,75 479,161 1357,28 1701,56 1920,26 1920,213 0,212 "
-                />
-                <polygon
-                  fill="#FFFFFF"
-                  points="0,91 481,177 1358,44 1702,72 1920,42 1920,212 0,212 "
-                />
-              </svg>
-            </div>
-          </div>
-        </section>
+      <section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}" data-image-src="img/demos/business-consulting-3/backgrounds/obi-07.jpg">
+					<img src="img/demos/business-consulting-3/backgrounds/DJI_1.JPG" class="img-fluid position-absolute top-0 right-0 d-none d-md-block appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1100" alt="" />
+					<div class="container pb-5 pb-xl-0 mt-md-3 mb-5">
+						<div class="row">
+							<div class="col-md-7 col-lg-12">
+								<div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="0">
+									<h1 class="custom-text-background custom-big-font-size-1 text-14 font-weight-bold float-xl-end clearfix line-height-1 custom-ws-mobile-wrap ws-nowrap pb-2 mb-3 mb-xl-5" style="background-image: url(img/demos/business-consulting-3/backgrounds/text-background.jpg);">MINERAL ALAM ABADI</h1>
+								</div>
+							</div>
+						</div>
+						<div class="row pb-5 mb-5">
+							<div class="col-md-7 col-xl-5 pb-5 pb-xl-0 mb-5">
+								<strong class="d-block font-weight-semibold text-color-white text-5-5 line-height-4 mb-3 pb-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500"> <span class="custom-highlight-text-1 font-weight-bold">Being an Integrated and Leading Mining Company in Indonesia</span></strong>
+								<p class="text-3-5 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750"> we are committed to contributing to meeting the needs of the Local and Global Market by providing the best performance and quality in serving customers.</p>
+							</div>
+						</div>
+					</div>
+					<div class="shape-divider shape-divider-bottom" style="height: 212px;">
+						<div class="shape-divider-horizontal-animation shape-divider-horizontal-animation-to-left">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 212" preserveAspectRatio="xMinYMin">
+								<polygon fill="#af2a25" points="0,75 479,161 1357,28 1701,56 1920,26 1920,213 0,212 "/>
+								<polygon fill="#fff" points="0,91 481,177 1358,44 1702,72 1920,42 1920,212 0,212 "/>
+							</svg>
+						</div>
+					</div>
+				</section>
 
-        <div class="container" style="margin-bottom: 20 px">
-          <div id="aboutus" class="row align-items-xl-center pt-4 mt-5">
+        <div class="container" ">
+          <div id="aboutus" class="row align-items-xl-center pt-4 mb-3">
             <div class="col-md-10 col-lg-6 mb-5 mb-lg-0">
               <div class="row row-gutter-sm">
                 <div class="col-6">
                   <img
-                    src="img/demos/business-consulting-3/generic/generic-1.jpg"
+                    src="img/demos/business-consulting-3/backgrounds/MMP OBI- 10.jpg"
                     class="img-fluid box-shadow-5"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
                   <img
-                    src="img/demos/business-consulting-3/generic/generic-2.jpg"
+                    src="img/demos/business-consulting-3/backgrounds/DJI_0865.JPG"
                     class="img-fluid box-shadow-5 mb-4"
                     alt=""
                   />
                   <img
-                    src="img/demos/business-consulting-3/generic/generic-3.jpg"
+                    src="img/demos/business-consulting-3/backgrounds/MMP OBI- 12.jpg"
                     class="img-fluid box-shadow-5"
                     alt=""
                   />
@@ -210,69 +173,33 @@
                 class="custom-highlight-text-1 d-inline-block line-height-5 text-4 positive-ls-3 font-weight-medium text-color-primary mb-2 appear-animation"
                 data-appear-animation="fadeInUpShorter"
               >
-                ABOUT US
+                ABOUT MAA
               </h2>
               <h3
                 class="text-9 text-lg-5 text-xl-9 line-height-3 text-transform-none font-weight-semibold mb-4 mb-lg-3 mb-xl-4 appear-animation"
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="250"
               >
-                We deliver the most advanced strategies for your business
+              Empowering Business Excellence
               </h3>
               <p
                 class="text-3-5 pb-1 mb-4 mb-lg-2 mb-xl-4 appear-animation"
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="500"
               >
-                Cras a elit sit amet leo accumsan volutpat. Suspendisse
-                hendreriast ehicula leo, vel efficitur felis ultrices non. Cras
-                a elit sit amet leo acun volutpat. Suspendisse hendrerit
-                vehicula leo, vel efficitur fel.
+              PT Mineral Alam Abadi is a leading provider of innovative business solutions. With a focus on delivering cutting-edge strategies, we empower businesses to thrive in today's dynamic landscape. Our expertise extends across diverse industries, enabling us to tailor solutions that drive growth and success.
               </p>
-              <div
-                class="row align-items-center pb-2 mb-4 mb-lg-1 mb-xl-4 appear-animation"
-                data-appear-animation="fadeInUpShorter"
-                data-appear-animation-delay="750"
-              >
-                <div class="col-5">
-                  <div class="d-flex">
-                    <img
-                      width="63"
-                      height="63"
-                      src="img/demos/business-consulting-3/icons/label.svg"
-                      alt=""
-                      data-icon
-                      data-plugin-options="{'onlySVG': true, 'extraClass': 'd-lg-none d-xl-block'}"
-                    />
-                    <span
-                      class="text-3 font-weight-bold text-color-dark pt-2 ms-2"
-                    >
-                      <strong class="d-block font-weight-bold text-9 mb-2"
-                        >240+</strong
-                      >
-                      Satisfied Clients
-                    </span>
-                  </div>
-                </div>
-                <div class="col-7">
-                  <blockquote class="custom-blockquote-style-1 m-0 pt-1 pb-2">
-                    <p class="mb-0">
-                      Cras a elit sit amet leo accumsan volutpat. Suspendisse.
-                    </p>
-                  </blockquote>
-                </div>
-              </div>
               <div
                 class="appear-animation"
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="1000"
               >
                 <a
-                  href="demo-business-consulting-3-contact.html"
+                  href="contact.php"
                   class="btn btn-primary custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5"
                   data-cursor-effect-hover="plus"
                   data-cursor-effect-hover-color="light"
-                  ><span>Get a Quote</span></a
+                  ><span>Get to know</span></a
                 >
               </div>
             </div>
@@ -318,381 +245,192 @@
                   data-appear-animation="fadeInUpShorter"
                   data-appear-animation-delay="500"
                 >
-                  Our Premium Services
+                  Our Business
                 </h3>
-                <p
-                  class="text-3-5 pb-3 mb-4 appear-animation text-color-white"
-                  data-appear-animation="fadeInUpShorter"
-                  data-appear-animation-delay="750"
-                >
-                  Cras a elit sit amet leo accumsan volutpat. Suspendisse
-                  hendreriast ehicula leo, vel efficitur felis ultrices non.
-                  Cras a elit sit amet leo acun volutpat. Suspendisse hendrerit
-                  vehicula leo, vel efficitur fel.
-                </p>
+                <p class="text-3-5 pb-3 mb-4 appear-animation text-color-white"
+                data-appear-animation="fadeInUpShorter"
+                data-appear-animation-delay="750">
+                PT Mineral Alam Abadi is dedicated to delivering advanced strategies and solutions for your business needs. Our wide range of expertise ensures comprehensive support and exceptional results for your business growth.
+            </p>
               </div>
             </div>
-            <div
-              class="row row-gutter-sm justify-content-center mb-5 appear-animation"
-              data-appear-animation="fadeInUpShorter"
-              data-appear-animation-delay="1000"
-            >
-              <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
-                <a
-                  href="demo-business-consulting-3-services-detail.html"
-                  class="custom-link-hover-effects text-decoration-none"
-                  data-cursor-effect-hover="plus"
-                >
-                  <div class="card box-shadow-4">
-                    <div
-                      class="card-img-top position-relative overlay overlay-show"
-                    >
-                      <div
-                        class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3"
-                      >
-                        <h4
-                          class="font-weight-semibold text-color-light text-6 mb-1"
-                        >
-                          Sales & Marketing
-                        </h4>
-                        <div class="custom-crooked-line">
-                          <img
-                            width="154"
-                            height="26"
-                            src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg"
-                            alt=""
-                            data-icon
-                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                            style="width: 154px"
-                          />
+    <div class="row row-gutter-sm justify-content-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+        <!-- Card 1 - Stone Mining -->
+        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                    <div class="card-img-top position-relative overlay overlay-show">
+                        <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                            <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Mining</h4>
+                            <div class="custom-crooked-line">
+                                <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                            </div>
                         </div>
-                      </div>
-                      <img
-                        src="img/demos/business-consulting-3/services/services-1.jpg"
-                        class="img-fluid"
-                        alt="Card Image"
-                      />
+                        <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
                     </div>
-                    <div
-                      class="card-body d-flex align-items-center custom-view-more px-4"
-                    >
-                      <p class="card-text w-100 mb-0">
-                        Cras a elit sit amet leo accumsan. Suspendisse
-                        hendrerit.
-                      </p>
-                      <img
-                        width="50"
-                        height="50"
-                        class="w-auto"
-                        src="img/demos/business-consulting-3/icons/arrow-right.svg"
-                        alt=""
-                        data-icon
-                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                        style="width: 50px"
-                      />
+                    <div class="card-body d-flex align-items-center custom-view-more px-4">
+                        <p class="card-text w-100 mb-0">PT Mineral Alam Abadi specializes in mining</p>
+                        <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
-                <a
-                  href="demo-business-consulting-3-services-detail.html"
-                  class="custom-link-hover-effects text-decoration-none"
-                  data-cursor-effect-hover="plus"
-                >
-                  <div class="card box-shadow-4">
-                    <div
-                      class="card-img-top position-relative overlay overlay-show"
-                    >
-                      <div
-                        class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3"
-                      >
-                        <h4
-                          class="font-weight-semibold text-color-light text-6 mb-1"
-                        >
-                          Strategic Planning
-                        </h4>
-                        <div class="custom-crooked-line">
-                          <img
-                            width="154"
-                            height="26"
-                            src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg"
-                            alt=""
-                            data-icon
-                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                            style="width: 154px"
-                          />
+                </div>
+            </a>
+        </div>
+        <!-- Card 2 - Nickel Mining -->
+        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                    <div class="card-img-top position-relative overlay overlay-show">
+                        <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                            <h4 class="font-weight-semibold text-color-light text-6 mb-1">Nickel Mining</h4>
+                            <div class="custom-crooked-line">
+                                <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                            </div>
                         </div>
-                      </div>
-                      <img
-                        src="img/demos/business-consulting-3/services/services-2.jpg"
-                        class="img-fluid"
-                        alt="Card Image"
-                      />
+                        <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
                     </div>
-                    <div
-                      class="card-body d-flex align-items-center custom-view-more px-4"
-                    >
-                      <p class="card-text w-100 mb-0">
-                        Cras a elit sit amet leo accumsan. Suspendisse
-                        hendrerit.
-                      </p>
-                      <img
-                        width="50"
-                        height="50"
-                        class="w-auto"
-                        src="img/demos/business-consulting-3/icons/arrow-right.svg"
-                        alt=""
-                        data-icon
-                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                        style="width: 50px"
-                      />
+                    <div class="card-body d-flex align-items-center custom-view-more px-4">
+                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
-                <a
-                  href="demo-business-consulting-3-services-detail.html"
-                  class="custom-link-hover-effects text-decoration-none"
-                  data-cursor-effect-hover="plus"
-                >
-                  <div class="card box-shadow-4">
-                    <div
-                      class="card-img-top position-relative overlay overlay-show"
-                    >
-                      <div
-                        class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3"
-                      >
-                        <h4
-                          class="font-weight-semibold text-color-light text-6 mb-1"
-                        >
-                          Operations
-                        </h4>
-                        <div class="custom-crooked-line">
-                          <img
-                            width="154"
-                            height="26"
-                            src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg"
-                            alt=""
-                            data-icon
-                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                            style="width: 154px"
-                          />
+                </div>
+            </a>
+        </div>
+        <!-- Card 3 - Stone Crusher -->
+        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                    <div class="card-img-top position-relative overlay overlay-show">
+                        <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                            <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Crusher</h4>
+                            <div class="custom-crooked-line">
+                                <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                            </div>
                         </div>
-                      </div>
-                      <img
-                        src="img/demos/business-consulting-3/services/services-3.jpg"
-                        class="img-fluid"
-                        alt="Card Image"
-                      />
+                        <img src="img/demos/business-consulting-3/backgrounds/DJI_0860.JPG" class="img-fluid" alt="Card Image">
                     </div>
-                    <div
-                      class="card-body d-flex align-items-center custom-view-more px-4"
-                    >
-                      <p class="card-text w-100 mb-0">
-                        Cras a elit sit amet leo accumsan. Suspendisse
-                        hendrerit.
-                      </p>
-                      <img
-                        width="50"
-                        height="50"
-                        class="w-auto"
-                        src="img/demos/business-consulting-3/icons/arrow-right.svg"
-                        alt=""
-                        data-icon
-                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                        style="width: 50px"
-                      />
+                    <div class="card-body d-flex align-items-center custom-view-more px-4">
+                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                <a
-                  href="demo-business-consulting-3-services-detail.html"
-                  class="custom-link-hover-effects text-decoration-none"
-                  data-cursor-effect-hover="plus"
-                >
-                  <div class="card box-shadow-4">
-                    <div
-                      class="card-img-top position-relative overlay overlay-show"
-                    >
-                      <div
-                        class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3"
-                      >
-                        <h4
-                          class="font-weight-semibold text-color-light text-6 mb-1"
-                        >
-                          Cost Transformation
-                        </h4>
-                        <div class="custom-crooked-line">
-                          <img
-                            width="154"
-                            height="26"
-                            src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg"
-                            alt=""
-                            data-icon
-                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                            style="width: 154px"
-                          />
+                </div>
+            </a>
+        </div>
+        <!-- Card 4 - Construction Services -->
+        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                    <div class="card-img-top position-relative overlay overlay-show">
+                        <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                            <h4 class="font-weight-semibold text-color-light text-6 mb-1">Construction Services</h4>
+                            <div class="custom-crooked-line">
+                                <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                            </div>
                         </div>
-                      </div>
-                      <img
-                        src="img/demos/business-consulting-3/services/services-4.jpg"
-                        class="img-fluid"
-                        alt="Card Image"
-                      />
+                        <img src="img/demos/business-consulting-3/backgrounds/DJI_0862.JPG" class="img-fluid" alt="Card Image">
                     </div>
-                    <div
-                      class="card-body d-flex align-items-center custom-view-more px-4"
-                    >
-                      <p class="card-text w-100 mb-0">
-                        Cras a elit sit amet leo accumsan. Suspendisse
-                        hendrerit.
-                      </p>
-                      <img
-                        width="50"
-                        height="50"
-                        class="w-auto"
-                        src="img/demos/business-consulting-3/icons/arrow-right.svg"
-                        alt=""
-                        data-icon
-                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                        style="width: 50px"
-                      />
+                    <div class="card-body d-flex align-items-center custom-view-more px-4">
+                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                <a
-                  href="demo-business-consulting-3-services-detail.html"
-                  class="custom-link-hover-effects text-decoration-none"
-                  data-cursor-effect-hover="plus"
-                >
-                  <div class="card box-shadow-4">
-                    <div
-                      class="card-img-top position-relative overlay overlay-show"
-                    >
-                      <div
-                        class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3"
-                      >
-                        <h4
-                          class="font-weight-semibold text-color-light text-6 mb-1"
-                        >
-                          Digital Marketing
-                        </h4>
-                        <div class="custom-crooked-line">
-                          <img
-                            width="154"
-                            height="26"
-                            src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg"
-                            alt=""
-                            data-icon
-                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                            style="width: 154px"
-                          />
+                </div>
+            </a>
+        </div>
+        <!-- Card 5 - Trading -->
+        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                    <div class="card-img-top position-relative overlay overlay-show">
+                        <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                            <h4 class="font-weight-semibold text-color-light text-6 mb-1">Trading</h4>
+                            <div class="custom-crooked-line">
+                                <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                            </div>
                         </div>
-                      </div>
-                      <img
-                        src="img/demos/business-consulting-3/services/services-5.jpg"
-                        class="img-fluid"
-                        alt="Card Image"
-                      />
+                        <img src="img/demos/business-consulting-3/backgrounds/DJI_0880.JPG" class="img-fluid" alt="Card Image">
                     </div>
-                    <div
-                      class="card-body d-flex align-items-center custom-view-more px-4"
-                    >
-                      <p class="card-text w-100 mb-0">
-                        Cras a elit sit amet leo accumsan. Suspendisse
-                        hendrerit.
-                      </p>
-                      <img
-                        width="50"
-                        height="50"
-                        class="w-auto"
-                        src="img/demos/business-consulting-3/icons/arrow-right.svg"
-                        alt=""
-                        data-icon
-                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                        style="width: 50px"
-                      />
+                    <div class="card-body d-flex align-items-center custom-view-more px-4">
+                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-6 col-lg-4">
-                <a
-                  href="demo-business-consulting-3-services-detail.html"
-                  class="custom-link-hover-effects text-decoration-none"
-                  data-cursor-effect-hover="plus"
-                >
-                  <div class="card box-shadow-4">
-                    <div
-                      class="card-img-top position-relative overlay overlay-show"
-                    >
-                      <div
-                        class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3"
-                      >
-                        <h4
-                          class="font-weight-semibold text-color-light text-6 mb-1"
-                        >
-                          Automation
-                        </h4>
-                        <div class="custom-crooked-line">
-                          <img
-                            width="154"
-                            height="26"
-                            src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg"
-                            alt=""
-                            data-icon
-                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                            style="width: 154px"
-                          />
+                </div>
+            </a>
+        </div>
+        <!-- Card 6 - Mining Contractor -->
+        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                    <div class="card-img-top position-relative overlay overlay-show">
+                        <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                            <h4 class="font-weight-semibold text-color-light text-6 mb-1">Mining Contractor</h4>
+                            <div class="custom-crooked-line">
+                                <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                            </div>
                         </div>
-                      </div>
-                      <img
-                        src="img/demos/business-consulting-3/services/services-6.jpg"
-                        class="img-fluid"
-                        alt="Card Image"
-                      />
+                        <img src="img/demos/business-consulting-3/backgrounds/DJI_0877.JPG" class="img-fluid" alt="Card Image">
                     </div>
-                    <div
-                      class="card-body d-flex align-items-center custom-view-more px-4"
-                    >
-                      <p class="card-text w-100 mb-0">
-                        Cras a elit sit amet leo accumsan. Suspendisse
-                        hendrerit.
-                      </p>
-                      <img
-                        width="50"
-                        height="50"
-                        class="w-auto"
-                        src="img/demos/business-consulting-3/icons/arrow-right.svg"
-                        alt=""
-                        data-icon
-                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
-                        style="width: 50px"
-                      />
+                    <div class="card-body d-flex align-items-center custom-view-more px-4">
+                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
-                  </div>
-                </a>
-              </div>
-            </div>
+                </div>
+            </a>
+        </div>
+        <!-- Card 7 - Shipping -->
+        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                    <div class="card-img-top position-relative overlay overlay-show">
+                        <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                            <h4 class="font-weight-semibold text-color-light text-6 mb-1">Shipping</h4>
+                            <div class="custom-crooked-line">
+                                <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                            </div>
+                        </div>
+                        <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
+                    </div>
+                    <div class="card-body d-flex align-items-center custom-view-more px-4">
+                        <p class="card-text w-100 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Card 8 - Investment -->
+        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                    <div class="card-img-top position-relative overlay overlay-show">
+                        <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                            <h4 class="font-weight-semibold text-color-light text-6 mb-1">Investment</h4>
+                            <div class="custom-crooked-line">
+                                <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                            </div>
+                        </div>
+                        <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
+                    </div>
+                    <div class="card-body d-flex align-items-center custom-view-more px-4">
+                        <p class="card-text w-100 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
             <div class="row">
               <div class="col text-center">
                 <a
-                  href="demo-business-consulting-3-services.html"
-                  class="btn btn-primary custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5"
+                  href="services.php"
+                  class="btn text-color-white custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5 bg-color-dark"
                   data-cursor-effect-hover="plus"
                   data-cursor-effect-hover-color="light"
                 >
-                  <span>All Services</span>
+                  <span>All Business</span>
                 </a>
               </div>
             </div>
           </div>
+          
         </section>
 
         <div class="container py-5 my-5-5">
@@ -704,7 +442,7 @@
                 Projects
               </h2>
               <p class="text-4 font-weight-light">
-                Cras a elit sit amet leo accumsan volutsudisse.
+              Currently, PT. Mineral Alam Abadi operates in three regions in Indonesia.
               </p>
             </div>
           </div>
@@ -781,17 +519,17 @@
                   <ul class="diamonds mb-0">
                     <li>
                       <a
-                        href="img/demos/construction/generic/generic-1-medium.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 21.jpg"
                         class="diamond lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
                           <img
-                            src="img/demos/construction/generic/generic-1.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 21.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': ['img/demos/construction/generic/generic-4.jpg', 'img/demos/construction/generic/generic-3.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/construction/generic/generic-1-medium.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': ['img/demos/construction/generic/generic-4.jpg', 'img/demos/construction/generic/generic-3.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/business-consulting-3/backgrounds/MMP OBI- 21.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
                           />
                         </div>
                       </a>
@@ -804,7 +542,7 @@
                       >
                         <div class="content">
                           <img
-                            src="img/demos/construction/generic/generic-2.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 15.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
@@ -815,7 +553,7 @@
                     </li>
                     <li>
                       <a
-                        href="img/demos/construction/generic/generic-9-medium.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 12.jpg"
                         class="diamond lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
@@ -832,13 +570,14 @@
                     </li>
                     <li>
                       <a
-                        href="img/demos/construction/generic/generic-5-wide.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 16.jpg"
                         class="diamond diamond-sm lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
+
                           <img
-                            src="img/demos/construction/generic/generic-5-small.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 16.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
@@ -849,7 +588,7 @@
                     </li>
                     <li>
                       <a
-                        href="img/demos/construction/generic/generic-3-medium.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 9.jpg"
                         class="diamond lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
@@ -866,13 +605,13 @@
                     </li>
                     <li>
                       <a
-                        href="img/demos/construction/generic/generic-6-medium.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg"
                         class="diamond diamond-sm lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
                           <img
-                            src="img/demos/construction/generic/generic-6-small.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg""
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
@@ -883,13 +622,13 @@
                     </li>
                     <li>
                       <a
-                        href="img/demos/construction/generic/generic-10-medium.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 06.jpg"
                         class="diamond diamond-sm lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
                           <img
-                            src="img/demos/construction/generic/generic-7-small.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 06.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
@@ -910,19 +649,21 @@
                 data-appear-animation="fadeInUpShorterPlus"
                 data-appear-animation-delay="600"
               >
-                Cras a elit sit amet leo accumsan volutpat. Suspendisse
-                hendrerit vehicula leo, vel efficitur felis
+              PT Mineral Alam Abadi
+has several operational locations, namely the Head Office of
                 <span
                   class="highlight highlight-primary highlight-bg-opacity highlight-animated"
                   data-appear-animation="highlight-animated-start"
                   data-appear-animation-delay="1100"
                   data-plugin-options="{'flagClassOnly': true}"
-                  >ultrices non hendrerit</span
+                  > PT Mineral Alam Abadi</span
                 >
-                vehicula leo, vel efficitur felis ultrices non.
+                which is
+domiciled in Jakarta, as well as mine locations in Central Sulawesi, Southeast Sulawesi, and South
+Halmahera.
               </p>
               <a
-                href="demo-construction-projects.html"
+                href="gellery.php"
                 class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                 data-appear-animation="fadeInUpShorterPlus"
                 data-appear-animation-delay="800"
@@ -941,6 +682,7 @@
           </div>
         </div>
       </div>
+      
       <?php include 'footer.php'; ?>
 
       
@@ -948,6 +690,7 @@
 
     <!-- Vendor -->
     <script src="vendor/plugins/js/plugins.min.js"></script>
+   
 
     <!-- Theme Base, Components and Settings -->
     <script src="js/theme.js"></script>
@@ -961,36 +704,42 @@
     <!-- Theme Initialization Files -->
     <script src="js/theme.init.js"></script>
 
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script> -->
+
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <script>
       /*
 			Map Settings
-
+      
 				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-			*/
-
-      function initializeGoogleMaps() {
-        // Map Initial Location
-        var initLatitude = 106.79144427076861;
-        var initLongitude = -6.1762329009338;
-
-        // Map Markers
-        var mapMarkers = [
-          {
-            latitude: initLatitude,
-            longitude: initLongitude,
-            html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: -6.1762329009338, longitude: 106.79144427076861, zoom: 16}, event)'>[+] zoom here</a>",
-            icon: {
+        - https://www.latlong.net/
+        - http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+        
+        */
+       
+       function initializeGoogleMaps() {
+         // Map Initial Location
+         var initLatitude = 106.79144427076861;
+         var initLongitude = -6.1762329009338;
+         
+         // Map Markers
+         var mapMarkers = [
+           {
+             latitude: initLatitude,
+             longitude: initLongitude,
+             html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: -6.1762329009338, longitude: 106.79144427076861, zoom: 16}, event)'>[+] zoom here</a>",
+             icon: {
               image: "img/demos/business-consulting-3/map-pin.png",
               iconsize: [26, 27],
               iconanchor: [12, 27],
             },
           },
         ];
-
+        
         // Map Extended Settings
         var mapSettings = {
           controls: {
@@ -1008,30 +757,30 @@
           longitude: initLongitude,
           zoom: 14,
         };
-
+        
         var map = $("#googlemaps").gMap(mapSettings),
           mapRef = $("#googlemaps").data("gMap.reference");
 
-        // Styles from https://snazzymaps.com/
-        var styles = [
-          {
-            featureType: "water",
-            elementType: "geometry",
-            stylers: [{ color: "#e9e9e9" }, { lightness: 17 }],
-          },
-          {
-            featureType: "landscape",
-            elementType: "geometry",
-            stylers: [{ color: "#f5f5f5" }, { lightness: 20 }],
-          },
-          {
-            featureType: "road.highway",
-            elementType: "geometry.fill",
-            stylers: [{ color: "#ffffff" }, { lightness: 17 }],
-          },
-          {
-            featureType: "road.highway",
-            elementType: "geometry.stroke",
+          // Styles from https://snazzymaps.com/
+          var styles = [
+            {
+              featureType: "water",
+              elementType: "geometry",
+              stylers: [{ color: "#e9e9e9" }, { lightness: 17 }],
+            },
+            {
+              featureType: "landscape",
+              elementType: "geometry",
+              stylers: [{ color: "#f5f5f5" }, { lightness: 20 }],
+            },
+            {
+              featureType: "road.highway",
+              elementType: "geometry.fill",
+              stylers: [{ color: "#ffffff" }, { lightness: 17 }],
+            },
+            {
+              featureType: "road.highway",
+              elementType: "geometry.stroke",
             stylers: [{ color: "#ffffff" }, { lightness: 29 }, { weight: 0.2 }],
           },
           {
@@ -1091,7 +840,7 @@
         var styledMap = new google.maps.StyledMapType(styles, {
           name: "Styled Map",
         });
-
+        
         mapRef.mapTypes.set("map_style", styledMap);
         mapRef.setMapTypeId("map_style");
       }
@@ -1105,5 +854,32 @@
         $("#googlemaps").gMap("centerAt", options);
       };
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        var notificationOverlay = document.getElementById("notificationOverlay");
+        var confirmButton = document.getElementById("confirmButton");
+
+        // Mengambil bagian akhir URL (home.php)
+        var currentPage = window.location.href.split("/").pop();
+
+        // Periksa apakah halaman saat ini adalah home.php
+        if (currentPage === "home.php") {
+            // Menghapus nilai notificationShown saat halaman dimuat ulang
+            localStorage.removeItem("notificationShown");
+
+            // Tampilkan notifikasi overlay hanya jika notificationShown tidak ada dalam localStorage
+            if (!localStorage.getItem("notificationShown")) {
+                notificationOverlay.style.display = "flex";
+            }
+        }
+
+        confirmButton.addEventListener("click", function () {
+            notificationOverlay.style.display = "none";
+            // Tandai bahwa notifikasi telah ditampilkan
+            localStorage.setItem("notificationShown", "true");
+        });
+    });
+    </script>
+
   </body>
 </html>

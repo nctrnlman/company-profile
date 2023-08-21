@@ -12,9 +12,9 @@
               <a href="demo-business-consulting-3.html">
                 <img
                   alt="Porto"
-                  width="250"
-                  height="25"
-                  src="img/demos/business-consulting-3/logo-MAA.png"
+                  width="270"
+                  height="27"
+                  src="img/demos/business-consulting-3/logo.png"
                 />
               </a>
             </div>

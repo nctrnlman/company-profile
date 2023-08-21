@@ -88,8 +88,8 @@
             <div class="modal-header custom-modal-header" style="background-color: #f5f5f5; ">
                 <img
                     alt="Porto"
-                    width="150"
-                    src="img/demos/business-consulting-3/logo-MAA.png"
+                    width="200"
+                    src="img/demos/business-consulting-3/logo.png"
                 />
                 <button type="button" class="close custom-close-button" aria-label="Close" style="background: none; border: none; font-size: 24px;">
                     <span aria-hidden="true" id="confirmButton" style="color: #af2a25;">&times;</span>
@@ -149,19 +149,19 @@
               <div class="row row-gutter-sm">
                 <div class="col-6">
                   <img
-                    src="img/demos/business-consulting-3/backgrounds/MMP OBI- 10.jpg"
+                    src="img/demos/business-consulting-3/backgrounds/home-about/1.jpg"
                     class="img-fluid box-shadow-5"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
                   <img
-                    src="img/demos/business-consulting-3/backgrounds/DJI_0865.JPG"
+                    src="img/demos/business-consulting-3/backgrounds/home-about/2.jpg"
                     class="img-fluid box-shadow-5 mb-4"
                     alt=""
                   />
                   <img
-                    src="img/demos/business-consulting-3/backgrounds/MMP OBI- 12.jpg"
+                    src="img/demos/business-consulting-3/backgrounds/home-about/3.jpg"
                     class="img-fluid box-shadow-5"
                     alt=""
                   />
@@ -195,7 +195,7 @@
                 data-appear-animation-delay="1000"
               >
                 <a
-                  href="contact.php"
+                  href="about.php"
                   class="btn btn-primary custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5"
                   data-cursor-effect-hover="plus"
                   data-cursor-effect-hover-color="light"
@@ -256,7 +256,7 @@
             </div>
     <div class="row row-gutter-sm justify-content-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
         <!-- Card 1 - Stone Mining -->
-        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
             <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                     <div class="card-img-top position-relative overlay overlay-show">
@@ -276,7 +276,7 @@
             </a>
         </div>
         <!-- Card 2 - Nickel Mining -->
-        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
             <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                     <div class="card-img-top position-relative overlay overlay-show">
@@ -296,7 +296,7 @@
             </a>
         </div>
         <!-- Card 3 - Stone Crusher -->
-        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
             <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                     <div class="card-img-top position-relative overlay overlay-show">
@@ -316,7 +316,7 @@
             </a>
         </div>
         <!-- Card 4 - Construction Services -->
-        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
             <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                     <div class="card-img-top position-relative overlay overlay-show">
@@ -336,7 +336,7 @@
             </a>
         </div>
         <!-- Card 5 - Trading -->
-        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
             <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                     <div class="card-img-top position-relative overlay overlay-show">
@@ -356,7 +356,7 @@
             </a>
         </div>
         <!-- Card 6 - Mining Contractor -->
-        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
             <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                     <div class="card-img-top position-relative overlay overlay-show">
@@ -376,7 +376,7 @@
             </a>
         </div>
         <!-- Card 7 - Shipping -->
-        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
             <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                     <div class="card-img-top position-relative overlay overlay-show">
@@ -396,7 +396,7 @@
             </a>
         </div>
         <!-- Card 8 - Investment -->
-        <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
             <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                     <div class="card-img-top position-relative overlay overlay-show">
@@ -519,47 +519,47 @@
                   <ul class="diamonds mb-0">
                     <li>
                       <a
-                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 21.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-blk.jpg"
                         class="diamond lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
                           <img
-                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 21.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-360x360.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': ['img/demos/construction/generic/generic-4.jpg', 'img/demos/construction/generic/generic-3.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/business-consulting-3/backgrounds/MMP OBI- 21.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': ['img/demos/construction/generic/generic-4.jpg', 'img/demos/construction/generic/generic-3.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
                           />
                         </div>
                       </a>
                     </li>
                     <li>
                       <a
-                        href="img/demos/construction/generic/generic-2-big.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-2-blk.jpg"
                         class="diamond lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
                           <img
-                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 15.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-2-360x360.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4200, 'imagesListURL': ['img/demos/construction/generic/generic-3.jpg', 'img/demos/construction/generic/generic-4.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-2-big.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4200, 'imagesListURL': ['img/demos/construction/generic/generic-3.jpg', 'img/demos/construction/generic/generic-4.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/construction/generic/generic-9-medium.jpg','img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-3-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
                           />
                         </div>
                       </a>
                     </li>
                     <li>
                       <a
-                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 12.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-3-blk.jpg"
                         class="diamond lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
                           <img
-                            src="img/demos/construction/generic/generic-4.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-3-360x360.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
@@ -570,14 +570,14 @@
                     </li>
                     <li>
                       <a
-                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 16.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-5-blk.jpg"
                         class="diamond diamond-sm lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
 
                           <img
-                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 16.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-5-181x181.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
@@ -588,13 +588,13 @@
                     </li>
                     <li>
                       <a
-                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 9.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-4-blk.jpg"
                         class="diamond lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
                           <img
-                            src="img/demos/construction/generic/generic-3.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-4-360x360.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
@@ -605,13 +605,13 @@
                     </li>
                     <li>
                       <a
-                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-6-blk.jpg"
                         class="diamond diamond-sm lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
                           <img
-                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg""
+                            src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-6-181x181.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
@@ -622,13 +622,13 @@
                     </li>
                     <li>
                       <a
-                        href="img/demos/business-consulting-3/backgrounds/MMP OBI- 06.jpg"
+                        href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-7-blk.jpg"
                         class="diamond diamond-sm lightbox"
                         data-plugin-options="{'type':'image'}"
                       >
                         <div class="content">
                           <img
-                            src="img/demos/business-consulting-3/backgrounds/MMP OBI- 06.jpg"
+                            src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-7-181x181.jpg"
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images

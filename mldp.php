@@ -125,14 +125,42 @@
         <div class="container pt-3 pb-4 mt-4 mb-5">
           <div class="row mb-4 pb-3">
             <div class="col">
-              <h2
-                class="text-9 text-lg-5 text-xl-9 line-height-3 text-transform-none font-weight-semibold mb-4 mb-lg-3 mb-xl-4 appear-animation"
+              <!-- <h2
+                class="text-9 text-lg-5 text-xl-9 line-height-3 text-transform-none font-weight-bold mb-4 mb-lg-3 mb-xl-4 appear-animation text-center"
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="250"
+                style="font-style: italic;"
               >
-                Learn more about case we've worked on
-              </h2>
-              <p
+                COMING SOON
+              </h2> -->
+              <!-- <div style="text-align: center;">
+        <h2 style="font-size: 24px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #333; font-style: italic;"
+            class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
+            Stay Tuned
+        </h2>
+        <p style="font-size: 18px; color: #777;"
+            class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+            We Will Launch Soon!
+        </p>
+    </div> -->
+    <div style="text-align: center;">
+    <img src="img\demos\business-consulting-3\backgrounds\comingsoon.png" alt="Background Image"class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500"
+         style="max-width: 15%; height: auto; margin-top: 20px; margin-bottom:20px; ">
+        <h2 style="font-size: 24px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #333; font-style: italic; margin-top:15px;"
+            class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
+            Stay Tuned
+        </h2>
+        
+        <p style="font-size: 18px; color: #777;"
+            class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+            We Will Launch Soon!
+        </p>
+        
+    
+    </div>
+
+    </div>
+              <!-- <p
                 class="text-3-5 appear-animation"
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="500"
@@ -141,10 +169,10 @@
                 Curabitur vulputate posuere tortor luctus vulputate. Cras
                 laoreet pretium blandit. Vestibulum luctus laoreet lacinia.
                 Maecenas luctus arcu ut orci lacinia ultrices.
-              </p>
+              </p> -->
             </div>
           </div>
-          <div
+          <!-- <div
             class="row align-items-center appear-animation"
             data-appear-animation="fadeInUpShorter"
             data-appear-animation-delay="750"
@@ -239,11 +267,11 @@
                 </div>
               </blockquote>
             </div>
-          </div>
-          <div class="py-5">
+          </div> -->
+          <!-- <div class="py-5">
             <hr />
-          </div>
-          <div
+          </div> -->
+          <!-- <div
             class="row align-items-center appear-animation"
             data-appear-animation="fadeInUpShorter"
             data-appear-animation-delay="250"
@@ -338,11 +366,11 @@
                 </div>
               </blockquote>
             </div>
-          </div>
-          <div class="py-5">
+          </div> -->
+          <!-- <div class="py-5">
             <hr />
-          </div>
-          <div
+          </div> -->
+          <!-- <div
             class="row align-items-center appear-animation"
             data-appear-animation="fadeInUpShorter"
             data-appear-animation-delay="250"
@@ -437,10 +465,10 @@
                 </div>
               </blockquote>
             </div>
-          </div>
+          </div> -->
         </div>
 
-        <section
+        <!-- <section
           class="section section-with-shape-divider position-relative bg-dark border-0 m-0"
         >
           <div
@@ -585,7 +613,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
       </div>
 
       <?php include 'footer.php'; ?>

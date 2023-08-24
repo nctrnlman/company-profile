@@ -1087,19 +1087,19 @@ html .nav-pills-light > li.active > a:focus {
 }
 
 .nav-link {
-  color: #f04c23;
+  color: #c6a265;
 }
 
 .nav-link:hover {
-  color: #f25f3b;
+  color: #c6a265;
 }
 
 .nav-link:focus {
-  color: #f25f3b;
+  color: #c6a265;
 }
 
 .nav-link:active {
-  color: #ea3b10;
+  color: #c6a260;
 }
 
 .section-scroll-dots-navigation-colored > ul > li.active > a:before {

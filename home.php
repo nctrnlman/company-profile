@@ -116,28 +116,28 @@
       <?php include 'navbar.php'; ?>
 
       <div role="main" class="main">
-      <section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}" data-image-src="img/demos/business-consulting-3/backgrounds/obi-07.jpg">
-					<img src="img/demos/business-consulting-3/backgrounds/DJI_1.JPG" class="img-fluid position-absolute top-0 right-0 d-none d-md-block appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1100" alt="" />
+      <section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}" data-image-src="img/demos/business-consulting-3/backgrounds/obi-20.jpg">
+					<img src="img/demos/business-consulting-3/backgrounds/MMP OBI- 20.jpg" class="img-fluid position-absolute top-0 right-0 d-none d-md-block appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1100" alt="" />
 					<div class="container pb-5 pb-xl-0 mt-md-3 mb-5">
 						<div class="row">
 							<div class="col-md-7 col-lg-12">
 								<div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="0">
-									<h1 class="custom-text-background custom-big-font-size-1 text-14 font-weight-bold float-xl-end clearfix line-height-1 custom-ws-mobile-wrap ws-nowrap pb-2 mb-3 mb-xl-5" style="background-image: url(img/demos/business-consulting-3/backgrounds/text-background.jpg);">MINERAL ALAM ABADI</h1>
+									<h1 class="custom-big-font-size-1 text-14 font-weight-bold float-xl-end clearfix line-height-1 custom-ws-mobile-wrap ws-nowrap pb-2 mb-3 mb-xl-5 " style="color: #af2a25;" >MINERAL ALAM ABADI</h1>
 								</div>
 							</div>
 						</div>
 						<div class="row pb-5 mb-5">
 							<div class="col-md-7 col-xl-5 pb-5 pb-xl-0 mb-5">
 								<strong class="d-block font-weight-semibold text-color-white text-5-5 line-height-4 mb-3 pb-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500"> <span class="custom-highlight-text-1 font-weight-bold">Being an Integrated and Leading Mining Company in Indonesia</span></strong>
-								<p class="text-3-5 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750"> we are committed to contributing to meeting the needs of the Local and Global Market by providing the best performance and quality in serving customers.</p>
+								<p class="text-3-5 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750"> We are committed to contributing to meeting the needs of the Local and Global Market by providing the best performance and quality in serving customers.</p>
 							</div>
 						</div>
 					</div>
 					<div class="shape-divider shape-divider-bottom" style="height: 212px;">
-						<div class="shape-divider-horizontal-animation shape-divider-horizontal-animation-to-left">
+          <div class="shape-divider-horizontal-animation shape-divider-horizontal-animation-to-left">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 212" preserveAspectRatio="xMinYMin">
 								<polygon fill="#af2a25" points="0,75 479,161 1357,28 1701,56 1920,26 1920,213 0,212 "/>
-								<polygon fill="#fff" points="0,91 481,177 1358,44 1702,72 1920,42 1920,212 0,212 "/>
+								<polygon fill="#FFFFFF" points="0,91 481,177 1358,44 1702,72 1920,42 1920,212 0,212 "/>
 							</svg>
 						</div>
 					</div>
@@ -170,8 +170,9 @@
             </div>
             <div class="col-lg-6 ps-lg-4 ps-xl-5">
               <h2
-                class="custom-highlight-text-1 d-inline-block line-height-5 text-4 positive-ls-3 font-weight-medium text-color-primary mb-2 appear-animation"
+                class=" d-inline-block line-height-5 text-4 positive-ls-3 font-weight-medium mb-2 appear-animation"
                 data-appear-animation="fadeInUpShorter"
+                style="color: #af2a25;"
               >
                 ABOUT MAA
               </h2>
@@ -250,7 +251,9 @@
                 <p class="text-3-5 pb-3 mb-4 appear-animation text-color-white"
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="750">
-                PT Mineral Alam Abadi is dedicated to delivering advanced strategies and solutions for your business needs. Our wide range of expertise ensures comprehensive support and exceptional results for your business growth.
+                PT Mineral
+Alam Abadi is committed to continuing to contribute in meeting the needs of local and global
+markets by providing the best performance and quality in providing services. 
             </p>
               </div>
             </div>
@@ -269,7 +272,7 @@
                         <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
                     </div>
                     <div class="card-body d-flex align-items-center custom-view-more px-4">
-                        <p class="card-text w-100 mb-0">PT Mineral Alam Abadi specializes in mining</p>
+                        <p class="card-text w-100 mb-0">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
                         <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
                 </div>
@@ -289,7 +292,7 @@
                         <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
                     </div>
                     <div class="card-body d-flex align-items-center custom-view-more px-4">
-                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <p class="card-text w-100 mb-0">Exploring Nickel Riches with PT Mineral Alam Abadi's Expertise.</p>
                         <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
                 </div>
@@ -309,7 +312,7 @@
                         <img src="img/demos/business-consulting-3/backgrounds/DJI_0860.JPG" class="img-fluid" alt="Card Image">
                     </div>
                     <div class="card-body d-flex align-items-center custom-view-more px-4">
-                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <p class="card-text w-100 mb-0">Crafting Stones with Precision at PT Mineral Alam Abadi.</p>
                         <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
                 </div>
@@ -329,7 +332,7 @@
                         <img src="img/demos/business-consulting-3/backgrounds/DJI_0862.JPG" class="img-fluid" alt="Card Image">
                     </div>
                     <div class="card-body d-flex align-items-center custom-view-more px-4">
-                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <p class="card-text w-100 mb-0">Building Dreams through Excellence by PT Mineral Alam Abadi.</p>
                         <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
                 </div>
@@ -349,7 +352,7 @@
                         <img src="img/demos/business-consulting-3/backgrounds/DJI_0880.JPG" class="img-fluid" alt="Card Image">
                     </div>
                     <div class="card-body d-flex align-items-center custom-view-more px-4">
-                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <p class="card-text w-100 mb-0">Expanding Horizons with Diverse Offerings from PT Mineral Alam Abadi.</p>
                         <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
                 </div>
@@ -369,7 +372,7 @@
                         <img src="img/demos/business-consulting-3/backgrounds/DJI_0877.JPG" class="img-fluid" alt="Card Image">
                     </div>
                     <div class="card-body d-flex align-items-center custom-view-more px-4">
-                        <p class="card-text w-100 mb-0">Cras a elit sit amet leo accumsan. Suspendisse hendrerit.</p>
+                        <p class="card-text w-100 mb-0">Forging Mining Partnerships with PT Mineral Alam Abadi's Expertise.</p>
                         <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
                 </div>
@@ -389,7 +392,7 @@
                         <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
                     </div>
                     <div class="card-body d-flex align-items-center custom-view-more px-4">
-                        <p class="card-text w-100 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text w-100 mb-0">Navigating Frontiers with Shipping Solutions from PT Mineral Alam Abadi.</p>
                         <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
                 </div>
@@ -409,7 +412,7 @@
                         <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
                     </div>
                     <div class="card-body d-flex align-items-center custom-view-more px-4">
-                        <p class="card-text w-100 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text w-100 mb-0">Investing for Tomorrow's Future PT Mineral Alam Abadi Vision</p>
                         <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
                     </div>
                 </div>
@@ -529,7 +532,7 @@
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': ['img/demos/construction/generic/generic-4.jpg', 'img/demos/construction/generic/generic-3.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm1-360x360.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm1-blkjpg.jpg', 'img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
                           />
                         </div>
                       </a>
@@ -546,7 +549,7 @@
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4200, 'imagesListURL': ['img/demos/construction/generic/generic-3.jpg', 'img/demos/construction/generic/generic-4.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/construction/generic/generic-9-medium.jpg','img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-3-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4200, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm2-360x360.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm2-blk.jpg','img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-2-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
                           />
                         </div>
                       </a>
@@ -563,7 +566,7 @@
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4400, 'imagesListURL': ['img/demos/construction/generic/generic-1.jpg', 'img/demos/construction/generic/generic-2.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-1-medium.jpg', 'img/demos/construction/generic/generic-2-medium.jpg', 'img/demos/construction/generic/generic-9-medium.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4400, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm3-360x360.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm3-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
                           />
                         </div>
                       </a>
@@ -581,7 +584,7 @@
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4600, 'imagesListURL': ['img/demos/construction/generic/generic-6-small.jpg', 'img/demos/construction/generic/generic-10-small-diamond.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-6-medium.jpg', 'img/demos/construction/generic/generic-10-medium.jpg', 'img/demos/construction/generic/generic-5-wide.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4600, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm5-181x181.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm5-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
                           />
                         </div>
                       </a>
@@ -598,7 +601,7 @@
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4800, 'imagesListURL': ['img/demos/construction/generic/generic-2.jpg', 'img/demos/construction/generic/generic-1.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-2-big.jpg', 'img/demos/construction/generic/generic-1-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg'], 'animateIn': 'blurIn', 'accY': -100}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4800, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm4-360x360.jpg'], 'lightboxImagesListURL': [  'img/demos/business-consulting-3/backgrounds/home-project/bcpm4-blk.jpg'], 'animateIn': 'blurIn', 'accY': -100}"
                           />
                         </div>
                       </a>
@@ -615,7 +618,7 @@
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5000, 'imagesListURL': ['img/demos/construction/generic/generic-5-small.jpg', 'img/demos/construction/generic/generic-7-small.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-5-wide.jpg', 'img/demos/construction/generic/generic-10-medium.jpg', 'img/demos/construction/generic/generic-6-medium.jpg'], 'animateIn': 'blurIn', 'accY': -100}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5000, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm6-181x181.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm6-blk.jpg'], 'animateIn': 'blurIn', 'accY': -100}"
                           />
                         </div>
                       </a>
@@ -632,7 +635,7 @@
                             class="img-fluid plugin-random-images"
                             alt=""
                             data-plugin-random-images
-                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5200, 'imagesListURL': ['img/demos/construction/generic/generic-10-small-diamond.jpg', 'img/demos/construction/generic/generic-6-small.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-10-medium.jpg', 'img/demos/construction/generic/generic-6-medium.jpg', 'img/demos/construction/generic/generic-10-medium.jpg'], 'animateIn': 'blurIn', 'accY': -100}"
+                            data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5200, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm7-181x181.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm7-blk.jpg'], 'animateIn': 'blurIn', 'accY': -100}"
                           />
                         </div>
                       </a>
@@ -663,7 +666,7 @@ domiciled in Jakarta, as well as mine locations in Central Sulawesi, Southeast S
 Halmahera.
               </p>
               <a
-                href="gellery.php"
+                href="gallery.php"
                 class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                 data-appear-animation="fadeInUpShorterPlus"
                 data-appear-animation-delay="800"

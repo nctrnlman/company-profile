@@ -60,7 +60,7 @@
                 </li>
                 <li class="social-icons-linkedin">
                   <a
-                    href="http://www.linkedin.com/"
+                    href="https://www.linkedin.com/company/pt-mineralalamabadi/"
                     target="_blank"
                     title="Linkedin"
                     data-cursor-effect-hover="fit"
@@ -82,7 +82,7 @@
                   <a
                     href="tel:8001234567"
                     class="text-color-light font-weight-semibold text-3-4 ms-2"
-                    > +621-456-7878</a
+                    > +621-2967-0591</a
                   >
                 </li>
                 <li class="d-flex px-0 my-3">

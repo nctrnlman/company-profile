@@ -127,19 +127,33 @@
 					<div class="row">
 						<div class="col">
 
-							<h2 class="font-weight-bold text-color-dark text-9 mb-4">Our Projects</h2>
-							<p class="text-4-5 line-height-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec velit magna, consectetur at suscipit eu, dapibus vel odio. Mauris ac nulla at ligula interdum ullamcorper. Nunc mattis eros nec eros dictum, nec molestie metus auctor. Nulla placerat nunc velit, a dictum lectus finibus quis. Nunc leo mauris, cursus vel tempor eu, tempus sed turpis.</p>
-							<p class="text-3-5 line-height-9 mb-4">Cras mattis nisl auctor tellus maximus, id consectetur nulla suscipit. Praesent consequat elit vitae ipsum porttitor, at facilisis enim hendrerit. Morbi tincidunt ornare scelerisque. Maecenas et iaculis libero, in volutpat arcu. Vestibulum ac sagittis felis. Aenean tempor tellus id felis finibus, quis aliquam sem pretium. </p>
+            <div style="text-align: center;">
+    <img src="img\demos\business-consulting-3\backgrounds\comingsoon.png" alt="Background Image"class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500"
+         style="max-width: 18%; height: auto; margin-top: 10px; margin-bottom:20px; ">
+        <h2 style="font-size: 24px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #333; font-style: italic; margin-top:15px;"
+            class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
+            Stay Tuned
+        </h2>
+        
+        <p style="font-size: 18px; color: #777;"
+            class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+            We Will Launch Soon!
+        </p>
+        
+    
+    </div>
+							<!-- <p class="text-4-5 line-height-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec velit magna, consectetur at suscipit eu, dapibus vel odio. Mauris ac nulla at ligula interdum ullamcorper. Nunc mattis eros nec eros dictum, nec molestie metus auctor. Nulla placerat nunc velit, a dictum lectus finibus quis. Nunc leo mauris, cursus vel tempor eu, tempus sed turpis.</p>
+							<p class="text-3-5 line-height-9 mb-4">Cras mattis nisl auctor tellus maximus, id consectetur nulla suscipit. Praesent consequat elit vitae ipsum porttitor, at facilisis enim hendrerit. Morbi tincidunt ornare scelerisque. Maecenas et iaculis libero, in volutpat arcu. Vestibulum ac sagittis felis. Aenean tempor tellus id felis finibus, quis aliquam sem pretium. </p> -->
 
-							<ul class="nav nav-pills sort-source sort-source-style-3 custom-sort-source mt-4" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'packery', 'filter': '*'}">
+							<!-- <ul class="nav nav-pills sort-source sort-source-style-3 custom-sort-source mt-4" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'packery', 'filter': '*'}">
 								<li class="nav-item active" data-option-value="*"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase active" href="#">Show All</a></li>
 								<li class="nav-item" data-option-value=".websites"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Websites</a></li>
 								<li class="nav-item" data-option-value=".logos"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Logos</a></li>
 								<li class="nav-item" data-option-value=".brands"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Brands</a></li>
 								<li class="nav-item" data-option-value=".medias"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Medias</a></li>
-							</ul>
+							</ul> -->
 
-							<div class="sort-destination-loader sort-destination-loader-showing mt-4 pt-2">
+							<!-- <div class="sort-destination-loader sort-destination-loader-showing mt-4 pt-2">
 								<div class="row portfolio-list sort-destination" data-sort-id="portfolio">
 
 									<div class="col-sm-6 col-lg-6 isotope-item websites">
@@ -180,8 +194,8 @@
 									</div>
 									<div class="col-sm-6 col-lg-6 isotope-item brands">
 										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
+											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3"> -->
+												<!-- <div class="thumb-info-wrapper rounded-0">
 													<img src="img/demos/digital-agency/projects/project-3.jpg" class="img-fluid rounded-0" alt="" />
 													<div class="thumb-info-action">
 														<a href="portfolio-single-wide-slider.html" aria-label="">
@@ -195,8 +209,8 @@
 												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
 											</h3>
 										</div>
-									</div>
-									<div class="col-sm-6 col-lg-6 isotope-item medias">
+									</div> -->
+									<!-- <div class="col-sm-6 col-lg-6 isotope-item medias">
 										<div class="portfolio-item">
 											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
 												<div class="thumb-info-wrapper rounded-0">
@@ -213,8 +227,8 @@
 												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
 											</h3>
 										</div>
-									</div>
-									<div class="col-sm-6 col-lg-6 isotope-item websites">
+									</div> -->
+									<!-- <div class="col-sm-6 col-lg-6 isotope-item websites">
 										<div class="portfolio-item">
 											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
 												<div class="thumb-info-wrapper rounded-0">
@@ -231,8 +245,8 @@
 												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
 											</h3>
 										</div>
-									</div>
-									<div class="col-sm-6 col-lg-6 isotope-item websites">
+									</div> -->
+									<!-- <div class="col-sm-6 col-lg-6 isotope-item websites">
 										<div class="portfolio-item">
 											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
 												<div class="thumb-info-wrapper rounded-0">
@@ -249,7 +263,7 @@
 												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
 											</h3>
 										</div>
-									</div>
+									</div> -->
 
 								</div>
 							</div>

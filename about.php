@@ -161,7 +161,7 @@ Halmahera
             <div class="col-sm-6 mb-4 mb-sm-0">
               <img
                 src="img/demos/business-consulting-3/backgrounds/MMP OBI- 10.jpg"
-                class="img-fluid box-shadow-5 appear-animation"
+                class="img-fluid box-shadow-5  appear-animation"
                 data-appear-animation="fadeInRightShorter"
                 data-appear-animation-delay="800"
                 alt=""
@@ -170,9 +170,18 @@ Halmahera
             <div class="col-6 col-sm-3">
               <img
                 src="img/demos/business-consulting-3/backgrounds/MMP OBI- 17.jpg"
-                class="img-fluid box-shadow-5 appear-animation"
+                class="img-fluid box-shadow-5 mb-4 appear-animation"
+          
                 data-appear-animation="fadeInRightShorter"
                 data-appear-animation-delay="600"
+                alt=""
+              />
+              <img
+                src="img/demos/business-consulting-3/backgrounds/17-obi.jpeg"
+                class="img-fluid box-shadow-5 appear-animation"
+                style="height: 175px;"
+                data-appear-animation="fadeInRightShorter"
+                data-appear-animation-delay="400"
                 alt=""
               />
             </div>
@@ -187,6 +196,7 @@ Halmahera
               <img
                 src="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg"
                 class="img-fluid box-shadow-5 appear-animation"
+
                 data-appear-animation="fadeInRightShorter"
                 data-appear-animation-delay="400"
                 alt=""
@@ -323,7 +333,8 @@ Halmahera
         <div class="container py-5 mb-5">
           <div class="row mb-2">
           <h2
-                  class="text-9 line-height-3 text-transform-none text-center font-weight-semibold mb-4 text-color-dark "
+                  class="text-9 line-height-3 text-transform-none text-center font-weight-semibold mb-4  "
+                  style="color: #af2a25;"
                 >
                   CORE VALUES 
                 </h2>
@@ -367,20 +378,21 @@ Halmahera
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane active" id="tabsNavigationManifesto">
-                    <div class="text-center">
-                      <p class="text-3-5">
+                    <div class="">
+                      <p class="text-3-5 text-center">
                       Pemikiran yang terbuka terhadap perubahan, ide, gagasan, tidak memandang perbedaan serta bersikap adil
 
 
                       </p>
-                      <!-- <div class="text-3">
-  <p>- Terbuka terhadap ide, pendapat, informasi, dan hal-hal baru</p>
-  <p>- Menunjukkan empati, memahami, dan menghormati perbedaan antar satu sama lain</p>
-  <p>- Mempertimbangkan perbedaan pendapat untuk membuat keputusan yang baik demi kepentingan bersama</p>
-  <p>- Mau menerima kritik atau masukan dari orang lain</p>
-</div> -->
+                      <div class="text-2">
+                      <ul class="list list-icons list-icons-sm items-center" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <li><i class="fas fa-caret-right"></i> Terbuka terhadap ide, pendapat, informasi, dan hal-hal baru</li>
+    <li><i class="fas fa-caret-right"></i> Menunjukkan empati, memahami, dan menghormati perbedaan antar satu sama lain</li>
+    <li><i class="fas fa-caret-right"></i> Mempertimbangkan perbedaan pendapat untuk membuat keputusan yang baik demi kepentingan bersama</li>
+    <li><i class="fas fa-caret-right"></i> Mau menerima kritik atau masukan dari orang lain</li>
+</ul>
 
-
+                      </div>
 
                     </div>
                   </div>
@@ -390,13 +402,16 @@ Halmahera
                       Menciptakan ekosistem kerja dengan semangat berbagi dan bekerjasama 
 
                       </p>
-                      <!-- <div class="text-3"> -->
-  <!-- <p>- Memberikan kontribusi berarti dalam melaksanakan tugas</p>
-  <p>- Mencari solusi terbaik saat menghadapi permasalahan demi kepentingan perusahaan</p>
-  <p>- Meminta pertolongan kepada rekan kerja / atasan dengan rendah hati pada saat mengalami kesulitan serta saling membantu sesama rekan kerja</p>
-  <p>- Merayakan kesuksesan bersama dan mampu membalikkan keadaan secara bersama-sama dalam menghadapi kemunduran</p>
-</div> -->
+                      <div class="text-2">
+                      <ul class="list list-icons list-icons-sm items-center" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <li><i class="fas fa-caret-right"></i> Memberikan kontribusi berarti dalam melaksanakan tugas</li>
+    <li><i class="fas fa-caret-right"></i> Mencari solusi terbaik saat menghadapi permasalahan demi kepentingan perusahaan</li>
+    <li><i class="fas fa-caret-right"></i> Meminta pertolongan kepada rekan kerja / atasan dengan rendah hati pada saat mengalami kesulitan serta saling membantu sesama rekan kerja</li>
+    <li><i class="fas fa-caret-right"></i> Merayakan kesuksesan bersama dan mampu membalikkan keadaan secara bersama-sama dalam menghadapi kemunduran</li>
+</ul>
 
+                      </div>
+                    
                     </div>
                   </div>
                   <div class="tab-pane" id="tabsNavigationMission">
@@ -404,12 +419,15 @@ Halmahera
                       <p class="text-3-5">
                       Berdedikasi, mengemban tanggung jawab, membangun kepercayaan terhadap rekan kerja, masyarakat dan lingkungan
                       </p>
-                      <!-- <div class="text-3">
-  <p>- Penuh semangat dalam menjalankan pekerjaan, menunjukkan usaha yang optimal, berorientasi pada tugas dan hasil</p>
-  <p>- Disiplin dalam memanfaatkan waktu kerja untuk melaksanakan kegiatan yang produktif</p>
-  <p>- Menjaga nama baik / aset / informasi perusahaan dengan sebaik-baiknya, tidak akan pernah memberikannya kepada pihak manapun yang tidak berkepentingan</p>
-  <p>- Berani mengambil risiko atas kesalahan / kegagalan, berupaya untuk tidak mengulangi kesalahan serta fokus pada solusi</p>
-</div> -->
+                      <div class="text-2">
+                      <ul class="list list-icons list-icons-sm items-center" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <li><i class="fas fa-caret-right"></i> Penuh semangat dalam menjalankan pekerjaan, menunjukkan usaha yang optimal, berorientasi pada tugas dan hasil</li>
+    <li><i class="fas fa-caret-right"></i> Disiplin dalam memanfaatkan waktu kerja untuk melaksanakan kegiatan yang produktif</li>
+    <li><i class="fas fa-caret-right"></i> Menjaga nama baik / aset / informasi perusahaan dengan sebaik-baiknya, tidak akan pernah memberikannya kepada pihak manapun yang tidak berkepentingan</li>
+    <li><i class="fas fa-caret-right"></i> Berani mengambil risiko atas kesalahan / kegagalan, berupaya untuk tidak mengulangi kesalahan serta fokus pada solusi</li>
+</ul>
+
+                      </div>
 
                     </div>
                   </div>
@@ -419,13 +437,16 @@ Halmahera
                       Terus mengeksplorasi dan merevolusi diri dengan tetap menjaga vitalitas dan efektivitas tim, berani keluar dari zona nyaman 
 
                       </p>
-                      <!-- <div class="text-3">
-  <p>- Berpikir inovatif, terus mengembangkan pengetahuan profesional dan kompetensi</p>
-  <p>- Terus-menerus melakukan perbaikan, mengikuti perkembangan teknologi dan tantangan perubahan zaman</p>
-  <p>- Melaksanakan pengembangan inisiatif baru yang dapat meningkatkan kinerja individu, unit kerja, dan perusahaan</p>
-  <p>- Kemampuan mengerjakan sesuatu yang baru, mencari peluang, mengembangkan ide, dan sumber daya</p>
-</div> -->
+                      <div class="text-2">
+                      <ul class="list list-icons list-icons-sm items-center" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <li><i class="fas fa-caret-right"></i> Berpikir inovatif, terus mengembangkan pengetahuan profesional dan kompetensi</li>
+    <li><i class="fas fa-caret-right"></i> Terus-menerus melakukan perbaikan, mengikuti perkembangan teknologi dan tantangan perubahan zaman</li>
+    <li><i class="fas fa-caret-right"></i> Melaksanakan pengembangan inisiatif baru yang dapat meningkatkan kinerja individu, unit kerja, dan perusahaan</li>
+    <li><i class="fas fa-caret-right"></i> Kemampuan mengerjakan sesuatu yang baru, mencari peluang, mengembangkan ide, dan sumber daya</li>
+</ul>
 
+                      </div>
+                    
                     </div>
                   </div>
                 </div>

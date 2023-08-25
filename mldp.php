@@ -7,13 +7,13 @@
 
     <title>MLDP | MAA GROUP</title>
 
-    <meta name="keywords" content="WebSite Template" />
-    <meta name="description" content="Porto - Multipurpose Website Template" />
-    <meta name="author" content="okler.net" />
+    <meta name="keywords" content="Company Profile" />
+    <meta name="description" content="Maa Group" />
+    <meta name="author" content="MAA" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/demos/business-consulting-3/" />
+    <link rel="shortcut icon" href="img/demos/business-consulting-3/logo-MAA-component.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
     <!-- Mobile Metas -->
     <meta

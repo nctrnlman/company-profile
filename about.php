@@ -82,7 +82,7 @@
       </section>
 
       <div class="container pt-3 mt-4">
-        <div class="row bg-black">
+        <div class="row ">
           <div class="col">
             <h2 class="text-9 text-lg-5 text-xl-9 line-height-3 text-transform-none font-weight-semibold mb-4 mb-lg-3 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
               Fostering Business Excellence through Innovative Strategies

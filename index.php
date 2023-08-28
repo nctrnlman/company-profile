@@ -87,22 +87,27 @@
     <?php include 'navbar.php'; ?>
 
     <div role="main" class="main">
-      <section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}" style="background-image: url('img/demos/business-consulting-3/backgrounds/obi-20.jpg'); background-size: cover; background-position: center;">
+      <section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/demos/business-consulting-3/backgrounds/OBI/MMP\ OBI-\ 20.jpg'); background-size: cover; background-position: center;">
         <!-- <img src="img/demos/business-consulting-3/backgrounds/MMP OBI- 20.jpg" class="img-fluid position-absolute top-0 right-0 d-none d-md-block appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="440" alt="" /> -->
         <div class="container pb-5 pb-xl-0 mt-md-3 mb-5">
           <div class="row">
             <div class="col-md-7 col-lg-12">
               <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="0">
-                <h1 class="custom-big-font-size-1 text-14 font-weight-bold float-xl-end clearfix line-height-1 custom-ws-mobile-wrap ws-nowrap pb-2 mb-3 mb-xl-5 " style="color: #af2a25;">MINERAL ALAM ABADI</h1>
+                <h1 class="custom-big-font-size-1 text-14 font-weight-bold float-xl-end clearfix line-height-1 custom-ws-mobile-wrap ws-nowrap pb-2 mb-3 mb-xl-5 " style="text-shadow: 5px 5px 10px black; color: #c6a265;">MINERAL ALAM ABADI</h1>
               </div>
             </div>
           </div>
-          <div class="row pb-5 mb-5">
+          <div class="row pb-5 mb-5" style="padding-left: 30px;"> <!-- Adjust the padding value as needed -->
             <div class="col-md-7 col-xl-5 pb-5 pb-xl-0 mb-5">
-              <strong class="d-block font-weight-semibold text-color-white text-5-5 line-height-4 mb-3 pb-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500"> <span class="custom-highlight-text-1 font-weight-bold">Being an Integrated and Leading Mining Company in Indonesia</span></strong>
-              <p class="text-3-5 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750"> We are committed to contributing to meeting the needs of the Local and Global Market by providing the best performance and quality in serving customers.</p>
+              <strong class="d-block font-weight-semibold text-color-white text-5-5 line-height-4 mb-3 pb-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+                <span class="custom-highlight-text-1 font-weight-bold">Being an Integrated and Leading Mining Company in Indonesia</span>
+              </strong>
+              <p class="text-3-5 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750" style="text-align: justify;">
+                We are committed to contributing to meeting the needs of the Local and Global Market by providing the best performance and quality in serving customers.
+              </p>
             </div>
           </div>
+
         </div>
         <div class="shape-divider shape-divider-bottom" style="height: 212px;">
           <div class="shape-divider-horizontal-animation shape-divider-horizontal-animation-to-left">
@@ -114,352 +119,352 @@
         </div>
       </section>
 
-      <div class="container" ">
-          <div id=" aboutus" class="row align-items-xl-center pt-4 mb-3">
-        <div class="col-md-10 col-lg-6 mb-5 mb-lg-0">
-          <div class="row row-gutter-sm">
-            <div class="col-6">
-              <img src="img/demos/business-consulting-3/backgrounds/home-about/1.jpg" class="img-fluid box-shadow-5" alt="" />
-            </div>
-            <div class="col-6">
-              <img src="img/demos/business-consulting-3/backgrounds/home-about/2.jpg" class="img-fluid box-shadow-5 mb-4" alt="" />
-              <img src="img/demos/business-consulting-3/backgrounds/home-about/3.jpg" class="img-fluid box-shadow-5" alt="" />
+      <div class="container">
+        <div id=" aboutus" class="row align-items-xl-center pt-4 mb-3">
+          <div class="col-md-10 col-lg-6 mb-5 mb-lg-0">
+            <div class="row row-gutter-sm">
+              <div class="col-6">
+                <img src="img/demos/business-consulting-3/backgrounds/home-about/1.jpg" class="img-fluid box-shadow-5" alt="" />
+              </div>
+              <div class="col-6">
+                <img src="img/demos/business-consulting-3/backgrounds/home-about/2.jpg" class="img-fluid box-shadow-5 mb-4" alt="" />
+                <img src="img/demos/business-consulting-3/backgrounds/home-about/3.jpg" class="img-fluid box-shadow-5" alt="" />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 ps-lg-4 ps-xl-5">
-          <h2 class=" d-inline-block line-height-5 text-4 positive-ls-3 font-weight-medium mb-2 appear-animation" data-appear-animation="fadeInUpShorter" style="color: #af2a25;">
-            ABOUT MAA
-          </h2>
-          <h3 class="text-9 text-lg-5 text-xl-9 line-height-3 text-transform-none font-weight-semibold mb-4 mb-lg-3 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
-            Empowering Business Excellence
-          </h3>
-          <p class="text-3-5 pb-1 mb-4 mb-lg-2 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
-            PT Mineral Alam Abadi is a leading provider of innovative business solutions. With a focus on delivering cutting-edge strategies, we empower businesses to thrive in today's dynamic landscape. Our expertise extends across diverse industries, enabling us to tailor solutions that drive growth and success.
-          </p>
-          <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
-            <a href="about.php" class="btn btn-primary custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Get to know</span></a>
+          <div class="col-lg-6 ps-lg-4 ps-xl-5">
+            <h2 class=" d-inline-block line-height-5 text-4 positive-ls-3 font-weight-medium mb-2 appear-animation" data-appear-animation="fadeInUpShorter" style="color: #af2a25;">
+              ABOUT MAA
+            </h2>
+            <h3 class="text-9 text-lg-5 text-xl-9 line-height-3 text-transform-none font-weight-semibold mb-4 mb-lg-3 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
+              Empowering Business Excellence
+            </h3>
+            <p class="text-3-5 pb-1 mb-4 mb-lg-2 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+              PT Mineral Alam Abadi is a leading provider of innovative business solutions. With a focus on delivering cutting-edge strategies, we empower businesses to thrive in today's dynamic landscape. Our expertise extends across diverse industries, enabling us to tailor solutions that drive growth and success.
+            </p>
+            <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+              <a href="about.php" class="btn btn-primary custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Get to know</span></a>
+            </div>
           </div>
         </div>
       </div>
+
+      <section class="section section-height-4 section-with-shape-divider border-0 pb-5 m-0" style="background-color: #af2a25">
+        <div class="shape-divider" style="height: 123px">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 123" preserveAspectRatio="xMinYMin">
+            <polygon fill="#c6a265" points="0,90 221,60 563,88 931,35 1408,93 1920,41 1920,-1 0,-1 " />
+            <polygon fill="#FFFFFF" points="0,75 219,44 563,72 930,19 1408,77 1920,25 1920,-1 0,-1 " />
+          </svg>
+        </div>
+        <div class="container mt-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-11 col-xl-10 text-center">
+              <h2 class="custom-highlight-text-1 d-inline-block line-height-5 text-4 positive-ls-3 font-weight-medium text-color-white mb-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
+                WHAT WE DO
+              </h2>
+              <h3 class="text-9 line-height-3 text-transform-none font-weight-semibold mb-3 pb-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+                Our Business
+              </h3>
+              <p class="text-3-5 pb-3 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
+                PT Mineral
+                Alam Abadi is committed to continuing to contribute in meeting the needs of local and global
+                markets by providing the best performance and quality in providing services.
+              </p>
+            </div>
+          </div>
+          <div class="row row-gutter-sm justify-content-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+            <!-- Card 1 - Stone Mining -->
+            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                  <div class="card-img-top position-relative overlay overlay-show">
+                    <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                      <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Mining</h4>
+                      <div class="custom-crooked-line">
+                        <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                      </div>
+                    </div>
+                    <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
+                  </div>
+                  <div class="card-body d-flex align-items-center custom-view-more px-4">
+                    <p class="card-text w-100 mb-0">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Card 2 - Nickel Mining -->
+            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                  <div class="card-img-top position-relative overlay overlay-show">
+                    <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                      <h4 class="font-weight-semibold text-color-light text-6 mb-1">Nickel Mining</h4>
+                      <div class="custom-crooked-line">
+                        <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                      </div>
+                    </div>
+                    <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
+                  </div>
+                  <div class="card-body d-flex align-items-center custom-view-more px-4">
+                    <p class="card-text w-100 mb-0">Exploring Nickel Riches with PT Mineral Alam Abadi's Expertise.</p>
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Card 3 - Stone Crusher -->
+            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                  <div class="card-img-top position-relative overlay overlay-show">
+                    <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                      <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Crusher</h4>
+                      <div class="custom-crooked-line">
+                        <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                      </div>
+                    </div>
+                    <img src="img/demos/business-consulting-3/backgrounds/DJI_0860.JPG" class="img-fluid" alt="Card Image">
+                  </div>
+                  <div class="card-body d-flex align-items-center custom-view-more px-4">
+                    <p class="card-text w-100 mb-0">Crafting Stones with Precision at PT Mineral Alam Abadi.</p>
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Card 4 - Construction Services -->
+            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                  <div class="card-img-top position-relative overlay overlay-show">
+                    <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                      <h4 class="font-weight-semibold text-color-light text-6 mb-1">Construction Services</h4>
+                      <div class="custom-crooked-line">
+                        <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                      </div>
+                    </div>
+                    <img src="img/demos/business-consulting-3/backgrounds/DJI_0862.JPG" class="img-fluid" alt="Card Image">
+                  </div>
+                  <div class="card-body d-flex align-items-center custom-view-more px-4">
+                    <p class="card-text w-100 mb-0">Building Dreams through Excellence by PT Mineral Alam Abadi.</p>
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Card 5 - Trading -->
+            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                  <div class="card-img-top position-relative overlay overlay-show">
+                    <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                      <h4 class="font-weight-semibold text-color-light text-6 mb-1">Trading</h4>
+                      <div class="custom-crooked-line">
+                        <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                      </div>
+                    </div>
+                    <img src="img/demos/business-consulting-3/backgrounds/DJI_0880.JPG" class="img-fluid" alt="Card Image">
+                  </div>
+                  <div class="card-body d-flex align-items-center custom-view-more px-4">
+                    <p class="card-text w-100 mb-0">Expanding Horizons with Diverse Offerings from PT Mineral Alam Abadi.</p>
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Card 6 - Mining Contractor -->
+            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                  <div class="card-img-top position-relative overlay overlay-show">
+                    <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                      <h4 class="font-weight-semibold text-color-light text-6 mb-1">Mining Contractor</h4>
+                      <div class="custom-crooked-line">
+                        <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                      </div>
+                    </div>
+                    <img src="img/demos/business-consulting-3/backgrounds/DJI_0877.JPG" class="img-fluid" alt="Card Image">
+                  </div>
+                  <div class="card-body d-flex align-items-center custom-view-more px-4">
+                    <p class="card-text w-100 mb-0">Forging Mining Partnerships with PT Mineral Alam Abadi's Expertise.</p>
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Card 7 - Shipping -->
+            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                  <div class="card-img-top position-relative overlay overlay-show">
+                    <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                      <h4 class="font-weight-semibold text-color-light text-6 mb-1">Shipping</h4>
+                      <div class="custom-crooked-line">
+                        <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                      </div>
+                    </div>
+                    <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
+                  </div>
+                  <div class="card-body d-flex align-items-center custom-view-more px-4">
+                    <p class="card-text w-100 mb-0">Navigating Frontiers with Shipping Solutions from PT Mineral Alam Abadi.</p>
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Card 8 - Investment -->
+            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+                <div class="card box-shadow-4">
+                  <div class="card-img-top position-relative overlay overlay-show">
+                    <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
+                      <h4 class="font-weight-semibold text-color-light text-6 mb-1">Investment</h4>
+                      <div class="custom-crooked-line">
+                        <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                      </div>
+                    </div>
+                    <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
+                  </div>
+                  <div class="card-body d-flex align-items-center custom-view-more px-4">
+                    <p class="card-text w-100 mb-0">Investing for Tomorrow's Future PT Mineral Alam Abadi Vision</p>
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <a href="services.php" class="btn text-color-white custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5 bg-color-dark" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light">
+              <span>All Business</span>
+            </a>
+          </div>
+        </div>
     </div>
 
-    <section class="section section-height-4 section-with-shape-divider border-0 pb-5 m-0" style="background-color: #af2a25">
-      <div class="shape-divider" style="height: 123px">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 123" preserveAspectRatio="xMinYMin">
-          <polygon fill="#c6a265" points="0,90 221,60 563,88 931,35 1408,93 1920,41 1920,-1 0,-1 " />
-          <polygon fill="#FFFFFF" points="0,75 219,44 563,72 930,19 1408,77 1920,25 1920,-1 0,-1 " />
-        </svg>
-      </div>
-      <div class="container mt-4">
-        <div class="row justify-content-center">
-          <div class="col-lg-11 col-xl-10 text-center">
-            <h2 class="custom-highlight-text-1 d-inline-block line-height-5 text-4 positive-ls-3 font-weight-medium text-color-white mb-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
-              WHAT WE DO
-            </h2>
-            <h3 class="text-9 line-height-3 text-transform-none font-weight-semibold mb-3 pb-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
-              Our Business
-            </h3>
-            <p class="text-3-5 pb-3 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
-              PT Mineral
-              Alam Abadi is committed to continuing to contribute in meeting the needs of local and global
-              markets by providing the best performance and quality in providing services.
-            </p>
-          </div>
+    </section>
+
+    <div class="container py-5 my-5-5">
+      <div class="row">
+        <div class="col">
+          <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5">
+            Projects
+          </h2>
+          <p class="text-4 font-weight-light">
+            Currently, PT. Mineral Alam Abadi operates in three regions in Indonesia.
+          </p>
         </div>
-        <div class="row row-gutter-sm justify-content-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
-          <!-- Card 1 - Stone Mining -->
-          <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
-                <div class="card-img-top position-relative overlay overlay-show">
-                  <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Mining</h4>
-                    <div class="custom-crooked-line">
-                      <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="position-relative">
+            <svg class="diamonds-svg-line position-absolute bottom-0 left-15 mb-4 ms-5 d-none d-xl-block" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1145.86 508.13" xml:space="preserve" data-appear-animation-svg="true">
+              <g>
+                <path d="M13.87,32.36c1.07,0.55,2.37-0.28,2.4-1.49c0.04-1.58,0.27-2.87,0.5-3.82c0.56-2.35,1.48-4.1,2.65-6.33
+											c1.7-3.25,1.95-2.85,2.46-4.35c1.47-4.3-0.36-8.19-0.47-8.41c-0.36-0.74-1.54-3.15-4.06-4.44c-3.71-1.9-8.87-0.94-11.91,2.46
+											c-2.64,2.95-3.08,7.05-2.08,9.92c0.25,0.71,1.6,2.01,3.64,4.75c3.62,4.87,3.42,4.53,4.11,6.02c1.3,2.83,1.07,4.78,2.74,5.67
+											C13.85,32.35,13.86,32.36,13.87,32.36z" />
+                <circle fill="#FFF" cx="12.65" cy="12.54" r="6.34" />
+                <circle cx="12.65" cy="12.54" r="4.29" />
+                <circle fill="#FFF" cx="12.65" cy="12.54" r="2.44" />
+              </g>
+              <g>
+                <path d="M1121.72,505.34c0.44,1.12,1.97,1.35,2.79,0.47c1.08-1.16,2.1-1.98,2.9-2.54c1.98-1.4,3.82-2.11,6.17-3.01 c3.43-1.32,3.35-0.86,4.71-1.64c3.94-2.26,5.13-6.39,5.19-6.63c0.22-0.79,0.92-3.38-0.12-6.02c-1.53-3.87-6.04-6.56-10.57-6.01 c-3.93,0.47-6.97,3.27-8.11,6.08c-0.28,0.69-0.12,2.56-0.4,5.97c-0.49,6.05-0.42,5.66-0.89,7.24c-0.89,2.98-2.35,4.3-1.68,6.07
+										C1121.71,505.32,1121.71,505.33,1121.72,505.34z" />
+                <circle fill="#FFF" cx="1133.88" cy="489.64" r="6.34" />
+                <circle cx="1133.88" cy="489.64" r="4.29" />
+                <circle fill="#FFF" cx="1133.88" cy="489.64" r="2.44" />
+              </g>
+              <g>
+                <g>
+                  <path class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300" data-appear-animation-duration="100ms" fill="none" stroke="#bfbfbf" stroke-miter-limit="10" stroke-dasharray="8.9374,8.9374" d="M22.48,46.84c12.43,19.8,37.11,58.25,65.34,90.46c6.24,7.12,38.23,43.11,89.76,77.67
+												c27.53,18.47,93.42,58.51,184.44,74.83c63.3,11.35,123.7,8.54,152.88,7.18c18.43-0.86,20.79-1.63,44.6-2.65
+												c25.38-1.08,74.44-3.04,134.17,1.51c27.49,2.09,68.09,5.34,120,16.82c38.84,8.59,89.79,20.21,149.48,50.83
+												c17.94,9.21,51.96,27.97,87.87,57.83c28.32,23.54,43.15,41.79,52.16,54.24c5.04,6.97,9.21,13.45,12.57,19.04" />
+                  <path class="appear-animation" data-appear-animation="customDiamondsLineAnim" data-appear-animation-delay="300" data-appear-animation-duration="10s" fill="none" stroke="#FFF" stroke-width="2" stroke-miter-limit="10" stroke-dasharray="8.9374,8.9374" d="M22.48,46.84c12.43,19.8,37.11,58.25,65.34,90.46c6.24,7.12,38.23,43.11,89.76,77.67
+												c27.53,18.47,93.42,58.51,184.44,74.83c63.3,11.35,123.7,8.54,152.88,7.18c18.43-0.86,20.79-1.63,44.6-2.65
+												c25.38-1.08,74.44-3.04,134.17,1.51c27.49,2.09,68.09,5.34,120,16.82c38.84,8.59,89.79,20.21,149.48,50.83
+												c17.94,9.21,51.96,27.97,87.87,57.83c28.32,23.54,43.15,41.79,52.16,54.24c5.04,6.97,9.21,13.45,12.57,19.04" />
+                </g>
+              </g>
+            </svg>
+
+            <div class="diamonds-wrapper">
+              <ul class="diamonds mb-0">
+                <li>
+                  <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-blk.jpg" class="diamond lightbox" data-plugin-options="{'type':'image'}">
+                    <div class="content">
+                      <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-360x360.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm1-360x360.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm1-blkjpg.jpg', 'img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}" />
                     </div>
-                  </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
-                </div>
-                <div class="card-body d-flex align-items-center custom-view-more px-4">
-                  <p class="card-text w-100 mb-0">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- Card 2 - Nickel Mining -->
-          <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
-                <div class="card-img-top position-relative overlay overlay-show">
-                  <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Nickel Mining</h4>
-                    <div class="custom-crooked-line">
-                      <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                  </a>
+                </li>
+                <li>
+                  <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-2-blk.jpg" class="diamond lightbox" data-plugin-options="{'type':'image'}">
+                    <div class="content">
+                      <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-2-360x360.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4200, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm2-360x360.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm2-blk.jpg','img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-2-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}" />
                     </div>
-                  </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
-                </div>
-                <div class="card-body d-flex align-items-center custom-view-more px-4">
-                  <p class="card-text w-100 mb-0">Exploring Nickel Riches with PT Mineral Alam Abadi's Expertise.</p>
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- Card 3 - Stone Crusher -->
-          <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
-                <div class="card-img-top position-relative overlay overlay-show">
-                  <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Crusher</h4>
-                    <div class="custom-crooked-line">
-                      <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                  </a>
+                </li>
+                <li>
+                  <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-3-blk.jpg" class="diamond lightbox" data-plugin-options="{'type':'image'}">
+                    <div class="content">
+                      <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-3-360x360.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4400, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm3-360x360.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm3-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}" />
                     </div>
-                  </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0860.JPG" class="img-fluid" alt="Card Image">
-                </div>
-                <div class="card-body d-flex align-items-center custom-view-more px-4">
-                  <p class="card-text w-100 mb-0">Crafting Stones with Precision at PT Mineral Alam Abadi.</p>
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- Card 4 - Construction Services -->
-          <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
-                <div class="card-img-top position-relative overlay overlay-show">
-                  <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Construction Services</h4>
-                    <div class="custom-crooked-line">
-                      <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                  </a>
+                </li>
+                <li>
+                  <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-5-blk.jpg" class="diamond diamond-sm lightbox" data-plugin-options="{'type':'image'}">
+                    <div class="content">
+
+                      <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-5-181x181.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4600, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm5-181x181.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm5-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}" />
                     </div>
-                  </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0862.JPG" class="img-fluid" alt="Card Image">
-                </div>
-                <div class="card-body d-flex align-items-center custom-view-more px-4">
-                  <p class="card-text w-100 mb-0">Building Dreams through Excellence by PT Mineral Alam Abadi.</p>
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- Card 5 - Trading -->
-          <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
-                <div class="card-img-top position-relative overlay overlay-show">
-                  <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Trading</h4>
-                    <div class="custom-crooked-line">
-                      <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                  </a>
+                </li>
+                <li>
+                  <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-4-blk.jpg" class="diamond lightbox" data-plugin-options="{'type':'image'}">
+                    <div class="content">
+                      <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-4-360x360.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4800, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm4-360x360.jpg'], 'lightboxImagesListURL': [  'img/demos/business-consulting-3/backgrounds/home-project/bcpm4-blk.jpg'], 'animateIn': 'blurIn', 'accY': -100}" />
                     </div>
-                  </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0880.JPG" class="img-fluid" alt="Card Image">
-                </div>
-                <div class="card-body d-flex align-items-center custom-view-more px-4">
-                  <p class="card-text w-100 mb-0">Expanding Horizons with Diverse Offerings from PT Mineral Alam Abadi.</p>
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- Card 6 - Mining Contractor -->
-          <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
-                <div class="card-img-top position-relative overlay overlay-show">
-                  <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Mining Contractor</h4>
-                    <div class="custom-crooked-line">
-                      <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                  </a>
+                </li>
+                <li>
+                  <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-6-blk.jpg" class="diamond diamond-sm lightbox" data-plugin-options="{'type':'image'}">
+                    <div class="content">
+                      <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-6-181x181.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5000, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm6-181x181.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm6-blk.jpg'], 'animateIn': 'blurIn', 'accY': -100}" />
                     </div>
-                  </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0877.JPG" class="img-fluid" alt="Card Image">
-                </div>
-                <div class="card-body d-flex align-items-center custom-view-more px-4">
-                  <p class="card-text w-100 mb-0">Forging Mining Partnerships with PT Mineral Alam Abadi's Expertise.</p>
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- Card 7 - Shipping -->
-          <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
-                <div class="card-img-top position-relative overlay overlay-show">
-                  <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Shipping</h4>
-                    <div class="custom-crooked-line">
-                      <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
+                  </a>
+                </li>
+                <li>
+                  <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-7-blk.jpg" class="diamond diamond-sm lightbox" data-plugin-options="{'type':'image'}">
+                    <div class="content">
+                      <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-7-181x181.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5200, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm7-181x181.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm7-blk.jpg'], 'animateIn': 'blurIn', 'accY': -100}" />
                     </div>
-                  </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
-                </div>
-                <div class="card-body d-flex align-items-center custom-view-more px-4">
-                  <p class="card-text w-100 mb-0">Navigating Frontiers with Shipping Solutions from PT Mineral Alam Abadi.</p>
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- Card 8 - Investment -->
-          <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-            <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
-                <div class="card-img-top position-relative overlay overlay-show">
-                  <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Investment</h4>
-                    <div class="custom-crooked-line">
-                      <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
-                    </div>
-                  </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
-                </div>
-                <div class="card-body d-flex align-items-center custom-view-more px-4">
-                  <p class="card-text w-100 mb-0">Investing for Tomorrow's Future PT Mineral Alam Abadi Vision</p>
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px">
-                </div>
-              </div>
-            </a>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col text-center">
-          <a href="services.php" class="btn text-color-white custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5 bg-color-dark" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light">
-            <span>All Business</span>
+        <div class="col-md-8 col-lg-6">
+          <p class="text-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="600">
+            PT Mineral Alam Abadi
+            has several operational locations, namely the Head Office of
+            <span class="highlight highlight-primary highlight-bg-opacity highlight-animated" data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100" data-plugin-options="{'flagClassOnly': true}"> PT Mineral Alam Abadi</span>
+            which is
+            domiciled in Jakarta, as well as mine locations in Central Sulawesi, Southeast Sulawesi, and South
+            Halmahera.
+          </p>
+          <a href="gallery.php" class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
+            View Projects
+            <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}" />
           </a>
         </div>
       </div>
-  </div>
-
-  </section>
-
-  <div class="container py-5 my-5-5">
-    <div class="row">
-      <div class="col">
-        <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5">
-          Projects
-        </h2>
-        <p class="text-4 font-weight-light">
-          Currently, PT. Mineral Alam Abadi operates in three regions in Indonesia.
-        </p>
-      </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <div class="position-relative">
-          <svg class="diamonds-svg-line position-absolute bottom-0 left-15 mb-4 ms-5 d-none d-xl-block" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1145.86 508.13" xml:space="preserve" data-appear-animation-svg="true">
-            <g>
-              <path d="M13.87,32.36c1.07,0.55,2.37-0.28,2.4-1.49c0.04-1.58,0.27-2.87,0.5-3.82c0.56-2.35,1.48-4.1,2.65-6.33
-											c1.7-3.25,1.95-2.85,2.46-4.35c1.47-4.3-0.36-8.19-0.47-8.41c-0.36-0.74-1.54-3.15-4.06-4.44c-3.71-1.9-8.87-0.94-11.91,2.46
-											c-2.64,2.95-3.08,7.05-2.08,9.92c0.25,0.71,1.6,2.01,3.64,4.75c3.62,4.87,3.42,4.53,4.11,6.02c1.3,2.83,1.07,4.78,2.74,5.67
-											C13.85,32.35,13.86,32.36,13.87,32.36z" />
-              <circle fill="#FFF" cx="12.65" cy="12.54" r="6.34" />
-              <circle cx="12.65" cy="12.54" r="4.29" />
-              <circle fill="#FFF" cx="12.65" cy="12.54" r="2.44" />
-            </g>
-            <g>
-              <path d="M1121.72,505.34c0.44,1.12,1.97,1.35,2.79,0.47c1.08-1.16,2.1-1.98,2.9-2.54c1.98-1.4,3.82-2.11,6.17-3.01 c3.43-1.32,3.35-0.86,4.71-1.64c3.94-2.26,5.13-6.39,5.19-6.63c0.22-0.79,0.92-3.38-0.12-6.02c-1.53-3.87-6.04-6.56-10.57-6.01 c-3.93,0.47-6.97,3.27-8.11,6.08c-0.28,0.69-0.12,2.56-0.4,5.97c-0.49,6.05-0.42,5.66-0.89,7.24c-0.89,2.98-2.35,4.3-1.68,6.07
-										C1121.71,505.32,1121.71,505.33,1121.72,505.34z" />
-              <circle fill="#FFF" cx="1133.88" cy="489.64" r="6.34" />
-              <circle cx="1133.88" cy="489.64" r="4.29" />
-              <circle fill="#FFF" cx="1133.88" cy="489.64" r="2.44" />
-            </g>
-            <g>
-              <g>
-                <path class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300" data-appear-animation-duration="100ms" fill="none" stroke="#bfbfbf" stroke-miter-limit="10" stroke-dasharray="8.9374,8.9374" d="M22.48,46.84c12.43,19.8,37.11,58.25,65.34,90.46c6.24,7.12,38.23,43.11,89.76,77.67
-												c27.53,18.47,93.42,58.51,184.44,74.83c63.3,11.35,123.7,8.54,152.88,7.18c18.43-0.86,20.79-1.63,44.6-2.65
-												c25.38-1.08,74.44-3.04,134.17,1.51c27.49,2.09,68.09,5.34,120,16.82c38.84,8.59,89.79,20.21,149.48,50.83
-												c17.94,9.21,51.96,27.97,87.87,57.83c28.32,23.54,43.15,41.79,52.16,54.24c5.04,6.97,9.21,13.45,12.57,19.04" />
-                <path class="appear-animation" data-appear-animation="customDiamondsLineAnim" data-appear-animation-delay="300" data-appear-animation-duration="10s" fill="none" stroke="#FFF" stroke-width="2" stroke-miter-limit="10" stroke-dasharray="8.9374,8.9374" d="M22.48,46.84c12.43,19.8,37.11,58.25,65.34,90.46c6.24,7.12,38.23,43.11,89.76,77.67
-												c27.53,18.47,93.42,58.51,184.44,74.83c63.3,11.35,123.7,8.54,152.88,7.18c18.43-0.86,20.79-1.63,44.6-2.65
-												c25.38-1.08,74.44-3.04,134.17,1.51c27.49,2.09,68.09,5.34,120,16.82c38.84,8.59,89.79,20.21,149.48,50.83
-												c17.94,9.21,51.96,27.97,87.87,57.83c28.32,23.54,43.15,41.79,52.16,54.24c5.04,6.97,9.21,13.45,12.57,19.04" />
-              </g>
-            </g>
-          </svg>
-
-          <div class="diamonds-wrapper">
-            <ul class="diamonds mb-0">
-              <li>
-                <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-blk.jpg" class="diamond lightbox" data-plugin-options="{'type':'image'}">
-                  <div class="content">
-                    <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-360x360.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm1-360x360.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm1-blkjpg.jpg', 'img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-1-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}" />
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-2-blk.jpg" class="diamond lightbox" data-plugin-options="{'type':'image'}">
-                  <div class="content">
-                    <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-2-360x360.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4200, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm2-360x360.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm2-blk.jpg','img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-2-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}" />
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-3-blk.jpg" class="diamond lightbox" data-plugin-options="{'type':'image'}">
-                  <div class="content">
-                    <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-3-360x360.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4400, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm3-360x360.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm3-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}" />
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-5-blk.jpg" class="diamond diamond-sm lightbox" data-plugin-options="{'type':'image'}">
-                  <div class="content">
-
-                    <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-5-181x181.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4600, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm5-181x181.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm5-blk.jpg'], 'animateIn': 'blurIn', 'accY': -400}" />
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-4-blk.jpg" class="diamond lightbox" data-plugin-options="{'type':'image'}">
-                  <div class="content">
-                    <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-4-360x360.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4800, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm4-360x360.jpg'], 'lightboxImagesListURL': [  'img/demos/business-consulting-3/backgrounds/home-project/bcpm4-blk.jpg'], 'animateIn': 'blurIn', 'accY': -100}" />
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-6-blk.jpg" class="diamond diamond-sm lightbox" data-plugin-options="{'type':'image'}">
-                  <div class="content">
-                    <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-6-181x181.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5000, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm6-181x181.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm6-blk.jpg'], 'animateIn': 'blurIn', 'accY': -100}" />
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-7-blk.jpg" class="diamond diamond-sm lightbox" data-plugin-options="{'type':'image'}">
-                  <div class="content">
-                    <img src="img/demos/business-consulting-3/backgrounds/home-project/MMP OBI-7-181x181.jpg" class="img-fluid plugin-random-images" alt="" data-plugin-random-images data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5200, 'imagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm7-181x181.jpg'], 'lightboxImagesListURL': [ 'img/demos/business-consulting-3/backgrounds/home-project/bcpm7-blk.jpg'], 'animateIn': 'blurIn', 'accY': -100}" />
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 col-lg-6">
-        <p class="text-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="600">
-          PT Mineral Alam Abadi
-          has several operational locations, namely the Head Office of
-          <span class="highlight highlight-primary highlight-bg-opacity highlight-animated" data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100" data-plugin-options="{'flagClassOnly': true}"> PT Mineral Alam Abadi</span>
-          which is
-          domiciled in Jakarta, as well as mine locations in Central Sulawesi, Southeast Sulawesi, and South
-          Halmahera.
-        </p>
-        <a href="gallery.php" class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
-          View Projects
-          <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}" />
-        </a>
-      </div>
-    </div>
-  </div>
   </div>
 
   <?php include 'footer.php'; ?>

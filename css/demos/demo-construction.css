@@ -214,8 +214,7 @@ html #header .header-nav-features:after {
 		height: 25px;
 }
 
-html.sticky-header-active #header .header-body {
-		background: rgba(255, 255, 255, 0.8);
+html.sticky-header-active #header .header-body {	
 		transform: translate3d(0, 0, 0);
 }
 

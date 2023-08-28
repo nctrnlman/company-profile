@@ -13,6 +13,8 @@
   <meta name="author" content="MAA" />
 
   <!-- Favicon -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+
   <link rel="shortcut icon" href="img/demos/business-consulting-3/logo-MAA-component.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
@@ -80,7 +82,7 @@
       </section>
 
       <div class="container pt-3 mt-4">
-        <div class="row">
+        <div class="row ">
           <div class="col">
             <h2 class="text-9 text-lg-5 text-xl-9 line-height-3 text-transform-none font-weight-semibold mb-4 mb-lg-3 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
               Fostering Business Excellence through Innovative Strategies
@@ -102,15 +104,15 @@
         </div>
         <div class="row row-gutter-sm">
           <div class="col-sm-6 mb-4 mb-sm-0">
-            <img src="img/demos/business-consulting-3/backgrounds/MMP OBI- 10.jpg" class="img-fluid box-shadow-5  appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800" alt="" />
+            <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 10.jpg" class="img-fluid box-shadow-5  appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800" alt="" />
           </div>
           <div class="col-6 col-sm-3">
-            <img src="img/demos/business-consulting-3/backgrounds/MMP OBI- 17.jpg" class="img-fluid box-shadow-5 mb-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600" alt="" />
+            <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 05.jpg" class="img-fluid box-shadow-5 mb-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600" alt="" />
             <img src="img/demos/business-consulting-3/backgrounds/17-obi.jpeg" class="img-fluid box-shadow-5 appear-animation" style="height: 175px;" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400" alt="" />
           </div>
           <div class="col-6 col-sm-3">
-            <img src="img/demos/business-consulting-3/backgrounds/DJI_0874.JPG" class="img-fluid box-shadow-5 mb-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" alt="" />
-            <img src="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg" class="img-fluid box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400" alt="" />
+            <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0863.JPG" class="img-fluid box-shadow-5 mb-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" alt="" />
+            <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0352.JPG" class="img-fluid box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400" alt="" />
           </div>
         </div>
       </div>

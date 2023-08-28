@@ -98,7 +98,7 @@
                       <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
                     </div>
                   </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
+                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0351.JPG" class="img-fluid" alt="Card Image">
                 </div>
                 <div class="card-body d-flex align-items-center custom-view-more px-4">
                   <p class="card-text w-100 mb-0">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
@@ -118,7 +118,7 @@
                       <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
                     </div>
                   </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
+                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0876.JPG" class="img-fluid" alt="Card Image">
                 </div>
                 <div class="card-body d-flex align-items-center custom-view-more px-4">
                   <p class="card-text w-100 mb-0">Exploring Nickel Riches with PT Mineral Alam Abadi's Expertise.</p>
@@ -138,7 +138,7 @@
                       <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
                     </div>
                   </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0860.JPG" class="img-fluid" alt="Card Image">
+                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0352.JPG" class="img-fluid" alt="Card Image">
                 </div>
                 <div class="card-body d-flex align-items-center custom-view-more px-4">
                   <p class="card-text w-100 mb-0">Crafting Stones with Precision at PT Mineral Alam Abadi.</p>
@@ -158,7 +158,7 @@
                       <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
                     </div>
                   </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0862.JPG" class="img-fluid" alt="Card Image">
+                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0879.JPG" class="img-fluid" alt="Card Image">
                 </div>
                 <div class="card-body d-flex align-items-center custom-view-more px-4">
                   <p class="card-text w-100 mb-0">Building Dreams through Excellence by PT Mineral Alam Abadi.</p>
@@ -178,7 +178,7 @@
                       <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
                     </div>
                   </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0880.JPG" class="img-fluid" alt="Card Image">
+                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0932.jpg" class="img-fluid" alt="Card Image">
                 </div>
                 <div class="card-body d-flex align-items-center custom-view-more px-4">
                   <p class="card-text w-100 mb-0">Expanding Horizons with Diverse Offerings from PT Mineral Alam Abadi.</p>
@@ -198,7 +198,7 @@
                       <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
                     </div>
                   </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0877.JPG" class="img-fluid" alt="Card Image">
+                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0347.JPG" class="img-fluid" alt="Card Image">
                 </div>
                 <div class="card-body d-flex align-items-center custom-view-more px-4">
                   <p class="card-text w-100 mb-0">Forging Mining Partnerships with PT Mineral Alam Abadi's Expertise.</p>
@@ -218,7 +218,7 @@
                       <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
                     </div>
                   </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0346.JPG" class="img-fluid" alt="Card Image">
+                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0876.JPG" class="img-fluid" alt="Card Image">
                 </div>
                 <div class="card-body d-flex align-items-center custom-view-more px-4">
                   <p class="card-text w-100 mb-0">Navigating Frontiers with Shipping Solutions from PT Mineral Alam Abadi.</p>
@@ -238,7 +238,7 @@
                       <img width="154" height="26" src="img/demos/business-consulting-3/icons/infinite-crooked-line.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 154px">
                     </div>
                   </div>
-                  <img src="img/demos/business-consulting-3/backgrounds/DJI_0347.JPG" class="img-fluid" alt="Card Image">
+                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0873.JPG" class="img-fluid" alt="Card Image">
                 </div>
                 <div class="card-body d-flex align-items-center custom-view-more px-4">
                   <p class="card-text w-100 mb-0">Investing for Tomorrow's Future PT Mineral Alam Abadi Vision</p>

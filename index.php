@@ -702,7 +702,7 @@
       var currentPage = window.location.href.split("/").pop();
 
       // Periksa apakah halaman saat ini adalah home.php
-      if (currentPage === "home.php") {
+      if (currentPage === "index.php") {
         // Menghapus nilai notificationShown saat halaman dimuat ulang
         localStorage.removeItem("notificationShown");
 

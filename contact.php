@@ -6,9 +6,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title>
-		Demo Business Consulting 3 | Porto - Multipurpose Website Template
-	</title>
+	<title>Contact | MAA GROUP</title>
 
 	<meta name="keywords" content="Company Profile" />
 	<meta name="description" content="Maa Group" />

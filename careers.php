@@ -202,6 +202,7 @@ try {
                             Explore the advantages of being a part of Mineral Alam Abadi. We believe in providing exceptional benefits that enhance your experience and well-being. From growth opportunities to a supportive environment, we've got you covered.
                           </p>
                         </div>
+                        
                       </section>
                       <section class="toggle">
                         <a class="toggle-title">Our Culture</a>

@@ -159,10 +159,7 @@
         <div class="container mt-4">
           <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10 text-center">
-              <h2 class="custom-highlight-text-1 d-inline-block line-height-5 text-4 positive-ls-3 font-weight-medium text-color-white mb-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
-                WHAT WE DO
-              </h2>
-              <h3 class="text-9 line-height-3 text-transform-none font-weight-semibold mb-3 pb-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+              <h3  class="text-9 line-height-3 text-transform-none font-weight-semibold mb-3 pb-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500"  style="text-shadow: 5px 5px 10px black; color: #ffff;">
                 Our Business
               </h3>
               <p class="text-3-5 pb-3 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">

@@ -13,6 +13,8 @@
   <meta name="author" content="MAA" />
 
   <!-- Favicon -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+
   <link rel="shortcut icon" href="img/demos/business-consulting-3/logo-MAA-component.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
@@ -80,7 +82,7 @@
       </section>
 
       <div class="container pt-3 mt-4">
-        <div class="row">
+        <div class="row bg-black">
           <div class="col">
             <h2 class="text-9 text-lg-5 text-xl-9 line-height-3 text-transform-none font-weight-semibold mb-4 mb-lg-3 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
               Fostering Business Excellence through Innovative Strategies

@@ -18,14 +18,14 @@
     <div class="row pt-3 mt-5">
       <div class="col-lg-3 mb-4 mb-lg-0">
         <a class="text-decoration-none">
-          <img src="img/demos/business-consulting-3/logo.png" class="img-fluid mb-4" width="250" height="30" alt="" style="background-color: white; padding: 15px;" />
+          <img src="img/demos/business-consulting-3/logo-maa-white.png" class="img-fluid mb-4" width="250" height="30" alt="" />
         </a>
         <p class="text-3-5 text-color-white">
           Being an Integrated and Leading Mining Company in Indonesia
         </p>
         <ul class="social-icons social-icons-clean social-icons-clean-with-border social-icons-medium social-icons-icon-light">
           <li class="social-icons-instagram mx-2">
-            <a href="https://www.instagram.com/mineralalamabadi/" target="_blank" title="Instagram" data-cursor-effect-hover="fit"> <!-- Changed href to Instagram URL and title to Instagram -->
+            <a href="https://www.instagram.com/mineralalamabadi/" target="_blank" title="Instagram" data-cursor-effect-hover="fit"> 
               <i class="fab fa-instagram"></i>
             </a>
           </li>

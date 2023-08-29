@@ -99,28 +99,29 @@
 
 
 <body>
-  <div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content custom-modal-content">
-        <div class="modal-header custom-modal-header" style="background-color: #f5f5f5; ">
-          <img alt="Porto" width="200" src="img/demos/business-consulting-3/logo.png" />
-          <button type="button" class="close custom-close-button" aria-label="Close" style="background: none; border: none; font-size: 24px;">
-            <span aria-hidden="true" id="confirmButton" style="color: #af2a25;">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body custom-modal-body" style="padding: 20px; color: #f5f5f5;">
-          <p class="text-center" style="font-size: 24px; margin-bottom: 20px;">
-            <strong>WASPADAI PENIPUAN REKRUTMEN KARYAWAN</strong>
-          </p>
-          <p style="text-align: justify;">
-            PT Mineral Alam Abadi tidak memungut biaya apapun dan tidak pernah bekerja sama dengan agen perjalanan atau pihak ketiga dalam proses rekrutmen. Proses rekrutmen di perusahaan kami sepenuhnya transparan.<br><br> Hindari penipuan dengan mencermati email, pesan, dan web yang digunakan untuk lowongan pekerjaan. Jika Anda atau seseorang yang Anda kenal mengalami penipuan atau situasi tidak etis sehubungan dengan proses rekrutmen di perusahaan kami, laporkan kepada kami melalui email <strong>recruitment@mineralalamabadi.co.id</strong> dengan subject "Pelaporan" atau bisa juga melalui sosial media kami.
-          </p>
-        </div>
-        <div class="modal-footer custom-modal-footer" style="background-color: #f5f5f5;">
-        </div>
+<div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 10px;">
+      <div class="modal-header custom-modal-header" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <img alt="Porto" width="200" src="img/demos/business-consulting-3/logo.png" />
+        <button type="button" class="close custom-close-button" aria-label="Close" style="background: none; border: none; font-size: 24px;">
+          <span aria-hidden="true" id="confirmButton" style="color: #af2a25;">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body custom-modal-body" style="padding: 20px; color: #f5f5f5; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+        <p class="text-center" style="font-size: 24px; margin-bottom: 20px; color: #af2a25;">
+          <strong>WASPADAI PENIPUAN REKRUTMEN KARYAWAN</strong>
+        </p>
+        <p style="text-align: justify; color: black">
+          PT Mineral Alam Abadi tidak memungut biaya apapun dan tidak pernah bekerja sama dengan agen perjalanan atau pihak ketiga dalam proses rekrutmen. Proses rekrutmen di perusahaan kami sepenuhnya transparan.<br><br> Hindari penipuan dengan mencermati email, pesan, dan web yang digunakan untuk lowongan pekerjaan. Jika Anda atau seseorang yang Anda kenal mengalami penipuan atau situasi tidak etis sehubungan dengan proses rekrutmen di perusahaan kami, laporkan kepada kami melalui email <strong>recruitment@mineralalamabadi.co.id</strong> dengan subject "Pelaporan" atau bisa juga melalui sosial media kami.
+        </p>
+      </div>
+      <div class="modal-footer custom-modal-footer" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
       </div>
     </div>
   </div>
+</div>
+
 
 
   <div class="body">

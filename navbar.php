@@ -18,7 +18,7 @@
                 <nav class="collapse">
                   <ul class="nav nav-pills" id="mainNav">
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'home.php') echo 'class="active"'; ?> class="nav-link" href="index.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') echo 'class="active"'; ?> class="nav-link" href="index.php">
                         Home
                       </a>
                     </li>
@@ -28,7 +28,7 @@
                       </a>
                     </li>
                     <li class="dropdown">
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'services.php') echo 'class="active"'; ?> class="nav-link dropdown-toggle" href="services.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'services.php' || basename($_SERVER['PHP_SELF']) == 'trading.php' || basename($_SERVER['PHP_SELF']) == 'shipping.php' || basename($_SERVER['PHP_SELF']) == 'stone-crusher.php' || basename($_SERVER['PHP_SELF']) == 'stone-mining.php' || basename($_SERVER['PHP_SELF']) == 'nickel-mining.php' || basename($_SERVER['PHP_SELF']) == 'mining-contractor.php' || basename($_SERVER['PHP_SELF']) == 'construction-services.php' || basename($_SERVER['PHP_SELF']) == 'investment.php') echo 'class="active"'; ?> class="nav-link dropdown-toggle" href="services.php">
                         Our Business
                       </a>
                       <!-- <ul class="dropdown-menu">

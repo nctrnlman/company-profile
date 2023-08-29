@@ -104,15 +104,15 @@
         </div>
         <div class="row row-gutter-sm">
           <div class="col-sm-6 mb-4 mb-sm-0">
-            <img src="img/demos/business-consulting-3/backgrounds/MMP OBI- 10.jpg" class="img-fluid box-shadow-5  appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800" alt="" />
+            <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 10.jpg" class="img-fluid box-shadow-5  appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800" alt="" />
           </div>
           <div class="col-6 col-sm-3">
-            <img src="img/demos/business-consulting-3/backgrounds/MMP OBI- 17.jpg" class="img-fluid box-shadow-5 mb-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600" alt="" />
+            <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 05.jpg" class="img-fluid box-shadow-5 mb-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600" alt="" />
             <img src="img/demos/business-consulting-3/backgrounds/17-obi.jpeg" class="img-fluid box-shadow-5 appear-animation" style="height: 175px;" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400" alt="" />
           </div>
           <div class="col-6 col-sm-3">
-            <img src="img/demos/business-consulting-3/backgrounds/DJI_0874.JPG" class="img-fluid box-shadow-5 mb-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" alt="" />
-            <img src="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg" class="img-fluid box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400" alt="" />
+            <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0863.JPG" class="img-fluid box-shadow-5 mb-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" alt="" />
+            <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0352.JPG" class="img-fluid box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400" alt="" />
           </div>
         </div>
       </div>

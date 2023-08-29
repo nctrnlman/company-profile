@@ -172,7 +172,7 @@
           <div class="row row-gutter-sm justify-content-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
             <!-- Card 1 - Stone Mining -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+              <a href="stone-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                   <div class="card-img-top position-relative overlay overlay-show">
                     <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -192,7 +192,7 @@
             </div>
             <!-- Card 2 - Nickel Mining -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+              <a href="nickel-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                   <div class="card-img-top position-relative overlay overlay-show">
                     <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -212,7 +212,7 @@
             </div>
             <!-- Card 3 - Stone Crusher -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+              <a href="stone-crusher.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                   <div class="card-img-top position-relative overlay overlay-show">
                     <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -232,7 +232,7 @@
             </div>
             <!-- Card 4 - Construction Services -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+              <a href="construction-services.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                   <div class="card-img-top position-relative overlay overlay-show">
                     <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -252,7 +252,7 @@
             </div>
             <!-- Card 5 - Trading -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+              <a href="trading.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                   <div class="card-img-top position-relative overlay overlay-show">
                     <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -272,7 +272,7 @@
             </div>
             <!-- Card 6 - Mining Contractor -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+              <a href="mining-contractor.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                   <div class="card-img-top position-relative overlay overlay-show">
                     <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -292,7 +292,7 @@
             </div>
             <!-- Card 7 - Shipping -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+              <a href="shipping.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                   <div class="card-img-top position-relative overlay overlay-show">
                     <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -312,7 +312,7 @@
             </div>
             <!-- Card 8 - Investment -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="services-detail.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+              <a href="investment.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
                   <div class="card-img-top position-relative overlay overlay-show">
                     <div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">

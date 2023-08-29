@@ -55,11 +55,15 @@
     <?php include 'navbar.php'; ?>
 
     <div role="main" class="main">
-      <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" data-bg-src="img/demos/business-consulting-3/backgrounds/background-5.jpg" style="background-size: cover; background-position: center">
+      <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="
+            background-size: cover;
+            background-position: center;
+            background-color: #af2a25;
+          ">
         <div class="container pb-5 my-3">
           <div class="row mb-4">
             <div class="col-md-12 align-self-center p-static order-2 text-center">
-              <h1 class="font-weight-bold text-color-dark text-10">
+              <h1 class="font-weight-bold text-color-white text-10">
                 Stone Crusher
               </h1>
             </div>
@@ -67,7 +71,7 @@
         </div>
         <div class="shape-divider shape-divider-bottom shape-divider-reverse-x" style="height: 123px">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 123" preserveAspectRatio="xMinYMin">
-            <polygon fill="#F3F3F3" points="0,90 221,60 563,88 931,35 1408,93 1920,41 1920,-1 0,-1 " />
+            <polygon fill="#c6a265" points="0,90 221,60 563,88 931,35 1408,93 1920,41 1920,-1 0,-1 " />
             <polygon fill="#FFFFFF" points="0,75 219,44 563,72 930,19 1408,77 1920,25 1920,-1 0,-1 " />
           </svg>
         </div>

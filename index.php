@@ -101,15 +101,15 @@
 <body>
   <div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 10px;">
-        <div class="modal-header custom-modal-header" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-top-left-radius: 10px; border-top-right-radius: 10px;">
+      <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(100px); ">
+        <div class="modal-header custom-modal-header" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(50px); ">
           <img alt="Porto" width="200" src="img/demos/business-consulting-3/logo.png" />
           <button type="button" class="close custom-close-button" aria-label="Close" style="background: none; border: none; font-size: 24px;">
             <span aria-hidden="true" id="confirmButton" style="color: #af2a25;">&times;</span>
           </button>
         </div>
-        <div class="modal-body custom-modal-body" style="padding: 20px; color: #f5f5f5; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
-          <p class="text-center" style="font-size: 24px; margin-bottom: 20px; color: #af2a25;">
+        <div class="modal-body custom-modal-body" style="padding: 20px; color: #f5f5f5; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(50px);">
+          <p class="text-center" style="font-size: 24px; margin-bottom: 20px; color: #af2a25; text-shadow: 2px 2px 3px black;">
             <strong>WASPADAI PENIPUAN REKRUTMEN KARYAWAN</strong>
           </p>
           <p style="text-align: justify; color: black">
@@ -282,80 +282,13 @@
                 </div>
               </a>
             </div>
-            <!-- Card 5 - Trading -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="trading.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-                <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0863.JPG" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Trading</h4>
-                  </div>
-                </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Expanding Horizons with PT Mineral Alam Abadi.</p>
-                </div>
-                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                </div>
-              </a>
-            </div>
-            <!-- Card 6 - Mining Contractor -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="mining-contractor.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-                <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0877.JPG" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Mining Contractor</h4>
-                  </div>
-                </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Forging Mining Partnerships with PT Mineral Alam Abadi.</p>
-                </div>
-                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                </div>
-              </a>
-            </div>
-            <!-- Card 7 - Shipping -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="shipping.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-                <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 15.jpg" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Shipping</h4>
-                  </div>
-                </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Shipping Solutions from PT Mineral Alam Abadi.</p>
-                </div>
-                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                </div>
-              </a>
-            </div>
-            <!-- Card 8 - Investment -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="investment.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-                <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0347.JPG" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Investment</h4>
-                  </div>
-                </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Investing for Tomorrow's with PT Mineral Alam Abadi Vision.</p>
-                </div>
-                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                </div>
-              </a>
-            </div>
+
           </div>
         </div>
         <div class="row">
           <div class="col text-center">
             <a href="services.php" class="btn text-color-white custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5 bg-color-dark" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light">
-              <span>All Business</span>
+              <span>View All Business</span>
             </a>
           </div>
         </div>

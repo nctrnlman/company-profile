@@ -101,15 +101,15 @@
 <body>
 <div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 10px;">
-      <div class="modal-header custom-modal-header" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-top-left-radius: 10px; border-top-right-radius: 10px;">
+    <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(100px); ">
+      <div class="modal-header custom-modal-header" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(50px); ">
         <img alt="Porto" width="200" src="img/demos/business-consulting-3/logo.png" />
         <button type="button" class="close custom-close-button" aria-label="Close" style="background: none; border: none; font-size: 24px;">
           <span aria-hidden="true" id="confirmButton" style="color: #af2a25;">&times;</span>
         </button>
       </div>
-      <div class="modal-body custom-modal-body" style="padding: 20px; color: #f5f5f5; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
-        <p class="text-center" style="font-size: 24px; margin-bottom: 20px; color: #af2a25;">
+      <div class="modal-body custom-modal-body" style="padding: 20px; color: #f5f5f5; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(50px);">
+        <p class="text-center" style="font-size: 24px; margin-bottom: 20px; color: #af2a25; text-shadow: 2px 2px 3px black;">
           <strong>WASPADAI PENIPUAN REKRUTMEN KARYAWAN</strong>
         </p>
         <p style="text-align: justify; color: black">

@@ -13,8 +13,6 @@
   <meta name="author" content="MAA" />
 
   <!-- Favicon -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-
   <link rel="shortcut icon" href="img/demos/business-consulting-3/logo-MAA-component.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
@@ -80,6 +78,7 @@
           </svg>
         </div>
       </section>
+
 
       <div class="container pt-5">
         <div class="row">
@@ -155,8 +154,6 @@
                     <div class="">
                       <p class="text-3-5 text-center font-weight-semibold text-color-white">
                         Pemikiran yang terbuka terhadap perubahan, ide, gagasan, tidak memandang perbedaan serta bersikap adil
-
-
                       </p>
                       <div class="text-2" style="text-align: justify;">
                         <ul class="list list-icons list-icons-sm items-center" style="display: flex; flex-direction: column; align-items: center; text-align: justify;">
@@ -235,126 +232,30 @@
         </div>
       </section>
 
-      <div class="container py-5 mb-5">
-        <!-- <div class="row mb-2">
-          <h2 class="text-9 line-height-3 text-transform-none text-center font-weight-semibold mb-4  " style="color: #af2a25;">
-            CORE VALUES
-          </h2>
-          <div class="col mt-5">
-            <div class="tabs tabs-bottom tabs-center tabs-simple custom-tabs-style-1">
-              <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#tabsNavigationManifesto" data-bs-toggle="tab">Open Minded</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#tabsNavigationVision" data-bs-toggle="tab">Sharing</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#tabsNavigationMission" data-bs-toggle="tab">Responsibility</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#tabsNavigationInnovative" data-bs-toggle="tab">Innovative</a>
-                </li>
-              </ul>
-              <div class="tab-content">
-                <div class="tab-pane active" id="tabsNavigationManifesto">
-                  <div class="">
-                    <p class="text-3-5 text-center">
-                      Pemikiran yang terbuka terhadap perubahan, ide, gagasan, tidak memandang perbedaan serta bersikap adil
 
-
-                    </p>
-                    <div class="text-2">
-                      <ul class="list list-icons list-icons-sm items-center" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                        <li><i class="fas fa-caret-right"></i> Terbuka terhadap ide, pendapat, informasi, dan hal-hal baru</li>
-                        <li><i class="fas fa-caret-right"></i> Menunjukkan empati, memahami, dan menghormati perbedaan antar satu sama lain</li>
-                        <li><i class="fas fa-caret-right"></i> Mempertimbangkan perbedaan pendapat untuk membuat keputusan yang baik demi kepentingan bersama</li>
-                        <li><i class="fas fa-caret-right"></i> Mau menerima kritik atau masukan dari orang lain</li>
-                      </ul>
-
-                    </div>
-
-                  </div>
-                </div>
-                <div class="tab-pane" id="tabsNavigationVision">
-                  <div class="text-center">
-                    <p class="text-3-5">
-                      Menciptakan ekosistem kerja dengan semangat berbagi dan bekerjasama
-
-                    </p>
-                    <div class="text-2">
-                      <ul class="list list-icons list-icons-sm items-center" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                        <li><i class="fas fa-caret-right"></i> Memberikan kontribusi berarti dalam melaksanakan tugas</li>
-                        <li><i class="fas fa-caret-right"></i> Mencari solusi terbaik saat menghadapi permasalahan demi kepentingan perusahaan</li>
-                        <li><i class="fas fa-caret-right"></i> Meminta pertolongan kepada rekan kerja / atasan dengan rendah hati pada saat mengalami kesulitan serta saling membantu sesama rekan kerja</li>
-                        <li><i class="fas fa-caret-right"></i> Merayakan kesuksesan bersama dan mampu membalikkan keadaan secara bersama-sama dalam menghadapi kemunduran</li>
-                      </ul>
-
-                    </div>
-
-                  </div>
-                </div>
-                <div class="tab-pane" id="tabsNavigationMission">
-                  <div class="text-center">
-                    <p class="text-3-5">
-                      Berdedikasi, mengemban tanggung jawab, membangun kepercayaan terhadap rekan kerja, masyarakat dan lingkungan
-                    </p>
-                    <div class="text-2">
-                      <ul class="list list-icons list-icons-sm items-center" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                        <li><i class="fas fa-caret-right"></i> Penuh semangat dalam menjalankan pekerjaan, menunjukkan usaha yang optimal, berorientasi pada tugas dan hasil</li>
-                        <li><i class="fas fa-caret-right"></i> Disiplin dalam memanfaatkan waktu kerja untuk melaksanakan kegiatan yang produktif</li>
-                        <li><i class="fas fa-caret-right"></i> Menjaga nama baik / aset / informasi perusahaan dengan sebaik-baiknya, tidak akan pernah memberikannya kepada pihak manapun yang tidak berkepentingan</li>
-                        <li><i class="fas fa-caret-right"></i> Berani mengambil risiko atas kesalahan / kegagalan, berupaya untuk tidak mengulangi kesalahan serta fokus pada solusi</li>
-                      </ul>
-
-                    </div>
-
-                  </div>
-                </div>
-                <div class="tab-pane" id="tabsNavigationInnovative">
-                  <div class="text-center">
-                    <p class="text-3-5">
-                      Terus mengeksplorasi dan merevolusi diri dengan tetap menjaga vitalitas dan efektivitas tim, berani keluar dari zona nyaman
-
-                    </p>
-                    <div class="text-2">
-                      <ul class="list list-icons list-icons-sm items-center" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                        <li><i class="fas fa-caret-right"></i> Berpikir inovatif, terus mengembangkan pengetahuan profesional dan kompetensi</li>
-                        <li><i class="fas fa-caret-right"></i> Terus-menerus melakukan perbaikan, mengikuti perkembangan teknologi dan tantangan perubahan zaman</li>
-                        <li><i class="fas fa-caret-right"></i> Melaksanakan pengembangan inisiatif baru yang dapat meningkatkan kinerja individu, unit kerja, dan perusahaan</li>
-                        <li><i class="fas fa-caret-right"></i> Kemampuan mengerjakan sesuatu yang baru, mencari peluang, mengembangkan ide, dan sumber daya</li>
-                      </ul>
-
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; position: relative;">
+        <img src="img/demos/business-consulting-3/backgrounds/maa-locations.png" alt="" style="max-width: 100%; border-radius: 100%;">
+        <div style="padding: 20px; border-radius: 10px; margin-top: -40px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+          <h3 style="font-size: 24px; margin-bottom: 10px; font-weight: 500; color: #af2a25; text-align: center;">Explore Our Locations</h3>
+          <p style="font-size: 18px; margin: 0; color: black;">
+            Currently, PT. Mineral Alam Abadi operates in three regions in Indonesia:
+          <div style="font-size: 15px;">
+            <br>1. Jakarta, Mineral Alam Abadi Headquarter, and offices of the enterprise entity underneath.
+            <br>2. Central Sulawesi site located in Morowali, South Bungku
+            <br>3. North Sulawesi site located in south Halmahera, Obi Island
           </div>
-        </div> -->
-        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; position: relative;">
-          <img src="img/demos/business-consulting-3/backgrounds/maa-locations.png" alt="" style="max-width: 100%; border-radius: 100%;">
-          <div style="padding: 20px; border-radius: 10px; margin-top: -40px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-            <h3 style="font-size: 24px; margin-bottom: 10px; font-weight: 500; color: #af2a25; text-align: center;">Explore Our Locations</h3>
-            <p style="font-size: 18px; margin: 0; color: black;">
-              Currently, PT. Mineral Alam Abadi operates in three regions in Indonesia:
-              <div style="font-size: 15px;">
-              <br>1. Jakarta, Mineral Alam Abadi Headquarter, and offices of the enterprise entity underneath.
-              <br>2. Central Sulawesi site located in Morowali, South Bungku
-              <br>3. North Sulawesi site located in south Halmahera, Obi Island
-              </div>
-            </p>
-          </div>
+          </p>
         </div>
-
       </div>
 
     </div>
 
+  </div>
 
 
-    <?php include 'footer.php'; ?>
+
+
+  <?php include 'footer.php'; ?>
   </div>
 
   <!-- Vendor -->

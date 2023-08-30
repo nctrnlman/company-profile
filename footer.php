@@ -4,7 +4,7 @@
           background-repeat: no-repeat;
           background-color: #af2a25;
         ">
-  <div class="container pt-7">
+  <div class="container ">
     <!-- <div class="row justify-content-between align-items-center py-5 mb-3">
             <div class="col-auto mb-4 mb-lg-0">
               <h2
@@ -15,7 +15,7 @@
             </div>
           </div> -->
     <hr class="bg-color-light opacity-1 my-0" />
-    <div class="row pt-3 mt-5">
+    <div class="row" style="padding-top: 30px; ">
       <div class="col-lg-3 mb-4 mb-lg-0">
         <a class="text-decoration-none">
           <img src="img/demos/business-consulting-3/logo-maa-white.png" class="img-fluid mb-4" width="250" height="30" alt="" />
@@ -35,7 +35,7 @@
         </ul>
       </div>
 
-      <div class="col-lg-4 mb-4 mb-lg-0 ms-auto"> 
+      <div class="col-lg-4 mb-lg-0 ms-auto" > 
         <ul class="list list-icons list-icons-lg">
           <li class="d-flex px-0 mb-1"> 
             <img width="25" src="img/demos/business-consulting-3/icons/phone.svg" alt="Phone Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" />
@@ -51,17 +51,18 @@
           </li>
         </ul>
       </div>
-
-    </div>
-  </div>
-  <div class="footer-copyright container bg-transparent">
-    <div class="row pb-5">
+      <div class="footer-copyright bg-transparent">
+    <div class="row pb-2">
       <div class="col-lg-12 text-center m-0">
-        <hr class="bg-color-light opacity-1 mt-5 mb-4" />
+        <hr class="bg-color-light opacity-1 mt-1 mb-4" />
         <p class="text-3-4 text-color-white">
           Mineral Alam Abadi. © 2023. All Rights Reserved
         </p>
       </div>
     </div>
   </div>
+    </div>
+  </div>
+
+  
 </footer>

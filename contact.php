@@ -64,7 +64,7 @@
 			<div class="container pb-5 my-3">
 				<div class="row mb-4">
 					<div class="col-md-12 align-self-center p-static order-2 text-center">
-						<h1 class="font-weight-bold text-color-white text-10">Contact Us</h1>
+						<h1 class="font-weight-bold text-color-white text-10" style="text-shadow: 5px 5px 10px black;">Contact Us</h1>
 					</div>
 				</div>
 			</div>

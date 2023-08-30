@@ -668,6 +668,12 @@
         }
       }
 
+      window.addEventListener("click", function(event) {
+        if (event.target === notificationOverlay) {
+          notificationOverlay.style.display = "none";
+        }
+      });
+
       confirmButton.addEventListener("click", function() {
         notificationOverlay.style.display = "none";
         // Tandai bahwa notifikasi telah ditampilkan

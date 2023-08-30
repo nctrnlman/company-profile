@@ -99,28 +99,28 @@
 
 
 <body>
-<div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 10px;">
-      <div class="modal-header custom-modal-header" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-top-left-radius: 10px; border-top-right-radius: 10px;">
-        <img alt="Porto" width="200" src="img/demos/business-consulting-3/logo.png" />
-        <button type="button" class="close custom-close-button" aria-label="Close" style="background: none; border: none; font-size: 24px;">
-          <span aria-hidden="true" id="confirmButton" style="color: #af2a25;">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body custom-modal-body" style="padding: 20px; color: #f5f5f5; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
-        <p class="text-center" style="font-size: 24px; margin-bottom: 20px; color: #af2a25;">
-          <strong>WASPADAI PENIPUAN REKRUTMEN KARYAWAN</strong>
-        </p>
-        <p style="text-align: justify; color: black">
-          PT Mineral Alam Abadi tidak memungut biaya apapun dan tidak pernah bekerja sama dengan agen perjalanan atau pihak ketiga dalam proses rekrutmen. Proses rekrutmen di perusahaan kami sepenuhnya transparan.<br><br> Hindari penipuan dengan mencermati email, pesan, dan web yang digunakan untuk lowongan pekerjaan. Jika Anda atau seseorang yang Anda kenal mengalami penipuan atau situasi tidak etis sehubungan dengan proses rekrutmen di perusahaan kami, laporkan kepada kami melalui email <strong>recruitment@mineralalamabadi.co.id</strong> dengan subject "Pelaporan" atau bisa juga melalui sosial media kami.
-        </p>
-      </div>
-      <div class="modal-footer custom-modal-footer" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+  <div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 10px;">
+        <div class="modal-header custom-modal-header" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-top-left-radius: 10px; border-top-right-radius: 10px;">
+          <img alt="Porto" width="200" src="img/demos/business-consulting-3/logo.png" />
+          <button type="button" class="close custom-close-button" aria-label="Close" style="background: none; border: none; font-size: 24px;">
+            <span aria-hidden="true" id="confirmButton" style="color: #af2a25;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body custom-modal-body" style="padding: 20px; color: #f5f5f5; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+          <p class="text-center" style="font-size: 24px; margin-bottom: 20px; color: #af2a25;">
+            <strong>WASPADAI PENIPUAN REKRUTMEN KARYAWAN</strong>
+          </p>
+          <p style="text-align: justify; color: black">
+            PT Mineral Alam Abadi tidak memungut biaya apapun dan tidak pernah bekerja sama dengan agen perjalanan atau pihak ketiga dalam proses rekrutmen. Proses rekrutmen di perusahaan kami sepenuhnya transparan.<br><br> Hindari penipuan dengan mencermati email, pesan, dan web yang digunakan untuk lowongan pekerjaan. Jika Anda atau seseorang yang Anda kenal mengalami penipuan atau situasi tidak etis sehubungan dengan proses rekrutmen di perusahaan kami, laporkan kepada kami melalui email <strong>recruitment@mineralalamabadi.co.id</strong> dengan subject "Pelaporan" atau bisa juga melalui sosial media kami.
+          </p>
+        </div>
+        <div class="modal-footer custom-modal-footer" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
 
@@ -220,12 +220,12 @@
                     <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Mining</h4>
                   </div>
                 </div>
-                  <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
-                  </div>
-                  <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                  </div>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
+                </div>
+                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
+                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                </div>
               </a>
             </div>
 
@@ -234,120 +234,120 @@
             <!-- Card 2 - Nickel Mining -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
               <a href="nickel-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
+                <div class="card box-shadow-4">
                   <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0347.JPG" class="img-fluid" alt="Card Image">
                   <div class="image-overlay">
                     <h4 class="font-weight-semibold text-color-light text-6 mb-1">Nickel Mining</h4>
                   </div>
                 </div>
-                  <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Exploring Nickel Riches with PT Mineral Alam Abadi's.</p>
-                  </div>
-                  <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                  </div>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Exploring Nickel Riches with PT Mineral Alam Abadi's.</p>
+                </div>
+                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
+                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                </div>
               </a>
             </div>
             <!-- Card 3 - Stone Crusher -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
               <a href="stone-crusher.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
+                <div class="card box-shadow-4">
                   <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 21.jpg" class="img-fluid" alt="Card Image">
                   <div class="image-overlay">
                     <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Crusher</h4>
                   </div>
                 </div>
-                  <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Crafting Stones with Precision at PT Mineral Alam Abadi.</p>
-                  </div>
-                  <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                  </div>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Crafting Stones with Precision at PT Mineral Alam Abadi.</p>
+                </div>
+                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
+                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                </div>
               </a>
             </div>
             <!-- Card 4 - Construction Services -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
               <a href="construction-services.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
+                <div class="card box-shadow-4">
                   <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0862.JPG" class="img-fluid" alt="Card Image">
                   <div class="image-overlay">
                     <h4 class="font-weight-semibold text-color-light text-6 mb-1">Construction Services</h4>
                   </div>
                 </div>
-                  <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Building Dreams by PT Mineral Alam Abadi.</p>
-                  </div>
-                  <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                  </div>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Building Dreams by PT Mineral Alam Abadi.</p>
+                </div>
+                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
+                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                </div>
               </a>
             </div>
             <!-- Card 5 - Trading -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
               <a href="trading.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
+                <div class="card box-shadow-4">
                   <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0863.JPG" class="img-fluid" alt="Card Image">
                   <div class="image-overlay">
                     <h4 class="font-weight-semibold text-color-light text-6 mb-1">Trading</h4>
                   </div>
                 </div>
-                  <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Expanding Horizons with PT Mineral Alam Abadi.</p>
-                  </div>
-                  <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                  </div>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Expanding Horizons with PT Mineral Alam Abadi.</p>
+                </div>
+                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
+                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                </div>
               </a>
             </div>
             <!-- Card 6 - Mining Contractor -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
               <a href="mining-contractor.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
+                <div class="card box-shadow-4">
                   <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0877.JPG" class="img-fluid" alt="Card Image">
                   <div class="image-overlay">
                     <h4 class="font-weight-semibold text-color-light text-6 mb-1">Mining Contractor</h4>
                   </div>
                 </div>
-                  <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Forging Mining Partnerships with PT Mineral Alam Abadi.</p>
-                  </div>
-                  <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                  </div>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Forging Mining Partnerships with PT Mineral Alam Abadi.</p>
+                </div>
+                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
+                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                </div>
               </a>
             </div>
             <!-- Card 7 - Shipping -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
               <a href="shipping.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
+                <div class="card box-shadow-4">
                   <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 15.jpg" class="img-fluid" alt="Card Image">
                   <div class="image-overlay">
                     <h4 class="font-weight-semibold text-color-light text-6 mb-1">Shipping</h4>
                   </div>
                 </div>
-                  <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Shipping Solutions from PT Mineral Alam Abadi.</p>
-                  </div>
-                  <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                  </div>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Shipping Solutions from PT Mineral Alam Abadi.</p>
+                </div>
+                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
+                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                </div>
               </a>
             </div>
             <!-- Card 8 - Investment -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
               <a href="investment.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-              <div class="card box-shadow-4">
+                <div class="card box-shadow-4">
                   <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0347.JPG" class="img-fluid" alt="Card Image">
                   <div class="image-overlay">
                     <h4 class="font-weight-semibold text-color-light text-6 mb-1">Investment</h4>
                   </div>
                 </div>
-                  <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Investing for Tomorrow's with PT Mineral Alam Abadi Vision.</p>
-                  </div>
-                  <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                  </div>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Investing for Tomorrow's with PT Mineral Alam Abadi Vision.</p>
+                </div>
+                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
+                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                </div>
               </a>
             </div>
           </div>
@@ -725,7 +725,7 @@
       var currentPage = window.location.href.split("/").pop();
 
       // Periksa apakah halaman saat ini adalah home.php
-      if (currentPage === "index.php") {
+      if (currentPage === "index.php" || currentPage === "") {
         // Menghapus nilai notificationShown saat halaman dimuat ulang
         localStorage.removeItem("notificationShown");
 

@@ -13,7 +13,7 @@
   <meta name="author" content="MAA" />
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="img/demos/business-consulting-3/logo-MAA-component.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
   <!-- Mobile Metas -->

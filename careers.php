@@ -63,6 +63,10 @@ try {
   <link rel="stylesheet" href="css/custom.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
   <style>
     #applyModal {
       background: none;
@@ -70,16 +74,15 @@ try {
 
     /* CSS for the modal */
     .modal {
-      z-index: 1050 !important;
-      /* Adjust the value as needed */
+      z-index: 1051 !important;
+      /* Higher value than the backdrop */
     }
 
     /* CSS for the backdrop overlay behind the modal */
     .modal-backdrop {
       z-index: 1040 !important;
-      /* Adjust the value as needed */
+      /* Lower value than the modal */
     }
-
     .modal-backdrop.show {
       display: none;
     }
@@ -96,6 +99,23 @@ try {
 
     #accordion11 .accordion-toggle {
       color: #af2a25;
+    }
+  </style>
+
+  <style>
+    /* Add a CSS rule for the overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Semi-transparent black background */
+      z-index: 1050;
+      /* Ensure the overlay is above the rest of the content */
+      display: none;
+      /* Initially hidden */
     }
   </style>
 
@@ -152,124 +172,74 @@ try {
                   <?php unset($_SESSION['success_message']); ?>
                 <?php } ?>
 
-                <?php if (isset($_SESSION['error_message'])) { ?>
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: '<?php echo $_SESSION['error_message']; ?>',
-                    showConfirmButton: false,
-                    timer: 3000
-                  });
-                  <?php unset($_SESSION['error_message']); ?>
-                <?php } ?>
+                // <?php if (isset($_SESSION['error_message'])) { ?>
+                //   Swal.fire({
+                //     icon: 'error',
+                //     title: 'Error',
+                //     text: '<?php echo $_SESSION['error_message']; ?>',
+                //     showConfirmButton: false,
+                //     timer: 3000
+                //   });
+                //   <?php unset($_SESSION['error_message']); ?>
+                // <?php } ?>
               });
             </script>
           </div>
-          <div class="row pb-4">
-            <div class="row mt-4">
-              <div class="col-md-12">
-                <div class=" appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="400">
-                  <div class="container py-5 mt-3">
 
-                    <div class="row">
-                      <div class="col-lg-8">
-                        <div class="overflow-hidden mb-2">
-                          <h2 class="font-weight-normal text-7 mb-2 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">Find Your <strong class="font-weight-extra-bold">Opportunity</strong></h2>
+          <div class="container">
+            <h2 class="font-weight-bold text-5 mb-2" style="color: black;">Unlock Your Potential with Us</h2>
+            <div class="overflow-hidden mb-4">
+              <p class="lead mb-0">Discover Your Path at PT Mineral Alam Abadi</p>
+            </div>
+            <p class="text-muted mb-4">Embark on a journey to shape the future of our industry alongside PT Mineral Alam Abadi. Our diverse range of opportunities empowers you to unleash your potential. Dive into innovative projects, collaborate with a dynamic team, and create a meaningful impact. Your path to growth and success begins here.</p>
+
+            <div class="row mt-5">
+              <!-- Loop through your job openings -->
+              <?php foreach ($results as $result) { ?>
+                <div class="col-md-4 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="mb-3">
+                        <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                      </div>
+                      <h5 class="font-weight-bold mb-2"><?php echo $result['posisi_job']; ?></h5>
+                      <p class="mb-1"><i class="far fa-calendar-alt me-1"></i><?php echo $result['tgl_job']; ?> | <i class="fas fa-map-marker-alt ms-1 me-1"></i><?php echo $result['lokasi_job']; ?></p>
+                      <p class="mb-2"><?php echo $result['namapt']; ?></p>
+
+                      <!-- Nested card for description with "View Description" button -->
+                      <div class="card">
+                        <div class="card-body" style="background-color:#af2a25;">
+                          <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
+                          <div class="text-center mt-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal<?php echo $result['idjob']; ?>">
+                              View Description
+                            </button>
+                          </div>
                         </div>
-                        <div class="overflow-hidden mb-4">
-                          <p class="lead mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="400">Discover Your Path at <strong class="font-weight-extra-bold">PT Mineral Alam Abadi</strong></p>
-                        </div>
-                        <p class="text-color-light-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">Join us in shaping the future of our industry. At PT Mineral Alam Abadi, we offer a range of opportunities that allow you to unleash your potential. Explore innovative projects, collaborate with a diverse team, and make a meaningful impact. Your journey towards growth starts here.</p>
                       </div>
 
-                    </div>
-
-
-                    <!-- <div class="owl-carousel owl-theme dots-inside mb-0 pb-0" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 4000, 'margin': 10, 'animateOut': 'fadeOut', 'dots': false}" style="z-index: 100;">
-                    <div class="pb-5">
-                      <img alt="" class="img-fluid rounded" src="img/demos/business-consulting-3/backgrounds/17-obi.jpeg" />
-                    </div>
-                    <div class="pb-5">
-                      <img alt="" class="img-fluid rounded" src="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg" />
-                    </div>
-                  </div> -->
-
-                    <div class="toggle toggle-primary toggle-simple " style="flex: auto;" data-plugin-toggle>
-                      <section class="toggle active">
-                        <a class="toggle-title">Our Benefits</a>
-                        <div class="toggle-content">
-                          <p>
-                            Explore the advantages of being a part of Mineral Alam Abadi. We believe in providing exceptional benefits that enhance your experience and well-being. From growth opportunities to a supportive environment, we've got you covered.
-                          </p>
-                        </div>
-                        
-                      </section>
-                      <section class="toggle">
-                        <a class="toggle-title">Our Culture</a>
-                        <div class="toggle-content">
-                          <p>
-                            Step into a culture that values collaboration, innovation, and individual growth. At Mineral Alam Abadi, our culture is the heartbeat of our success, fostering an environment where every team member thrives.
-                          </p>
-                        </div>
-                      </section>
-                      <section class="toggle">
-                        <a class="toggle-title">Join Our Team</a>
-                        <div class="toggle-content">
-                          <p>
-                            Are you ready to embark on a journey of growth, innovation, and impact? At Mineral Alam Abadi, we invite you to join our dynamic team and contribute to shaping the future of our industry.
-                          </p>
-                        </div>
-                      </section>
+                      <div class="text-center mt-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal<?php echo $result['idjob']; ?>">Apply Now</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="200">
-                <h4 class="mt-2 mb-2">Current <strong>Openings</strong></h4>
 
-                <div class="accordion accordion-modern without-bg mt-4" id="accordion11">
-                  <?php foreach ($results as $result) { ?>
-                    <div class="card card-default mb-2">
-                      <div class="card-header">
-                        <h4 class="card-title m-0">
-                          <a class="accordion-toggle text-3" data-bs-toggle="collapse" href="#collapse<?php echo $result['idjob']; ?>" data-bs-parent="#accordion11">
-                            <?php echo $result['posisi_job']; ?>
-                          </a>
-                        </h4>
+                <div class="modal fade" id="descriptionModal<?php echo $result['idjob']; ?>" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
+                      <div class="modal-header">
+                        <h5 class="modal-title text-white"><?php echo $result['posisi_job']; ?> Description</h5>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                      <div id="collapse<?php echo $result['idjob']; ?>" class="collapse">
-                        <div class="card-body mt-3">
-                          <p><?php echo $result['diskripsi']; ?></p>
-                          <ul class="list list-inline mt-4 mb-3 text-2">
-                            <li class="list-inline-item">
-                              <strong>DATE:</strong>
-                              <?php echo $result['tgl_job']; ?>
-                            </li>
-                            <li class="list-inline-item ms-md-3">
-                              <strong>COMPANY:</strong>
-                              <?php echo $result['namapt']; ?>
-                            </li>
-                            <li class="list-inline-item ms-md-3">
-                              <strong>LOCATION:</strong>
-                              <?php echo $result['lokasi_job']; ?>
-                            </li>
-                            <li class="list-inline-item ms-md-3">
-                              <strong>STATUS:</strong>
-                              <?php echo $result['status_job']; ?>
-                            </li>
-                          </ul>
-                          <button class="btn btn-modern btn-dark" data-bs-toggle="modal" data-bs-target="#applyModal<?php echo $result['idjob']; ?>">
-                            Apply
-                          </button>
-                        </div>
+                      <div class="modal-body text-white">
+                        <p><?php echo $result['diskripsi']; ?></p>
                       </div>
                     </div>
+                  </div>
+                </div>
 
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="applyModal<?php echo $result['idjob']; ?>" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel<?php echo $result['idjob']; ?>" aria-hidden="true">
+                <div class="modal fade" id="applyModal<?php echo $result['idjob']; ?>" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel<?php echo $result['idjob']; ?>" aria-hidden="true" data-backdrop="static">
 
                       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px;">
                         <div class="modal-content" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
@@ -314,19 +284,24 @@ try {
 
                     </div>
 
-
-                    <!-- End Modal -->
-                  <?php } ?>
-
-                </div>
-              </div>
-
+              <?php } ?>
             </div>
           </div>
-      </section>
+
+
+
+          <!-- End Modal -->
+
+
+        </div>
     </div>
 
-    <?php include 'footer.php'; ?>
+  </div>
+  </div>
+  </section>
+  </div>
+
+  <?php include 'footer.php'; ?>
   </div>
   <script src="sweetalert2.all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -551,6 +526,131 @@ try {
       $("#googlemaps").gMap("centerAt", options);
     };
   </script>
+
+  <script>
+    $(document).ready(function() {
+      $('#descriptionModal').modal({
+        backdrop: 'static', // Prevent clicking outside to close
+        keyboard: false // Prevent using the escape key to close
+      });
+    });
+  </script>
+
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 4360,
+          "density": {
+            "enable": true,
+            "value_area": 900
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 1,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 1,
+            "opacity_min": 0,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 4,
+            "size_min": 0.3,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": false,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 600
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": false,
+            "mode": "bubble"
+          },
+          "onclick": {
+            "enable": false,
+            "mode": "none"
+          },
+          "resize": false
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 250,
+            "size": 0,
+            "duration": 2,
+            "opacity": 0,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 400,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+
+
+
 </body>
 
 </html>

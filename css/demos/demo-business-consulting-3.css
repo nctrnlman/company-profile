@@ -56,7 +56,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 20% 30%;
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }

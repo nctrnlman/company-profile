@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $currentDate = date("Y-m-d H:i:s");
 
     try {
-        $stmt = $db->prepare("INSERT INTO apply (idapply, idjob, tgl_apply, name, phone_number, email, resume) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $db->prepare("INSERT INTO apply_job (id_apply_job, id_job_vacanacy, apply_date, name, phone_number, email, resume) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([$unique_id, $job_id, $currentDate, $name, $phone, $email, $resumePath]);
 
         $successMessage = "Application submitted successfully!";
@@ -54,7 +54,7 @@ function generateUniqueId()
 function checkUniqueIdExists($id)
 {
     global $db;
-    $stmt = $db->prepare("SELECT COUNT(*) FROM apply WHERE idapply = ?");
+    $stmt = $db->prepare("SELECT COUNT(*) FROM apply_job WHERE id_apply_job = ?");
     $stmt->execute([$id]);
     return $stmt->fetchColumn() > 0;
 }

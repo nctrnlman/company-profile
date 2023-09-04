@@ -3,7 +3,7 @@ session_start();
 include 'db.php';
 
 try {
-  $stmt = $db->query("SELECT * FROM job WHERE status_job = 'aktif'");
+  $stmt = $db->query("SELECT * FROM job_vacanacy");
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
   echo "Query failed: " . $e->getMessage();
@@ -34,7 +34,7 @@ try {
   <!-- Web Fonts  -->
   <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css" />
 
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjO5ftz5z5F5u5pge5O8W5B2EpE" crossorigin="anonymous">
   <!-- Vendor CSS -->
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css" />
@@ -81,42 +81,6 @@ try {
     }
   </style>
 
-  <!--  <style>
-    #applyModal {
-      background: none;
-    }
-
-    /* CSS for the modal */
-    .modal {
-      z-index: 1051 !important;
-      /* Higher value than the backdrop */
-    }
-
-    /* CSS for the backdrop overlay behind the modal */
-    .modal-backdrop {
-      z-index: 1040 !important;
-      /* Lower value than the modal */
-    }
-
-    .modal-backdrop.show {
-      display: none;
-    }
-
-    .accordion {
-      z-index: 1030 !important;
-      border-color: #af2a25 !important;
-      /* Adjust the value as needed */
-    }
-
-    #accordion11 .card-header {
-      border-color: #af2a25 !important;
-    }
-
-    #accordion11 .accordion-toggle {
-      color: #af2a25;
-    }
-  </style>
-  -->
 
   <style>
     /* Add a CSS rule for the overlay */
@@ -218,6 +182,11 @@ try {
       z-index: 1050;
 
     } */
+    #thisModal {
+      /* Properti CSS khusus untuk modal dengan ID thisModal */
+      display: none;
+      /* Tambahkan properti lainnya sesuai kebutuhan Anda */
+    }
   </style>
 
 
@@ -233,23 +202,86 @@ try {
 <body>
   <div class="body">
 
+
+
     <!-- Existing Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
-          <!--  -->
-          <div class="modal-header">
-            <h5 class="modal-title text-white">Flyer</h5>
-            <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    <?php foreach ($results as $result) { ?>
+      <!-- Existing Modal -->
+      <div class="modal fade" id="myModal<?php echo $result['id_job_vacanacy']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
+            <!-- Modal content -->
+            <div class="modal-header">
+              <h5 class="modal-title text-white">Flyer</h5>
+              <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
+              <?php
+              if (!empty($result['resume'])) {
+                // Jika kolom 'resume' tidak kosong, gunakan isi dari 'resume' sebagai sumber gambar dari folder "flyer"
+                echo '<img src="flyer/' . $result['resume'] . '" alt="Flyer" class="img-fluid">';
+              } elseif (!empty($result['description'])) {
+                // Jika kolom 'description' ada, tampilkan konten description dalam tag <p>
+                echo '<p>' . $result['description'] . '</p>';
+              } else {
+                // Tampilkan pesan jika tidak ada konten yang sesuai
+                echo 'No content available.';
+              }
+              ?>
+            </div>
+
           </div>
-          <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
-            <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
+        </div>
+      </div>
+    <?php } ?>
+
+    <!-- Modal -->
+    <div class="modal fade" id="thisModal<?php echo $result['id_job_vacanacy']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px;">
+        <div class="modal-content" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+          <div class="modal-header" style="border-bottom: none;">
+            <h5 class="modal-title" id="applyModalLabel<?php echo $result['id_job_vacanacy']; ?>" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">APPL</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="border: none; background: transparent;">
+              <span aria-hidden="true" style="font-size: 35px;">&times;</span>
+            </button>
           </div>
+          <form method="POST" enctype="multipart/form-data" action="applyCareer.php">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="name" class="form-label" style="font-weight: bold;">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label" style="font-weight: bold;">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label" style="font-weight: bold;">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;">
+              </div>
+              <div class="mb-3">
+                <label for="resume" class="form-label" style="font-weight: bold;">Upload Resume (PDF, max 3MB)</label>
+                <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+              </div>
+              <input type="hidden" name="job_id" value="<?php echo $result['id_job_vacanacy']; ?>"> <!-- Input hidden untuk ID job vacancy -->
+            </div>
+
+            <div class="modal-footer" style="border-top: none; padding-top: 0;">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #6c757d; border: none;">Close</button>
+              <button type="submit" class="btn btn-primary" name="submit">Apply</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
+
+
+
+
     <?php include 'navbar.php'; ?>
+
     <div id="overlay">
       <div role="main" class="main">
         <!-- judul -->
@@ -274,6 +306,33 @@ try {
             </svg>
           </div>
         </section>
+        <div class="col-md-12">
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              <?php if (isset($_SESSION['success_message'])) { ?>
+                Swal.fire({
+                  icon: 'success', // Ikonya bisa diganti dengan 'error', 'warning', dll.
+                  text: '<?php echo $_SESSION['success_message']; ?>',
+
+                  showConfirmButton: false,
+                  timer: 3000
+                });
+                <?php unset($_SESSION['success_message']); ?>
+              <?php } ?>
+
+              <?php if (isset($_SESSION['error_message'])) { ?>
+                Swal.fire({
+                  icon: 'error',
+                  text: '<?php echo $_SESSION['error_message']; ?>',
+
+                  showConfirmButton: false,
+                  timer: 3000
+                });
+                <?php unset($_SESSION['error_message']); ?>
+              <?php } ?>
+            });
+          </script>
+        </div>
 
         <section class="section section-default border-0 m-0 bg-light">
           <div class="container py-4">
@@ -321,109 +380,62 @@ try {
             <div class="container">
 
               <div class="row mt-5">
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="mb-3">
-                        <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
-                      </div>
-                      <h5 class="font-weight-bold mb-2">Job Position 1</h5>
-                      <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-01 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 1</p>
-                      <p class="mb-2">Company A</p>
 
-                      <!-- Nested card for description with "View Description" button -->
+                <?php if (count($results) > 0) { ?>
+                  <?php foreach ($results as $result) { ?>
+                    <div class="col-md-4 mb-4">
                       <div class="card">
-                        <div class="card-body" style="background-color:#af2a25;">
-                          <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
-                          <div class="text-center mt-3">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal1" onclick="viewDescription(1)">
-                              View Description
-                            </button>
+                        <div class="card-body">
+                          <div class="mb-3">
+                            <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
                           </div>
-                        </div>
-                      </div>
+                          <h5 class="font-weight-bold mb-2"><?php echo $result['position']; ?></h5>
+                          <p class="mb-1"><i class="far fa-calendar-alt me-1"></i><?php echo $result['create_date']; ?> | <i class="fas fa-map-marker-alt ms-1 me-1"></i><?php echo $result['location']; ?></p>
+                          <p class="mb-2"><?php echo $result['company']; ?></p>
 
-                      <div class="text-center mt-3">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal1">Apply Now</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                          <!-- Nested card for description with "View Description" button -->
+                          <div class="card">
 
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="mb-3">
-                        <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
-                      </div>
-                      <h5 class="font-weight-bold mb-2">Job Position 2</h5>
-                      <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-02 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
-                      <p class="mb-2">Company B</p>
-
-                      <!-- Nested card for description with "View Description" button -->
-                      <div class="card">
-                        <div class="card-body" style="background-color:#af2a25;">
-                          <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
-                          <div class="text-center mt-3">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal2" onclick="viewDescription(2)">
-                              View Description
-                            </button>
+                            <div class="card-body" style="background-color:#af2a25;">
+                              <!-- <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"><?php echo $result['description']; ?></p> -->
+                              <div class="text-center mt-3">
+                                <?php if (!empty($result['resume'])) { ?>
+                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openModal(<?php echo $result['id_job_vacanacy']; ?>)">
+                                    Open Flyer
+                                  </button>
+                                <?php } else { ?>
+                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openModal(<?php echo $result['id_job_vacanacy']; ?>)">
+                                    Open Description
+                                  </button>
+                                <?php } ?>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
 
-                      <div class="text-center mt-3">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="mb-3">
-                        <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
-                      </div>
-                      <h5 class="font-weight-bold mb-2">Job Position 3</h5>
-                      <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-03 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
-                      <p class="mb-2">Company C</p>
-
-                      <!-- Nested card for description with "View Description" button -->
-                      <div class="card">
-                        <div class="card-body" style="background-color:#af2a25;">
-                          <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
                           <div class="text-center mt-3">
-                            <button type="button" class="btn btn-primary" onclick="openModal()">
-                              Open Flyer
+                            <!-- Tombol "Apply Job" pada setiap kartu pekerjaan -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#thisModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openApplyModal(<?php echo $result['id_job_vacanacy']; ?>)">
+                              Apply Job
                             </button>
 
                           </div>
                         </div>
                       </div>
-
-                      <div class="text-center mt-3">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
-                      </div>
                     </div>
+
+                  <?php } ?>
+                <?php } else { ?>
+                  <div class="col-md-12">
+                    <h1>Tidak ada lowongan.</h1>
                   </div>
-                </div>
-
-
-
-
-
-
-
-
+                <?php } ?>
 
               </div>
             </div>
             <!-- end card -->
           </div>
         </section>
-
-
+        <!-- end section card -->
 
 
 
@@ -434,20 +446,10 @@ try {
     </div>
     <?php include 'footer.php'; ?>
   </div>
-  <script>
-    function openModal() {
-      // Show the overlay
-      document.getElementById("overlay").style.display = "block";
 
-      // Open the modal
-      var myModal = new bootstrap.Modal(document.getElementById("myModal"));
-      myModal.show();
-    }
-  </script>
   <script src="sweetalert2.all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <!-- Vendor -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script src="vendor/plugins/js/plugins.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -464,236 +466,45 @@ try {
   <script src="js/theme.init.js"></script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-  <script>
-    /*
-			Map Settings
-
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-			*/
-
-
-    function initializeGoogleMaps() {
-      // Map Initial Location
-      var initLatitude = 40.75198;
-      var initLongitude = -73.96978;
-
-      // Map Markers
-      var mapMarkers = [{
-        latitude: initLatitude,
-        longitude: initLongitude,
-        html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
-        icon: {
-          image: "img/demos/business-consulting-3/map-pin.png",
-          iconsize: [26, 27],
-          iconanchor: [12, 27],
-        },
-      }, ];
-
-      // Map Extended Settings
-      var mapSettings = {
-        controls: {
-          draggable: $.browser.mobile ? false : true,
-          panControl: false,
-          zoomControl: false,
-          mapTypeControl: false,
-          scaleControl: false,
-          streetViewControl: false,
-          overviewMapControl: false,
-        },
-        scrollwheel: false,
-        markers: mapMarkers,
-        latitude: initLatitude,
-        longitude: initLongitude,
-        zoom: 14,
-      };
-
-      var map = $("#googlemaps").gMap(mapSettings),
-        mapRef = $("#googlemaps").data("gMap.reference");
-
-      // Styles from https://snazzymaps.com/
-      var styles = [{
-          featureType: "water",
-          elementType: "geometry",
-          stylers: [{
-            color: "#e9e9e9"
-          }, {
-            lightness: 17
-          }],
-        },
-        {
-          featureType: "landscape",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f5f5f5"
-          }, {
-            lightness: 20
-          }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 17
-          }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 29
-          }, {
-            weight: 0.2
-          }],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "geometry",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 18
-          }],
-        },
-        {
-          featureType: "road.local",
-          elementType: "geometry",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 16
-          }],
-        },
-        {
-          featureType: "poi",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f5f5f5"
-          }, {
-            lightness: 21
-          }],
-        },
-        {
-          featureType: "poi.park",
-          elementType: "geometry",
-          stylers: [{
-            color: "#dedede"
-          }, {
-            lightness: 21
-          }],
-        },
-        {
-          elementType: "labels.text.stroke",
-          stylers: [{
-              visibility: "on"
-            },
-            {
-              color: "#ffffff"
-            },
-            {
-              lightness: 16
-            },
-          ],
-        },
-        {
-          elementType: "labels.text.fill",
-          stylers: [{
-              saturation: 36
-            },
-            {
-              color: "#333333"
-            },
-            {
-              lightness: 40
-            },
-          ],
-        },
-        {
-          elementType: "labels.icon",
-          stylers: [{
-            visibility: "off"
-          }]
-        },
-        {
-          featureType: "transit",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f2f2f2"
-          }, {
-            lightness: 19
-          }],
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry.fill",
-          stylers: [{
-            color: "#fefefe"
-          }, {
-            lightness: 20
-          }],
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry.stroke",
-          stylers: [{
-            color: "#fefefe"
-          }, {
-            lightness: 17
-          }, {
-            weight: 1.2
-          }],
-        },
-      ];
-
-      var styledMap = new google.maps.StyledMapType(styles, {
-        name: "Styled Map",
-      });
-
-      mapRef.mapTypes.set("map_style", styledMap);
-      mapRef.setMapTypeId("map_style");
-    }
-
-    // Initialize Google Maps when element enter on browser view
-    theme.fn.intObs("#googlemaps", "initializeGoogleMaps()", {});
-
-    // Map text-center At
-    var mapCenterAt = function(options, e) {
-      e.preventDefault();
-      $("#googlemaps").gMap("centerAt", options);
-    };
-  </script>
-
 
 
   <script>
-    const jobDescriptions = {
-      1: "Description for Job 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      2: "Description for Job 2. Vestibulum eget velit ac nisl efficitur pharetra.",
-      // Add descriptions for other jobs as needed.
-    };
+    function openModal(id) {
+      // Show the overlay
+      document.getElementById("overlay").style.display = "block";
 
-    function viewDescription(id) {
-      // Check if the description exists for the selected job ID.
-      if (jobDescriptions[id]) {
-        // Display the description in the description modal.
-        $('#descriptionContent').text(jobDescriptions[id]);
-
-        // Open the description modal when the button is clicked.
-        $('#descriptionModal').modal('show');
-      } else {
-        // Handle the case when the description is not found.
-        $('#descriptionContent').text("Description not available for this job.");
-        $('#descriptionModal').modal('show');
-      }
+      // Open the modal with the specified ID
+      var modalId = "myModal" + id;
+      var myModal = new bootstrap.Modal(document.getElementById(modalId));
+      myModal.show();
     }
   </script>
+  <script>
+    // Fungsi untuk menangani klik pada tombol Apply
+    function handleApplyButtonClick(event) {
+      // Dapatkan ID dari atribut data-id
+      const jobId = event.target.getAttribute('data-id');
 
+      // Lakukan sesuatu dengan ID yang ditemukan, seperti mencetaknya
+      console.log('Job ID:', jobId);
+    }
+
+    // Tambahkan event listener ke semua tombol Apply
+    const applyButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
+    applyButtons.forEach(function(button) {
+      button.addEventListener('click', handleApplyButtonClick);
+    });
+  </script>
+  <script>
+    function openApplyModal(id) {
+      // Show the overlay
+
+      // Open the modal with the specified ID
+      var modalId = "thisModal" + id;
+      var myModal = new bootstrap.Modal(document.getElementById(modalId));
+      myModal.show();
+    }
+  </script>
 
 
 </body>

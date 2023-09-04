@@ -175,18 +175,6 @@ try {
     .dropdown:hover .dropdown-menu {
       display: block;
     }
-
-    /* 
-    .modal-backdrop.show {
-      opacity: 1;
-      z-index: 1050;
-
-    } */
-    #thisModal {
-      /* Properti CSS khusus untuk modal dengan ID thisModal */
-      display: none;
-      /* Tambahkan properti lainnya sesuai kebutuhan Anda */
-    }
   </style>
 
 
@@ -201,9 +189,6 @@ try {
 
 <body>
   <div class="body">
-
-
-
     <!-- Existing Modal -->
     <?php foreach ($results as $result) { ?>
       <!-- Existing Modal -->
@@ -236,49 +221,50 @@ try {
       </div>
     <?php } ?>
 
-    <!-- Modal -->
-    <div class="modal fade" id="thisModal<?php echo $result['id_job_vacanacy']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
-      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px;">
-        <div class="modal-content" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
-          <div class="modal-header" style="border-bottom: none;">
-            <h5 class="modal-title" id="applyModalLabel<?php echo $result['id_job_vacanacy']; ?>" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">APPL</h5>
-            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="border: none; background: transparent;">
-              <span aria-hidden="true" style="font-size: 35px;">&times;</span>
-            </button>
-          </div>
-          <form method="POST" enctype="multipart/form-data" action="applyCareer.php">
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="name" class="form-label" style="font-weight: bold;">Your Name</label>
-                <input type="text" class="form-control" id="name" name="name" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
-              </div>
-              <div class="mb-3">
-                <label for="phone" class="form-label" style="font-weight: bold;">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" name="phone" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label" style="font-weight: bold;">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;">
-              </div>
-              <div class="mb-3">
-                <label for="resume" class="form-label" style="font-weight: bold;">Upload Resume (PDF, max 3MB)</label>
-                <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
-              </div>
-              <input type="hidden" name="job_id" value="<?php echo $result['id_job_vacanacy']; ?>"> <!-- Input hidden untuk ID job vacancy -->
+    <!-- apply form -->
+    <?php foreach ($results as $result) { ?>
+      <!-- Existing Modal -->
+      <div class="modal fade" id="thisModal<?php echo $result['id_job_vacanacy']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" style="background-color: #C6A265">
+            <!-- Modal content -->
+            <div class="modal-header">
+              <h5 class="modal-title text-white"><?php echo $result['position']; ?> | <?php echo $result['division']; ?> </h5>
             </div>
 
-            <div class="modal-footer" style="border-top: none; padding-top: 0;">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #6c757d; border: none;">Close</button>
-              <button type="submit" class="btn btn-primary" name="submit">Apply</button>
+            <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
+              <form method="POST" enctype="multipart/form-data" action="applyCareer.php">
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="name" class="form-label" style="font-weight: bold;">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label" style="font-weight: bold;">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label" style="font-weight: bold;">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;">
+                  </div>
+                  <div class="mb-3">
+                    <label for="resume" class="form-label" style="font-weight: bold;">Upload Resume (PDF, max 3MB)</label>
+                    <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+                  </div>
+                  <input type="hidden" name="job_id" value="<?php echo $result['id_job_vacanacy']; ?>">
+                </div>
+
+                <div class="modal-footer" style="border-top: none; padding-top: 0;">
+                  <button type="submit" class="btn btn-primary" name="submit">Apply</button>
+                </div>
+              </form>
             </div>
-          </form>
+
+          </div>
         </div>
       </div>
-    </div>
-
-
-
-
+    <?php } ?>
+    <!-- end apply form -->
 
     <?php include 'navbar.php'; ?>
 
@@ -390,15 +376,22 @@ try {
                             <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
                           </div>
                           <h5 class="font-weight-bold mb-2"><?php echo $result['position']; ?></h5>
-                          <p class="mb-1"><i class="far fa-calendar-alt me-1"></i><?php echo $result['create_date']; ?> | <i class="fas fa-map-marker-alt ms-1 me-1"></i><?php echo $result['location']; ?></p>
+                          <p class="mb-1"><i class="far fa-calendar-alt me-1"></i><?php
+                                                                                  $originalDate = $result['create_date']; // Tanggal asli dari database
+
+                                                                                  // Ubah format tanggal menjadi "tanggal bulan tahun"
+                                                                                  $newDate = date("d F Y", strtotime($originalDate));
+
+                                                                                  echo $newDate;
+                                                                                  ?> | <i class="fas fa-map-marker-alt ms-1 me-1"></i><?php echo $result['location']; ?></p>
                           <p class="mb-2"><?php echo $result['company']; ?></p>
 
                           <!-- Nested card for description with "View Description" button -->
                           <div class="card">
 
-                            <div class="card-body" style="background-color:#af2a25;">
-                              <!-- <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"><?php echo $result['description']; ?></p> -->
-                              <div class="text-center mt-3">
+                            <div class="card-body" style="background-color:#af2a25; background-image: url('img/demos/business-consulting-3/texture-card.png'); background-blend-mode: overlay;"">
+                              <!-- <p class=" text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"><?php echo $result['description']; ?></p> -->
+                              <div class="text-center mt-2">
                                 <?php if (!empty($result['resume'])) { ?>
                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openModal(<?php echo $result['id_job_vacanacy']; ?>)">
                                     Open Flyer
@@ -422,6 +415,8 @@ try {
                         </div>
                       </div>
                     </div>
+
+
 
                   <?php } ?>
                 <?php } else { ?>
@@ -448,6 +443,8 @@ try {
   </div>
 
   <script src="sweetalert2.all.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script src="vendor/plugins/js/plugins.min.js"></script>
@@ -497,9 +494,7 @@ try {
   </script>
   <script>
     function openApplyModal(id) {
-      // Show the overlay
-
-      // Open the modal with the specified ID
+      // Show the modal with the specified ID
       var modalId = "thisModal" + id;
       var myModal = new bootstrap.Modal(document.getElementById(modalId));
       myModal.show();

@@ -81,7 +81,7 @@ try {
     }
   </style>
 
-  <style>
+  <!--  <style>
     #applyModal {
       background: none;
     }
@@ -116,6 +116,7 @@ try {
       color: #af2a25;
     }
   </style>
+  -->
 
   <style>
     /* Add a CSS rule for the overlay */
@@ -184,7 +185,7 @@ try {
 
     .dropdown-toggle {
       background-color: #fff;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
       padding: 8px 12px;
       border-radius: 5px;
       cursor: pointer;
@@ -211,11 +212,12 @@ try {
       display: block;
     }
 
+    /* 
     .modal-backdrop.show {
       opacity: 1;
       z-index: 1050;
-      /* Adjust z-index to make it cover other elements */
-    }
+
+    } */
   </style>
 
 
@@ -229,287 +231,208 @@ try {
 
 
 <body>
+  <div class="body">
 
-
-  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog" data-bs-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
-        <div class="modal-header">
-          <h5 class="modal-title text-white">Flyer</h5>
-          <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-white" style="max-height: 400px; overflow-y: auto;">
-          <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
+    <!-- Existing Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
+          <!--  -->
+          <div class="modal-header">
+            <h5 class="modal-title text-white">Flyer</h5>
+            <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
+            <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  
-  
-  <div id="overlay" class="overlay">
-  <?php include 'navbar.php'; ?>
-    
-      <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="background-size: cover; background-position: center ;background-color: #af2a25;">
-        <div class="container pb-5 my-3">
-          <div class="row mb-4">
-            <div class="col-md-12 align-self-center p-static order-2 text-center">
-              <h1 class="font-weight-bold text-color-white text-10">Career</h1>
-            </div>
-          </div>
-        </div>
-        <div class="shape-divider shape-divider-bottom shape-divider-reverse-x" style="height: 123px">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 123" preserveAspectRatio="xMinYMin">
-            <polygon fill="#c6a265" points="0,90 221,60 563,88 931,35 1408,93 1920,41 1920,-1 0,-1 " />
-            <polygon fill="#FFFFFF" points="0,75 219,44 563,72 930,19 1408,77 1920,25 1920,-1 0,-1 " />
-          </svg>
-        </div>
-      </section>
-
-
-
-      <section class="section section-default border-0 m-0 bg-light">
-        <div class="container py-4">
-          <div class="col-md-12">
-            <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                <?php if (isset($_SESSION['success_message'])) { ?>
-                  Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: '<?php echo $_SESSION['success_message']; ?>',
-                    showConfirmButton: false,
-                    timer: 3000
-                  });
-                  // Swal.fire({
-                  //   icon: 'success', // Ikonya bisa diganti dengan 'error', 'warning', dll.
-                  //   title: 'Success',
-                  //   text: '<?php echo $_SESSION['success_message']; ?>',
-                  //   toast: true,
-                  //   position: 'top-end', // Atau 'bottom-end' untuk notifikasi di bawah
-                  //   showConfirmButton: false,
-                  //   timer: 3000
-                  // });
-                  <?php unset($_SESSION['success_message']); ?>
-                <?php } ?>
-
-                // <?php if (isset($_SESSION['error_message'])) { ?>
-                //   Swal.fire({
-                //     icon: 'error',
-                //     title: 'Error',
-                //     text: '<?php echo $_SESSION['error_message']; ?>',
-                //     showConfirmButton: false,
-                //     timer: 3000
-                //   });
-                //   <?php unset($_SESSION['error_message']); ?>
-                // <?php } ?>
-              });
-            </script>
-          </div>
-
-          <div class="container">
-            <h1 style='font-weight: 500; text-align : center; color:black; '>Unlock Your Potential with PT Mineral Alam Abadi</h1><br />
-          </div>
-
-          <div class="search-bar">
-            <div class="search-input">
-              <input type="text" id="searchInput" placeholder="Search...">
-              <button id="searchButton"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="sort-category">
-              <div class="dropdown">
-                <button id="sortButton" class="dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-sort"></i> Sort
-                </button>
-                <div class="dropdown-menu" aria-labelledby="sortDropdown">
-                  <select>
-                    <option value="location">Sort by Location</option>
-                    <option value="date">Sort by Date</option>
-                    <option value="category">Sort by Category</option>
-                  </select>
-                </div>
-              </div>
-              <div class="dropdown">
-                <button id="categoryButton" class="dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-filter"></i> Category
-                </button>
-                <div class="dropdown-menu" aria-labelledby="categoryDropdown">
-                  <select>
-                    <option value="engineering">Engineering</option>
-                    <option value="sales">Sales</option>
-                    <option value="marketing">Marketing</option>
-                  </select>
-                </div>
+    <?php include 'navbar.php'; ?>
+    <div id="overlay">
+      <div role="main" class="main">
+        <!-- judul -->
+        <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="
+            background-size: cover;
+            background-position: center;
+            background-color: #af2a25;
+          ">
+          <div class="container pb-5 my-3">
+            <div class="row mb-4">
+              <div class="col-md-12 align-self-center p-static order-2 text-center">
+                <h1 class="font-weight-bold text-color-white text-12" style="text-shadow: 5px 5px 10px black;">
+                  Careers
+                </h1>
               </div>
             </div>
-
-
-
-
-
-
-
-
-
           </div>
-        </div>
-        <div class="container">
+          <div class="shape-divider shape-divider-bottom shape-divider-reverse-x" style="height: 123px">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 123" preserveAspectRatio="xMinYMin">
+              <polygon fill="#c6a265" points="0,90 221,60 563,88 931,35 1408,93 1920,41 1920,-1 0,-1 " />
+              <polygon fill="#FFFFFF" points="0,75 219,44 563,72 930,19 1408,77 1920,25 1920,-1 0,-1 " />
+            </svg>
+          </div>
+        </section>
 
+        <section class="section section-default border-0 m-0 bg-light">
+          <div class="container py-4">
 
-          <div class="row mt-5">
-            <div class="col-md-4 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="mb-3">
-                    <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+            <!-- search sort filter -->
+            <div class="container">
+              <h1 style='font-weight: 500; text-align : center; color:black; '>Unlock Your Potential with PT Mineral Alam Abadi</h1><br />
+            </div>
+
+            <div class="search-bar">
+              <div class="search-input">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+              </div>
+              <div class="sort-category">
+                <div class="dropdown">
+                  <button id="sortButton" class="dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" border: 1px solid #ccc">
+                    <i class="fas fa-sort"></i> Sort
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="sortDropdown">
+                    <select>
+                      <option value="location">Sort by Location</option>
+                      <option value="date">Sort by Date</option>
+                      <option value="category">Sort by Category</option>
+                    </select>
                   </div>
-                  <h5 class="font-weight-bold mb-2">Job Position 1</h5>
-                  <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-01 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 1</p>
-                  <p class="mb-2">Company A</p>
+                </div>
+                <div class="dropdown">
+                  <button id="categoryButton" class="dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" border: 1px solid #ccc">
+                    <i class="fas fa-filter"></i> Category
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+                    <select>
+                      <option value="engineering">Engineering</option>
+                      <option value="sales">Sales</option>
+                      <option value="marketing">Marketing</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end search filter sort -->
 
-                  <!-- Nested card for description with "View Description" button -->
+            <!-- card -->
+            <div class="container">
+
+              <div class="row mt-5">
+                <div class="col-md-4 mb-4">
                   <div class="card">
-                    <div class="card-body" style="background-color:#af2a25;">
-                      <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
+                    <div class="card-body">
+                      <div class="mb-3">
+                        <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                      </div>
+                      <h5 class="font-weight-bold mb-2">Job Position 1</h5>
+                      <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-01 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 1</p>
+                      <p class="mb-2">Company A</p>
+
+                      <!-- Nested card for description with "View Description" button -->
+                      <div class="card">
+                        <div class="card-body" style="background-color:#af2a25;">
+                          <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
+                          <div class="text-center mt-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal1" onclick="viewDescription(1)">
+                              View Description
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
                       <div class="text-center mt-3">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal1" onclick="viewDescription(1)">
-                          View Description
-                        </button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal1">Apply Now</button>
                       </div>
                     </div>
                   </div>
-
-                  <div class="text-center mt-3">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal1">Apply Now</button>
-                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-4 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="mb-3">
-                    <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
-                  </div>
-                  <h5 class="font-weight-bold mb-2">Job Position 2</h5>
-                  <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-02 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
-                  <p class="mb-2">Company B</p>
-
-                  <!-- Nested card for description with "View Description" button -->
+                <div class="col-md-4 mb-4">
                   <div class="card">
-                    <div class="card-body" style="background-color:#af2a25;">
-                      <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
+                    <div class="card-body">
+                      <div class="mb-3">
+                        <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                      </div>
+                      <h5 class="font-weight-bold mb-2">Job Position 2</h5>
+                      <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-02 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
+                      <p class="mb-2">Company B</p>
+
+                      <!-- Nested card for description with "View Description" button -->
+                      <div class="card">
+                        <div class="card-body" style="background-color:#af2a25;">
+                          <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
+                          <div class="text-center mt-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal2" onclick="viewDescription(2)">
+                              View Description
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
                       <div class="text-center mt-3">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal2" onclick="viewDescription(2)">
-                          View Description
-                        </button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
                       </div>
                     </div>
                   </div>
-
-                  <div class="text-center mt-3">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
-                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-4 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="mb-3">
-                    <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
-                  </div>
-                  <h5 class="font-weight-bold mb-2">Job Position 3</h5>
-                  <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-03 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
-                  <p class="mb-2">Company C</p>
-
-                  <!-- Nested card for description with "View Description" button -->
+                <div class="col-md-4 mb-4">
                   <div class="card">
-                    <div class="card-body" style="background-color:#af2a25;">
-                      <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
-                      <div class="text-center mt-3">
-                        <button type="button" class="btn btn-primary" onclick="openModal()">
-                          Open Flyer
-                        </button>
+                    <div class="card-body">
+                      <div class="mb-3">
+                        <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                      </div>
+                      <h5 class="font-weight-bold mb-2">Job Position 3</h5>
+                      <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-03 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
+                      <p class="mb-2">Company C</p>
 
+                      <!-- Nested card for description with "View Description" button -->
+                      <div class="card">
+                        <div class="card-body" style="background-color:#af2a25;">
+                          <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
+                          <div class="text-center mt-3">
+                            <button type="button" class="btn btn-primary" onclick="openModal()">
+                              Open Flyer
+                            </button>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="text-center mt-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
                       </div>
                     </div>
                   </div>
-
-                  <div class="text-center mt-3">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
-                  </div>
                 </div>
+
+
+
+
+
+
+
+
+
               </div>
             </div>
-
-            <!-- Description Modals 
-            <div class="modal fade" id="descriptionModal1" tabindex="-1" role="dialog">
-              
-            </div>
-
-            <div class="modal fade" id="descriptionModal2" tabindex="-1" role="dialog">
-             
-            </div>
-
-            button modal--
-            <div class="modal fade" id="applyModal1" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
-              
-            </div>
-
-            <div class="modal fade" id="applyModal2" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
-             ... Modal content ... -->
-
-            <!-- Add a new modal for the flyer image -->
-            <div class="modal fade" id="flyerModal" tabindex="-1">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
-                  <div class="modal-header">
-                    <h5 class="modal-title text-white">Flyer</h5>
-                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body text-white">
-                    <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Existing Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
-                  <div class="modal-header">
-                    <h5 class="modal-title text-white">Flyer</h5>
-                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body text-white" style="max-height: 400px; overflow-y: auto;">
-                    <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-
-
-
+            <!-- end card -->
           </div>
-        </div>
+        </section>
+
+
+
+
+
+
+
+
+      </div>
     </div>
-
-
-
-
-  </div>
-  </div>
-  </section>
-  </div>
-
-  <?php include 'footer.php'; ?>
+    <?php include 'footer.php'; ?>
   </div>
   <script>
     function openModal() {

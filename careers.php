@@ -226,13 +226,13 @@ try {
       <!-- Existing Modal -->
       <div class="modal fade" id="thisModal<?php echo $result['id_job_vacanacy']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content" style="background-color: #C6A265">
+          <div class="modal-content" style="background-color: #fff">
             <!-- Modal content -->
             <div class="modal-header">
-              <h5 class="modal-title text-white"><?php echo $result['position']; ?> | <?php echo $result['division']; ?> </h5>
+              <h5 class="modal-title text-black"><?php echo $result['position']; ?> | <?php echo $result['division']; ?> </h5>
             </div>
 
-            <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
+            <div class="modal-body text-black" style="max-width: auto; overflow-y: auto;">
               <form method="POST" enctype="multipart/form-data" action="applyCareer.php">
                 <div class="modal-body">
                   <div class="mb-3">
@@ -389,7 +389,7 @@ try {
                           <!-- Nested card for description with "View Description" button -->
                           <div class="card">
 
-                            <div class="card-body" style="background-color:#af2a25; background-image: url('img/demos/business-consulting-3/texture-card.png'); background-blend-mode: overlay;"">
+                            <div class="card-body" style="background-color:#af2a25; background-image: url('img/demos/business-consulting-3/texture-card.png'); background-blend-mode: overlay;">
                               <!-- <p class=" text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"><?php echo $result['description']; ?></p> -->
                               <div class="text-center mt-2">
                                 <?php if (!empty($result['resume'])) { ?>

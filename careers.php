@@ -2,13 +2,93 @@
 session_start();
 include 'db.php';
 
-try {
-  $stmt = $db->query("SELECT * FROM job_vacanacy");
-  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-  echo "Query failed: " . $e->getMessage();
+// Fungsi untuk mengambil data pekerjaan dari database dengan batasan
+function getDefaultJobs($limit = 3)
+{
+  global $db;
+  $query = "SELECT * FROM job_vacanacy LIMIT $limit";
+  $stmt = $db->query($query);
+  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  header("Location: careers.php");
+  exit();
+}
+
+// Fungsi untuk mengambil data pekerjaan dari database dengan filter, pencarian, dan pengurutan
+function getFilteredJobs($searchTerm = '', $sortOption = '', $filterOption = '', $limitOption = 3)
+{
+  global $db;
+  $query = "SELECT * FROM job_vacanacy WHERE 1";
+
+  // Cek apakah ada pencarian yang dikirimkan
+  if (!empty($searchTerm)) {
+    $query .= " AND (position LIKE :searchTerm OR location LIKE :searchTerm)";
+  }
+
+  // Cek apakah ada filter yang dikirimkan
+  if (!empty($filterOption)) {
+    $query .= " AND division = :filterOption";
+  }
+
+  // Cek apakah ada pengurutan yang dikirimkan
+  if (!empty($sortOption)) {
+    $query .= " ORDER BY $sortOption";
+  }
+
+  // Tambahkan LIMIT sesuai dengan opsi yang diberikan
+  $query .= " LIMIT :limitOption";
+
+  $stmt = $db->prepare($query);
+
+  // Bind parameter pencarian
+  if (!empty($searchTerm)) {
+    $searchTerm = '%' . $searchTerm . '%';
+    $stmt->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
+  }
+
+  // Bind parameter filter
+  if (!empty($filterOption)) {
+    $stmt->bindParam(':filterOption', $filterOption, PDO::PARAM_STR);
+  }
+
+  // Bind parameter limit
+  $stmt->bindParam(':limitOption', $limitOption, PDO::PARAM_INT);
+
+  $stmt->execute();
+  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  header("Location: careers.php");
+  exit();
+}
+
+// Mengambil data dari formulir
+$searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
+$sortOption = isset($_GET['sort']) ? htmlspecialchars($_GET['sort']) : '';
+$filterOption = isset($_GET['filter']) ? htmlspecialchars($_GET['filter']) : '';
+$limitOption = isset($_GET['limit']) ? intval($_GET['limit']) : 3;
+
+// Jika tombol "Seemore" ditekan, tambahkan 3 ke limit
+if (isset($_GET['seemore'])) {
+  $limitOption += 3;
+}
+
+// Jika tidak ada permintaan khusus, gunakan fungsi getDefaultJobs() untuk mendapatkan data dengan limit awal
+if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
+  $results = getDefaultJobs($limitOption);
+
+  $numResults = count($results);
+
+  // Tampilkan tombol "Seemore" hanya jika jumlah data lebih dari atau sama dengan limit
+  $showSeemore = $numResults >= $limitOption;
+} else {
+  // Jika ada permintaan khusus, gunakan fungsi getFilteredJobs() untuk mengambil data sesuai permintaan
+  $results = getFilteredJobs($searchTerm, $sortOption, $filterOption, $limitOption);
+
+  $numResults = count($results);
+
+  // Tampilkan tombol "Seemore" hanya jika jumlah data lebih dari atau sama dengan limit
+  $showSeemore = $numResults >= $limitOption;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en" data-hash-offset="130">
@@ -63,8 +143,9 @@ try {
   <link rel="stylesheet" href="css/custom.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 
   <style>
     .overlay {
@@ -191,11 +272,11 @@ try {
   <div class="body">
     <!-- Existing Modal -->
     <?php foreach ($results as $result) { ?>
-      <!-- Existing Modal -->
+
       <div class="modal fade" id="myModal<?php echo $result['id_job_vacanacy']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
-            <!-- Modal content -->
+
             <div class="modal-header">
               <h5 class="modal-title text-white">Flyer</h5>
               <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -204,13 +285,11 @@ try {
             <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
               <?php
               if (!empty($result['resume'])) {
-                // Jika kolom 'resume' tidak kosong, gunakan isi dari 'resume' sebagai sumber gambar dari folder "flyer"
                 echo '<img src="flyer/' . $result['resume'] . '" alt="Flyer" class="img-fluid">';
               } elseif (!empty($result['description'])) {
-                // Jika kolom 'description' ada, tampilkan konten description dalam tag <p>
+
                 echo '<p>' . $result['description'] . '</p>';
               } else {
-                // Tampilkan pesan jika tidak ada konten yang sesuai
                 echo 'No content available.';
               }
               ?>
@@ -223,11 +302,9 @@ try {
 
     <!-- apply form -->
     <?php foreach ($results as $result) { ?>
-      <!-- Existing Modal -->
       <div class="modal fade" id="thisModal<?php echo $result['id_job_vacanacy']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content" style="background-color: #fff">
-            <!-- Modal content -->
             <div class="modal-header">
               <h5 class="modal-title text-black"><?php echo $result['position']; ?> | <?php echo $result['division']; ?> </h5>
             </div>
@@ -328,42 +405,41 @@ try {
               <h1 style='font-weight: 500; text-align : center; color:black; '>Unlock Your Potential with PT Mineral Alam Abadi</h1><br />
             </div>
 
+
             <div class="search-bar">
-              <div class="search-input">
-                <input type="text" id="searchInput" placeholder="Search...">
-                <button id="searchButton"><i class="fas fa-search"></i></button>
-              </div>
-              <div class="sort-category">
-                <div class="dropdown">
-                  <button id="sortButton" class="dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" border: 1px solid #ccc">
-                    <i class="fas fa-sort"></i> Sort
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="sortDropdown">
-                    <select>
-                      <option value="location">Sort by Location</option>
-                      <option value="date">Sort by Date</option>
-                      <option value="category">Sort by Category</option>
-                    </select>
-                  </div>
+              <form method="GET">
+                <div class="search-input">
+                  <input type="text" id="searchInput" name="search" placeholder="Search...">
+                  <button id="searchButton" type="submit"><i class="fas fa-search"></i></button>
                 </div>
+              </form>
+              <div class="sort-category">
+                <form method="GET">
+                  <select id="sortSelect" name="sort">
+                    <option value="">Sort by</option>
+                    <option value="position">Sort by Position</option>
+                    <option value="company">Sort by Company</option>
+                    <option value="location">Sort by Location</option>
+                    <option value="create_date">Sort by Date</option>
+                  </select>
+                </form>
                 <div class="dropdown">
-                  <button id="categoryButton" class="dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" border: 1px solid #ccc">
-                    <i class="fas fa-filter"></i> Category
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="categoryDropdown">
-                    <select>
-                      <option value="engineering">Engineering</option>
-                      <option value="sales">Sales</option>
-                      <option value="marketing">Marketing</option>
+                  <form method="GET">
+                    <select id="filterSelect" name="filter">
+                      <option value="">Filter by Division</option>
+                      <option value="IT">IT</option>
+                      <option value="HRGA">HRGA</option>
+                      <option value="Mining">Mining</option>
                     </select>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
+
             <!-- end search filter sort -->
 
             <!-- card -->
-            <div class="container">
+            <div class="card-container" id="jobList">
 
               <div class="row mt-5">
 
@@ -377,20 +453,15 @@ try {
                           </div>
                           <h5 class="font-weight-bold mb-2"><?php echo $result['position']; ?></h5>
                           <p class="mb-1"><i class="far fa-calendar-alt me-1"></i><?php
-                                                                                  $originalDate = $result['create_date']; // Tanggal asli dari database
-
-                                                                                  // Ubah format tanggal menjadi "tanggal bulan tahun"
+                                                                                  $originalDate = $result['create_date'];
                                                                                   $newDate = date("d F Y", strtotime($originalDate));
 
                                                                                   echo $newDate;
                                                                                   ?> | <i class="fas fa-map-marker-alt ms-1 me-1"></i><?php echo $result['location']; ?></p>
                           <p class="mb-2"><?php echo $result['company']; ?></p>
-
-                          <!-- Nested card for description with "View Description" button -->
                           <div class="card">
 
                             <div class="card-body" style="background-color:#af2a25; background-image: url('img/demos/business-consulting-3/texture-card.png'); background-blend-mode: overlay;">
-                              <!-- <p class=" text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"><?php echo $result['description']; ?></p> -->
                               <div class="text-center mt-2">
                                 <?php if (!empty($result['resume'])) { ?>
                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openModal(<?php echo $result['id_job_vacanacy']; ?>)">
@@ -406,7 +477,6 @@ try {
                           </div>
 
                           <div class="text-center mt-3">
-                            <!-- Tombol "Apply Job" pada setiap kartu pekerjaan -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#thisModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openApplyModal(<?php echo $result['id_job_vacanacy']; ?>)">
                               Apply Job
                             </button>
@@ -434,13 +504,23 @@ try {
 
 
 
-
+        <?php if ($showSeemore) : ?>
+          <form method="GET" action="careers.php">
+            <input type="hidden" name="search" value="<?= htmlspecialchars($searchTerm) ?>">
+            <input type="hidden" name="sort" value="<?= htmlspecialchars($sortOption) ?>">
+            <input type="hidden" name="filter" value="<?= htmlspecialchars($filterOption) ?>">
+            <input type="hidden" name="limit" value="<?= $limitOption ?>">
+            <button type="submit" name="seemore">Seemore</button>
+          </form>
+        <?php endif; ?>
 
 
       </div>
     </div>
     <?php include 'footer.php'; ?>
   </div>
+
+
 
   <script src="sweetalert2.all.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -463,6 +543,25 @@ try {
   <script src="js/theme.init.js"></script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+
+  <script>
+    // Mendapatkan elemen select
+    const sortSelect = document.getElementById("sortSelect");
+
+    // Mendengarkan perubahan pada select
+    sortSelect.addEventListener("change", function() {
+      // Mengirim formulir saat pilihan berubah
+      this.form.submit();
+    });
+
+    const filterSelect = document.getElementById("filterSelect");
+
+    // Mendengarkan perubahan pada select
+    filterSelect.addEventListener("change", function() {
+      // Mengirim formulir saat pilihan berubah
+      this.form.submit();
+    });
+  </script>
 
 
   <script>

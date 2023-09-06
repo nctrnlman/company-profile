@@ -34,7 +34,7 @@
                 <!-- App Search-->
                 <div class="d-flex align-items-center">
 
-                    <h5>Employee Information Portal </h5>
+                    <h5> Job vacancy Management </h5>
 
                 </div>
             </div>

@@ -28,6 +28,51 @@
     <!-- custom Css-->
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
+
+
+
+    <!-- style for hover card -->
+    <style>
+        .card-shadow {
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .card-shadow:hover {
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Status badge styles */
+        .badge {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Review status */
+        .badge-review {
+            background-color: #add8e6;
+            /* Light blue background */
+            color: #00008b;
+            /* Dark blue text */
+        }
+
+        /* Accept status */
+        .badge-accept {
+            background-color: #90ee90;
+            /* Light green background */
+            color: #006400;
+            /* Dark green text */
+        }
+
+        /* Reject status */
+        .badge-reject {
+            background-color: #ffcccb;
+            /* Light red background */
+            color: #8b0000;
+            /* Dark red text */
+        }
+    </style>
 </head>
 
 <body>
@@ -51,23 +96,117 @@
                 <div class="container-fluid">
 
                     <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0"> <?php echo $page =  $_GET['page'];
-                                                        ?></h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="index.php?page=Dashboard">Dashboards</a></li>
-                                        <li class="breadcrumb-item active"><?php echo $page =  $_GET['page'];
-                                                                            ?></li>
-                                    </ol>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-primary" role="alert" style="background-color: #af2a25; color:white; font-size:medium; ">
+                                    Welcome Admin!
+                                    <p style="font-size: small; padding-top: 20px;">This system will help you to insert the job vacancy and
+                                        also help to manage, and tracking the applicant submission. <i>Sistem ini akan membantu Anda untuk memasukkan lowongan pekerjaan dan juga membantu mengelola serta melacak pengiriman aplikasi pelamar.</i>
+                                    </p>
                                 </div>
-
                             </div>
                         </div>
+
+                        <!-- data card -->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card card-shadow">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Job Vacancies</h5>
+                                        <p class="card-text">50</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-shadow">
+                                    <div class="card-body">
+                                        <h5 class="card-title">New Applications Today</h5>
+                                        <p class="card-text">5</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-shadow">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Applications</h5>
+                                        <p class="card-text">150</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- applicant status-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Job Applications</h5>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Position</th>
+                                                    <th>Date Applied</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Rajes</td>
+                                                    <td>Software Developer</td>
+                                                    <td>2023-09-05</td>
+                                                    <td>
+                                                        <span class="badge badge-review">Reviewing</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Alhambra</td>
+                                                    <td>UX Designer</td>
+                                                    <td>2023-09-04</td>
+                                                    <td>
+                                                        <span class="badge badge-accept">Accepted</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Andalusia</td>
+                                                    <td>Data Analyst</td>
+                                                    <td>2023-09-03</td>
+                                                    <td>
+                                                        <span class="badge badge-reject">Rejected</span>
+                                                    </td>
+                                                </tr>
+                                                <!-- Add more rows as needed -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Job Views</h5>
+                                        <canvas id="jobViewsChart" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Application Submissions</h5>
+                                        <canvas id="appSubmissionsChart" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
+
                     <!-- end page title -->
 
                     <?php include "menu.php" ?>
@@ -124,9 +263,49 @@
 
     <script src="assets/libs/prismjs/prism.js"></script>
 
+    <!-- script for diagram -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+
+    <script>
+        // Sample data for the Job Views chart
+        var jobViewsData = {
+            labels: ["January", "February", "March", "April", "May", "June"],
+            datasets: [{
+                label: "Job Views",
+                data: [120, 150, 200, 180, 250, 300],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        var jobViewsCtx = document.getElementById("jobViewsChart").getContext('2d');
+        var jobViewsChart = new Chart(jobViewsCtx, {
+            type: 'line',
+            data: jobViewsData,
+        });
+
+        // Sample data for the Application Submissions chart
+        var appSubmissionsData = {
+            labels: ["January", "February", "March", "April", "May", "June"],
+            datasets: [{
+                label: "Application Submissions",
+                data: [50, 60, 70, 80, 90, 100],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        var appSubmissionsCtx = document.getElementById("appSubmissionsChart").getContext('2d');
+        var appSubmissionsChart = new Chart(appSubmissionsCtx, {
+            type: 'bar',
+            data: appSubmissionsData,
+        });
+    </script>
 </body>
 
 </html>

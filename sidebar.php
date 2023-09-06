@@ -1,4 +1,28 @@
-<?php $page =  $_GET['page']; ?>
+<?php
+$page = isset($_GET['page']) ? $_GET['page'] : ''; // Get the 'page' parameter from the URL.
+?>
+<style>
+    /* Style the icons */
+    .navbar-menu .menu-title i,
+    .navbar-menu .nav-link i {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    /* Style the links */
+    .navbar-menu .nav-link {
+        padding: 10px 15px;
+        transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
+    }
+
+    /* Hover effect */
+    .navbar-menu .nav-link:hover {
+        transform: scale(0.95);
+        /* Scale down effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>
 <div class="app-menu navbar-menu">
     <!-- LOGO -->
     <div class="navbar-brand-box">
@@ -27,36 +51,31 @@
 
     <div id="scrollbar">
         <div class="container-fluid">
-
             <div id="two-column-menu">
             </div>
 
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                 <li class="nav-item">
-                    <a class="nav-link <?php if ($page == 'Dashboard') echo 'active'; ?>" href="index.php?page=Dashboard">
-                        <i class="ri-dashboard-2-line"></i> Dashboard
+                    <a class="nav-link <?php if ($page == 'Dashboard') echo 'active'; ?>" href="dashboard-admin.php">
+                        <i data-feather="bar-chart-2"></i>
+                        <span class="menu-title">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php if ($page == 'job') echo 'active'; ?>" href="job-admin.php">
-                        <i class="ri-dashboard-2-line"></i> Job List
+                        <i data-feather="list"></i>
+                        <span class="menu-title">Job List</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($page == 'job') echo 'active'; ?>" href="applicant-list.php">
+                        <i data-feather="user"></i>
+                        <span class="menu-title">Applicant List</span>
                     </a>
                 </li>
 
-
-
-
-
-
-
-
-
-
-
-
             </ul>
-            <?php    ?>
         </div>
         <!-- Sidebar -->
     </div>

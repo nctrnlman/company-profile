@@ -13,7 +13,7 @@
   <meta name="author" content="MAA" />
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="img/demos/business-consulting-3/logo-MAA-component.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
   <!-- Mobile Metas -->
@@ -63,7 +63,7 @@
         <div class="container pb-5 my-3">
           <div class="row mb-4">
             <div class="col-md-12 align-self-center p-static order-2 text-center">
-              <h1 class="font-weight-bold text-color-white text-10">
+              <h1 class="font-weight-bold text-color-white text-10" style="text-shadow: 5px 5px 10px black;">
                 Stone Crusher
               </h1>
             </div>

@@ -147,6 +147,9 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
   <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
 
   <style>
     .overlay {
@@ -181,7 +184,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
     }
   </style>
 
-<style>
+  <style>
     .seemore-container {
       display: flex;
       justify-content: center;
@@ -276,7 +279,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
     }
   </style>
 
-  
+
 
 
 
@@ -346,6 +349,9 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                   <div class="mb-3">
                     <label for="resume" class="form-label" style="font-weight: bold;">Upload Resume (PDF, max 3MB)</label>
                     <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+                  </div>
+                  <div class="mb-3">
+                    <div class="g-recaptcha" data-sitekey="6LdnLwYoAAAAAM0oA32qzK-lSACMIOgd2S-qfyBL"></div>
                   </div>
                   <input type="hidden" name="job_id" value="<?php echo $result['id_job_vacanacy']; ?>">
                 </div>
@@ -472,7 +478,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                           <div class="mb-3">
                             <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
                           </div>
-                          <h5 class="font-weight-bold mb-2"><?php echo $result['position']; ?></h5>
+                          <h5 class="font-weight-bold mb-2"><?php echo $result['position']; ?> - Division <?php echo $result ['division']; ?></h5>
                           <p class="mb-1"><i class="far fa-calendar-alt me-1"></i><?php
                                                                                   $originalDate = $result['create_date'];
                                                                                   $newDate = date("d F Y", strtotime($originalDate));
@@ -521,21 +527,21 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
             <!-- end card -->
           </div>
           <?php if ($showSeemore) : ?>
-          <div class="seemore-container" >
-            <form method="GET" action="careers.php">
-              <input type="hidden" name="search" value="<?= htmlspecialchars($searchTerm) ?>">
-              <input type="hidden" name="sort" value="<?= htmlspecialchars($sortOption) ?>">
-              <input type="hidden" name="filter" value="<?= htmlspecialchars($filterOption) ?>">
-              <input type="hidden" name="limit" value="<?= $limitOption ?>">
-              <button type="submit" name="seemore"  class="btn text-color-white custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 bg-color-dark" > <span>See More</span></button>
-          </div>
-        <?php endif; ?>
+            <div class="seemore-container">
+              <form method="GET" action="careers.php">
+                <input type="hidden" name="search" value="<?= htmlspecialchars($searchTerm) ?>">
+                <input type="hidden" name="sort" value="<?= htmlspecialchars($sortOption) ?>">
+                <input type="hidden" name="filter" value="<?= htmlspecialchars($filterOption) ?>">
+                <input type="hidden" name="limit" value="<?= $limitOption ?>">
+                <button type="submit" name="seemore" class="btn text-color-white custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 bg-color-dark"> <span>See More</span></button>
+            </div>
+          <?php endif; ?>
         </section>
         <!-- end section card -->
 
 
 
-        
+
 
 
 

@@ -78,31 +78,30 @@
       </section>
 
       <div class="container pt-3 mt-4">
-        <div class="row mb-5">
-          <div class="col-lg-7">
-            <p class="text-3-5">
-              PT Mineral Alam Abadi's shipping services play a crucial role in ensuring the efficient and reliable transportation of goods across various destinations. We specialize in providing comprehensive shipping solutions that encompass cargo handling, logistics coordination, and timely delivery.
+    <div class="row mb-5">
+        <div class="col-lg-7">
+            <p class="text-justify">
+                PT Mineral Alam Abadi's shipping services play a crucial role in ensuring the efficient and reliable transportation of goods across various destinations. We specialize in providing comprehensive shipping solutions that encompass cargo handling, logistics coordination, and timely delivery.
             </p>
-            <p>
-              With a fleet of modern vessels and a dedicated team of professionals, we guarantee the safe and secure transport of goods by sea. Our commitment to excellence extends to optimizing routes, minimizing transit times, and adhering to international shipping standards.
+            <p class="text-justify">
+                With a fleet of modern vessels and a dedicated team of professionals, we guarantee the safe and secure transport of goods by sea. Our commitment to excellence extends to optimizing routes, minimizing transit times, and adhering to international shipping standards.
             </p>
-            <p>
-              Whether it's bulk cargo, container shipments, or specialized goods, our shipping services are tailored to meet the unique requirements of each client. We prioritize customer satisfaction and maintain transparent communication throughout the shipping process.
+            <p class="text-justify">
+                Whether it's bulk cargo, container shipments, or specialized goods, our shipping services are tailored to meet the unique requirements of each client. We prioritize customer satisfaction and maintain transparent communication throughout the shipping process.
             </p>
-          </div>
-          <div class="col-10 col-lg-4 ms-auto pt-4 pt-5 pt-lg-4 pb-5">
-            <div class="cascading-images-wrapper p-0 mt-5 mb-5">
-              <div class="cascading-images position-relative">
-                <img src="img/demos/business-consulting-3/generic/generic-6.jpg" class="box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-duration="600ms" />
-                <div class="position-absolute w-100" style="top: 61%; left: -20%">
-                  <img src="img/demos/business-consulting-3/generic/generic-3.jpg" class="box-shadow-4 appear-animation" width="285" alt="" data-appear-animation="expandIn" data-appear-animation-delay="300" data-appear-animation-duration="600ms" />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+        <div class="col-10 col-lg-4 ms-auto pt-4 pt-5 pt-lg-4 pb-5">
+            <div class="cascading-images-wrapper p-0 mt-5 mb-5">
+                <div class="cascading-images position-relative">
+                    <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 10.jpg" class="box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-duration="600ms" />
+                    <div class="position-absolute w-100" style="top: 61%; left: -20%">
+                        <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 15.jpg" class="box-shadow-4 appear-animation" width="285" alt="" data-appear-animation="expandIn" data-appear-animation-delay="300" data-appear-animation-duration="600ms" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
     <?php include 'footer.php'; ?>
   </div>

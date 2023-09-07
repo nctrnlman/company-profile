@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "particles.js": "^2.0.0",
     "sweetalert2": "^11.7.27"
   }
 }

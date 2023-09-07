@@ -13,7 +13,7 @@
   <meta name="author" content="MAA" />
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="img/demos/business-consulting-3/logo-MAA-component.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
   <!-- Mobile Metas -->
@@ -83,40 +83,54 @@
       <div class="container pt-5">
         <div class="row">
           <div class="col-lg-6 mb-4" style="text-align: justify;">
-            <h2 class="text-9 text-lg-5 text-xl-9 line-height-3 text-transform-none font-weight-semibold mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
+            <h2 class="text-5 font-weight-bold mb-3">
               Driving Business Excellence with Strategic Innovation
             </h2>
-            <p class="text-3-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+            <p class="text-2 mb-4">
               PT Mineral Alam Abadi is a premier mining company specializing in Mining Investments, Nickel & Stone Mining,
               Mining Contracts, Nickel & Coal Trading, Construction Services, and Sea Transportation Services. Our unwavering
               commitment to exceptional performance and superior quality addresses the dynamic needs of both local and global markets.
             </p>
-            <p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
+            <p class="text-2">
               With operational presence in Central Sulawesi, Southeast Sulawesi, and South Halmahera, our dedication to excellence
               is the cornerstone of our multifaceted operations.
             </p>
           </div>
 
           <div class="col-lg-6">
-            <div class="row row-gutter-sm">
-              <div class="col-md-6 mb-4">
-                <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 10.jpg" class="img-fluid box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600" alt="" />
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="row row-gutter-sm">
-                  <div class="col-12 mb-4">
-                    <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 05.jpg" class="img-fluid box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400" alt="" />
-                  </div>
-                  <div class="col-12">
-                    <img src="img/demos/business-consulting-3/backgrounds/17-obi.jpeg" class="img-fluid box-shadow-5 appear-animation" style="height: 175px;" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600" alt="" />
-                  </div>
-                </div>
-              </div>
+    <div class="row row-gutter-sm">
+        <div class="col-md-6 mb-4">
+            <div class="image-window">
+                <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 10.jpg" class="img-fluid rounded box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400" alt="Image 1" />
             </div>
-          </div>
+            <div class="row-12 mt-4">
+                    <div class="image-window">
+                        <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" class="img-fluid rounded box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1000" alt="Image 4" />
+                    </div>
+                </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="row row-gutter-sm">
+                <div class="col-12 mb-4">
+                    <div class="image-window">
+                        <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 05.jpg" class="img-fluid rounded box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600" alt="Image 2" />
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="image-window" style="height: 175px;">
+                        <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 23.jpg" class="img-fluid rounded box-shadow-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800" alt="Image 3" />
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
 
+          </div>
         </div>
       </div>
+
 
 
       <div class="container-fluid pt-5 mt-5 mb-4"></div>
@@ -233,16 +247,25 @@
       </section>
 
 
-      <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; position: relative;">
-        <img src="img/demos/business-consulting-3/backgrounds/maa-locations.png" alt="" style="max-width: 100%; border-radius: 100%;">
-        <div style="padding: 20px; border-radius: 10px; margin-top: -40px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-          <h3 style="font-size: 24px; margin-bottom: 10px; font-weight: 500; color: #af2a25; text-align: center;">Explore Our Locations</h3>
-          <p style="font-size: 18px; margin: 0; color: black;">
-            Currently, PT. Mineral Alam Abadi operates in three regions in Indonesia:
-          <div style="font-size: 15px;">
-            <br>1. Jakarta, Mineral Alam Abadi Headquarter, and offices of the enterprise entity underneath.
-            <br>2. Central Sulawesi site located in Morowali, South Bungku
-            <br>3. North Sulawesi site located in south Halmahera, Obi Island
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; position: relative;">
+          <img src="img/demos/business-consulting-3/backgrounds/maa-locations.png" alt="" style="max-width: 100%; border-radius: 100%;">
+          <div style="padding: 20px; border-radius: 10px; margin-top: -40px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+            <h3 style="font-size: 24px; margin-bottom: 10px; font-weight: 500; color: #af2a25; text-align: center;">Explore Our Locations</h3>
+            <p style="font-size: 18px; margin: 0; color: black;">
+              Currently, PT. Mineral Alam Abadi operates in three regions in Indonesia:
+            <div style="font-size: 15px;">
+              <br>1. Jakarta, Mineral Alam Abadi Headquarter, and offices of the enterprise entity underneath.
+              <br>2. Central Sulawesi site located in Morowali, South Bungku
+              <br>3. North Sulawesi site located in south Halmahera, Obi Island
+            </div>
+            </p>
           </div>
           </p>
         </div>

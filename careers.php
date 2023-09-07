@@ -25,7 +25,7 @@ try {
   <meta name="author" content="MAA" />
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="img/demos/business-consulting-3/logo-MAA-component.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
   <!-- Mobile Metas -->
@@ -63,6 +63,24 @@ try {
   <link rel="stylesheet" href="css/custom.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      /* Adjust the opacity to control darkness */
+      display: none;
+      z-index: 999;
+      /* Ensure the overlay is above other content */
+    }
+  </style>
+
   <style>
     #applyModal {
       background: none;
@@ -70,14 +88,14 @@ try {
 
     /* CSS for the modal */
     .modal {
-      z-index: 1050 !important;
-      /* Adjust the value as needed */
+      z-index: 1051 !important;
+      /* Higher value than the backdrop */
     }
 
     /* CSS for the backdrop overlay behind the modal */
     .modal-backdrop {
       z-index: 1040 !important;
-      /* Adjust the value as needed */
+      /* Lower value than the modal */
     }
 
     .modal-backdrop.show {
@@ -99,16 +117,139 @@ try {
     }
   </style>
 
+  <style>
+    /* Add a CSS rule for the overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Semi-transparent black background */
+      z-index: 1050;
+      /* Ensure the overlay is above the rest of the content */
+      display: none;
+      /* Initially hidden */
+    }
+  </style>
+
+  <style>
+    .search-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      display: flex;
+      align-items: center;
+      flex: 1;
+
+    }
+
+    #searchInput {
+      border: none;
+      padding: 7px;
+      flex: 1;
+      width: 60%;
+      max-width: 94%;
+      /* Add this line */
+    }
+
+    #searchButton {
+      background-color: #af2a25;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #searchButton:hover {
+      background-color: #C6A265;
+    }
+
+    .sort-category {
+      display: flex;
+      gap: 10px;
+    }
+
+    .dropdown-toggle {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .dropdown-menu select {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 8px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .modal-backdrop.show {
+      opacity: 1;
+      z-index: 1050;
+      /* Adjust z-index to make it cover other elements */
+    }
+  </style>
+
+
+
 
   <!-- Head Libs -->
   <script src="vendor/modernizr/modernizr.min.js"></script>
 </head>
 
-<body>
-  <div class="body">
-    <?php include 'navbar.php'; ?>
 
-    <div role="main" class="main">
+
+
+<body>
+
+
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
+        <div class="modal-header">
+          <h5 class="modal-title text-white">Flyer</h5>
+          <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-white" style="max-height: 400px; overflow-y: auto;">
+          <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <div id="overlay" class="overlay">
+  <?php include 'navbar.php'; ?>
+    
       <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="background-size: cover; background-position: center ;background-color: #af2a25;">
         <div class="container pb-5 my-3">
           <div class="row mb-4">
@@ -152,185 +293,237 @@ try {
                   <?php unset($_SESSION['success_message']); ?>
                 <?php } ?>
 
-                <?php if (isset($_SESSION['error_message'])) { ?>
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: '<?php echo $_SESSION['error_message']; ?>',
-                    showConfirmButton: false,
-                    timer: 3000
-                  });
-                  <?php unset($_SESSION['error_message']); ?>
-                <?php } ?>
+                // <?php if (isset($_SESSION['error_message'])) { ?>
+                //   Swal.fire({
+                //     icon: 'error',
+                //     title: 'Error',
+                //     text: '<?php echo $_SESSION['error_message']; ?>',
+                //     showConfirmButton: false,
+                //     timer: 3000
+                //   });
+                //   <?php unset($_SESSION['error_message']); ?>
+                // <?php } ?>
               });
             </script>
           </div>
-          <div class="row pb-4">
-            <div class="row mt-4">
-              <div class="col-md-12">
-                <div class=" appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="400">
-                  <div class="container py-5 mt-3">
 
-                    <div class="row">
-                      <div class="col-lg-8">
-                        <div class="overflow-hidden mb-2">
-                          <h2 class="font-weight-normal text-7 mb-2 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">Find Your <strong class="font-weight-extra-bold">Opportunity</strong></h2>
-                        </div>
-                        <div class="overflow-hidden mb-4">
-                          <p class="lead mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="400">Discover Your Path at <strong class="font-weight-extra-bold">PT Mineral Alam Abadi</strong></p>
-                        </div>
-                        <p class="text-color-light-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">Join us in shaping the future of our industry. At PT Mineral Alam Abadi, we offer a range of opportunities that allow you to unleash your potential. Explore innovative projects, collaborate with a diverse team, and make a meaningful impact. Your journey towards growth starts here.</p>
+          <div class="container">
+            <h1 style='font-weight: 500; text-align : center; color:black; '>Unlock Your Potential with PT Mineral Alam Abadi</h1><br />
+          </div>
+
+          <div class="search-bar">
+            <div class="search-input">
+              <input type="text" id="searchInput" placeholder="Search...">
+              <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="sort-category">
+              <div class="dropdown">
+                <button id="sortButton" class="dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-sort"></i> Sort
+                </button>
+                <div class="dropdown-menu" aria-labelledby="sortDropdown">
+                  <select>
+                    <option value="location">Sort by Location</option>
+                    <option value="date">Sort by Date</option>
+                    <option value="category">Sort by Category</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button id="categoryButton" class="dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-filter"></i> Category
+                </button>
+                <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+                  <select>
+                    <option value="engineering">Engineering</option>
+                    <option value="sales">Sales</option>
+                    <option value="marketing">Marketing</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+        <div class="container">
+
+
+          <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                  </div>
+                  <h5 class="font-weight-bold mb-2">Job Position 1</h5>
+                  <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-01 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 1</p>
+                  <p class="mb-2">Company A</p>
+
+                  <!-- Nested card for description with "View Description" button -->
+                  <div class="card">
+                    <div class="card-body" style="background-color:#af2a25;">
+                      <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
+                      <div class="text-center mt-3">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal1" onclick="viewDescription(1)">
+                          View Description
+                        </button>
                       </div>
-
                     </div>
+                  </div>
 
-
-                    <!-- <div class="owl-carousel owl-theme dots-inside mb-0 pb-0" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 4000, 'margin': 10, 'animateOut': 'fadeOut', 'dots': false}" style="z-index: 100;">
-                    <div class="pb-5">
-                      <img alt="" class="img-fluid rounded" src="img/demos/business-consulting-3/backgrounds/17-obi.jpeg" />
-                    </div>
-                    <div class="pb-5">
-                      <img alt="" class="img-fluid rounded" src="img/demos/business-consulting-3/backgrounds/MMP OBI- 02.jpg" />
-                    </div>
-                  </div> -->
-
-                    <div class="toggle toggle-primary toggle-simple " style="flex: auto;" data-plugin-toggle>
-                      <section class="toggle active">
-                        <a class="toggle-title">Our Benefits</a>
-                        <div class="toggle-content">
-                          <p>
-                            Explore the advantages of being a part of Mineral Alam Abadi. We believe in providing exceptional benefits that enhance your experience and well-being. From growth opportunities to a supportive environment, we've got you covered.
-                          </p>
-                        </div>
-                        
-                      </section>
-                      <section class="toggle">
-                        <a class="toggle-title">Our Culture</a>
-                        <div class="toggle-content">
-                          <p>
-                            Step into a culture that values collaboration, innovation, and individual growth. At Mineral Alam Abadi, our culture is the heartbeat of our success, fostering an environment where every team member thrives.
-                          </p>
-                        </div>
-                      </section>
-                      <section class="toggle">
-                        <a class="toggle-title">Join Our Team</a>
-                        <div class="toggle-content">
-                          <p>
-                            Are you ready to embark on a journey of growth, innovation, and impact? At Mineral Alam Abadi, we invite you to join our dynamic team and contribute to shaping the future of our industry.
-                          </p>
-                        </div>
-                      </section>
-                    </div>
+                  <div class="text-center mt-3">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal1">Apply Now</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-8">
-              <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="200">
-                <h4 class="mt-2 mb-2">Current <strong>Openings</strong></h4>
 
-                <div class="accordion accordion-modern without-bg mt-4" id="accordion11">
-                  <?php foreach ($results as $result) { ?>
-                    <div class="card card-default mb-2">
-                      <div class="card-header">
-                        <h4 class="card-title m-0">
-                          <a class="accordion-toggle text-3" data-bs-toggle="collapse" href="#collapse<?php echo $result['idjob']; ?>" data-bs-parent="#accordion11">
-                            <?php echo $result['posisi_job']; ?>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="collapse<?php echo $result['idjob']; ?>" class="collapse">
-                        <div class="card-body mt-3">
-                          <p><?php echo $result['diskripsi']; ?></p>
-                          <ul class="list list-inline mt-4 mb-3 text-2">
-                            <li class="list-inline-item">
-                              <strong>DATE:</strong>
-                              <?php echo $result['tgl_job']; ?>
-                            </li>
-                            <li class="list-inline-item ms-md-3">
-                              <strong>COMPANY:</strong>
-                              <?php echo $result['namapt']; ?>
-                            </li>
-                            <li class="list-inline-item ms-md-3">
-                              <strong>LOCATION:</strong>
-                              <?php echo $result['lokasi_job']; ?>
-                            </li>
-                            <li class="list-inline-item ms-md-3">
-                              <strong>STATUS:</strong>
-                              <?php echo $result['status_job']; ?>
-                            </li>
-                          </ul>
-                          <button class="btn btn-modern btn-dark" data-bs-toggle="modal" data-bs-target="#applyModal<?php echo $result['idjob']; ?>">
-                            Apply
-                          </button>
-                        </div>
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                  </div>
+                  <h5 class="font-weight-bold mb-2">Job Position 2</h5>
+                  <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-02 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
+                  <p class="mb-2">Company B</p>
+
+                  <!-- Nested card for description with "View Description" button -->
+                  <div class="card">
+                    <div class="card-body" style="background-color:#af2a25;">
+                      <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
+                      <div class="text-center mt-3">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal2" onclick="viewDescription(2)">
+                          View Description
+                        </button>
                       </div>
                     </div>
+                  </div>
 
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="applyModal<?php echo $result['idjob']; ?>" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel<?php echo $result['idjob']; ?>" aria-hidden="true">
-
-                      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px;">
-                        <div class="modal-content" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
-
-                          <div class="modal-header" style="border-bottom: none;">
-                            <h5 class="modal-title" id="applyModalLabel<?php echo $result['idjob']; ?>" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;"><?php echo $result['posisi_job']; ?></h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="border: none; background: transparent;">
-                              <span aria-hidden="true" style="font-size: 35px;">&times;</span>
-                            </button>
-                          </div>
-                          <form method="POST" enctype="multipart/form-data" action="applyCareer.php">
-                            <div class="modal-body">
-                              <div class="mb-3">
-                                <label for="name" class="form-label" style="font-weight: bold;">Your Name</label>
-                                <input type="text" class="form-control" id="name" name="name" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
-                              </div>
-                              <div class="mb-3">
-                                <label for="phone" class="form-label" style="font-weight: bold;">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" name="phone" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
-                              </div>
-                              <div class="mb-3">
-                                <label for="email" class="form-label" style="font-weight: bold;">Email address</label>
-                                <input type="email" class="form-control" id="email" name="email" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;">
-                              </div>
-                              <div class="mb-3">
-                                <label for="resume" class="form-label" style="font-weight: bold;">Upload Resume (PDF, max 3MB)</label>
-                                <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
-                              </div>
-                              <input type="hidden" name="job_id" value="<?php echo $result['idjob']; ?>">
-
-                            </div>
-
-                            <div class="modal-footer" style="border-top: none; padding-top: 0;">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #6c757d; border: none;">Close</button>
-                              <button type="submit" class="btn btn-primary" name="submit">Apply</button>
-                            </div>
-                          </form>
-
-
-                        </div>
-                      </div>
-
-                    </div>
-
-
-                    <!-- End Modal -->
-                  <?php } ?>
-
+                  <div class="text-center mt-3">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
+                  </div>
                 </div>
               </div>
-
             </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                  </div>
+                  <h5 class="font-weight-bold mb-2">Job Position 3</h5>
+                  <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-03 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
+                  <p class="mb-2">Company C</p>
+
+                  <!-- Nested card for description with "View Description" button -->
+                  <div class="card">
+                    <div class="card-body" style="background-color:#af2a25;">
+                      <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
+                      <div class="text-center mt-3">
+                        <button type="button" class="btn btn-primary" onclick="openModal()">
+                          Open Flyer
+                        </button>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="text-center mt-3">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Description Modals 
+            <div class="modal fade" id="descriptionModal1" tabindex="-1" role="dialog">
+              
+            </div>
+
+            <div class="modal fade" id="descriptionModal2" tabindex="-1" role="dialog">
+             
+            </div>
+
+            button modal--
+            <div class="modal fade" id="applyModal1" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+              
+            </div>
+
+            <div class="modal fade" id="applyModal2" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+             ... Modal content ... -->
+
+            <!-- Add a new modal for the flyer image -->
+            <div class="modal fade" id="flyerModal" tabindex="-1">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-white">Flyer</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-white">
+                    <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Existing Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-white">Flyer</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-white" style="max-height: 400px; overflow-y: auto;">
+                    <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
           </div>
-      </section>
+        </div>
     </div>
 
-    <?php include 'footer.php'; ?>
+
+
+
   </div>
+  </div>
+  </section>
+  </div>
+
+  <?php include 'footer.php'; ?>
+  </div>
+  <script>
+    function openModal() {
+      // Show the overlay
+      document.getElementById("overlay").style.display = "block";
+
+      // Open the modal
+      var myModal = new bootstrap.Modal(document.getElementById("myModal"));
+      myModal.show();
+    }
+  </script>
   <script src="sweetalert2.all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <!-- Vendor -->
   <script src="vendor/plugins/js/plugins.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -357,6 +550,7 @@ try {
 					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
 
 			*/
+
 
     function initializeGoogleMaps() {
       // Map Initial Location
@@ -551,6 +745,34 @@ try {
       $("#googlemaps").gMap("centerAt", options);
     };
   </script>
+
+
+
+  <script>
+    const jobDescriptions = {
+      1: "Description for Job 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      2: "Description for Job 2. Vestibulum eget velit ac nisl efficitur pharetra.",
+      // Add descriptions for other jobs as needed.
+    };
+
+    function viewDescription(id) {
+      // Check if the description exists for the selected job ID.
+      if (jobDescriptions[id]) {
+        // Display the description in the description modal.
+        $('#descriptionContent').text(jobDescriptions[id]);
+
+        // Open the description modal when the button is clicked.
+        $('#descriptionModal').modal('show');
+      } else {
+        // Handle the case when the description is not found.
+        $('#descriptionContent').text("Description not available for this job.");
+        $('#descriptionModal').modal('show');
+      }
+    }
+  </script>
+
+
+
 </body>
 
 </html>

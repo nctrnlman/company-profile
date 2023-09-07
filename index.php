@@ -13,7 +13,7 @@
   <meta name="author" content="MAA" />
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="img/demos/business-consulting-3/logo-MAA-component.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 
@@ -248,23 +248,7 @@
                 </div>
               </a>
             </div>
-            <!-- Card 3 - Stone Crusher -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="stone-crusher.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
-                <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 21.jpg" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Crusher</h4>
-                  </div>
-                </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Crafting Stones with Precision at PT Mineral Alam Abadi.</p>
-                </div>
-                <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
-                </div>
-              </a>
-            </div>
+            
             <!-- Card 4 - Construction Services -->
             <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
               <a href="construction-services.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">

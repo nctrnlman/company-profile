@@ -145,6 +145,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 
 
   <style>
@@ -179,6 +180,23 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
       /* Initially hidden */
     }
   </style>
+
+<style>
+    .seemore-container {
+      display: flex;
+      justify-content: center;
+      /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); */
+      /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+      /* margin: 0px; */
+      /* padding: 0px; */
+    }
+
+    /* Style the button as needed */
+    /* .seemore-container button:hover {
+      transform: scale(0.95);
+    } */
+  </style>
+
 
   <style>
     .search-bar {
@@ -258,6 +276,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
     }
   </style>
 
+  
 
 
 
@@ -402,14 +421,15 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
             <!-- search sort filter -->
             <div class="container">
-              <h1 style='font-weight: 500; text-align : center; color:black; '>Unlock Your Potential with PT Mineral Alam Abadi</h1><br />
+              <h1 style='font-weight: 600; text-align : center; color:black; '>Find Your Dream Job at PT Mineral Alam Abadi</h1><br />
             </div>
 
 
             <div class="search-bar">
+
               <form method="GET">
                 <div class="search-input">
-                  <input type="text" id="searchInput" name="search" placeholder="Search...">
+                  <input type="text" id="searchInput" name="search" placeholder="Search..." style="width: 770px;">
                   <button id="searchButton" type="submit"><i class="fas fa-search"></i></button>
                 </div>
               </form>
@@ -434,6 +454,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                   </form>
                 </div>
               </div>
+
             </div>
 
             <!-- end search filter sort -->
@@ -499,20 +520,23 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
             </div>
             <!-- end card -->
           </div>
+          <?php if ($showSeemore) : ?>
+          <div class="seemore-container" >
+            <form method="GET" action="careers.php">
+              <input type="hidden" name="search" value="<?= htmlspecialchars($searchTerm) ?>">
+              <input type="hidden" name="sort" value="<?= htmlspecialchars($sortOption) ?>">
+              <input type="hidden" name="filter" value="<?= htmlspecialchars($filterOption) ?>">
+              <input type="hidden" name="limit" value="<?= $limitOption ?>">
+              <button type="submit" name="seemore"  class="btn text-color-white custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 bg-color-dark" > <span>See More</span></button>
+          </div>
+        <?php endif; ?>
         </section>
         <!-- end section card -->
 
 
 
-        <?php if ($showSeemore) : ?>
-          <form method="GET" action="careers.php">
-            <input type="hidden" name="search" value="<?= htmlspecialchars($searchTerm) ?>">
-            <input type="hidden" name="sort" value="<?= htmlspecialchars($sortOption) ?>">
-            <input type="hidden" name="filter" value="<?= htmlspecialchars($filterOption) ?>">
-            <input type="hidden" name="limit" value="<?= $limitOption ?>">
-            <button type="submit" name="seemore">Seemore</button>
-          </form>
-        <?php endif; ?>
+        
+
 
 
       </div>
@@ -600,6 +624,9 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
     }
   </script>
 
+  <script>
+    feather.replace();
+  </script>
 
 </body>
 

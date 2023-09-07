@@ -61,7 +61,7 @@ function checkUniqueIdExists($id)
 
 function moveUploadedFile($file, $unique_id)
 {
-    $uploadDirectory = "resume/";
+    $uploadDirectory = "flyer/";
     $fileName = $unique_id . "_" . basename($file['name']);
     $targetFilePath = $uploadDirectory . $fileName;
     move_uploaded_file($file['tmp_name'], $targetFilePath);

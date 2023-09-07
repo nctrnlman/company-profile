@@ -1,7 +1,6 @@
 <?php
 session_start();
 include 'db.php';
-// Cek apakah metode HTTP adalah POST (form telah disubmit)
 
 ?>
 

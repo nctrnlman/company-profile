@@ -1,15 +1,44 @@
+<?php
+session_start();
+include 'db.php';
+
+if (!isset($_SESSION['username'])) {
+    header("Location: maa-admin.php");
+    exit();
+}
+
+try {
+    $query = "
+        SELECT * FROM apply_job AS aj
+        LEFT JOIN job_vacanacy AS jv ON aj.id_job_vacanacy = jv.id_job_vacanacy
+    ";
+
+    $results = $db->query($query);
+
+    if (!$results) {
+        throw new Exception("Error in SQL query: " . $db->errorInfo()[2]);
+    }
+} catch (Exception $e) {
+    die($e->getMessage());
+}
+?>
+
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 <head>
 
     <meta charset="utf-8" />
-    <title>EIP | Mineral Alam Abadi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Admin | MAA GROUP</title>
+
+    <meta name="keywords" content="Company Profile" />
+    <meta name="description" content="Maa Group" />
+    <meta name="author" content="MAA" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
 
     <!-- jsvectormap css -->
     <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
@@ -20,7 +49,8 @@
     <!-- Layout config Js -->
     <script src="assets/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
     <!-- Icons Css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
@@ -56,10 +86,7 @@
     <div id="layout-wrapper">
 
         <?php include "topbar.php" ?>
-        <!-- ========== App Menu ========== -->
         <?php include "sidebar.php" ?>
-        <!-- Left Sidebar End -->
-        <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
 
         <div class="main-content">
@@ -85,96 +112,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>John Doe</td>
-                                            <td>john@example.com</td>
-                                            <td>123-456-7890</td>
-                                            <td><a href="john_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-06</td>
-                                            <td>Admin</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>987-654-3210</td>
-                                            <td><a href="jane_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-07</td>
-                                            <td>Admin</td>
-                                        </tr>
-                                        <tr>
-                                        <td>3</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>987-654-3210</td>
-                                            <td><a href="jane_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-07</td>
-                                            <td>Admin</td>
-                                        </tr>
-                                        <tr>
-                                        <td>4</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>987-654-3210</td>
-                                            <td><a href="jane_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-07</td>
-                                            <td>Admin</td>
-                                        </tr>
-                                        <tr>
-                                        <td>5</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>987-654-3210</td>
-                                            <td><a href="jane_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-07</td>
-                                            <td>Admin</td>
-                                        </tr>
-                                        <tr>
-                                        <td>6</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>987-654-3210</td>
-                                            <td><a href="jane_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-07</td>
-                                            <td>Admin</td>
-                                        </tr>
-                                        <tr>
-                                        <td>7</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>987-654-3210</td>
-                                            <td><a href="jane_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-07</td>
-                                            <td>Admin</td>
-                                        </tr>
-                                        <tr>
-                                        <td>8</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>987-654-3210</td>
-                                            <td><a href="jane_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-07</td>
-                                            <td>Admin</td>
-                                        </tr> 
-                                        <tr>
-                                        <td>9</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>987-654-3210</td>
-                                            <td><a href="jane_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-07</td>
-                                            <td>Admin</td>
-                                        </tr>
-                                        <tr>
-                                        <td>10</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>987-654-3210</td>
-                                            <td><a href="jane_resume.pdf" target="_blank">View Resume</a></td>
-                                            <td>2023-09-07</td>
-                                            <td>Admin</td>
-                                        </tr>
+                                        <?php $counter = 1; ?>
+                                        <?php foreach ($results as $result) { ?>
+                                            <tr>
+                                                <td><?php echo $counter; ?></td>
+                                                <td><?php echo $result['name']; ?></td>
+                                                <td><?php echo $result['email']; ?></td>
+                                                <td><?php echo $result['phone_number']; ?></td>
+                                                <td><a href="file/resume/<?php echo $result['resume']; ?>.pdf" target="_blank">View Resume</a></td>
+                                                <td><?php echo $result['create_date']; ?></td>
+                                                <td><?php echo $result['position']; ?></td>
+                                            </tr>
+                                            <?php $counter++; ?>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

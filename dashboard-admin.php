@@ -1,15 +1,51 @@
+<?php
+session_start();
+include 'db.php';
+
+if (!isset($_SESSION['username'])) {
+    header("Location: maa-admin.php");
+    exit();
+}
+
+$queryTotalJobs = "SELECT COUNT(*) AS total_jobs FROM job_vacanacy";
+$resultTotalJobs = $db->query($queryTotalJobs);
+$rowTotalJobs = $resultTotalJobs->fetch(PDO::FETCH_ASSOC);
+$totalJobs = $rowTotalJobs['total_jobs'];
+
+$queryNewApplications = "SELECT COUNT(*) AS new_applications FROM apply_job WHERE DATE(apply_date) = CURDATE()";
+$resultNewApplications = $db->query($queryNewApplications);
+$rowNewApplications = $resultNewApplications->fetch(PDO::FETCH_ASSOC);
+$newApplications = $rowNewApplications['new_applications'];
+
+$queryTotalApplications = "SELECT COUNT(*) AS total_applications FROM apply_job";
+$resultTotalApplications = $db->query($queryTotalApplications);
+$rowTotalApplications = $resultTotalApplications->fetch(PDO::FETCH_ASSOC);
+$totalApplications = $rowTotalApplications['total_applications'];
+
+$queryApplications = "SELECT *  FROM apply_job a
+                      INNER JOIN job_vacanacy j ON a.id_job_vacanacy = j.id_job_vacanacy
+                      ORDER BY a.apply_date DESC
+                      LIMIT 5";
+$resultApplications = $db->query($queryApplications);
+
+
+?>
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 <head>
 
     <meta charset="utf-8" />
-    <title>EIP | Mineral Alam Abadi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Admin | MAA GROUP</title>
+
+    <meta name="keywords" content="Company Profile" />
+    <meta name="description" content="Maa Group" />
+    <meta name="author" content="MAA" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
 
     <!-- jsvectormap css -->
     <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
@@ -114,7 +150,7 @@
                                 <div class="card card-shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Total Job Vacancies</h5>
-                                        <p class="card-text">50</p>
+                                        <p class="card-text"><?php echo $totalJobs; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +158,7 @@
                                 <div class="card card-shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">New Applications Today</h5>
-                                        <p class="card-text">5</p>
+                                        <p class="card-text"><?php echo $newApplications; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +166,7 @@
                                 <div class="card card-shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Total Applications</h5>
-                                        <p class="card-text">150</p>
+                                        <p class="card-text"><?php echo $totalApplications; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -152,31 +188,14 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Rajes</td>
-                                                    <td>Software Developer</td>
-                                                    <td>2023-09-05</td>
-                                                    <td>
-                                                        <span class="badge badge-review">Reviewing</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Alhambra</td>
-                                                    <td>UX Designer</td>
-                                                    <td>2023-09-04</td>
-                                                    <td>
-                                                        <span class="badge badge-accept">Accepted</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Andalusia</td>
-                                                    <td>Data Analyst</td>
-                                                    <td>2023-09-03</td>
-                                                    <td>
-                                                        <span class="badge badge-reject">Rejected</span>
-                                                    </td>
-                                                </tr>
-                                                <!-- Add more rows as needed -->
+                                                <?php while ($row = $resultApplications->fetch(PDO::FETCH_ASSOC)) { ?>
+                                                    <tr>
+                                                        <td><?php echo $row['name']; ?></td>
+                                                        <td><?php echo $row['position']; ?></td>
+                                                        <td><?php echo $row['apply_date']; ?></td>
+                                                        <td><a href="file/resume/<?php echo $row['resume']; ?>.pdf" target="_blank">View Resume</a></td>
+                                                    </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>

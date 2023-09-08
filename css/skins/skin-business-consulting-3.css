@@ -28,8 +28,14 @@ a:focus {
 }
 
 a:active {
-  color: #ea3b10;
+  color: #f25f3b ;
 }
+
+
+.nav-link:hover {
+  color: #c6a265 !important;
+}
+
 
 html .text-color-primary,
 html .text-primary {
@@ -902,14 +908,14 @@ html .nav-color-light:not(.header-nav-main-dropdown-arrow) nav > ul > li ul {
 
 .nav-pills > li.active > a,
 .nav-pills .nav-link.active {
-  background-color: #f04c23;
+  background-color: #c6a265;
 }
 
 .nav-pills > li.active > a:hover,
 .nav-pills .nav-link.active:hover,
 .nav-pills > li.active > a:focus,
 .nav-pills .nav-link.active:focus {
-  background-color: #f04c23;
+  background-color: #c6a265;
 }
 
 .nav-active-style-1 > li > a:hover,
@@ -931,19 +937,19 @@ html .nav-pills-primary a:focus {
 }
 
 html .nav-pills-primary a:active {
-  color: #ea3b10;
+  color: #c6a265;
 }
 
 html .nav-pills-primary .nav-link.active,
 html .nav-pills-primary > li.active > a {
-  background-color: #f04c23;
+  background-color: #c6a265;
 }
 
 html .nav-pills-primary .nav-link.active:hover,
 html .nav-pills-primary > li.active > a:hover,
 html .nav-pills-primary .nav-link.active:focus,
 html .nav-pills-primary > li.active > a:focus {
-  background-color: #f04c23;
+  background-color: #c6a265;
 }
 
 html .nav-pills-secondary a {
@@ -7217,7 +7223,7 @@ html[dir="rtl"] #header .tip-light:before {
     > ul
     > li
     > a.active {
-    color: #f04c23 !important;
+    color: #c6a265 !important;
   }
 
   html.side-header-hamburguer-sidebar

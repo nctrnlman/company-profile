@@ -1,85 +1,131 @@
 <?php
 session_start();
 include 'db.php';
+require 'php/PHPMailer/src/PHPMailer.php';
+require 'php/PHPMailer/src/SMTP.php';
 
-// Separate reCAPTCHA verification section
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Include your reCAPTCHA secret key
-    $recaptchaSecretKey = 'YOUR_SECRET_KEY';
 
-    // Verify the reCAPTCHA response
-    $recaptchaResponse = $_POST['g-recaptcha-response'];
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $job_id = $_POST['job_id'];
 
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
-    $data = [
-        'secret'   => $recaptchaSecretKey,
-        'response' => $recaptchaResponse,
-    ];
+    $unique_id = generateUniqueId();
 
-    $options = [
-        'http' => [
-            'header' => 'Content-type: application/x-www-form-urlencoded',
-            'method' => 'POST',
-            'content' => http_build_query($data),
-        ],
-    ];
+    while (checkUniqueIdExists($unique_id)) {
+        $unique_id = generateUniqueId();
+    }
 
-    $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
-    $recaptchaResult = json_decode($result);
-
-    if ($recaptchaResult->success) {
-        // reCAPTCHA verification succeeded
-        // Continue with form processing
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
-            $name = $_POST['name'];
-            $phone = $_POST['phone'];
-            $email = $_POST['email'];
-            $job_id = $_POST['job_id'];
-
-            $unique_id = generateUniqueId();
-
-            while (checkUniqueIdExists($unique_id)) {
-                $unique_id = generateUniqueId();
-            }
-
-            if (!empty($_FILES['resume']['name'])) {
-                $uploadedResume = $_FILES['resume'];
-                if ($uploadedResume['size'] <= 3 * 1024 * 1024) {
-                    $resumePath = moveUploadedFile($uploadedResume, $unique_id);
-                } else {
-                    $errorMessage = "File size exceeds the maximum limit of 3 MB.";
-                    $_SESSION['error_message'] = $errorMessage;
-                    header("Location: careers.php");
-                    exit();
-                }
-            } else {
-                $resumePath = "NULL";
-            }
-
-            $currentDate = date("Y-m-d H:i:s");
-
-            try {
-                $stmt = $db->prepare("INSERT INTO apply_job (id_apply_job, id_job_vacanacy, apply_date, name, phone_number, email, resume) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                $stmt->execute([$unique_id, $job_id, $currentDate, $name, $phone, $email, $resumePath]);
-
-                $successMessage = "Application submitted successfully!";
-                $_SESSION['success_message'] = $successMessage;
-            } catch (PDOException $e) {
-                $errorMessage = "Error: " . $e->getMessage();
-                $_SESSION['error_message'] = $errorMessage;
-            }
-
+    if (!empty($_FILES['resume']['name'])) {
+        $uploadedResume = $_FILES['resume'];
+        if ($uploadedResume['size'] <= 3 * 1024 * 1024) {
+            $resumePath = moveUploadedFile($uploadedResume, $unique_id);
+        } else {
+            $errorMessage = "File size exceeds the maximum limit of 3 MB.";
+            $_SESSION['error_message'] = $errorMessage;
             header("Location: careers.php");
             exit();
         }
     } else {
-        // reCAPTCHA verification failed, handle the error (e.g., display a message)
-        $errorMessage = "reCAPTCHA verification failed. Please try again.";
-        $_SESSION['error_message'] = $errorMessage;
-        header("Location: careers.php");
-        exit();
+        $resumePath = "NULL";
     }
+
+    $currentDate = date("Y-m-d H:i:s");
+
+    try {
+        $stmt = $db->prepare("INSERT INTO apply_job (id_apply_job, id_job_vacanacy, apply_date, name, phone_number, email, resume) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$unique_id, $job_id, $currentDate, $name, $phone, $email, $resumePath]);
+
+        $mailApplicant = new PHPMailer(true);
+        $mailApplicant->isSMTP();
+        $mailApplicant->SMTPAuth = true;
+        $mailApplicant->SMTPSecure = 'tls';
+        $mailApplicant->Host = 'mail.ptmaagroup.com';
+        $mailApplicant->Port = 587;
+        $mailApplicant->Username = 'info@ptmaagroup.com';
+        $mailApplicant->Password = 'emailMaaGroup';
+
+        $mailApplicant->setFrom('info@ptmaagroup.com', 'MAA Group');
+        $mailApplicant->addAddress($email, $name);
+
+        $mailApplicant->Subject = 'Thank You for Applying with Us';
+        $mailApplicant->Body = "
+        Dear $name,
+
+        We want to express our sincere gratitude for your application. We deeply appreciate the time and effort you invested in considering a role with us.
+        
+        Our dedicated HR team will carefully evaluate your application. If we find that your qualifications align with our requirements, we will reach out to you to discuss the next steps in our selection process.
+        
+        In the meantime, please keep an eye on your email for any further updates and notifications. Once again, thank you for your keen interest in a career opportunity.
+        
+        Warm regards,
+        
+        Sincerely,
+        
+        PT Mineral Alam Abadi";
+
+        if ($mailApplicant->send()) {
+            $successMessage = "Application submitted successfully!";
+            $_SESSION['success_message'] = $successMessage;
+        } else {
+            $errorMessage = "Error sending confirmation email. Please try again later.";
+            $_SESSION['error_message'] = $errorMessage;
+        }
+
+        $mailCompany = new PHPMailer(true);
+        $mailCompany->isSMTP();
+        $mailCompany->SMTPAuth = true;
+        $mailCompany->SMTPSecure = 'tls';
+        $mailCompany->Host = 'mail.ptmaagroup.com';
+        $mailCompany->Port = 587;
+        $mailCompany->Username = 'info@ptmaagroup.com';
+        $mailCompany->Password = 'emailMaaGroup';
+
+        $mailCompany->setFrom('info@ptmaagroup.com', 'MAA Group');
+        $mailCompany->addAddress('rhazesd@gmail.com', 'Company Recipient');
+        $mailCompany->Subject = 'New Job Application Received';
+        $mailCompany->Body = "
+    Hello,
+
+    A new job application has been received. Please find the applicant's details below:
+
+    Name: $name
+    Phone: $phone
+    Email: $email
+
+    Please find the applicant's CV attached.
+
+    Thank you.
+
+    Sincerely,
+
+    PT Mineral Alam Abadi";
+
+        if (!empty($resumePath) && $resumePath != "NULL") {
+            $mailCompany->addAttachment('file/resume/' . $resumePath);
+        }
+
+        if ($mailCompany->send()) {
+            $successMessage = "Application submitted successfully!";
+            $_SESSION['success_message'] = $successMessage;
+        } else {
+            $errorMessage = "Error sending notification email to the company. Please try again later.";
+            $_SESSION['error_message'] = $errorMessage;
+        }
+    } catch (PDOException $e) {
+        $errorMessage = "Error: " . $e->getMessage();
+        $_SESSION['error_message'] = $errorMessage;
+    }
+
+
+    header("Location: careers.php");
+    exit();
 }
 
 function generateUniqueId()
@@ -97,10 +143,9 @@ function checkUniqueIdExists($id)
 
 function moveUploadedFile($file, $unique_id)
 {
-    $uploadDirectory = "resume/";
+    $uploadDirectory = "file/resume/";
     $fileName = $unique_id . "_" . basename($file['name']);
     $targetFilePath = $uploadDirectory . $fileName;
     move_uploaded_file($file['tmp_name'], $targetFilePath);
     return $fileName;
 }
-?>

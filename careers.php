@@ -351,7 +351,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                     <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
                   </div>
                   <div class="mb-3">
-                    <div class="g-recaptcha" data-sitekey="6LdnLwYoAAAAAM0oA32qzK-lSACMIOgd2S-qfyBL"></div>
+                    <!-- <div class="g-recaptcha" data-sitekey="6LdnLwYoAAAAAM0oA32qzK-lSACMIOgd2S-qfyBL"></div> -->
                   </div>
                   <input type="hidden" name="job_id" value="<?php echo $result['id_job_vacanacy']; ?>">
                 </div>
@@ -478,7 +478,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                           <div class="mb-3">
                             <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
                           </div>
-                          <h5 class="font-weight-bold mb-2"><?php echo $result['position']; ?> - Division <?php echo $result ['division']; ?></h5>
+                          <h5 class="font-weight-bold mb-2"><?php echo $result['position']; ?> - Division <?php echo $result['division']; ?></h5>
                           <p class="mb-1"><i class="far fa-calendar-alt me-1"></i><?php
                                                                                   $originalDate = $result['create_date'];
                                                                                   $newDate = date("d F Y", strtotime($originalDate));

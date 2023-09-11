@@ -99,6 +99,7 @@
 
 
 <body>
+ 
   <div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(100px); ">
@@ -123,9 +124,9 @@
   </div>
 
 
-
+  <?php include 'navbar.php'; ?>
   <div class="body">
-    <?php include 'navbar.php'; ?>
+    
 
     <div role="main" class="main">
       <section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/demos/business-consulting-3/backgrounds/OBI/MMP\ OBI-\ 20.jpg'); background-size: cover; background-position: center;">
@@ -148,8 +149,8 @@
               </p>
             </div>
           </div>
-
         </div>
+
         <div class="shape-divider shape-divider-bottom" style="height: 212px;">
           <div class="shape-divider-horizontal-animation shape-divider-horizontal-animation-to-left">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 212" preserveAspectRatio="xMinYMin">

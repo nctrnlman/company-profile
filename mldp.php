@@ -54,8 +54,9 @@
 </head>
 
 <body>
+<?php include 'navbar.php'; ?>
   <div class="body">
-    <?php include 'navbar.php'; ?>
+   
 
 
     <div role="main" class="main">

@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    include 'db.php';
+    include '../db.php';
 
     $jobId = $_POST['jobIdInput'];
     $jobTitle = $_POST['jobTitleInput'];
@@ -48,11 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($_FILES['flyer']['size'] > $maxFileSize) {
                 $_SESSION['error_message'] = "File is too large. Maximum file size allowed is 5MB.";
             } else {
-                $newFileName = $_FILES['flyer']['name'];
-                $newFileTmpName = $_FILES['flyer']['tmp_name'];
+                $newFileName = $_FILES['flayer']['name'];
+                $newFileTmpName = $_FILES['flayer']['tmp_name'];
 
 
-                $uploadDirectory = 'flyer/';
+                $uploadDirectory = '../file/flayer';
                 $newFilePath = $uploadDirectory . $newFileName;
                 move_uploaded_file($newFileTmpName, $newFilePath);
 

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,14 +53,16 @@
 	<!-- Theme Custom CSS -->
 	<link rel="stylesheet" href="css/custom.css" />
 
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 	<!-- Head Libs -->
 	<script src="vendor/modernizr/modernizr.min.js"></script>
 </head>
 
 
+<?php include 'navbar.php'; ?>
 
 <body>
-	<?php include 'navbar.php'; ?>
 	<div role="main" class="main">
 		<section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="background-size: cover; background-position: center; background-color: #af2a25">
 			<div class="container pb-5 my-3">
@@ -73,6 +79,32 @@
 				</svg>
 			</div>
 		</section>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				<?php if (isset($_SESSION['success_message'])) { ?>
+					Swal.fire({
+						icon: 'success', // Ikonya bisa diganti dengan 'error', 'warning', dll.
+						text: '<?php echo $_SESSION['success_message']; ?>',
+
+						showConfirmButton: false,
+						timer: 3000
+					});
+					<?php unset($_SESSION['success_message']); ?>
+				<?php } ?>
+
+				<?php if (isset($_SESSION['error_message'])) { ?>
+					Swal.fire({
+						icon: 'error',
+						text: '<?php echo $_SESSION['error_message']; ?>',
+
+						showConfirmButton: false,
+						timer: 3000
+					});
+					<?php unset($_SESSION['error_message']); ?>
+				<?php } ?>
+			});
+		</script>
 
 		<section class="section section-height-3 bg-light border-0 pt-4 m-0 lazyload" data-bg-src="img/demos/business-consulting-3/backgrounds/background-6.jpg" style="background-size: 100%; background-repeat: no-repeat;">
 			<div class="container py-4">
@@ -123,16 +155,7 @@
 								<h2 class="text-color-light font-weight-medium mb-4 mt-5 mt-lg-0">Send Us a Message and Learn More About Our Services</h2>
 								<p class="text-3-5 font-weight-medium mb-4 text-color-white">Feel free to contact us and discover more about the services we offer. Our team is ready to assist you. </p>
 
-								<form class="contact-form form-style-4 form-placeholders-light form-errors-light mb-5 mb-lg-0" action="php/contact-form.php" method="POST">
-									<div class="contact-form-success alert alert-success d-none mt-4">
-										<strong>Success!</strong> Your message has been sent to us.
-									</div>
-
-									<div class="contact-form-error alert alert-danger d-none mt-4">
-										<strong>Error!</strong> There was an error sending your message.
-										<span class="mail-error-message text-1 d-block"></span>
-									</div>
-
+								<form class="" method="POST" action="contact-form.php">
 									<div class="row">
 										<div class="form-group col">
 											<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control text-3 custom-border-color-grey-1 h-auto py-2" name="name" placeholder="* Full Name" required>
@@ -168,6 +191,7 @@
 	</div>
 	<?php include 'footer.php'; ?>
 
+	<script src="sweetalert2.all.min.js"></script>
 	<!-- Vendor -->
 	<script src="vendor/plugins/js/plugins.min.js"></script>
 
@@ -185,373 +209,7 @@
 
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-	<script>
-		/*
-			Map Settings
 
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-			*/
-
-		function initializeGoogleMaps() {
-			// Map Initial Location
-			var initLatitude = 40.75198;
-			var initLongitude = -73.96978;
-
-			// Map Markers
-			var mapMarkers = [{
-				latitude: initLatitude,
-				longitude: initLongitude,
-				html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
-				icon: {
-					image: "img/demos/business-consulting-3/map-pin.png",
-					iconsize: [26, 27],
-					iconanchor: [12, 27]
-				}
-			}];
-
-			// Map Extended Settings
-			var mapSettings = {
-				controls: {
-					draggable: (($.browser.mobile) ? false : true),
-					panControl: false,
-					zoomControl: false,
-					mapTypeControl: false,
-					scaleControl: false,
-					streetViewControl: false,
-					overviewMapControl: false
-				},
-				scrollwheel: false,
-				markers: mapMarkers,
-				latitude: initLatitude,
-				longitude: initLongitude,
-				zoom: 14
-			};
-
-			var map = $('#googlemaps').gMap(mapSettings),
-				mapRef = $('#googlemaps').data('gMap.reference');
-
-			// Styles from https://snazzymaps.com/
-			var styles = [{
-				"featureType": "water",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#e9e9e9"
-				}, {
-					"lightness": 17
-				}]
-			}, {
-				"featureType": "landscape",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#f5f5f5"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 17
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 29
-				}, {
-					"weight": 0.2
-				}]
-			}, {
-				"featureType": "road.arterial",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 18
-				}]
-			}, {
-				"featureType": "road.local",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#f5f5f5"
-				}, {
-					"lightness": 21
-				}]
-			}, {
-				"featureType": "poi.park",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#dedede"
-				}, {
-					"lightness": 21
-				}]
-			}, {
-				"elementType": "labels.text.stroke",
-				"stylers": [{
-					"visibility": "on"
-				}, {
-					"color": "#ffffff"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"elementType": "labels.text.fill",
-				"stylers": [{
-					"saturation": 36
-				}, {
-					"color": "#333333"
-				}, {
-					"lightness": 40
-				}]
-			}, {
-				"elementType": "labels.icon",
-				"stylers": [{
-					"visibility": "off"
-				}]
-			}, {
-				"featureType": "transit",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#f2f2f2"
-				}, {
-					"lightness": 19
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#fefefe"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#fefefe"
-				}, {
-					"lightness": 17
-				}, {
-					"weight": 1.2
-				}]
-			}];
-
-			var styledMap = new google.maps.StyledMapType(styles, {
-				name: 'Styled Map'
-			});
-
-			mapRef.mapTypes.set('map_style', styledMap);
-			mapRef.setMapTypeId('map_style');
-		}
-
-		// Initialize Google Maps when element enter on browser view
-		theme.fn.intObs('#googlemaps', 'initializeGoogleMaps()', {});
-
-		// Map text-center At
-		var mapCenterAt = function(options, e) {
-			e.preventDefault();
-			$('#googlemaps').gMap("centerAt", options);
-		}
-	</script>
-
-	<script>
-		/*
-			Map Settings
-
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-			*/
-
-		function initializeGoogleMaps2() {
-			// Map Initial Location
-			var initLatitude = 40.75198;
-			var initLongitude = -73.96978;
-
-			// Map Markers
-			var mapMarkers = [{
-				latitude: initLatitude,
-				longitude: initLongitude,
-				html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt2({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
-				icon: {
-					image: "img/demos/business-consulting-3/map-pin-big.png",
-					iconsize: [28, 37],
-					iconanchor: [12, 37]
-				}
-			}];
-
-			// Map Extended Settings
-			var mapSettings = {
-				controls: {
-					draggable: (($.browser.mobile) ? false : true),
-					panControl: false,
-					zoomControl: false,
-					mapTypeControl: false,
-					scaleControl: false,
-					streetViewControl: false,
-					overviewMapControl: false
-				},
-				scrollwheel: false,
-				markers: mapMarkers,
-				latitude: initLatitude,
-				longitude: initLongitude,
-				zoom: 14
-			};
-
-			var map = $('#googlemaps2').gMap(mapSettings),
-				mapRef = $('#googlemaps2').data('gMap.reference');
-
-			// Styles from https://snazzymaps.com/
-			var styles = [{
-				"featureType": "water",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#e9e9e9"
-				}, {
-					"lightness": 17
-				}]
-			}, {
-				"featureType": "landscape",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#f5f5f5"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 17
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 29
-				}, {
-					"weight": 0.2
-				}]
-			}, {
-				"featureType": "road.arterial",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 18
-				}]
-			}, {
-				"featureType": "road.local",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#f5f5f5"
-				}, {
-					"lightness": 21
-				}]
-			}, {
-				"featureType": "poi.park",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#dedede"
-				}, {
-					"lightness": 21
-				}]
-			}, {
-				"elementType": "labels.text.stroke",
-				"stylers": [{
-					"visibility": "on"
-				}, {
-					"color": "#ffffff"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"elementType": "labels.text.fill",
-				"stylers": [{
-					"saturation": 36
-				}, {
-					"color": "#333333"
-				}, {
-					"lightness": 40
-				}]
-			}, {
-				"elementType": "labels.icon",
-				"stylers": [{
-					"visibility": "off"
-				}]
-			}, {
-				"featureType": "transit",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#f2f2f2"
-				}, {
-					"lightness": 19
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#fefefe"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#fefefe"
-				}, {
-					"lightness": 17
-				}, {
-					"weight": 1.2
-				}]
-			}];
-
-			var styledMap = new google.maps.StyledMapType(styles, {
-				name: 'Styled Map'
-			});
-
-			mapRef.mapTypes.set('map_style', styledMap);
-			mapRef.setMapTypeId('map_style');
-		}
-
-		// Initialize Google Maps when element enter on browser view
-		theme.fn.intObs('#googlemaps2', 'initializeGoogleMaps2()', {});
-
-		// Map text-center At
-		var mapCenterAt2 = function(options, e) {
-			e.preventDefault();
-			$('#googlemaps2').gMap("centerAt", options);
-		}
-	</script>
 
 </body>
 

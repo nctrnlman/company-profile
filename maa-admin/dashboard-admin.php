@@ -3,7 +3,7 @@ session_start();
 include '../db.php';
 
 if (!isset($_SESSION['username'])) {
-    header("Location: index.php");
+    header("Location: ./");
     exit();
 }
 
@@ -48,21 +48,21 @@ $resultApplications = $db->query($queryApplications);
     <link rel="shortcut icon" href="../img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
 
     <!-- jsvectormap css -->
-    <link href="../assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
 
     <!--Swiper slider css-->
-    <link href="../assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Layout config Js -->
-    <script src="../assets/js/layout.js"></script>
+    <script src="assets/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -139,7 +139,7 @@ $resultApplications = $db->query($queryApplications);
                                 <div class="alert alert-primary" role="alert" style="background-color: #af2a25; color:white; font-size:medium; ">
                                     Welcome Admin!
                                     <p style="font-size: small; padding-top: 20px;">This system will help you to insert the job vacancy and
-                                        also help to manage, and tracking the applicant submission. <i>Sistem ini akan membantu Anda untuk memasukkan lowongan pekerjaan dan juga membantu mengelola serta melacak pengiriman aplikasi pelamar.</i>
+                                        also help to manage, and tracking the applicant submission.<br /> <i>Sistem ini akan membantu Anda untuk memasukkan lowongan pekerjaan dan juga membantu mengelola serta melacak pengiriman aplikasi pelamar.</i>
                                     </p>
                                 </div>
                             </div>
@@ -219,7 +219,7 @@ $resultApplications = $db->query($queryApplications);
                                                         <td><?php echo $row['name']; ?></td>
                                                         <td><?php echo $row['position']; ?></td>
                                                         <td><?php echo $row['apply_date']; ?></td>
-                                                        <td><a href="file/resume/<?php echo $row['resume']; ?>.pdf" target="_blank">View Resume</a></td>
+                                                        <td><a href="../file/resume/<?php echo $row['resume']; ?>.pdf" target="_blank">View Resume</a></td>
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>
@@ -282,7 +282,6 @@ $resultApplications = $db->query($queryApplications);
 
     <!-- Theme Settings -->
 
-
     <!-- JAVASCRIPT -->
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
@@ -293,8 +292,6 @@ $resultApplications = $db->query($queryApplications);
 
     <!-- apexcharts -->
     <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-    <script src="sweetalert2.all.min.js"></script>
-    <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
 
     <!-- Vector map-->
     <script src="assets/libs/jsvectormap/js/jsvectormap.min.js"></script>

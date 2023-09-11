@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'db.php';
+include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])) {
     $jobId = $_POST['id'];
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])) {
     $result = $stmt->fetch();
 
     if ($result && !empty($result['flyer'])) {
-        $filePath = "file/flayer/" . $result['image'];
+        $filePath = "../file/flayer/" . $result['image'];
         if (file_exists($filePath)) {
             unlink($filePath);
         }

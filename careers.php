@@ -306,8 +306,8 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
             <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
               <?php
-              if (!empty($result['resume'])) {
-                echo '<img src="flyer/' . $result['resume'] . '" alt="Flyer" class="img-fluid">';
+              if (!empty($result['image'])) {
+                echo '<img src="file/flayer/' . $result['image'] . '" alt="Flyer" class="img-fluid">';
               } elseif (!empty($result['description'])) {
 
                 echo '<p>' . $result['description'] . '</p>';
@@ -490,7 +490,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
                             <div class="card-body" style="background-color:#af2a25; background-image: url('img/demos/business-consulting-3/texture-card.png'); background-blend-mode: overlay;">
                               <div class="text-center mt-2">
-                                <?php if (!empty($result['resume'])) { ?>
+                                <?php if (!empty($result['image'])) { ?>
                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openModal(<?php echo $result['id_job_vacanacy']; ?>)">
                                     Open Flyer
                                   </button>

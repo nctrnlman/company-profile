@@ -29,7 +29,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : ''; // Get the 'page' parameter f
         <!-- Dark Logo-->
         <a href="index.php?page=Dashboard" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="../assets/images/logo_MAA.png" alt="" height="22">
+                <img src="assets/images/logo_MAA.png" alt="" height="22">
             </span>
             <span class="logo-lg">
                 <img src="assets/images/logo_MAAA.png" alt="" height="17">

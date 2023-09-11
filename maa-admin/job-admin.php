@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php';
 
 if (!isset($_SESSION['username'])) {
-    header("Location: maa-admin.php");
+    header("Location: ./");
     exit();
 }
 
@@ -28,7 +28,7 @@ $results = $db->query($query);
     <meta name="author" content="MAA" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
 
     <!-- jsvectormap css -->
     <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
@@ -53,10 +53,10 @@ $results = $db->query($query);
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Include DataTables CSS (from npm) -->
-    <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-dt/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/datatables.net-dt/css/jquery.dataTables.css">
 
     <!-- Include DataTables JavaScript (from npm) -->
-    <script type="text/javascript" src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../node_modules/datatables.net/js/jquery.dataTables.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -141,7 +141,7 @@ $results = $db->query($query);
                                                             if ($result['image'] === null || strtoupper($result['image']) === 'NULL') {
                                                                 echo "No Flyer Available";
                                                             } else {
-                                                                echo '<a href="file/flayer/' . $result['image'] . '" target="_blank">View Flyer</a>';
+                                                                echo '<a href="../file/flayer/' . $result['image'] . '" target="_blank">View Flyer</a>';
                                                             }
                                                             ?></td>
                                                         <td>
@@ -402,7 +402,7 @@ $results = $db->query($query);
 
                 if (currentFlyerSrc == undefined || currentFlyerSrc === '') {
                     // Jika tidak ada flyer, atur teks atau atribut lainnya untuk menampilkan pesan "Tidak ada flyer"
-                    $('#currentFlyer').attr('src', 'file/flayer/placeholder-image.png'); // Ganti dengan URL gambar placeholder Anda
+                    $('#currentFlyer').attr('src', '../file/flayer/placeholder-image.png'); // Ganti dengan URL gambar placeholder Anda
                     $('#currentFlyer').attr('alt', 'No Flyer Available');
                 } else {
                     // Atur src gambar saat ini dengan URL yang sesuai

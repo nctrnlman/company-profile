@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $position = $_POST['position'];
@@ -61,7 +61,7 @@ function checkUniqueIdExists($id)
 
 function moveUploadedFile($file, $unique_id)
 {
-    $uploadDirectory = "file/flayer/";
+    $uploadDirectory = "../file/flayer/";
     $fileName = $unique_id . "_" . basename($file['name']);
     $targetFilePath = $uploadDirectory . $fileName;
     move_uploaded_file($file['tmp_name'], $targetFilePath);

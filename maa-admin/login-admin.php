@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($username) && empty($password)) {
         $_SESSION['error_message'] = "Username and password are required.";
-        header("Location: maa-admin.php");
+        header("Location: ./");
         exit();
     }
 
@@ -31,18 +31,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             } else {
                 $_SESSION['error_message'] = "Password is incorrect.";
-                header("Location: maa-admin.php");
+                header("Location: ./");
                 exit();
             }
         } else {
             $_SESSION['error_message'] = "Username not found.";
-            header("Location: maa-admin.php");
+            header("Location: ./");
             exit();
         }
     } catch (PDOException $e) {
         $errorMessage = "Error: " . $e->getMessage();
         $_SESSION['error_message'] = $errorMessage;
-        header("Location: maa-admin.php");
+        header("Location: ./");
         exit();
     }
 }

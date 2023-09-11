@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php';
 
 if (!isset($_SESSION['username'])) {
-    header("Location: maa-admin.php");
+    header("Location: ./");
     exit();
 }
 
@@ -38,7 +38,7 @@ try {
     <meta name="author" content="MAA" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
 
     <!-- jsvectormap css -->
     <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
@@ -50,7 +50,7 @@ try {
     <script src="assets/js/layout.js"></script>
     <!-- Bootstrap Css -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
-    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
@@ -64,10 +64,10 @@ try {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Include DataTables CSS (from npm) -->
-    <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-dt/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/datatables.net-dt/css/jquery.dataTables.css">
 
     <!-- Include DataTables JavaScript (from npm) -->
-    <script type="text/javascript" src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../node_modules/datatables.net/js/jquery.dataTables.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -75,10 +75,10 @@ try {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Include DataTables CSS (from npm) -->
-    <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-dt/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/datatables.net-dt/css/jquery.dataTables.css">
 
     <!-- Include DataTables JavaScript (from npm) -->
-    <script type="text/javascript" src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../node_modules/datatables.net/js/jquery.dataTables.js"></script>
 
 </head>
 
@@ -119,7 +119,7 @@ try {
                                                 <td><?php echo $result['name']; ?></td>
                                                 <td><?php echo $result['email']; ?></td>
                                                 <td><?php echo $result['phone_number']; ?></td>
-                                                <td><a href="file/resume/<?php echo $result['resume']; ?>.pdf" target="_blank">View Resume</a></td>
+                                                <td><a href="../file/resume/<?php echo $result['resume']; ?>.pdf" target="_blank">View Resume</a></td>
                                                 <td><?php echo $result['create_date']; ?></td>
                                                 <td><?php echo $result['position']; ?></td>
                                             </tr>

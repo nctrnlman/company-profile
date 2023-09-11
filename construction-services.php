@@ -64,7 +64,7 @@
           <div class="row mb-4">
             <div class="col-md-12 align-self-center p-static order-2 text-center">
               <h1 class="font-weight-bold text-color-white text-10" style="text-shadow: 5px 5px 10px black;">
-                construction Services
+                Construction Services
               </h1>
             </div>
           </div>
@@ -103,8 +103,9 @@
     </div>
 </div>
 
-    <?php include 'footer.php'; ?>
+    
   </div>
+  <?php include 'footer.php'; ?>
 
   <!-- Vendor -->
   <script src="vendor/plugins/js/plugins.min.js"></script>

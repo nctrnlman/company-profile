@@ -104,8 +104,9 @@
       </div>
 
 
-      <?php include 'footer.php'; ?>
+      
     </div>
+    <?php include 'footer.php'; ?>
 
     <!-- Vendor -->
     <script src="vendor/plugins/js/plugins.min.js"></script>

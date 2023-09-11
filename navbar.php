@@ -18,17 +18,18 @@
                 <nav class="collapse">
                   <ul class="nav nav-pills" id="mainNav">
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') echo 'class="active"'; ?> class="nav-link" href="index.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="index.php">
                         Home
                       </a>
                     </li>
+
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'about.php') echo 'class="active"'; ?> class="nav-link" href="about.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'about.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="about.php">
                         About MAA
                       </a>
                     </li>
                     <li class="dropdown">
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'services.php' || basename($_SERVER['PHP_SELF']) == 'trading.php' || basename($_SERVER['PHP_SELF']) == 'shipping.php' || basename($_SERVER['PHP_SELF']) == 'stone-crusher.php' || basename($_SERVER['PHP_SELF']) == 'stone-mining.php' || basename($_SERVER['PHP_SELF']) == 'nickel-mining.php' || basename($_SERVER['PHP_SELF']) == 'mining-contractor.php' || basename($_SERVER['PHP_SELF']) == 'construction-services.php' || basename($_SERVER['PHP_SELF']) == 'investment.php') echo 'class="active"'; ?> class="nav-link dropdown-toggle" href="services.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'services.php' || basename($_SERVER['PHP_SELF']) == 'trading.php' || basename($_SERVER['PHP_SELF']) == 'shipping.php' || basename($_SERVER['PHP_SELF']) == 'stone-crusher.php' || basename($_SERVER['PHP_SELF']) == 'stone-mining.php' || basename($_SERVER['PHP_SELF']) == 'nickel-mining.php' || basename($_SERVER['PHP_SELF']) == 'mining-contractor.php' || basename($_SERVER['PHP_SELF']) == 'construction-services.php' || basename($_SERVER['PHP_SELF']) == 'investment.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link dropdown-toggle" href="services.php">
                         Our Business
                       </a>
                       <!-- <ul class="dropdown-menu">
@@ -77,22 +78,22 @@
                             </ul> -->
                     </li>
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'mldp.php') echo 'class="active"'; ?> class="nav-link" href="mldp.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'mldp.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="mldp.php">
                         MLDP
                       </a>
                     </li>
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'careers.php') echo 'class="active"'; ?> class="nav-link" href="careers.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'careers.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="careers.php">
                         Career
                       </a>
                     </li>
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'gallery.php') echo 'class="active"'; ?> class="nav-link" href="gallery.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'gallery.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="gallery.php">
                         Gallery
                       </a>
                     </li>
                     <li class="d-lg-none">
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'contact.php') echo 'class="active"'; ?> class="nav-link" href="contact.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'contact.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="contact.php">
                         Contact Us
                       </a>
                     </li>
@@ -183,4 +184,4 @@
     </div>
   </div>
   </div>
-</header>
+</header

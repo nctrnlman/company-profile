@@ -78,34 +78,35 @@
       </section>
 
       <div class="container pt-3 mt-4">
-        <div class="row mb-5">
-          <div class="col-lg-7">
-            <p class="text-3-5">
-              Our investment arm at PT Mineral Alam Abadi is dedicated to fostering growth and opportunity. With a keen eye for promising ventures, we strategically invest in diverse sectors that align with our company's values and long-term goals.
+    <div class="row mb-5">
+        <div class="col-lg-7">
+            <p class="text-justify">
+                Our investment arm at PT Mineral Alam Abadi is dedicated to fostering growth and opportunity. With a keen eye for promising ventures, we strategically invest in diverse sectors that align with our company's values and long-term goals.
             </p>
-            <p>
-              Our investment philosophy centers on nurturing innovation, driving sustainable practices, and creating value. We collaborate with visionary entrepreneurs and businesses to provide not only capital but also strategic guidance and industry insights.
+            <p class="text-justify">
+                Our investment philosophy centers on nurturing innovation, driving sustainable practices, and creating value. We collaborate with visionary entrepreneurs and businesses to provide not only capital but also strategic guidance and industry insights.
             </p>
-            <p>
-              At PT Mineral Alam Abadi, we recognize the power of strategic partnerships. Through our investment endeavors, we aim to catalyze positive change, promote technological advancement, and contribute to the development of industries that drive economic progress and societal well-being.
+            <p class="text-justify">
+                At PT Mineral Alam Abadi, we recognize the power of strategic partnerships. Through our investment endeavors, we aim to catalyze positive change, promote technological advancement, and contribute to the development of industries that drive economic progress and societal well-being.
             </p>
-          </div>
-          <div class="col-10 col-lg-4 ms-auto pt-4 pt-5 pt-lg-4 pb-5">
-            <div class="cascading-images-wrapper p-0 mt-5 mb-5">
-              <div class="cascading-images position-relative">
-                <img src="img/demos/business-consulting-3/generic/generic-6.jpg" class="box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-duration="600ms" />
-                <div class="position-absolute w-100" style="top: 61%; left: -20%">
-                  <img src="img/demos/business-consulting-3/generic/generic-3.jpg" class="box-shadow-4 appear-animation" width="285" alt="" data-appear-animation="expandIn" data-appear-animation-delay="300" data-appear-animation-duration="600ms" />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+        <div class="col-10 col-lg-4 ms-auto pt-4 pt-5 pt-lg-4 pb-5">
+            <div class="cascading-images-wrapper p-0 mt-5 mb-5">
+                <div class="cascading-images position-relative">
+                    <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0863.JPG" class="box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-duration="600ms" />
+                    <div class="position-absolute w-100" style="top: 61%; left: -20%">
+                        <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0867.JPG" class="box-shadow-4 appear-animation" width="285" alt="" data-appear-animation="expandIn" data-appear-animation-delay="300" data-appear-animation-duration="600ms" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <?php include 'footer.php'; ?>
+
+    
   </div>
+  <?php include 'footer.php'; ?>
 
   <!-- Vendor -->
   <script src="vendor/plugins/js/plugins.min.js"></script>

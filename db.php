@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'eip';
+$dbname = 'maa_cp';
 $username = 'root';
 $password = '';
 

@@ -2,13 +2,93 @@
 session_start();
 include 'db.php';
 
-try {
-  $stmt = $db->query("SELECT * FROM job WHERE status_job = 'aktif'");
-  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-  echo "Query failed: " . $e->getMessage();
+// Fungsi untuk mengambil data pekerjaan dari database dengan batasan
+function getDefaultJobs($limit = 3)
+{
+  global $db;
+  $query = "SELECT * FROM job_vacanacy LIMIT $limit";
+  $stmt = $db->query($query);
+  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  header("Location: careers.php");
+  exit();
+}
+
+// Fungsi untuk mengambil data pekerjaan dari database dengan filter, pencarian, dan pengurutan
+function getFilteredJobs($searchTerm = '', $sortOption = '', $filterOption = '', $limitOption = 3)
+{
+  global $db;
+  $query = "SELECT * FROM job_vacanacy WHERE 1";
+
+  // Cek apakah ada pencarian yang dikirimkan
+  if (!empty($searchTerm)) {
+    $query .= " AND (position LIKE :searchTerm OR location LIKE :searchTerm)";
+  }
+
+  // Cek apakah ada filter yang dikirimkan
+  if (!empty($filterOption)) {
+    $query .= " AND division = :filterOption";
+  }
+
+  // Cek apakah ada pengurutan yang dikirimkan
+  if (!empty($sortOption)) {
+    $query .= " ORDER BY $sortOption";
+  }
+
+  // Tambahkan LIMIT sesuai dengan opsi yang diberikan
+  $query .= " LIMIT :limitOption";
+
+  $stmt = $db->prepare($query);
+
+  // Bind parameter pencarian
+  if (!empty($searchTerm)) {
+    $searchTerm = '%' . $searchTerm . '%';
+    $stmt->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
+  }
+
+  // Bind parameter filter
+  if (!empty($filterOption)) {
+    $stmt->bindParam(':filterOption', $filterOption, PDO::PARAM_STR);
+  }
+
+  // Bind parameter limit
+  $stmt->bindParam(':limitOption', $limitOption, PDO::PARAM_INT);
+
+  $stmt->execute();
+  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  header("Location: careers.php");
+  exit();
+}
+
+// Mengambil data dari formulir
+$searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
+$sortOption = isset($_GET['sort']) ? htmlspecialchars($_GET['sort']) : '';
+$filterOption = isset($_GET['filter']) ? htmlspecialchars($_GET['filter']) : '';
+$limitOption = isset($_GET['limit']) ? intval($_GET['limit']) : 3;
+
+// Jika tombol "Seemore" ditekan, tambahkan 3 ke limit
+if (isset($_GET['seemore'])) {
+  $limitOption += 3;
+}
+
+// Jika tidak ada permintaan khusus, gunakan fungsi getDefaultJobs() untuk mendapatkan data dengan limit awal
+if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
+  $results = getDefaultJobs($limitOption);
+
+  $numResults = count($results);
+
+  // Tampilkan tombol "Seemore" hanya jika jumlah data lebih dari atau sama dengan limit
+  $showSeemore = $numResults >= $limitOption;
+} else {
+  // Jika ada permintaan khusus, gunakan fungsi getFilteredJobs() untuk mengambil data sesuai permintaan
+  $results = getFilteredJobs($searchTerm, $sortOption, $filterOption, $limitOption);
+
+  $numResults = count($results);
+
+  // Tampilkan tombol "Seemore" hanya jika jumlah data lebih dari atau sama dengan limit
+  $showSeemore = $numResults >= $limitOption;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en" data-hash-offset="130">
@@ -34,7 +114,7 @@ try {
   <!-- Web Fonts  -->
   <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css" />
 
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjO5ftz5z5F5u5pge5O8W5B2EpE" crossorigin="anonymous">
   <!-- Vendor CSS -->
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css" />
@@ -63,8 +143,13 @@ try {
   <link rel="stylesheet" href="css/custom.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
 
   <style>
     .overlay {
@@ -81,41 +166,6 @@ try {
     }
   </style>
 
-  <style>
-    #applyModal {
-      background: none;
-    }
-
-    /* CSS for the modal */
-    .modal {
-      z-index: 1051 !important;
-      /* Higher value than the backdrop */
-    }
-
-    /* CSS for the backdrop overlay behind the modal */
-    .modal-backdrop {
-      z-index: 1040 !important;
-      /* Lower value than the modal */
-    }
-
-    .modal-backdrop.show {
-      display: none;
-    }
-
-    .accordion {
-      z-index: 1030 !important;
-      border-color: #af2a25 !important;
-      /* Adjust the value as needed */
-    }
-
-    #accordion11 .card-header {
-      border-color: #af2a25 !important;
-    }
-
-    #accordion11 .accordion-toggle {
-      color: #af2a25;
-    }
-  </style>
 
   <style>
     /* Add a CSS rule for the overlay */
@@ -133,6 +183,23 @@ try {
       /* Initially hidden */
     }
   </style>
+
+  <style>
+    .seemore-container {
+      display: flex;
+      justify-content: center;
+      /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); */
+      /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+      /* margin: 0px; */
+      /* padding: 0px; */
+    }
+
+    /* Style the button as needed */
+    /* .seemore-container button:hover {
+      transform: scale(0.95);
+    } */
+  </style>
+
 
   <style>
     .search-bar {
@@ -184,7 +251,7 @@ try {
 
     .dropdown-toggle {
       background-color: #fff;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
       padding: 8px 12px;
       border-radius: 5px;
       cursor: pointer;
@@ -210,13 +277,8 @@ try {
     .dropdown:hover .dropdown-menu {
       display: block;
     }
-
-    .modal-backdrop.show {
-      opacity: 1;
-      z-index: 1050;
-      /* Adjust z-index to make it cover other elements */
-    }
   </style>
+
 
 
 
@@ -229,119 +291,253 @@ try {
 
 
 <body>
+  <div class="body">
+    <!-- Existing Modal -->
+    <?php foreach ($results as $result) { ?>
 
+      <div class="modal fade" id="myModal<?php echo $result['id_job_vacanacy']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
 
-  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog" data-bs-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
-        <div class="modal-header">
-          <h5 class="modal-title text-white">Flyer</h5>
-          <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-white" style="max-height: 400px; overflow-y: auto;">
-          <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
+            <div class="modal-header">
+              <h5 class="modal-title text-white">Flyer</h5>
+              <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
+              <?php
+              if (!empty($result['resume'])) {
+                echo '<img src="flyer/' . $result['resume'] . '" alt="Flyer" class="img-fluid">';
+              } elseif (!empty($result['description'])) {
+
+                echo '<p>' . $result['description'] . '</p>';
+              } else {
+                echo 'No content available.';
+              }
+              ?>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    <?php } ?>
 
-  
-  
-  <div id="overlay" class="overlay">
-  <?php include 'navbar.php'; ?>
-    
-      <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="background-size: cover; background-position: center ;background-color: #af2a25;">
-        <div class="container pb-5 my-3">
-          <div class="row mb-4">
-            <div class="col-md-12 align-self-center p-static order-2 text-center">
-              <h1 class="font-weight-bold text-color-white text-10">Career</h1>
+    <!-- apply form -->
+    <?php foreach ($results as $result) { ?>
+      <div class="modal fade" id="thisModal<?php echo $result['id_job_vacanacy']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" style="background-color: #fff">
+            <div class="modal-header">
+              <h5 class="modal-title text-black"><?php echo $result['position']; ?> | <?php echo $result['division']; ?> </h5>
             </div>
+
+            <div class="modal-body text-black" style="max-width: auto; overflow-y: auto;">
+              <form method="POST" enctype="multipart/form-data" action="applyCareer.php">
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="name" class="form-label" style="font-weight: bold;">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label" style="font-weight: bold;">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label" style="font-weight: bold;">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;">
+                  </div>
+                  <div class="mb-3">
+                    <label for="resume" class="form-label" style="font-weight: bold;">Upload Resume (PDF, max 3MB)</label>
+                    <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
+                  </div>
+                  <div class="mb-3">
+                    <!-- <div class="g-recaptcha" data-sitekey="6LdnLwYoAAAAAM0oA32qzK-lSACMIOgd2S-qfyBL"></div> -->
+                  </div>
+                  <input type="hidden" name="job_id" value="<?php echo $result['id_job_vacanacy']; ?>">
+                </div>
+
+                <div class="modal-footer" style="border-top: none; padding-top: 0;">
+                  <button type="submit" class="btn btn-primary" name="submit">Apply</button>
+                </div>
+              </form>
+            </div>
+
           </div>
         </div>
-        <div class="shape-divider shape-divider-bottom shape-divider-reverse-x" style="height: 123px">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 123" preserveAspectRatio="xMinYMin">
-            <polygon fill="#c6a265" points="0,90 221,60 563,88 931,35 1408,93 1920,41 1920,-1 0,-1 " />
-            <polygon fill="#FFFFFF" points="0,75 219,44 563,72 930,19 1408,77 1920,25 1920,-1 0,-1 " />
-          </svg>
+      </div>
+    <?php } ?>
+    <!-- end apply form -->
+
+    <?php include 'navbar.php'; ?>
+
+    <div id="overlay">
+      <div role="main" class="main">
+        <!-- judul -->
+        <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="
+            background-size: cover;
+            background-position: center;
+            background-color: #af2a25;
+          ">
+          <div class="container pb-5 my-3">
+            <div class="row mb-4">
+              <div class="col-md-12 align-self-center p-static order-2 text-center">
+                <h1 class="font-weight-bold text-color-white text-12" style="text-shadow: 5px 5px 10px black;">
+                  Careers
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="shape-divider shape-divider-bottom shape-divider-reverse-x" style="height: 123px">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 123" preserveAspectRatio="xMinYMin">
+              <polygon fill="#c6a265" points="0,90 221,60 563,88 931,35 1408,93 1920,41 1920,-1 0,-1 " />
+              <polygon fill="#FFFFFF" points="0,75 219,44 563,72 930,19 1408,77 1920,25 1920,-1 0,-1 " />
+            </svg>
+          </div>
+        </section>
+        <div class="col-md-12">
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              <?php if (isset($_SESSION['success_message'])) { ?>
+                Swal.fire({
+                  icon: 'success', // Ikonya bisa diganti dengan 'error', 'warning', dll.
+                  text: '<?php echo $_SESSION['success_message']; ?>',
+
+                  showConfirmButton: false,
+                  timer: 3000
+                });
+                <?php unset($_SESSION['success_message']); ?>
+              <?php } ?>
+
+              <?php if (isset($_SESSION['error_message'])) { ?>
+                Swal.fire({
+                  icon: 'error',
+                  text: '<?php echo $_SESSION['error_message']; ?>',
+
+                  showConfirmButton: false,
+                  timer: 3000
+                });
+                <?php unset($_SESSION['error_message']); ?>
+              <?php } ?>
+            });
+          </script>
         </div>
-      </section>
+
+        <section class="section section-default border-0 m-0 bg-light">
+          <div class="container py-4">
+
+            <!-- search sort filter -->
+            <div class="container">
+              <h1 style='font-weight: 600; text-align : center; color:black; '>Find Your Dream Job at PT Mineral Alam Abadi</h1><br />
+            </div>
+
+
+            <div class="search-bar">
+
+              <form method="GET">
+                <div class="search-input">
+                  <input type="text" id="searchInput" name="search" placeholder="Search..." style="width: 770px;">
+                  <button id="searchButton" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+              </form>
+              <div class="sort-category">
+                <form method="GET">
+                  <select id="sortSelect" name="sort">
+                    <option value="">Sort by</option>
+                    <option value="position">Sort by Position</option>
+                    <option value="company">Sort by Company</option>
+                    <option value="location">Sort by Location</option>
+                    <option value="create_date">Sort by Date</option>
+                  </select>
+                </form>
+                <div class="dropdown">
+                  <form method="GET">
+                    <select id="filterSelect" name="filter">
+                      <option value="">Filter by Division</option>
+                      <option value="IT">IT</option>
+                      <option value="HRGA">HRGA</option>
+                      <option value="Mining">Mining</option>
+                    </select>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- end search filter sort -->
+
+            <!-- card -->
+            <div class="card-container" id="jobList">
+
+              <div class="row mt-5">
+
+                <?php if (count($results) > 0) { ?>
+                  <?php foreach ($results as $result) { ?>
+                    <div class="col-md-4 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="mb-3">
+                            <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                          </div>
+                          <h5 class="font-weight-bold mb-2"><?php echo $result['position']; ?> - Division <?php echo $result['division']; ?></h5>
+                          <p class="mb-1"><i class="far fa-calendar-alt me-1"></i><?php
+                                                                                  $originalDate = $result['create_date'];
+                                                                                  $newDate = date("d F Y", strtotime($originalDate));
+
+                                                                                  echo $newDate;
+                                                                                  ?> | <i class="fas fa-map-marker-alt ms-1 me-1"></i><?php echo $result['location']; ?></p>
+                          <p class="mb-2"><?php echo $result['company']; ?></p>
+                          <div class="card">
+
+                            <div class="card-body" style="background-color:#af2a25; background-image: url('img/demos/business-consulting-3/texture-card.png'); background-blend-mode: overlay;">
+                              <div class="text-center mt-2">
+                                <?php if (!empty($result['resume'])) { ?>
+                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openModal(<?php echo $result['id_job_vacanacy']; ?>)">
+                                    Open Flyer
+                                  </button>
+                                <?php } else { ?>
+                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openModal(<?php echo $result['id_job_vacanacy']; ?>)">
+                                    Open Description
+                                  </button>
+                                <?php } ?>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="text-center mt-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#thisModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openApplyModal(<?php echo $result['id_job_vacanacy']; ?>)">
+                              Apply Job
+                            </button>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
 
 
-      <section class="section section-default border-0 m-0 bg-light">
-        <div class="container py-4">
-          <div class="col-md-12">
-            <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                <?php if (isset($_SESSION['success_message'])) { ?>
-                  Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: '<?php echo $_SESSION['success_message']; ?>',
-                    showConfirmButton: false,
-                    timer: 3000
-                  });
-                  // Swal.fire({
-                  //   icon: 'success', // Ikonya bisa diganti dengan 'error', 'warning', dll.
-                  //   title: 'Success',
-                  //   text: '<?php echo $_SESSION['success_message']; ?>',
-                  //   toast: true,
-                  //   position: 'top-end', // Atau 'bottom-end' untuk notifikasi di bawah
-                  //   showConfirmButton: false,
-                  //   timer: 3000
-                  // });
-                  <?php unset($_SESSION['success_message']); ?>
+                  <?php } ?>
+                <?php } else { ?>
+                  <div class="col-md-12">
+                    <h1>Tidak ada lowongan.</h1>
+                  </div>
                 <?php } ?>
 
-                // <?php if (isset($_SESSION['error_message'])) { ?>
-                //   Swal.fire({
-                //     icon: 'error',
-                //     title: 'Error',
-                //     text: '<?php echo $_SESSION['error_message']; ?>',
-                //     showConfirmButton: false,
-                //     timer: 3000
-                //   });
-                //   <?php unset($_SESSION['error_message']); ?>
-                // <?php } ?>
-              });
-            </script>
+              </div>
+            </div>
+            <!-- end card -->
           </div>
-
-          <div class="container">
-            <h1 style='font-weight: 500; text-align : center; color:black; '>Unlock Your Potential with PT Mineral Alam Abadi</h1><br />
-          </div>
-
-          <div class="search-bar">
-            <div class="search-input">
-              <input type="text" id="searchInput" placeholder="Search...">
-              <button id="searchButton"><i class="fas fa-search"></i></button>
+          <?php if ($showSeemore) : ?>
+            <div class="seemore-container">
+              <form method="GET" action="careers.php">
+                <input type="hidden" name="search" value="<?= htmlspecialchars($searchTerm) ?>">
+                <input type="hidden" name="sort" value="<?= htmlspecialchars($sortOption) ?>">
+                <input type="hidden" name="filter" value="<?= htmlspecialchars($filterOption) ?>">
+                <input type="hidden" name="limit" value="<?= $limitOption ?>">
+                <button type="submit" name="seemore" class="btn text-color-white custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 bg-color-dark"> <span>See More</span></button>
             </div>
-            <div class="sort-category">
-              <div class="dropdown">
-                <button id="sortButton" class="dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-sort"></i> Sort
-                </button>
-                <div class="dropdown-menu" aria-labelledby="sortDropdown">
-                  <select>
-                    <option value="location">Sort by Location</option>
-                    <option value="date">Sort by Date</option>
-                    <option value="category">Sort by Category</option>
-                  </select>
-                </div>
-              </div>
-              <div class="dropdown">
-                <button id="categoryButton" class="dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-filter"></i> Category
-                </button>
-                <div class="dropdown-menu" aria-labelledby="categoryDropdown">
-                  <select>
-                    <option value="engineering">Engineering</option>
-                    <option value="sales">Sales</option>
-                    <option value="marketing">Marketing</option>
-                  </select>
-                </div>
-              </div>
-            </div>
+          <?php endif; ?>
+        </section>
+        <!-- end section card -->
 
 
 
@@ -349,182 +545,18 @@ try {
 
 
 
-
-
-          </div>
-        </div>
-        <div class="container">
-
-
-          <div class="row mt-5">
-            <div class="col-md-4 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="mb-3">
-                    <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
-                  </div>
-                  <h5 class="font-weight-bold mb-2">Job Position 1</h5>
-                  <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-01 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 1</p>
-                  <p class="mb-2">Company A</p>
-
-                  <!-- Nested card for description with "View Description" button -->
-                  <div class="card">
-                    <div class="card-body" style="background-color:#af2a25;">
-                      <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
-                      <div class="text-center mt-3">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal1" onclick="viewDescription(1)">
-                          View Description
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="text-center mt-3">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal1">Apply Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="mb-3">
-                    <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
-                  </div>
-                  <h5 class="font-weight-bold mb-2">Job Position 2</h5>
-                  <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-02 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
-                  <p class="mb-2">Company B</p>
-
-                  <!-- Nested card for description with "View Description" button -->
-                  <div class="card">
-                    <div class="card-body" style="background-color:#af2a25;">
-                      <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
-                      <div class="text-center mt-3">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descriptionModal2" onclick="viewDescription(2)">
-                          View Description
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="text-center mt-3">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="mb-3">
-                    <img src="img/demos/business-consulting-3/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 150px; height: auto;">
-                  </div>
-                  <h5 class="font-weight-bold mb-2">Job Position 3</h5>
-                  <p class="mb-1"><i class="far fa-calendar-alt me-1"></i>2023-08-03 | <i class="fas fa-map-marker-alt ms-1 me-1"></i>City 2</p>
-                  <p class="mb-2">Company C</p>
-
-                  <!-- Nested card for description with "View Description" button -->
-                  <div class="card">
-                    <div class="card-body" style="background-color:#af2a25;">
-                      <p class="text-muted" style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;"></p>
-                      <div class="text-center mt-3">
-                        <button type="button" class="btn btn-primary" onclick="openModal()">
-                          Open Flyer
-                        </button>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="text-center mt-3">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Description Modals 
-            <div class="modal fade" id="descriptionModal1" tabindex="-1" role="dialog">
-              
-            </div>
-
-            <div class="modal fade" id="descriptionModal2" tabindex="-1" role="dialog">
-             
-            </div>
-
-            button modal--
-            <div class="modal fade" id="applyModal1" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
-              
-            </div>
-
-            <div class="modal fade" id="applyModal2" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
-             ... Modal content ... -->
-
-            <!-- Add a new modal for the flyer image -->
-            <div class="modal fade" id="flyerModal" tabindex="-1">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
-                  <div class="modal-header">
-                    <h5 class="modal-title text-white">Flyer</h5>
-                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body text-white">
-                    <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Existing Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.7);">
-                  <div class="modal-header">
-                    <h5 class="modal-title text-white">Flyer</h5>
-                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body text-white" style="max-height: 400px; overflow-y: auto;">
-                    <img src="img/demos/business-consulting-3/flyer.png" alt="Flyer" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-
-
-
-          </div>
-        </div>
+      </div>
     </div>
-
-
-
-
-  </div>
-  </div>
-  </section>
+    <?php include 'footer.php'; ?>
   </div>
 
-  <?php include 'footer.php'; ?>
-  </div>
-  <script>
-    function openModal() {
-      // Show the overlay
-      document.getElementById("overlay").style.display = "block";
 
-      // Open the modal
-      var myModal = new bootstrap.Modal(document.getElementById("myModal"));
-      myModal.show();
-    }
-  </script>
+
   <script src="sweetalert2.all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <!-- Vendor -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script src="vendor/plugins/js/plugins.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -541,237 +573,66 @@ try {
   <script src="js/theme.init.js"></script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+
   <script>
-    /*
-			Map Settings
+    // Mendapatkan elemen select
+    const sortSelect = document.getElementById("sortSelect");
 
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+    // Mendengarkan perubahan pada select
+    sortSelect.addEventListener("change", function() {
+      // Mengirim formulir saat pilihan berubah
+      this.form.submit();
+    });
 
-			*/
+    const filterSelect = document.getElementById("filterSelect");
 
-
-    function initializeGoogleMaps() {
-      // Map Initial Location
-      var initLatitude = 40.75198;
-      var initLongitude = -73.96978;
-
-      // Map Markers
-      var mapMarkers = [{
-        latitude: initLatitude,
-        longitude: initLongitude,
-        html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
-        icon: {
-          image: "img/demos/business-consulting-3/map-pin.png",
-          iconsize: [26, 27],
-          iconanchor: [12, 27],
-        },
-      }, ];
-
-      // Map Extended Settings
-      var mapSettings = {
-        controls: {
-          draggable: $.browser.mobile ? false : true,
-          panControl: false,
-          zoomControl: false,
-          mapTypeControl: false,
-          scaleControl: false,
-          streetViewControl: false,
-          overviewMapControl: false,
-        },
-        scrollwheel: false,
-        markers: mapMarkers,
-        latitude: initLatitude,
-        longitude: initLongitude,
-        zoom: 14,
-      };
-
-      var map = $("#googlemaps").gMap(mapSettings),
-        mapRef = $("#googlemaps").data("gMap.reference");
-
-      // Styles from https://snazzymaps.com/
-      var styles = [{
-          featureType: "water",
-          elementType: "geometry",
-          stylers: [{
-            color: "#e9e9e9"
-          }, {
-            lightness: 17
-          }],
-        },
-        {
-          featureType: "landscape",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f5f5f5"
-          }, {
-            lightness: 20
-          }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 17
-          }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 29
-          }, {
-            weight: 0.2
-          }],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "geometry",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 18
-          }],
-        },
-        {
-          featureType: "road.local",
-          elementType: "geometry",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 16
-          }],
-        },
-        {
-          featureType: "poi",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f5f5f5"
-          }, {
-            lightness: 21
-          }],
-        },
-        {
-          featureType: "poi.park",
-          elementType: "geometry",
-          stylers: [{
-            color: "#dedede"
-          }, {
-            lightness: 21
-          }],
-        },
-        {
-          elementType: "labels.text.stroke",
-          stylers: [{
-              visibility: "on"
-            },
-            {
-              color: "#ffffff"
-            },
-            {
-              lightness: 16
-            },
-          ],
-        },
-        {
-          elementType: "labels.text.fill",
-          stylers: [{
-              saturation: 36
-            },
-            {
-              color: "#333333"
-            },
-            {
-              lightness: 40
-            },
-          ],
-        },
-        {
-          elementType: "labels.icon",
-          stylers: [{
-            visibility: "off"
-          }]
-        },
-        {
-          featureType: "transit",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f2f2f2"
-          }, {
-            lightness: 19
-          }],
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry.fill",
-          stylers: [{
-            color: "#fefefe"
-          }, {
-            lightness: 20
-          }],
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry.stroke",
-          stylers: [{
-            color: "#fefefe"
-          }, {
-            lightness: 17
-          }, {
-            weight: 1.2
-          }],
-        },
-      ];
-
-      var styledMap = new google.maps.StyledMapType(styles, {
-        name: "Styled Map",
-      });
-
-      mapRef.mapTypes.set("map_style", styledMap);
-      mapRef.setMapTypeId("map_style");
-    }
-
-    // Initialize Google Maps when element enter on browser view
-    theme.fn.intObs("#googlemaps", "initializeGoogleMaps()", {});
-
-    // Map text-center At
-    var mapCenterAt = function(options, e) {
-      e.preventDefault();
-      $("#googlemaps").gMap("centerAt", options);
-    };
+    // Mendengarkan perubahan pada select
+    filterSelect.addEventListener("change", function() {
+      // Mengirim formulir saat pilihan berubah
+      this.form.submit();
+    });
   </script>
 
 
-
   <script>
-    const jobDescriptions = {
-      1: "Description for Job 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      2: "Description for Job 2. Vestibulum eget velit ac nisl efficitur pharetra.",
-      // Add descriptions for other jobs as needed.
-    };
+    function openModal(id) {
+      // Show the overlay
+      document.getElementById("overlay").style.display = "block";
 
-    function viewDescription(id) {
-      // Check if the description exists for the selected job ID.
-      if (jobDescriptions[id]) {
-        // Display the description in the description modal.
-        $('#descriptionContent').text(jobDescriptions[id]);
+      // Open the modal with the specified ID
+      var modalId = "myModal" + id;
+      var myModal = new bootstrap.Modal(document.getElementById(modalId));
+      myModal.show();
+    }
+  </script>
+  <script>
+    // Fungsi untuk menangani klik pada tombol Apply
+    function handleApplyButtonClick(event) {
+      // Dapatkan ID dari atribut data-id
+      const jobId = event.target.getAttribute('data-id');
 
-        // Open the description modal when the button is clicked.
-        $('#descriptionModal').modal('show');
-      } else {
-        // Handle the case when the description is not found.
-        $('#descriptionContent').text("Description not available for this job.");
-        $('#descriptionModal').modal('show');
-      }
+      // Lakukan sesuatu dengan ID yang ditemukan, seperti mencetaknya
+      console.log('Job ID:', jobId);
+    }
+
+    // Tambahkan event listener ke semua tombol Apply
+    const applyButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
+    applyButtons.forEach(function(button) {
+      button.addEventListener('click', handleApplyButtonClick);
+    });
+  </script>
+  <script>
+    function openApplyModal(id) {
+      // Show the modal with the specified ID
+      var modalId = "thisModal" + id;
+      var myModal = new bootstrap.Modal(document.getElementById(modalId));
+      myModal.show();
     }
   </script>
 
-
+  <script>
+    feather.replace();
+  </script>
 
 </body>
 

@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php';
 
 if (!isset($_SESSION['username'])) {
-    header("Location: maa-admin.php");
+    header("Location: index.php");
     exit();
 }
 
@@ -45,24 +45,24 @@ $resultApplications = $db->query($queryApplications);
     <meta name="author" content="MAA" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/demos/business-consulting-3/favicon.png" type="image/x-icon" />
 
     <!-- jsvectormap css -->
-    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
 
     <!--Swiper slider css-->
-    <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Layout config Js -->
-    <script src="assets/js/layout.js"></script>
+    <script src="../assets/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -109,6 +109,7 @@ $resultApplications = $db->query($queryApplications);
             /* Dark red text */
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -143,7 +144,32 @@ $resultApplications = $db->query($queryApplications);
                                 </div>
                             </div>
                         </div>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                <?php if (isset($_SESSION['success_message'])) { ?>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Success',
+                                        text: '<?php echo $_SESSION['success_message']; ?>',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                    });
 
+                                    <?php unset($_SESSION['success_message']); ?>
+                                <?php } ?>
+
+                                <?php if (isset($_SESSION['error_message'])) { ?>
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Error',
+                                        text: '<?php echo $_SESSION['error_message']; ?>',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                    });
+                                    <?php unset($_SESSION['error_message']); ?>
+                                <?php } ?>
+                            });
+                        </script>
                         <!-- data card -->
                         <div class="row">
                             <div class="col-md-4">
@@ -267,6 +293,8 @@ $resultApplications = $db->query($queryApplications);
 
     <!-- apexcharts -->
     <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
 
     <!-- Vector map-->
     <script src="assets/libs/jsvectormap/js/jsvectormap.min.js"></script>

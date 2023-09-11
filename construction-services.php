@@ -64,7 +64,7 @@
           <div class="row mb-4">
             <div class="col-md-12 align-self-center p-static order-2 text-center">
               <h1 class="font-weight-bold text-color-white text-10" style="text-shadow: 5px 5px 10px black;">
-                construction Services
+                Construction Services
               </h1>
             </div>
           </div>
@@ -78,34 +78,34 @@
       </section>
 
       <div class="container pt-3 mt-4">
-        <div class="row mb-5">
-          <div class="col-lg-7">
-            <p class="text-3-5">
-              Our construction services at PT Mineral Alam Abadi epitomize excellence and innovation in the industry. With a deep-rooted commitment to quality and precision, we provide a comprehensive range of construction solutions tailored to meet the diverse needs of our clients. Backed by a team of experienced engineers, architects, and skilled craftsmen, we bring visions to life and turn concepts into reality.
+    <div class="row mb-5">
+        <div class="col-lg-7">
+            <p class="text-justify">
+                Our construction services at PT Mineral Alam Abadi epitomize excellence and innovation in the industry. With a deep-rooted commitment to quality and precision, we provide a comprehensive range of construction solutions tailored to meet the diverse needs of our clients. Backed by a team of experienced engineers, architects, and skilled craftsmen, we bring visions to life and turn concepts into reality.
             </p>
-            <p>
-              From residential to commercial projects, our construction services encompass every phase of development. We excel in project management, architectural design, structural engineering, and construction execution. Our projects stand as testaments to our unwavering dedication to craftsmanship, safety, and sustainable practices.
+            <p class="text-justify">
+                From residential to commercial projects, our construction services encompass every phase of development. We excel in project management, architectural design, structural engineering, and construction execution. Our projects stand as testaments to our unwavering dedication to craftsmanship, safety, and sustainable practices.
             </p>
-            <p>
-              At PT Mineral Alam Abadi, our construction services prioritize innovation and efficiency. We leverage cutting-edge technology and modern methodologies to streamline processes, optimize resources, and ensure timely project completion. Our track record of successful projects speaks to our ability to deliver exceptional results that exceed expectations.
+            <p class="text-justify">
+                At PT Mineral Alam Abadi, our construction services prioritize innovation and efficiency. We leverage cutting-edge technology and modern methodologies to streamline processes, optimize resources, and ensure timely project completion. Our track record of successful projects speaks to our ability to deliver exceptional results that exceed expectations.
             </p>
-          </div>
-          <div class="col-10 col-lg-4 ms-auto pt-4 pt-5 pt-lg-4 pb-5">
-            <div class="cascading-images-wrapper p-0 mt-5 mb-5">
-              <div class="cascading-images position-relative">
-                <img src="img/demos/business-consulting-3/generic/generic-6.jpg" class="box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-duration="600ms" />
-                <div class="position-absolute w-100" style="top: 61%; left: -20%">
-                  <img src="img/demos/business-consulting-3/generic/generic-3.jpg" class="box-shadow-4 appear-animation" width="285" alt="" data-appear-animation="expandIn" data-appear-animation-delay="300" data-appear-animation-duration="600ms" />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+        <div class="col-10 col-lg-4 ms-auto pt-4 pt-5 pt-lg-4 pb-5">
+            <div class="cascading-images-wrapper p-0 mt-5 mb-5">
+                <div class="cascading-images position-relative">
+                    <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0873.JPG" class="box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-duration="600ms" />
+                    <div class="position-absolute w-100" style="top: 61%; left: -20%">
+                        <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0874.JPG" class="box-shadow-4 appear-animation" width="285" alt="" data-appear-animation="expandIn" data-appear-animation-delay="300" data-appear-animation-duration="600ms" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <?php include 'footer.php'; ?>
+    
   </div>
+  <?php include 'footer.php'; ?>
 
   <!-- Vendor -->
   <script src="vendor/plugins/js/plugins.min.js"></script>

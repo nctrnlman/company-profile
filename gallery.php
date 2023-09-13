@@ -1,3 +1,42 @@
+<?php
+session_start();
+include 'db.php';
+
+$itemsPerPage = 12;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($page - 1) * $itemsPerPage;
+
+
+$categoriesStmt = $db->prepare("SELECT DISTINCT category FROM gallery");
+$categoriesStmt->execute();
+$categories = $categoriesStmt->fetchAll(PDO::FETCH_COLUMN);
+
+
+$filterCategory = isset($_GET['category']) ? $_GET['category'] : null;
+$filterClause = $filterCategory ? "WHERE category = :category" : "";
+
+
+$stmt = $db->prepare("SELECT image, category FROM gallery $filterClause ORDER BY category ASC LIMIT :limit OFFSET :offset");
+$stmt->bindValue(':limit', $itemsPerPage, PDO::PARAM_INT);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+if ($filterCategory) {
+  $stmt->bindParam(':category', $filterCategory, PDO::PARAM_STR);
+}
+$stmt->execute();
+$results = $stmt->fetchAll();
+
+
+$countStmt = $db->prepare("SELECT COUNT(*) FROM gallery $filterClause");
+if ($filterCategory) {
+  $countStmt->bindParam(':category', $filterCategory, PDO::PARAM_STR);
+}
+$countStmt->execute();
+$totalItems = $countStmt->fetchColumn();
+
+
+$totalPages = ceil($totalItems / $itemsPerPage);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,70 +163,42 @@
       </section>
       <section class="container gallery-section">
 
-
+        <!-- Category -->
         <div class="gallery-categories" style="text-align: center; margin-bottom: 20px;">
-          <button class="category-btn" data-category="all" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">All</button>
-          <button class="category-btn" data-category="category1" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">OBI</button>
-          <button class="category-btn" data-category="category2" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">BCPM</button>
-          <button class="category-btn" data-category="category3" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">Head Office</button>
-          <button class="category-btn" data-category="category4" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">MLDP</button>
+          <a class="category-btn" href="gallery.php " style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">All</a>
+          <?php foreach ($categories as $category) { ?>
+            <a style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;" class="category-btn" href="gallery.php?category=<?php echo $category; ?>"><?php echo $category; ?></a>
+          <?php } ?>
         </div>
-
 
         <!-- Gallery Grid -->
         <div class="gallery-grid">
-          <!-- Gallery Items (Change the image sources accordingly) -->
-          <div class="gallery-item page-1"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 1" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 2" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 3" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 4" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 5" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 6" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 7" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 8" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 9" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 10" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 11" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <!-- page 2 -->
-          <div class="gallery-item page-2"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 13" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <!-- page 3 -->
-          <div class="gallery-item page-2"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 13" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
-
-
+          <?php foreach ($results as $result) { ?>
+            <div class="gallery-item <?php echo 'category-' . $result['category']; ?>">
+              <img src="./file/gallery/<?php echo $result['image']; ?>" alt="Image" />
+            </div>
+          <?php } ?>
         </div>
+
         <!-- Pagination -->
         <div class="pagination">
           <div class="">
-          <div class="pagination-text">Showing 12 of 36 images</div>
-          <button class="page-btn prev-btn">◄</button>
-          <button class="page-btn active">1</button>
-          <button class="page-btn">2</button>
-          <button class="page-btn">3</button>
-          <button class="page-btn next-btn">►</button>
+            <div class="pagination-text">Showing <?php echo count($results); ?> images</div>
+
+            <?php if ($page > 1) { ?>
+              <a class="page-btn prev-btn" href="?page=<?php echo $page - 1; ?>&category=<?php echo $filterCategory; ?>">◄</a>
+            <?php } ?>
+
+            <?php for ($i = 1; $i <= $totalPages; $i++) { ?>
+              <a class="page-btn <?php echo ($page == $i) ? 'active' : ''; ?>" href="?page=<?php echo $i; ?>&category=<?php echo $filterCategory; ?>"><?php echo $i; ?></a>
+            <?php } ?>
+
+
+            <?php if ($page < $totalPages) { ?>
+              <a class="page-btn next-btn" href="?page=<?php echo $page + 1; ?>&category=<?php echo $filterCategory; ?>">►</a>
+            <?php } ?>
           </div>
         </div>
-
       </section>
     </div>
   </div>
@@ -213,66 +224,66 @@
   </script>
 
   <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function() {
-    const itemsPerPage = 12;
-    const totalItems = $('.gallery-item').length;
-    const $galleryItems = $('.gallery-item');
-    const $paginationText = $('.pagination-text');
-    const $prevBtn = $('.prev-btn');
-    const $nextBtn = $('.next-btn');
-    let currentPage = 1;
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const itemsPerPage = 12;
+      const totalItems = $('.gallery-item').length;
+      const $galleryItems = $('.gallery-item');
+      const $paginationText = $('.pagination-text');
+      const $prevBtn = $('.prev-btn');
+      const $nextBtn = $('.next-btn');
+      let currentPage = 1;
 
-    // Show the first page by default
-    showPage(currentPage);
+      // Show the first page by default
+      showPage(currentPage);
 
-    // Calculate the number of pages
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
+      // Calculate the number of pages
+      const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-    // Update pagination text
-    updatePaginationText(currentPage);
+      // Update pagination text
+      updatePaginationText(currentPage);
 
-    // Handle pagination text click
-    $paginationText.click(function() {
-      const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
-      showPage(nextPage);
+      // Handle pagination text click
+      $paginationText.click(function() {
+        const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
+        showPage(nextPage);
+      });
+
+      // Handle previous button click
+      $prevBtn.click(function() {
+        const prevPage = currentPage === 1 ? totalPages : currentPage - 1;
+        showPage(prevPage);
+      });
+
+      // Handle next button click
+      $nextBtn.click(function() {
+        const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
+        showPage(nextPage);
+      });
+
+      // Show items for a specific page
+      function showPage(pageNumber) {
+        const startIndex = (pageNumber - 1) * itemsPerPage;
+        const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+
+        // Hide all gallery items and then show the ones for the selected page
+        $galleryItems.hide();
+        $galleryItems.slice(startIndex, endIndex).show();
+
+        // Update pagination text and current page
+        updatePaginationText(pageNumber);
+        currentPage = pageNumber;
+      }
+
+      // Update pagination text with the current page number
+      function updatePaginationText(pageNumber) {
+        const startIndex = (pageNumber - 1) * itemsPerPage + 1;
+        const endIndex = Math.min(startIndex + itemsPerPage - 1, totalItems);
+        $paginationText.text(`Showing ${startIndex}-${endIndex} of ${totalItems} images`);
+      }
     });
-
-    // Handle previous button click
-    $prevBtn.click(function() {
-      const prevPage = currentPage === 1 ? totalPages : currentPage - 1;
-      showPage(prevPage);
-    });
-
-    // Handle next button click
-    $nextBtn.click(function() {
-      const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
-      showPage(nextPage);
-    });
-
-    // Show items for a specific page
-    function showPage(pageNumber) {
-      const startIndex = (pageNumber - 1) * itemsPerPage;
-      const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
-
-      // Hide all gallery items and then show the ones for the selected page
-      $galleryItems.hide();
-      $galleryItems.slice(startIndex, endIndex).show();
-
-      // Update pagination text and current page
-      updatePaginationText(pageNumber);
-      currentPage = pageNumber;
-    }
-
-    // Update pagination text with the current page number
-    function updatePaginationText(pageNumber) {
-      const startIndex = (pageNumber - 1) * itemsPerPage + 1;
-      const endIndex = Math.min(startIndex + itemsPerPage - 1, totalItems);
-      $paginationText.text(`Showing ${startIndex}-${endIndex} of ${totalItems} images`);
-    }
-  });
-</script>
+  </script>
 
 
 </body>

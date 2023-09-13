@@ -101,9 +101,9 @@
 </head>
 
 <body>
-<?php include 'navbar.php'; ?>
+  <?php include 'navbar.php'; ?>
   <div class="body">
-   
+
     <div role="main" class="main">
       <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="background-size: cover; background-position: center;background-color: #af2a25;">
         <div class="container pb-5 my-3">
@@ -160,13 +160,34 @@
           <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
           <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
           <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <!-- page 3 -->
+          <div class="gallery-item page-2"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 13" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+
 
         </div>
         <!-- Pagination -->
         <div class="pagination">
+          <div class="">
+          <div class="pagination-text">Showing 12 of 36 images</div>
+          <button class="page-btn prev-btn">◄</button>
           <button class="page-btn active">1</button>
           <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn next-btn">►</button>
+          </div>
         </div>
+
       </section>
     </div>
   </div>
@@ -192,37 +213,67 @@
   </script>
 
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      const itemsPerPage = 12;
-      const $galleryItems = $('.gallery-item');
-      const $paginationButtons = $('.page-btn');
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    const itemsPerPage = 12;
+    const totalItems = $('.gallery-item').length;
+    const $galleryItems = $('.gallery-item');
+    const $paginationText = $('.pagination-text');
+    const $prevBtn = $('.prev-btn');
+    const $nextBtn = $('.next-btn');
+    let currentPage = 1;
 
-      // Show the first page by default
-      showPage(1);
+    // Show the first page by default
+    showPage(currentPage);
 
-      // Handle pagination button click
-      $paginationButtons.click(function() {
-        const pageNumber = $(this).text();
-        showPage(pageNumber);
-      });
+    // Calculate the number of pages
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-      // Show items for a specific page
-      function showPage(pageNumber) {
-        const startIndex = (pageNumber - 1) * itemsPerPage;
-        const endIndex = startIndex + itemsPerPage;
+    // Update pagination text
+    updatePaginationText(currentPage);
 
-        // Hide all gallery items and then show the ones for the selected page
-        $galleryItems.hide();
-        $galleryItems.slice(startIndex, endIndex).show();
-
-        // Update the active button style
-        $paginationButtons.removeClass('active');
-        $(`.page-btn:contains(${pageNumber})`).addClass('active');
-      }
+    // Handle pagination text click
+    $paginationText.click(function() {
+      const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
+      showPage(nextPage);
     });
-  </script>
+
+    // Handle previous button click
+    $prevBtn.click(function() {
+      const prevPage = currentPage === 1 ? totalPages : currentPage - 1;
+      showPage(prevPage);
+    });
+
+    // Handle next button click
+    $nextBtn.click(function() {
+      const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
+      showPage(nextPage);
+    });
+
+    // Show items for a specific page
+    function showPage(pageNumber) {
+      const startIndex = (pageNumber - 1) * itemsPerPage;
+      const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+
+      // Hide all gallery items and then show the ones for the selected page
+      $galleryItems.hide();
+      $galleryItems.slice(startIndex, endIndex).show();
+
+      // Update pagination text and current page
+      updatePaginationText(pageNumber);
+      currentPage = pageNumber;
+    }
+
+    // Update pagination text with the current page number
+    function updatePaginationText(pageNumber) {
+      const startIndex = (pageNumber - 1) * itemsPerPage + 1;
+      const endIndex = Math.min(startIndex + itemsPerPage - 1, totalItems);
+      $paginationText.text(`Showing ${startIndex}-${endIndex} of ${totalItems} images`);
+    }
+  });
+</script>
+
 
 </body>
 

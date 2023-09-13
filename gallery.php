@@ -19,7 +19,7 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
 
-  <!-- Web Fonts  -->
+  <!-- Web Fonts -->
   <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css" />
 
   <!-- Vendor CSS -->
@@ -46,17 +46,64 @@
   <!-- Skin CSS -->
   <link id="skinCSS" rel="stylesheet" href="css/skins/skin-business-consulting-3.css" />
 
-  <!-- Theme Custom CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css" />
 
   <!-- Head Libs -->
   <script src="vendor/modernizr/modernizr.min.js"></script>
+
+  <style>
+    /* Gallery styles */
+    .gallery-section {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+    }
+
+    .page-btn {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      background-color: #f5f5f5;
+      cursor: pointer;
+    }
+
+    .page-btn:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
 </head>
 
 <body>
+<?php include 'navbar.php'; ?>
   <div class="body">
-    <?php include 'navbar.php'; ?>
-    <!-- data-bg-src="img/demos/business-consulting-3/backgrounds/background-5.jpg" -->
+   
     <div role="main" class="main">
       <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="background-size: cover; background-position: center;background-color: #af2a25;">
         <div class="container pb-5 my-3">
@@ -75,154 +122,53 @@
           </svg>
         </div>
       </section>
-
-      <div class="container pt-4 pb-5 my-5">
-        <div class="container ">
-          <div class="row">
-            <div class="col">
-
-              <div style="text-align: center;">
-                <img src="img\demos\business-consulting-3\backgrounds\comingsoon.png" alt="Background Image" class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" style="max-width: 18%; height: auto; margin-top: 10px; margin-bottom:20px; ">
-                <h2 style="font-size: 24px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #333; font-style: italic; margin-top:15px;" class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
-                  Stay Tuned
-                </h2>
-
-                <p style="font-size: 18px; color: #777;" class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
-                  We Will Launch Soon!
-                </p>
+      <section class="container gallery-section">
 
 
-              </div>
-              <!-- <p class="text-4-5 line-height-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec velit magna, consectetur at suscipit eu, dapibus vel odio. Mauris ac nulla at ligula interdum ullamcorper. Nunc mattis eros nec eros dictum, nec molestie metus auctor. Nulla placerat nunc velit, a dictum lectus finibus quis. Nunc leo mauris, cursus vel tempor eu, tempus sed turpis.</p>
-							<p class="text-3-5 line-height-9 mb-4">Cras mattis nisl auctor tellus maximus, id consectetur nulla suscipit. Praesent consequat elit vitae ipsum porttitor, at facilisis enim hendrerit. Morbi tincidunt ornare scelerisque. Maecenas et iaculis libero, in volutpat arcu. Vestibulum ac sagittis felis. Aenean tempor tellus id felis finibus, quis aliquam sem pretium. </p> -->
+        <div class="gallery-categories" style="text-align: center; margin-bottom: 20px;">
+          <button class="category-btn" data-category="all" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">All</button>
+          <button class="category-btn" data-category="category1" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">OBI</button>
+          <button class="category-btn" data-category="category2" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">BCPM</button>
+          <button class="category-btn" data-category="category3" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">Head Office</button>
+          <button class="category-btn" data-category="category4" style="margin: 0 10px; padding: 8px 20px; border: 1px solid #ccc; background-color: #f5f5f5; color: #333; cursor: pointer; transition: background-color 0.3s ease;">MLDP</button>
+        </div>
 
-              <!-- <ul class="nav nav-pills sort-source sort-source-style-3 custom-sort-source mt-4" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'packery', 'filter': '*'}">
-								<li class="nav-item active" data-option-value="*"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase active" href="#">Show All</a></li>
-								<li class="nav-item" data-option-value=".websites"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Websites</a></li>
-								<li class="nav-item" data-option-value=".logos"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Logos</a></li>
-								<li class="nav-item" data-option-value=".brands"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Brands</a></li>
-								<li class="nav-item" data-option-value=".medias"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Medias</a></li>
-							</ul> -->
 
-              <!-- <div class="sort-destination-loader sort-destination-loader-showing mt-4 pt-2">
-								<div class="row portfolio-list sort-destination" data-sort-id="portfolio">
-
-									<div class="col-sm-6 col-lg-6 isotope-item websites">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-1.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-6 isotope-item logos">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-2.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-6 isotope-item brands">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3"> -->
-              <!-- <div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-3.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div> -->
-              <!-- <div class="col-sm-6 col-lg-6 isotope-item medias">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-4.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div> -->
-              <!-- <div class="col-sm-6 col-lg-6 isotope-item websites">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-5.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div> -->
-              <!-- <div class="col-sm-6 col-lg-6 isotope-item websites">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-6.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div> -->
-
-            </div>
-          </div>
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+          <!-- Gallery Items (Change the image sources accordingly) -->
+          <div class="gallery-item page-1"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 1" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 2" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 3" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 4" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 5" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 6" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 7" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 8" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 9" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 10" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 11" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <!-- page 2 -->
+          <div class="gallery-item page-2"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 13" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
+          <div class="gallery-item"><img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0861.JPG" alt="Image 12" /></div>
 
         </div>
-      </div>
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+        </div>
+      </section>
     </div>
-  </div>
   </div>
 
   <?php include 'footer.php'; ?>
@@ -231,13 +177,10 @@
   <!-- Vendor -->
   <script src="vendor/plugins/js/plugins.min.js"></script>
 
-  <!-- Theme Base, Components and Settings -->
+  <!-- Theme Base, Components, and Settings -->
   <script src="js/theme.js"></script>
 
-  <!-- Current Page Vendor and Views -->
-  <script src="js/views/view.contact.js"></script>
-
-  <!-- Theme Custom -->
+  <!-- Custom Scripts -->
   <script src="js/custom.js"></script>
 
   <!-- Theme Initialization Files -->
@@ -245,208 +188,42 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
   <script>
-    /*
-			Map Settings
+    /* Google Maps settings and functions here */
+  </script>
 
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const itemsPerPage = 12;
+      const $galleryItems = $('.gallery-item');
+      const $paginationButtons = $('.page-btn');
 
-			*/
+      // Show the first page by default
+      showPage(1);
 
-    function initializeGoogleMaps() {
-      // Map Initial Location
-      var initLatitude = 40.75198;
-      var initLongitude = -73.96978;
-
-      // Map Markers
-      var mapMarkers = [{
-        latitude: initLatitude,
-        longitude: initLongitude,
-        html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
-        icon: {
-          image: "img/demos/business-consulting-3/map-pin.png",
-          iconsize: [26, 27],
-          iconanchor: [12, 27],
-        },
-      }, ];
-
-      // Map Extended Settings
-      var mapSettings = {
-        controls: {
-          draggable: $.browser.mobile ? false : true,
-          panControl: false,
-          zoomControl: false,
-          mapTypeControl: false,
-          scaleControl: false,
-          streetViewControl: false,
-          overviewMapControl: false,
-        },
-        scrollwheel: false,
-        markers: mapMarkers,
-        latitude: initLatitude,
-        longitude: initLongitude,
-        zoom: 14,
-      };
-
-      var map = $("#googlemaps").gMap(mapSettings),
-        mapRef = $("#googlemaps").data("gMap.reference");
-
-      // Styles from https://snazzymaps.com/
-      var styles = [{
-          featureType: "water",
-          elementType: "geometry",
-          stylers: [{
-            color: "#e9e9e9"
-          }, {
-            lightness: 17
-          }],
-        },
-        {
-          featureType: "landscape",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f5f5f5"
-          }, {
-            lightness: 20
-          }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 17
-          }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 29
-          }, {
-            weight: 0.2
-          }],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "geometry",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 18
-          }],
-        },
-        {
-          featureType: "road.local",
-          elementType: "geometry",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 16
-          }],
-        },
-        {
-          featureType: "poi",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f5f5f5"
-          }, {
-            lightness: 21
-          }],
-        },
-        {
-          featureType: "poi.park",
-          elementType: "geometry",
-          stylers: [{
-            color: "#dedede"
-          }, {
-            lightness: 21
-          }],
-        },
-        {
-          elementType: "labels.text.stroke",
-          stylers: [{
-              visibility: "on"
-            },
-            {
-              color: "#ffffff"
-            },
-            {
-              lightness: 16
-            },
-          ],
-        },
-        {
-          elementType: "labels.text.fill",
-          stylers: [{
-              saturation: 36
-            },
-            {
-              color: "#333333"
-            },
-            {
-              lightness: 40
-            },
-          ],
-        },
-        {
-          elementType: "labels.icon",
-          stylers: [{
-            visibility: "off"
-          }]
-        },
-        {
-          featureType: "transit",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f2f2f2"
-          }, {
-            lightness: 19
-          }],
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry.fill",
-          stylers: [{
-            color: "#fefefe"
-          }, {
-            lightness: 20
-          }],
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry.stroke",
-          stylers: [{
-            color: "#fefefe"
-          }, {
-            lightness: 17
-          }, {
-            weight: 1.2
-          }],
-        },
-      ];
-
-      var styledMap = new google.maps.StyledMapType(styles, {
-        name: "Styled Map",
+      // Handle pagination button click
+      $paginationButtons.click(function() {
+        const pageNumber = $(this).text();
+        showPage(pageNumber);
       });
 
-      mapRef.mapTypes.set("map_style", styledMap);
-      mapRef.setMapTypeId("map_style");
-    }
+      // Show items for a specific page
+      function showPage(pageNumber) {
+        const startIndex = (pageNumber - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
 
-    // Initialize Google Maps when element enter on browser view
-    theme.fn.intObs("#googlemaps", "initializeGoogleMaps()", {});
+        // Hide all gallery items and then show the ones for the selected page
+        $galleryItems.hide();
+        $galleryItems.slice(startIndex, endIndex).show();
 
-    // Map text-center At
-    var mapCenterAt = function(options, e) {
-      e.preventDefault();
-      $("#googlemaps").gMap("centerAt", options);
-    };
+        // Update the active button style
+        $paginationButtons.removeClass('active');
+        $(`.page-btn:contains(${pageNumber})`).addClass('active');
+      }
+    });
   </script>
+
 </body>
 
 </html>

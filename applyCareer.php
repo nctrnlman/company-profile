@@ -87,9 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mailCompany->Username = 'info@ptmaagroup.com';
         $mailCompany->Password = 'emailMaaGroup';
 
-        $mailCompany->setFrom('info@ptmaagroup.com', 'MAA Group');
-        $mailCompany->addAddress('rhazesd@gmail.com', 'Company Recipient');
+        $mailCompany->setFrom('info@ptmaagroup.com', 'Notif Carerr Web');
+        $mailCompany->addAddress('wali@maagroup.co.id', 'Company Recipient');
         $mailCompany->Subject = 'New Job Application Received';
+        $mailCompany->addCustomHeader('Reply-To', 'no-reply@ptmaagroup.com');
         $mailCompany->Body = "
     Hello,
 

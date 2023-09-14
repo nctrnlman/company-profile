@@ -226,28 +226,7 @@ $results = $db->query($query);
 
         <!-- JAVASCRIPT -->
     
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                // When a file is selected, update the image preview
-                $('#image').change(function() {
-                    const file = this.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = function(e) {
-                            // Update the src attribute of the image preview
-                            $('#image-preview').attr('src', e.target.result);
-                            // Display the image preview
-                            $('#image-preview').css('display', 'block');
-                        };
-                        reader.readAsDataURL(file);
-                    } else {
-                        // Hide the image preview if no file is selected
-                        $('#image-preview').css('display', 'none');
-                    }
-                });
-            });
-        </script>
+       
 
 
         <script src="assets/js/pages/form-masks.init.js"></script>
@@ -337,7 +316,7 @@ $results = $db->query($query);
                 button.addEventListener('click', function() {
                     var jobId = this.getAttribute('data-job-id');
                     document.getElementById('deleteJobId').value = jobId;
-                    console.log(jobId)
+                    console.log(jobId);
                 });
             });
 
@@ -352,7 +331,28 @@ $results = $db->query($query);
         <!-- Bootstrap JS -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // When a file is selected, update the image preview
+                $('#image').change(function() {
+                    const file = this.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            // Update the src attribute of the image preview
+                            $('#image-preview').attr('src', e.target.result);
+                            // Display the image preview
+                            $('#image-preview').css('display', 'block');
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        // Hide the image preview if no file is selected
+                        $('#image-preview').css('display', 'none');
+                    }
+                });
+            });
+        </script>
 
 </body>
 

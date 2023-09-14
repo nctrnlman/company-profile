@@ -65,19 +65,25 @@ $page = isset($_GET['page']) ? $_GET['page'] : ''; // Get the 'page' parameter f
                 <li class="nav-item">
                     <a class="nav-link <?php if ($page == 'job') echo 'active'; ?>" href="job-admin.php">
                         <i data-feather="list"></i>
-                        <span class="menu-title">Job List</span>
+                        <span class="menu-title">Job</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php if ($page == 'job') echo 'active'; ?>" href="applicant-list.php">
                         <i data-feather="user"></i>
-                        <span class="menu-title">Applicant List</span>
+                        <span class="menu-title">Applicant</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php if ($page == 'job') echo 'active'; ?>" href="gallery-admin.php">
                         <i data-feather="camera"></i>
                         <span class="menu-title">Gallery</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($page == 'job') echo 'active'; ?>" href="news-admin.php">
+                        <i data-feather="file-text"></i>
+                        <span class="menu-title">News</span>
                     </a>
                 </li>
 

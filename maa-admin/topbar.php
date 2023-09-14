@@ -43,7 +43,7 @@
                 <div class="dropdown ms-sm-3 header-item topbar-user">
                     <form id="logoutForm" action="logout.php" method="post">
                         <button type="submit" class="btn" id="page-header-user-dropdown" aria-haspopup="true" aria-expanded="false">
-                            <a class="dropdown-item" href="#"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                            <a class="dropdown-item"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
                         </button>
                     </form>
                 </div>

@@ -118,6 +118,8 @@ $results = $db->query($query);
                                         <div class="mb-3">
                                             <label for="image" class="form-label">Image Upload (max 5MB)</label>
                                             <input type="file" class="form-control" id="image" name="image" accept=".jpg, .jpeg, .png" required>
+                                            <label for="image" class="form-label mt-2">Image Preview</label>
+                                            <img id="image-preview" src="#" alt="Preview" style="display: none; max-width: 100px;">
                                         </div>
 
                                         <div class="mb-3">
@@ -189,6 +191,7 @@ $results = $db->query($query);
 
 
                     <!-- Delete Confirmation Modal -->
+
                     <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -198,7 +201,7 @@ $results = $db->query($query);
                                 </div>
                                 <form method="POST" action="delete-gallery.php">
                                     <div class="modal-body">
-                                        Are you sure you want to delete this job?
+                                        Are you sure you want to delete this image?
                                         <input type="hidden" id="deleteJobId" name="id">
                                     </div>
                                     <div class="modal-footer">
@@ -222,6 +225,30 @@ $results = $db->query($query);
         </button>
 
         <!-- JAVASCRIPT -->
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // When a file is selected, update the image preview
+                $('#image').change(function() {
+                    const file = this.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            // Update the src attribute of the image preview
+                            $('#image-preview').attr('src', e.target.result);
+                            // Display the image preview
+                            $('#image-preview').css('display', 'block');
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        // Hide the image preview if no file is selected
+                        $('#image-preview').css('display', 'none');
+                    }
+                });
+            });
+        </script>
+
 
         <script src="assets/js/pages/form-masks.init.js"></script>
         <script>

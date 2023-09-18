@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mailApplicant->Username = 'info@ptmaagroup.com';
         $mailApplicant->Password = 'emailMaaGroup';
 
-        $mailApplicant->setFrom('info@ptmaagroup.com', 'MAA Group');
+        $mailApplicant->setFrom('info@ptmaagroup.com', 'Web MAA');
         $mailApplicant->addAddress($email, $name);
 
         $mailApplicant->Subject = 'Thank You for Applying with Us';
@@ -87,10 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mailCompany->Username = 'info@ptmaagroup.com';
         $mailCompany->Password = 'emailMaaGroup';
 
-        $mailCompany->setFrom('info@ptmaagroup.com', 'Notif Carerr Web');
-        $mailCompany->addAddress('wali@maagroup.co.id', 'Company Recipient');
+        $mailCompany->setFrom('info@ptmaagroup.com', 'MAA Group');
+        $mailCompany->addAddress('recruitment@maagroup.co.id', 'Company Recipient');
         $mailCompany->Subject = 'New Job Application Received';
-        $mailCompany->addCustomHeader('Reply-To', 'no-reply@ptmaagroup.com');
         $mailCompany->Body = "
     Hello,
 

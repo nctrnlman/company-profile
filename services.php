@@ -97,9 +97,9 @@
 
 
 <body>
-<?php include 'navbar.php'; ?>
+  <?php include 'navbar.php'; ?>
   <div class="body">
-    
+
 
     <div role="main" class="main">
       <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="background-size: cover; background-position: center;background-color: #af2a25;">
@@ -124,7 +124,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-11 col-xl-10 text-center">
             <p class="text-3-5 pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="150">
-              PT Mineral Alam Abadi is committed to continuing to contribute in meeting the needs of local and global markets by providing the best performance and quality in providing services.
+              Mineral Alam Abadi Group is committed to continuing to contribute in meeting the needs of local and global markets by providing the best performance and quality in providing services.
             </p>
           </div>
         </div>
@@ -139,7 +139,7 @@
                 </div>
               </div>
               <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
+                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Discover Stone Mining at Mineral Alam Abadi Group Source.</p>
               </div>
               <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                 <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" style="width: 50px; transition: transform 0.3s;">
@@ -159,14 +159,14 @@
                 </div>
               </div>
               <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Exploring Nickel Riches with PT Mineral Alam Abadi's.</p>
+                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Exploring Nickel Riches with Mineral Alam Abadi Group.</p>
               </div>
               <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                 <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" style="width: 50px; transition: transform 0.3s;">
               </div>
             </a>
           </div>
-         
+
           <!-- Card 4 - Construction Services -->
           <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
             <a href="construction-services.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
@@ -177,7 +177,7 @@
                 </div>
               </div>
               <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Building Dreams by PT Mineral Alam Abadi.</p>
+                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Building Dreams by Mineral Alam Abadi Group.</p>
               </div>
               <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                 <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" style="width: 50px; transition: transform 0.3s;">
@@ -194,7 +194,7 @@
                 </div>
               </div>
               <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Expanding Horizons with PT Mineral Alam Abadi.</p>
+                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Expanding Horizons with Mineral Alam Abadi Group.</p>
               </div>
               <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                 <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" style="width: 50px; transition: transform 0.3s;">
@@ -211,7 +211,7 @@
                 </div>
               </div>
               <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Forging Mining Partnerships with PT Mineral Alam Abadi.</p>
+                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Forging Mining Partnerships with Mineral Alam Abadi Group.</p>
               </div>
               <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                 <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" style="width: 50px; transition: transform 0.3s;">
@@ -228,7 +228,7 @@
                 </div>
               </div>
               <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Shipping Solutions from PT Mineral Alam Abadi.</p>
+                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Shipping Solutions from Mineral Alam Abadi Group.</p>
               </div>
               <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                 <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" style="width: 50px; transition: transform 0.3s;">
@@ -245,7 +245,7 @@
                 </div>
               </div>
               <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Investing for Tomorrow's with PT Mineral Alam Abadi Vision.</p>
+                <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Investing for Tomorrow's with Mineral Alam Abadi Group.</p>
               </div>
               <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                 <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" style="width: 50px; transition: transform 0.3s;">

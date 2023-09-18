@@ -6,7 +6,7 @@ include 'db.php';
 function getDefaultJobs($limit = 3)
 {
   global $db;
-  $query = "SELECT * FROM job_vacanacy LIMIT $limit";
+  $query = "SELECT * FROM job_vacanacy WHERE status = 'active' LIMIT $limit";;
   $stmt = $db->query($query);
   return $stmt->fetchAll(PDO::FETCH_ASSOC);
   header("Location: careers.php");
@@ -18,6 +18,8 @@ function getFilteredJobs($searchTerm = '', $sortOption = '', $filterOption = '',
 {
   global $db;
   $query = "SELECT * FROM job_vacanacy WHERE 1";
+
+  $query .= " AND status = 'active'";
 
   // Cek apakah ada pencarian yang dikirimkan
   if (!empty($searchTerm)) {
@@ -570,15 +572,6 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 
   <script>
-    // Mendapatkan elemen select
-    const sortSelect = document.getElementById("sortSelect");
-
-    // Mendengarkan perubahan pada select
-    sortSelect.addEventListener("change", function() {
-      // Mengirim formulir saat pilihan berubah
-      this.form.submit();
-    });
-
     const filterSelect = document.getElementById("filterSelect");
 
     // Mendengarkan perubahan pada select

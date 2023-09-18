@@ -16,6 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $job_id = $_POST['job_id'];
 
+    $query = "SELECT position FROM job_vacanacy WHERE id_job_vacanacy = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$job_id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
     $unique_id = generateUniqueId();
 
     while (checkUniqueIdExists($unique_id)) {
@@ -41,6 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $stmt = $db->prepare("INSERT INTO apply_job (id_apply_job, id_job_vacanacy, apply_date, name, phone_number, email, resume) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([$unique_id, $job_id, $currentDate, $name, $phone, $email, $resumePath]);
+
+
 
         $mailApplicant = new PHPMailer(true);
         $mailApplicant->isSMTP();
@@ -89,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $mailCompany->setFrom('info@ptmaagroup.com', 'MAA Group');
         $mailCompany->addAddress('recruitment@maagroup.co.id', 'Company Recipient');
-        $mailCompany->Subject = 'New Job Application Received';
+        $mailCompany->Subject = 'Application Received - ' . $result['position'];
         $mailCompany->Body = "
     Hello,
 

@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $jobId = $_POST['jobIdInput'];
     $jobTitle = $_POST['jobTitleInput'];
-    $dueDate = $_POST['dateInput'];
+    $status = $_POST['status'];
     $division = $_POST['divisionInput'];
     $location = $_POST['locationInput'];
     $companyName = $_POST['companyNameInput'];
@@ -26,8 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $updates[] = "position = '$jobTitle'";
         }
 
-        if ($dueDate != $result['due_date']) {
-            $updates[] = "due_date = '$dueDate'";
+        if ($status != $result['status']) {
+
+            $updates[] = "status = '$status'";
         }
 
         if ($division != $result['division']) {

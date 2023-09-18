@@ -16,6 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $job_id = $_POST['job_id'];
 
+    $query = "SELECT position FROM job_vacanacy WHERE id_job_vacanacy = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$job_id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
     $unique_id = generateUniqueId();
 
     while (checkUniqueIdExists($unique_id)) {
@@ -42,6 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $db->prepare("INSERT INTO apply_job (id_apply_job, id_job_vacanacy, apply_date, name, phone_number, email, resume) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([$unique_id, $job_id, $currentDate, $name, $phone, $email, $resumePath]);
 
+
+
         $mailApplicant = new PHPMailer(true);
         $mailApplicant->isSMTP();
         $mailApplicant->SMTPAuth = true;
@@ -51,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mailApplicant->Username = 'info@ptmaagroup.com';
         $mailApplicant->Password = 'emailMaaGroup';
 
-        $mailApplicant->setFrom('info@ptmaagroup.com', 'MAA Group');
+        $mailApplicant->setFrom('info@ptmaagroup.com', 'Web MAA');
         $mailApplicant->addAddress($email, $name);
 
         $mailApplicant->Subject = 'Thank You for Applying with Us';
@@ -87,10 +94,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mailCompany->Username = 'info@ptmaagroup.com';
         $mailCompany->Password = 'emailMaaGroup';
 
-        $mailCompany->setFrom('info@ptmaagroup.com', 'Notif Carerr Web');
-        $mailCompany->addAddress('wali@maagroup.co.id', 'Company Recipient');
-        $mailCompany->Subject = 'New Job Application Received';
-        $mailCompany->addCustomHeader('Reply-To', 'no-reply@ptmaagroup.com');
+        $mailCompany->setFrom('info@ptmaagroup.com', 'MAA Group');
+        $mailCompany->addAddress('recruitment@maagroup.co.id', 'Company Recipient');
+        $mailCompany->Subject = 'Application Received - ' . $result['position'];
         $mailCompany->Body = "
     Hello,
 

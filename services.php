@@ -125,9 +125,9 @@
 
 
 <body>
-<?php include 'navbar.php'; ?>
+  <?php include 'navbar.php'; ?>
   <div class="body">
-    
+
 
     <div role="main" class="main">
       <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="background-size: cover; background-position: center;background-color: #af2a25;">
@@ -152,7 +152,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-11 col-xl-10 text-center">
             <p class="text-3-5 pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="150">
-              PT Mineral Alam Abadi is committed to continuing to contribute in meeting the needs of local and global markets by providing the best performance and quality in providing services.
+              Mineral Alam Abadi Group is committed to continuing to contribute in meeting the needs of local and global markets by providing the best performance and quality in providing services.
             </p>
           </div>
         </div>

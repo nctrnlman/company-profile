@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $mailApplicant->setFrom('info@ptmaagroup.com', 'MAA Group');
-        $mailApplicant->addAddress('rhazesd@gmail.com');
+        $mailApplicant->addAddress('wali@maagroup.co.id');
         $mailApplicant->Subject = 'Thank You for Your Message';
         $mailApplicant->Body = "Dear Team,\n\n" .
             "You have received a new message from a website visitor. Here are the details:\n\n" .

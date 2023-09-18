@@ -306,8 +306,8 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
             <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
               <?php
-              if (!empty($result['image'])) {
-                echo '<img src="file/flayer/' . $result['image'] . '" alt="Flyer" class="img-fluid">';
+              if (!empty($result['resume'])) {
+                echo '<img src="flyer/' . $result['resume'] . '" alt="Flyer" class="img-fluid">';
               } elseif (!empty($result['description'])) {
 
                 echo '<p>' . $result['description'] . '</p>';
@@ -351,7 +351,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                     <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
                   </div>
                   <div class="mb-3">
-                    <!-- <div class="g-recaptcha" data-sitekey="6LdnLwYoAAAAAM0oA32qzK-lSACMIOgd2S-qfyBL"></div> -->
+                    <div class="g-recaptcha" data-sitekey="6LdnLwYoAAAAAM0oA32qzK-lSACMIOgd2S-qfyBL"></div>
                   </div>
                   <input type="hidden" name="job_id" value="<?php echo $result['id_job_vacanacy']; ?>">
                 </div>
@@ -435,7 +435,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
               <form method="GET">
                 <div class="search-input">
-                  <input type="text" id="searchInput" name="search" placeholder="Search..." style="width: 770px;">
+                  <input type="text" id="searchInput" name="search" placeholder="Search..." style="width: 695px;">
                   <button id="searchButton" type="submit"><i class="fas fa-search"></i></button>
                 </div>
               </form>
@@ -449,16 +449,21 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                     <option value="create_date">Sort by Date</option>
                   </select>
                 </form>
+
                 <div class="dropdown">
                   <form method="GET">
                     <select id="filterSelect" name="filter">
                       <option value="">Filter by Division</option>
-                      <option value="IT">IT</option>
+                      <option value="Operation">Operation</option>
+                      <option value="Plant">Plant</option>
+                      <option value="Technical">Technical</option>
+                      <option value="Procurement">Procurement</option>
+                      <option value="External Relation & Permit">External Relation & Permit</option>
                       <option value="HRGA">HRGA</option>
-                      <option value="Mining">Mining</option>
                     </select>
                   </form>
                 </div>
+
               </div>
 
             </div>
@@ -490,7 +495,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
                             <div class="card-body" style="background-color:#af2a25; background-image: url('img/demos/business-consulting-3/texture-card.png'); background-blend-mode: overlay;">
                               <div class="text-center mt-2">
-                                <?php if (!empty($result['image'])) { ?>
+                                <?php if (!empty($result['resume'])) { ?>
                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openModal(<?php echo $result['id_job_vacanacy']; ?>)">
                                     Open Flyer
                                   </button>

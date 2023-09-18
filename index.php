@@ -95,11 +95,38 @@
     }
   </style>
 
+  <style>
+
+/* CSS for setting a maximum width for the cards */
+.max-width-card {
+  max-width: 100%;
+}
+
+/* CSS for controlling card size and image aspect ratio */
+.card-container {
+  width: 100%;
+  padding-top: 66.67%; /* 3:2 aspect ratio (2 / 3 * 100%) */
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Image covers the 3:2 aspect ratio */
+}
+
+
+  </style>
+
 </head>
 
 
 <body>
- 
+
   <div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(100px); ">
@@ -126,7 +153,7 @@
 
   <?php include 'navbar.php'; ?>
   <div class="body">
-    
+
 
     <div role="main" class="main">
       <section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/demos/business-consulting-3/backgrounds/OBI/MMP\ OBI-\ 20.jpg'); background-size: cover; background-position: center;">
@@ -165,13 +192,21 @@
         <div id=" aboutus" class="row align-items-xl-center pt-4 mb-3">
           <div class="col-md-10 col-lg-6 mb-5 mb-lg-0">
             <div class="row row-gutter-sm">
-              <div class="col-6">
-                <img src="img/demos/business-consulting-3/backgrounds/home-about/1.jpg" class="img-fluid box-shadow-5" alt="" />
+
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- Left image with inline CSS for cropping -->
+                  <div style="height: 100%; display: flex; align-items: stretch;">
+                    <img src="img/demos/business-consulting-3/assets-img-baru/DJI_0843.jpg" style="max-height: 100%; width: 100%; object-fit: cover;" class="img-fluid box-shadow-5" alt="" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <!-- Right images -->
+                  <img src="img/demos/business-consulting-3/assets-img-baru/20230828_070937.jpg" class="img-fluid box-shadow-5 mb-4" alt="" />
+                  <img src="img/demos/business-consulting-3/assets-img-baru/20230816_065855.jpg" style="filter: brightness(120%);" class="img-fluid box-shadow-5" alt="" />
+                </div>
               </div>
-              <div class="col-6">
-                <img src="img/demos/business-consulting-3/backgrounds/home-about/2.jpg" class="img-fluid box-shadow-5 mb-4" alt="" />
-                <img src="img/demos/business-consulting-3/backgrounds/home-about/3.jpg" class="img-fluid box-shadow-5" alt="" />
-              </div>
+
             </div>
           </div>
           <div class="col-lg-6 ps-lg-4 ps-xl-5">
@@ -212,63 +247,78 @@
             </div>
           </div>
           <div class="row row-gutter-sm justify-content-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
-            <!-- Card 1 - Stone Mining -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="stone-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+        <!-- Card 1 - Stone Mining -->
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+            <a href="stone-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0346.JPG" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Mining</h4>
-                  </div>
+                    <div class="card-container">
+                        <img src="img/demos/business-consulting-3/assets-img-baru/DJI_0420.jpg" class="card-image" alt="Card Image">
+                    </div>
+                    <div class="image-overlay">
+                        <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Mining</h4>
+                    </div>
                 </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3">
+                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">
+                        <!-- Place your Stone Mining content here -->
+                        Discover Stone Mining at PT Mineral Alam Abadi's Source.
+                    </p>
                 </div>
                 <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}">
                 </div>
-              </a>
-            </div>
+            </a>
+        </div>
 
-
-
-            <!-- Card 2 - Nickel Mining -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="nickel-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+        <!-- Card 2 - Nickel Mining -->
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+            <a href="nickel-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0347.JPG" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Nickel Mining</h4>
-                  </div>
+                    <div class="card-container">
+                        <img src="img/demos/business-consulting-3/assets-img-baru/DJI_0161.jpg" class="card-image" alt="Card Image">
+                    </div>
+                    <div class="image-overlay">
+                        <h4 class="font-weight-semibold text-color-light text-6 mb-1">Nickel Mining</h4>
+                    </div>
                 </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Exploring Nickel Riches with PT Mineral Alam Abadi's.</p>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3">
+                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">
+                        <!-- Place your Nickel Mining content here -->
+                        Exploring Nickel Riches with PT Mineral Alam Abadi's.
+                    </p>
                 </div>
                 <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}">
                 </div>
-              </a>
-            </div>
+            </a>
+        </div>
 
-            <!-- Card 4 - Construction Services -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="construction-services.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+        <!-- Card 3 - Construction Services -->
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+            <a href="construction-services.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0862.JPG" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Construction Services</h4>
-                  </div>
+                    <div class="card-container">
+                        <img src="img/demos/business-consulting-3/assets-img-baru/20230823_090559.jpg" class="card-image" alt="Card Image">
+                    </div>
+                    <div class="image-overlay">
+                        <h4 class="font-weight-semibold text-color-light text-6 mb-1">Construction Services</h4>
+                    </div>
                 </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Building Dreams by PT Mineral Alam Abadi.</p>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3">
+                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">
+                        <!-- Place your Construction Services content here -->
+                        Building Dreams by PT Mineral Alam Abadi.
+                    </p>
                 </div>
                 <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}">
                 </div>
-              </a>
-            </div>
+            </a>
+        </div>
 
-          </div>
+
+</div>
+
         </div>
         <div class="row">
           <div class="col text-center">

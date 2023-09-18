@@ -95,11 +95,39 @@
     }
   </style>
 
+  <style>
+
+/* CSS for setting a maximum width for the cards */
+.max-width-card {
+  max-width: 100%;
+}
+
+/* CSS for controlling card size and image aspect ratio */
+.card-container {
+  width: 100%;
+  padding-top: 66.67%; /* 3:2 aspect ratio (2 / 3 * 100%) */
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Image covers the 3:2 aspect ratio */
+}
+
+
+  </style>
+
 </head>
 
 
 <body>
- 
+
+
   <div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(100px); ">
@@ -114,7 +142,7 @@
             <strong>WASPADAI PENIPUAN REKRUTMEN KARYAWAN</strong>
           </p>
           <p style="text-align: justify; color: black">
-            PT Mineral Alam Abadi tidak memungut biaya apapun dan tidak pernah bekerja sama dengan agen perjalanan atau pihak ketiga dalam proses rekrutmen. Proses rekrutmen di perusahaan kami sepenuhnya transparan.<br><br> Hindari penipuan dengan mencermati email, pesan, dan web yang digunakan untuk lowongan pekerjaan. Jika Anda atau seseorang yang Anda kenal mengalami penipuan atau situasi tidak etis sehubungan dengan proses rekrutmen di perusahaan kami, laporkan kepada kami melalui email <strong>recruitment@mineralalamabadi.co.id</strong> dengan subject "Pelaporan" atau bisa juga melalui sosial media kami.
+            Mineral Alam Abadi Group tidak memungut biaya apapun dan tidak pernah bekerja sama dengan agen perjalanan atau pihak ketiga dalam proses rekrutmen. Proses rekrutmen di perusahaan kami sepenuhnya transparan.<br><br> Hindari penipuan dengan mencermati email, pesan, dan web yang digunakan untuk lowongan pekerjaan. Jika Anda atau seseorang yang Anda kenal mengalami penipuan atau situasi tidak etis sehubungan dengan proses rekrutmen di perusahaan kami, laporkan kepada kami melalui email <strong>recruitment@maagroup.co.id</strong> dengan subject "Pelaporan" atau bisa juga melalui sosial media kami.
           </p>
         </div>
         <div class="modal-footer custom-modal-footer" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
@@ -126,7 +154,7 @@
 
   <?php include 'navbar.php'; ?>
   <div class="body">
-    
+
 
     <div role="main" class="main">
       <section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/demos/business-consulting-3/backgrounds/OBI/MMP\ OBI-\ 20.jpg'); background-size: cover; background-position: center;">
@@ -165,13 +193,21 @@
         <div id=" aboutus" class="row align-items-xl-center pt-4 mb-3">
           <div class="col-md-10 col-lg-6 mb-5 mb-lg-0">
             <div class="row row-gutter-sm">
-              <div class="col-6">
-                <img src="img/demos/business-consulting-3/backgrounds/home-about/1.jpg" class="img-fluid box-shadow-5" alt="" />
+
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- Left image with inline CSS for cropping -->
+                  <div style="height: 100%; display: flex; align-items: stretch;">
+                    <img src="img/demos/business-consulting-3/assets-img-baru/DJI_0843.jpg" style="max-height: 100%; width: 100%; object-fit: cover;" class="img-fluid box-shadow-5" alt="" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <!-- Right images -->
+                  <img src="img/demos/business-consulting-3/assets-img-baru/20230828_070937.jpg" class="img-fluid box-shadow-5 mb-4" alt="" />
+                  <img src="img/demos/business-consulting-3/assets-img-baru/20230816_065855.jfif" style="filter: brightness(120%);" class="img-fluid box-shadow-5" alt="" />
+                </div>
               </div>
-              <div class="col-6">
-                <img src="img/demos/business-consulting-3/backgrounds/home-about/2.jpg" class="img-fluid box-shadow-5 mb-4" alt="" />
-                <img src="img/demos/business-consulting-3/backgrounds/home-about/3.jpg" class="img-fluid box-shadow-5" alt="" />
-              </div>
+
             </div>
           </div>
           <div class="col-lg-6 ps-lg-4 ps-xl-5">
@@ -182,7 +218,7 @@
               The Dynamic World of MAA and its Diverse Ventures
             </h3>
             <p class="text-3-5 pb-1 mb-4 mb-lg-2 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" style="text-align: justify;">
-              PT Mineral Alam Abadi is the holding company of several companies engaged in Nickel Mining, Nickel Trading, and Sea Transportation Services. We have subsidiaries located in various cities in Central Sulawesi, Southeast Sulawesi and North Maluku, we are committed to contributing to meeting the needs of the Local and Global Market by providing the best performance and quality in serving customers.
+              Mineral Alam Abadi Group is the holding company of several companies engaged in Nickel Mining, Nickel Trading, and Sea Transportation Services. We have subsidiaries located in various cities in Central Sulawesi, Southeast Sulawesi and North Maluku, we are committed to contributing to meeting the needs of the Local and Global Market by providing the best performance and quality in serving customers.
             </p>
             <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
               <a href="about.php" class="btn btn-primary custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Get to know</span></a>
@@ -205,70 +241,85 @@
                 Our Business
               </h3>
               <p class="text-3-5 pb-3 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
-                PT Mineral
-                Alam Abadi is committed to continuing to contribute in meeting the needs of local and global
+                Mineral
+                Alam Abadi Group is committed to continuing to contribute in meeting the needs of local and global
                 markets by providing the best performance and quality in providing services.
               </p>
             </div>
           </div>
           <div class="row row-gutter-sm justify-content-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
-            <!-- Card 1 - Stone Mining -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="stone-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+        <!-- Card 1 - Stone Mining -->
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+            <a href="stone-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0346.JPG" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Mining</h4>
-                  </div>
+                    <div class="card-container">
+                        <img src="img/demos/business-consulting-3/assets-img-baru/DJI_0420.jpg" class="card-image" alt="Card Image">
+                    </div>
+                    <div class="image-overlay">
+                        <h4 class="font-weight-semibold text-color-light text-6 mb-1">Stone Mining</h4>
+                    </div>
                 </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3">
+                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">
+                        <!-- Place your Stone Mining content here -->
+                        Discover Stone Mining at PT Mineral Alam Abadi's Source.
+                    </p>
                 </div>
                 <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}">
                 </div>
-              </a>
-            </div>
+            </a>
+        </div>
 
-
-
-            <!-- Card 2 - Nickel Mining -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="nickel-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+        <!-- Card 2 - Nickel Mining -->
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+            <a href="nickel-mining.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0347.JPG" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Nickel Mining</h4>
-                  </div>
+                    <div class="card-container">
+                        <img src="img/demos/business-consulting-3/assets-img-baru/DJI_0161.jpg" class="card-image" alt="Card Image">
+                    </div>
+                    <div class="image-overlay">
+                        <h4 class="font-weight-semibold text-color-light text-6 mb-1">Nickel Mining</h4>
+                    </div>
                 </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Exploring Nickel Riches with PT Mineral Alam Abadi's.</p>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3">
+                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">
+                        <!-- Place your Nickel Mining content here -->
+                        Exploring Nickel Riches with PT Mineral Alam Abadi's.
+                    </p>
                 </div>
                 <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}">
                 </div>
-              </a>
-            </div>
+            </a>
+        </div>
 
-            <!-- Card 4 - Construction Services -->
-            <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
-              <a href="construction-services.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
+        <!-- Card 3 - Construction Services -->
+        <div class="col-sm-9 col-md-6 col-lg-3 mb-4">
+            <a href="construction-services.php" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                 <div class="card box-shadow-4">
-                  <img src="img/demos/business-consulting-3/backgrounds/BCPM/DJI_0862.JPG" class="img-fluid" alt="Card Image">
-                  <div class="image-overlay">
-                    <h4 class="font-weight-semibold text-color-light text-6 mb-1">Construction Services</h4>
-                  </div>
+                    <div class="card-container">
+                        <img src="img/demos/business-consulting-3/assets-img-baru/20230823_090559.jfif" class="card-image" alt="Card Image">
+                    </div>
+                    <div class="image-overlay">
+                        <h4 class="font-weight-semibold text-color-light text-6 mb-1">Construction Services</h4>
+                    </div>
                 </div>
-                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Building Dreams by PT Mineral Alam Abadi.</p>
+                <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3">
+                    <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">
+                        <!-- Place your Construction Services content here -->
+                        Building Dreams by PT Mineral Alam Abadi.
+                    </p>
                 </div>
                 <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
-                  <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
+                    <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}">
                 </div>
-              </a>
-            </div>
+            </a>
+        </div>
 
-          </div>
+
+</div>
+
         </div>
         <div class="row">
           <div class="col text-center">
@@ -288,7 +339,7 @@
             MAA PROJECTS
           </h2>
           <p class="text-4 font-weight-light">
-            Currently, PT. Mineral Alam Abadi operates in three regions in Indonesia.
+            Currently, Mineral Alam Abadi Group operates in three regions in Indonesia.
           </p>
         </div>
       </div>
@@ -386,9 +437,9 @@
       <div class="row">
         <div class="col-md-8 col-lg-6">
           <p class="text-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="600">
-            PT Mineral Alam Abadi
+            Mineral Alam Abadi Group
             has several operational locations, namely the Head Office of
-            <span class="highlight highlight-primary highlight-bg-opacity highlight-animated" data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100" data-plugin-options="{'flagClassOnly': true}"> PT Mineral Alam Abadi</span>
+            <span class="highlight highlight-primary highlight-bg-opacity highlight-animated" data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100" data-plugin-options="{'flagClassOnly': true}"> Mineral Alam Abadi Group</span>
             which is
             domiciled in Jakarta, as well as mine locations in Central Sulawesi, Southeast Sulawesi, and South
             Halmahera.
@@ -643,7 +694,7 @@
       var currentPage = window.location.href.split("/").pop();
 
       // Periksa apakah halaman saat ini adalah home.php
-      if (currentPage === "index.php" || currentPage === "") {
+      if (currentPage === "index" || currentPage === "") {
         // Menghapus nilai notificationShown saat halaman dimuat ulang
         localStorage.removeItem("notificationShown");
 

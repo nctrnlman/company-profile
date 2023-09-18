@@ -6,7 +6,7 @@ include 'db.php';
 function getDefaultJobs($limit = 3)
 {
   global $db;
-  $query = "SELECT * FROM job_vacanacy LIMIT $limit";
+  $query = "SELECT * FROM job_vacanacy WHERE status = 'active' LIMIT $limit";;
   $stmt = $db->query($query);
   return $stmt->fetchAll(PDO::FETCH_ASSOC);
   header("Location: careers.php");
@@ -18,6 +18,8 @@ function getFilteredJobs($searchTerm = '', $sortOption = '', $filterOption = '',
 {
   global $db;
   $query = "SELECT * FROM job_vacanacy WHERE 1";
+
+  $query .= " AND status = 'active'";
 
   // Cek apakah ada pencarian yang dikirimkan
   if (!empty($searchTerm)) {
@@ -62,7 +64,7 @@ function getFilteredJobs($searchTerm = '', $sortOption = '', $filterOption = '',
 // Mengambil data dari formulir
 $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 $sortOption = isset($_GET['sort']) ? htmlspecialchars($_GET['sort']) : '';
-$filterOption = isset($_GET['filter']) ? htmlspecialchars($_GET['filter']) : '';
+$filterOption = isset($_GET['filter']) ? urldecode($_GET['filter']) : '';
 $limitOption = isset($_GET['limit']) ? intval($_GET['limit']) : 3;
 
 // Jika tombol "Seemore" ditekan, tambahkan 3 ke limit
@@ -88,6 +90,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
   $showSeemore = $numResults >= $limitOption;
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -204,7 +207,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
   <style>
     .search-bar {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-center;
       align-items: center;
       border: 1px solid #ccc;
       padding: 10px;
@@ -212,6 +215,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
       background-color: #fff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
+      gap: 3px;
     }
 
     .search-input {
@@ -307,7 +311,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
             <div class="modal-body text-white" style="max-width: auto; overflow-y: auto;">
               <?php
               if (!empty($result['image'])) {
-                echo '<img src="file/flayer/' . $result['image'] . '" alt="Flyer" class="img-fluid">';
+                echo '<img src="file/flayer/' . $result['image'] . '" alt="Flayer" class="img-fluid">';
               } elseif (!empty($result['description'])) {
 
                 echo '<p>' . $result['description'] . '</p>';
@@ -349,9 +353,6 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                   <div class="mb-3">
                     <label for="resume" class="form-label" style="font-weight: bold;">Upload Resume (PDF, max 3MB)</label>
                     <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" style="border: 1px solid #ccc; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem;" required>
-                  </div>
-                  <div class="mb-3">
-                    <!-- <div class="g-recaptcha" data-sitekey="6LdnLwYoAAAAAM0oA32qzK-lSACMIOgd2S-qfyBL"></div> -->
                   </div>
                   <input type="hidden" name="job_id" value="<?php echo $result['id_job_vacanacy']; ?>">
                 </div>
@@ -427,7 +428,7 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
             <!-- search sort filter -->
             <div class="container">
-              <h1 style='font-weight: 600; text-align : center; color:black; '>Find Your Dream Job at PT Mineral Alam Abadi</h1><br />
+              <h1 style='font-weight: 600; text-align : center; color:black; '>Find Your Dream Job at Mineral Alam Abadi Group</h1><br />
             </div>
 
 
@@ -435,31 +436,27 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
               <form method="GET">
                 <div class="search-input">
-                  <input type="text" id="searchInput" name="search" placeholder="Search..." style="width: 770px;">
+                  <input type="text" id="searchInput" name="search" placeholder="Search..." style="width: 695px;">
                   <button id="searchButton" type="submit"><i class="fas fa-search"></i></button>
                 </div>
               </form>
-              <div class="sort-category">
+
+
+
+              <div class="dropdown">
                 <form method="GET">
-                  <select id="sortSelect" name="sort">
-                    <option value="">Sort by</option>
-                    <option value="position">Sort by Position</option>
-                    <option value="company">Sort by Company</option>
-                    <option value="location">Sort by Location</option>
-                    <option value="create_date">Sort by Date</option>
+                  <select id="filterSelect" name="filter">
+                    <option value="">Filter by Division</option>
+                    <option value="Operation">Operation</option>
+                    <option value="Plant">Plant</option>
+                    <option value="Technical">Technical</option>
+                    <option value="Procurement">Procurement</option>
+                    <option value="External Relation & Permit">External Relation & Permit</option>
+                    <option value="HRGA">HRGA</option>
                   </select>
                 </form>
-                <div class="dropdown">
-                  <form method="GET">
-                    <select id="filterSelect" name="filter">
-                      <option value="">Filter by Division</option>
-                      <option value="IT">IT</option>
-                      <option value="HRGA">HRGA</option>
-                      <option value="Mining">Mining</option>
-                    </select>
-                  </form>
-                </div>
               </div>
+
 
             </div>
 
@@ -485,12 +482,12 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
 
                                                                                   echo $newDate;
                                                                                   ?> | <i class="fas fa-map-marker-alt ms-1 me-1"></i><?php echo $result['location']; ?></p>
-                          <p class="mb-2"><?php echo $result['company']; ?></p>
+
                           <div class="card">
 
                             <div class="card-body" style="background-color:#af2a25; background-image: url('img/demos/business-consulting-3/texture-card.png'); background-blend-mode: overlay;">
                               <div class="text-center mt-2">
-                                <?php if (!empty($result['image'])) { ?>
+                                <?php if (!empty($result['resume'])) { ?>
                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openModal(<?php echo $result['id_job_vacanacy']; ?>)">
                                     Open Flyer
                                   </button>
@@ -575,15 +572,6 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 
   <script>
-    // Mendapatkan elemen select
-    const sortSelect = document.getElementById("sortSelect");
-
-    // Mendengarkan perubahan pada select
-    sortSelect.addEventListener("change", function() {
-      // Mengirim formulir saat pilihan berubah
-      this.form.submit();
-    });
-
     const filterSelect = document.getElementById("filterSelect");
 
     // Mendengarkan perubahan pada select

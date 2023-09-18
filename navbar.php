@@ -5,7 +5,7 @@
         <div class="header-column">
           <div class="header-row">
             <div class="header-logo">
-              <a href="index.php">
+              <a href="index">
                 <img alt="Porto" width="270" height="27" src="img/demos/business-consulting-3/logo.png" />
               </a>
             </div>
@@ -18,18 +18,18 @@
                 <nav class="collapse">
                   <ul class="nav nav-pills" id="mainNav">
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="index.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="index">
                         Home
                       </a>
                     </li>
 
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'about.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="about.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'about.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="about">
                         About MAA
                       </a>
                     </li>
                     <li class="dropdown">
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'services.php' || basename($_SERVER['PHP_SELF']) == 'trading.php' || basename($_SERVER['PHP_SELF']) == 'shipping.php' || basename($_SERVER['PHP_SELF']) == 'stone-crusher.php' || basename($_SERVER['PHP_SELF']) == 'stone-mining.php' || basename($_SERVER['PHP_SELF']) == 'nickel-mining.php' || basename($_SERVER['PHP_SELF']) == 'mining-contractor.php' || basename($_SERVER['PHP_SELF']) == 'construction-services.php' || basename($_SERVER['PHP_SELF']) == 'investment.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link dropdown-toggle" href="services.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'services.php' || basename($_SERVER['PHP_SELF']) == 'trading' || basename($_SERVER['PHP_SELF']) == 'shipping' || basename($_SERVER['PHP_SELF']) == 'stone-crusher' || basename($_SERVER['PHP_SELF']) == 'stone-mining' || basename($_SERVER['PHP_SELF']) == 'nickel-mining' || basename($_SERVER['PHP_SELF']) == 'mining-contractor' || basename($_SERVER['PHP_SELF']) == 'construction-services' || basename($_SERVER['PHP_SELF']) == 'investment') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link dropdown-toggle" href="services">
                         Our Business
                       </a>
                       <!-- <ul class="dropdown-menu">
@@ -78,22 +78,27 @@
                             </ul> -->
                     </li>
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'mldp.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="mldp.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'mldp.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="mldp">
                         MLDP
                       </a>
                     </li>
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'careers.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="careers.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'careers.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="careers">
                         Career
                       </a>
                     </li>
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'gallery.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="gallery.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'gallery.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="gallery">
                         Gallery
                       </a>
                     </li>
+                    <!-- <li>
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'news.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="news.php">
+                        News
+                      </a>
+                    </li> -->
                     <li class="d-lg-none">
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'contact.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="contact.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'contact.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="contact">
                         Contact Us
                       </a>
                     </li>
@@ -107,7 +112,7 @@
           <?php
           if (basename($_SERVER['PHP_SELF']) == 'contact.php') {
           ?>
-            <a href="contact.php" class="btn btn-primary custom-btn-style-1 font-weight-semibold text-3-5 btn-px-3 py-2 ws-nowrap ms-4 d-none d-lg-block" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Contact Us</span></a>
+            <a href="contact" class="btn btn-primary custom-btn-style-1 font-weight-semibold text-3-5 btn-px-3 py-2 ws-nowrap ms-4 d-none d-lg-block" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Contact Us</span></a>
             <div class="header-nav-features header-nav-features-no-border">
               <div class="header-nav-feature header-nav-features-search d-inline-flex">
                 <!-- <a href="#" class="header-nav-features-toggle text-decoration-none" data-focus="headerSearch" aria-label="Search">
@@ -131,7 +136,7 @@
           <?php
           } else {
           ?>
-            <a href="contact.php" class="btn btn-dark custom-btn-style-1 font-weight-semibold text-3-5 btn-px-3 py-2 ws-nowrap ms-4 d-none d-lg-block" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Contact Us</span></a>
+            <a href="contact" class="btn btn-dark custom-btn-style-1 font-weight-semibold text-3-5 btn-px-3 py-2 ws-nowrap ms-4 d-none d-lg-block" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Contact Us</span></a>
             <div class="header-nav-features header-nav-features-no-border">
               <!-- <div
               class="header-nav-feature header-nav-features-search d-inline-flex"

@@ -1,3 +1,42 @@
+<?php
+session_start();
+include 'db.php';
+
+$itemsPerPage = 12;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($page - 1) * $itemsPerPage;
+
+
+$categoriesStmt = $db->prepare("SELECT DISTINCT category FROM gallery");
+$categoriesStmt->execute();
+$categories = $categoriesStmt->fetchAll(PDO::FETCH_COLUMN);
+
+
+$filterCategory = isset($_GET['category']) ? $_GET['category'] : null;
+$filterClause = $filterCategory ? "WHERE category = :category" : "";
+
+
+$stmt = $db->prepare("SELECT image, category FROM gallery $filterClause ORDER BY category ASC LIMIT :limit OFFSET :offset");
+$stmt->bindValue(':limit', $itemsPerPage, PDO::PARAM_INT);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+if ($filterCategory) {
+  $stmt->bindParam(':category', $filterCategory, PDO::PARAM_STR);
+}
+$stmt->execute();
+$results = $stmt->fetchAll();
+
+
+$countStmt = $db->prepare("SELECT COUNT(*) FROM gallery $filterClause");
+if ($filterCategory) {
+  $countStmt->bindParam(':category', $filterCategory, PDO::PARAM_STR);
+}
+$countStmt->execute();
+$totalItems = $countStmt->fetchColumn();
+
+
+$totalPages = ceil($totalItems / $itemsPerPage);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +58,7 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
 
-  <!-- Web Fonts  -->
+  <!-- Web Fonts -->
   <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css" />
 
   <!-- Vendor CSS -->
@@ -46,17 +85,219 @@
   <!-- Skin CSS -->
   <link id="skinCSS" rel="stylesheet" href="css/skins/skin-business-consulting-3.css" />
 
-  <!-- Theme Custom CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css" />
 
   <!-- Head Libs -->
   <script src="vendor/modernizr/modernizr.min.js"></script>
+
+  <style>
+    /* Gallery styles */
+    .gallery-section {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+    }
+
+    .page-btn {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      background-color: #f5f5f5;
+      cursor: pointer;
+    }
+
+    .page-btn:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+
+  <style>
+    /* Gallery styles */
+    .gallery-section {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      max-width: 550px;
+      /* Set the maximum width for each image */
+      width: 100%;
+      /* Ensure all images take up the full width */
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      max-height: 100%;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      animation: hover-fade 0.5s linear;
+
+      transform-origin: center bottom;
+
+      transition: opacity 0.5s linear;
+      /* Add a smooth transition for opacity */
+
+    }
+
+    /* Define a keyframe animation */
+    @keyframes hover-fade {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+        /* Adjust the opacity as needed */
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .gallery-item:hover img {
+      opacity: 0.5;
+      /* Adjust the opacity as needed */
+      transform-origin: center bottom;
+      /* Set the transform origin to the center bottom */
+      transform: scale(1);
+    }
+
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+    }
+
+    .page-btn {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      background-color: #f5f5f5;
+      cursor: pointer;
+    }
+
+    .page-btn:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+  <style>
+    /* Center-align the tab navigation */
+    .gallery-categories {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+
+  <style>
+    .slider {
+      height: 200px;
+      margin: auto;
+      position: relative;
+      width: 90%;
+      overflow: hidden;
+    }
+
+    .slide-track {
+      display: flex;
+      animation: scroll 40s linear infinite;
+    }
+
+    .slide {
+      height: 100%;
+      width: 250px;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-250px * 6));
+        /* Adjust the translation distance based on the number of images */
+      }
+    }
+
+    /* 
+img {
+  width: 100%;
+  height: auto; /* Ensure the aspect ratio is maintained */
+
+    .slider::before,
+    .slider::after {
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 15px;
+      z-index: 2;
+      background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0)100%);
+    }
+
+    .slider::before {
+      left: 0;
+      top: 0;
+    }
+
+    .slider::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+    }
+
+    .slide:hover img {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+  </style>
 </head>
 
 <body>
+  <?php include 'navbar.php'; ?>
   <div class="body">
-    <?php include 'navbar.php'; ?>
-    <!-- data-bg-src="img/demos/business-consulting-3/backgrounds/background-5.jpg" -->
+
     <div role="main" class="main">
       <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="background-size: cover; background-position: center;background-color: #af2a25;">
         <div class="container pb-5 my-3">
@@ -76,152 +317,98 @@
         </div>
       </section>
 
-      <div class="container pt-4 pb-5 my-5">
-        <div class="container ">
-          <div class="row">
-            <div class="col">
-
-              <div style="text-align: center;">
-                <img src="img\demos\business-consulting-3\backgrounds\comingsoon.png" alt="Background Image" class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" style="max-width: 18%; height: auto; margin-top: 10px; margin-bottom:20px; ">
-                <h2 style="font-size: 24px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #333; font-style: italic; margin-top:15px;" class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">
-                  Stay Tuned
-                </h2>
-
-                <p style="font-size: 18px; color: #777;" class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
-                  We Will Launch Soon!
-                </p>
+      <div class="font-weight-bold text-4" style="display: flex; justify-content: center; padding-top: 100px;">
+        <h1>Welcome to Mineral Alam Abadi Group Gallery</h1>
+      </div>
 
 
-              </div>
-              <!-- <p class="text-4-5 line-height-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec velit magna, consectetur at suscipit eu, dapibus vel odio. Mauris ac nulla at ligula interdum ullamcorper. Nunc mattis eros nec eros dictum, nec molestie metus auctor. Nulla placerat nunc velit, a dictum lectus finibus quis. Nunc leo mauris, cursus vel tempor eu, tempus sed turpis.</p>
-							<p class="text-3-5 line-height-9 mb-4">Cras mattis nisl auctor tellus maximus, id consectetur nulla suscipit. Praesent consequat elit vitae ipsum porttitor, at facilisis enim hendrerit. Morbi tincidunt ornare scelerisque. Maecenas et iaculis libero, in volutpat arcu. Vestibulum ac sagittis felis. Aenean tempor tellus id felis finibus, quis aliquam sem pretium. </p> -->
+      <div class="slider" style="margin-top: 100px;">
+        <div class="slide-track">
+          <?php
+          $imagePaths = [
+            "./img/demos/business-consulting-3/backgrounds/BCPM/DJI_0346.JPG",
+            "./img/demos/business-consulting-3/backgrounds/BCPM/DJI_0347.JPG",
+            "./img/demos/business-consulting-3/backgrounds/BCPM/DJI_0348.JPG",
+            "./img/demos/business-consulting-3/backgrounds/BCPM/DJI_0349.JPG",
+            "./img/demos/business-consulting-3/backgrounds/BCPM/DJI_0350.JPG",
+            "./img/demos/business-consulting-3/backgrounds/BCPM/DJI_0351.JPG",
+          ];
 
-              <!-- <ul class="nav nav-pills sort-source sort-source-style-3 custom-sort-source mt-4" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'packery', 'filter': '*'}">
-								<li class="nav-item active" data-option-value="*"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase active" href="#">Show All</a></li>
-								<li class="nav-item" data-option-value=".websites"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Websites</a></li>
-								<li class="nav-item" data-option-value=".logos"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Logos</a></li>
-								<li class="nav-item" data-option-value=".brands"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Brands</a></li>
-								<li class="nav-item" data-option-value=".medias"><a class="nav-link text-1 positive-ls-3 font-weight-bold text-3 px-5 text-uppercase" href="#">Medias</a></li>
-							</ul> -->
+          $imagePaths = array_merge($imagePaths, $imagePaths);
 
-              <!-- <div class="sort-destination-loader sort-destination-loader-showing mt-4 pt-2">
-								<div class="row portfolio-list sort-destination" data-sort-id="portfolio">
-
-									<div class="col-sm-6 col-lg-6 isotope-item websites">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-1.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-6 isotope-item logos">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-2.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-6 isotope-item brands">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3"> -->
-              <!-- <div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-3.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div> -->
-              <!-- <div class="col-sm-6 col-lg-6 isotope-item medias">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-4.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div> -->
-              <!-- <div class="col-sm-6 col-lg-6 isotope-item websites">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-5.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div> -->
-              <!-- <div class="col-sm-6 col-lg-6 isotope-item websites">
-										<div class="portfolio-item">
-											<div class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons rounded-0 mb-3">
-												<div class="thumb-info-wrapper rounded-0">
-													<img src="img/demos/digital-agency/projects/project-6.jpg" class="img-fluid rounded-0" alt="" />
-													<div class="thumb-info-action">
-														<a href="portfolio-single-wide-slider.html" aria-label="">
-															<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
-														</a>
-													</div>
-												</div>
-											</div>
-											<h2 class="text-color-dark font-weight-semibold text-3 opacity-7 line-height-1 mb-1">WEBSITE CREATION - 2023</h2>
-											<h3 class="text-transform-none font-weight-bold text-5-5 mb-0 pb-2">
-												<a href="#" class="text-decoration-none text-color-dark opacity-hover-8">Porto Digital Agency</a>
-											</h3>
-										</div>
-									</div> -->
-
+          foreach ($imagePaths as $imagePath) {
+          ?>
+            <div class="slide">
+              <img src="<?php echo $imagePath; ?>" alt="Image" style="width: 100%; height: auto; border: 2px solid black; border-radius: 4px;">
             </div>
-          </div>
+          <?php
+          }
+          ?>
+        </div>
+      </div>
 
+
+
+
+
+    </div>
+
+  </div>
+
+  <section class="container gallery-section">
+
+    <div class="gallery-categories text-center" style="margin-bottom: 20px;">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link <?php echo ($filterCategory === 'All') ? 'active' : ''; ?>" href="gallery.php">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php echo ($filterCategory === 'OBI') ? 'active' : ''; ?>" href="gallery.php?category=OBI">OBI</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php echo ($filterCategory === 'BCPM') ? 'active' : ''; ?>" href="gallery.php?category=BCPM">BCPM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php echo ($filterCategory === 'Head Office') ? 'active' : ''; ?>" href="gallery.php?category=Head Office">Head Office</a>
+        </li>
+
+      </ul>
+    </div>
+
+
+    <div class="container" style="background-color: #af2a25; padding-top: 10px; padding-bottom: 10px;">
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" style="margin-top: 40px;">
+        <?php foreach ($results as $result) { ?>
+          <div class="gallery-item <?php echo 'category-' . $result['category']; ?>">
+            <img src="./file/gallery/<?php echo $result['image']; ?>" alt="Image" style="border: 2px solid #c6a265; border-radius: 5px;" />
+          </div>
+        <?php } ?>
+      </div>
+    </div>
+
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <div class="">
+        <div class="pagination-text mt-4" style="font-size: 14px; color: #777;">Showing <?php echo count($results); ?> images</div>
+        <div class="mt-2">
+          <?php if ($page > 1) { ?>
+            <a class="page-btn prev-btn" href="?page=<?php echo $page - 1; ?>&category=<?php echo $filterCategory; ?>" style="display: inline-block; margin: 0 5px; padding: 5px 10px; background-color: #af2a25; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;">◄</a>
+          <?php } ?>
+
+          <?php for ($i = 1; $i <= $totalPages; $i++) { ?>
+            <a class="page-btn <?php echo ($page == $i) ? 'active' : ''; ?>" href="?page=<?php echo $i; ?>&category=<?php echo $filterCategory; ?>" style="display: inline-block; margin: 0 5px; padding: 5px 10px; background-color: <?php echo ($page == $i) ? '#c6a265' : '#af2a25'; ?>; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;"><?php echo $i; ?></a>
+          <?php } ?>
+
+          <?php if ($page < $totalPages) { ?>
+            <a class="page-btn next-btn" href="?page=<?php echo $page + 1; ?>&category=<?php echo $filterCategory; ?>" style="display: inline-block; margin: 0 5px; padding: 5px 10px; background-color: #af2a25; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;">►</a>
+          <?php } ?>
         </div>
       </div>
     </div>
+
+  </section>
   </div>
   </div>
 
@@ -231,13 +418,10 @@
   <!-- Vendor -->
   <script src="vendor/plugins/js/plugins.min.js"></script>
 
-  <!-- Theme Base, Components and Settings -->
+  <!-- Theme Base, Components, and Settings -->
   <script src="js/theme.js"></script>
 
-  <!-- Current Page Vendor and Views -->
-  <script src="js/views/view.contact.js"></script>
-
-  <!-- Theme Custom -->
+  <!-- Custom Scripts -->
   <script src="js/custom.js"></script>
 
   <!-- Theme Initialization Files -->
@@ -245,208 +429,109 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
   <script>
-    /*
-			Map Settings
+    /* Google Maps settings and functions here */
+  </script>
 
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const itemsPerPage = 12;
+      const totalItems = $('.gallery-item').length;
+      const $galleryItems = $('.gallery-item');
+      const $paginationText = $('.pagination-text');
+      const $prevBtn = $('.prev-btn');
+      const $nextBtn = $('.next-btn');
+      let currentPage = 1;
 
-			*/
+      // Show the first page by default
+      showPage(currentPage);
 
-    function initializeGoogleMaps() {
-      // Map Initial Location
-      var initLatitude = 40.75198;
-      var initLongitude = -73.96978;
+      // Calculate the number of pages
+      const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-      // Map Markers
-      var mapMarkers = [{
-        latitude: initLatitude,
-        longitude: initLongitude,
-        html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
-        icon: {
-          image: "img/demos/business-consulting-3/map-pin.png",
-          iconsize: [26, 27],
-          iconanchor: [12, 27],
-        },
-      }, ];
+      // Update pagination text
+      updatePaginationText(currentPage);
 
-      // Map Extended Settings
-      var mapSettings = {
-        controls: {
-          draggable: $.browser.mobile ? false : true,
-          panControl: false,
-          zoomControl: false,
-          mapTypeControl: false,
-          scaleControl: false,
-          streetViewControl: false,
-          overviewMapControl: false,
-        },
-        scrollwheel: false,
-        markers: mapMarkers,
-        latitude: initLatitude,
-        longitude: initLongitude,
-        zoom: 14,
-      };
-
-      var map = $("#googlemaps").gMap(mapSettings),
-        mapRef = $("#googlemaps").data("gMap.reference");
-
-      // Styles from https://snazzymaps.com/
-      var styles = [{
-          featureType: "water",
-          elementType: "geometry",
-          stylers: [{
-            color: "#e9e9e9"
-          }, {
-            lightness: 17
-          }],
-        },
-        {
-          featureType: "landscape",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f5f5f5"
-          }, {
-            lightness: 20
-          }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 17
-          }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 29
-          }, {
-            weight: 0.2
-          }],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "geometry",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 18
-          }],
-        },
-        {
-          featureType: "road.local",
-          elementType: "geometry",
-          stylers: [{
-            color: "#ffffff"
-          }, {
-            lightness: 16
-          }],
-        },
-        {
-          featureType: "poi",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f5f5f5"
-          }, {
-            lightness: 21
-          }],
-        },
-        {
-          featureType: "poi.park",
-          elementType: "geometry",
-          stylers: [{
-            color: "#dedede"
-          }, {
-            lightness: 21
-          }],
-        },
-        {
-          elementType: "labels.text.stroke",
-          stylers: [{
-              visibility: "on"
-            },
-            {
-              color: "#ffffff"
-            },
-            {
-              lightness: 16
-            },
-          ],
-        },
-        {
-          elementType: "labels.text.fill",
-          stylers: [{
-              saturation: 36
-            },
-            {
-              color: "#333333"
-            },
-            {
-              lightness: 40
-            },
-          ],
-        },
-        {
-          elementType: "labels.icon",
-          stylers: [{
-            visibility: "off"
-          }]
-        },
-        {
-          featureType: "transit",
-          elementType: "geometry",
-          stylers: [{
-            color: "#f2f2f2"
-          }, {
-            lightness: 19
-          }],
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry.fill",
-          stylers: [{
-            color: "#fefefe"
-          }, {
-            lightness: 20
-          }],
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry.stroke",
-          stylers: [{
-            color: "#fefefe"
-          }, {
-            lightness: 17
-          }, {
-            weight: 1.2
-          }],
-        },
-      ];
-
-      var styledMap = new google.maps.StyledMapType(styles, {
-        name: "Styled Map",
+      // Handle pagination text click
+      $paginationText.click(function() {
+        const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
+        showPage(nextPage);
       });
 
-      mapRef.mapTypes.set("map_style", styledMap);
-      mapRef.setMapTypeId("map_style");
-    }
+      // Handle previous button click
+      $prevBtn.click(function() {
+        const prevPage = currentPage === 1 ? totalPages : currentPage - 1;
+        showPage(prevPage);
+      });
 
-    // Initialize Google Maps when element enter on browser view
-    theme.fn.intObs("#googlemaps", "initializeGoogleMaps()", {});
+      // Handle next button click
+      $nextBtn.click(function() {
+        const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
+        showPage(nextPage);
+      });
 
-    // Map text-center At
-    var mapCenterAt = function(options, e) {
-      e.preventDefault();
-      $("#googlemaps").gMap("centerAt", options);
-    };
+      // Show items for a specific page
+      function showPage(pageNumber) {
+        const startIndex = (pageNumber - 1) * itemsPerPage;
+        const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+
+        // Hide all gallery items and then show the ones for the selected page
+        $galleryItems.hide();
+        $galleryItems.slice(startIndex, endIndex).show();
+
+        // Update pagination text and current page
+        updatePaginationText(pageNumber);
+        currentPage = pageNumber;
+      }
+
+      // Update pagination text with the current page number
+      function updatePaginationText(pageNumber) {
+        const startIndex = (pageNumber - 1) * itemsPerPage + 1;
+        const endIndex = Math.min(startIndex + itemsPerPage - 1, totalItems);
+        $paginationText.text(`Showing ${startIndex}-${endIndex} of ${totalItems} images`);
+      }
+    });
   </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const slider = document.querySelector(".slider");
+      const slideTrack = document.querySelector(".slide-track");
+
+      // Clone the first slide and append it to the end for looping
+      const firstSlideClone = slideTrack.children[0].cloneNode(true);
+      slideTrack.appendChild(firstSlideClone);
+
+      // Set the width of slideTrack to accommodate all slides
+      slideTrack.style.width = slideTrack.children.length * 100 + "%";
+
+      // Animation function for looping
+      function animateSlider() {
+        let currentSlideIndex = 0;
+
+        function nextSlide() {
+          currentSlideIndex++;
+          if (currentSlideIndex >= slideTrack.children.length) {
+            currentSlideIndex = 1;
+            slideTrack.style.transition = "none"; // Disable transition for instant jump
+            slideTrack.style.transform = "translateX(0)";
+            setTimeout(() => {
+              slideTrack.style.transition = ""; // Re-enable transition
+            }, 0);
+          }
+          slideTrack.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+        }
+
+        setInterval(nextSlide, 4000); // Change slide every 4 seconds (adjust as needed)
+      }
+
+      animateSlider();
+    });
+  </script>
+
+
+
 </body>
 
 </html>

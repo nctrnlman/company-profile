@@ -4,12 +4,15 @@ include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $position = $_POST['position'];
-    $dueDate = $_POST['dueDate'];
+    $status = $_POST['status'];
     $division = $_POST['division'];
     $location = $_POST['location'];
     $company = $_POST['companyName'];
 
     $unique_id = generateUniqueId();
+
+
+
 
     while (checkUniqueIdExists($unique_id)) {
         $unique_id = generateUniqueId();
@@ -32,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $currentDate = date("Y-m-d H:i:s");
 
     try {
-        $stmt = $db->prepare("INSERT INTO job_vacanacy (id_job_vacanacy, position, division, company, location, create_date, due_date, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$unique_id, $position, $division, $company, $location, $currentDate, $dueDate, 'NULL', $flyerPath]);
+        $stmt = $db->prepare("INSERT INTO job_vacanacy (id_job_vacanacy, position, division, company, location, create_date, status, description, image) VALUES (?, ?, ?, ?, ?, ?, ?,NULL, ?)");
+        $stmt->execute([$unique_id, $position, $division, $company, $location, $currentDate, $status, $flyerPath]);
 
         $successMessage = "Job vacancy added successfully!";
         $_SESSION['success_message'] = $successMessage;

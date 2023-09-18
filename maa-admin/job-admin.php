@@ -118,7 +118,7 @@ $results = $db->query($query);
                                                     <th>No</th>
                                                     <th>Job Title</th>
                                                     <th>Create Date</th>
-                                                    <th>Due Date</th>
+                                                    <th>Status</th>
                                                     <th>Division</th>
                                                     <th>Location</th>
                                                     <th>Company Name</th>
@@ -133,7 +133,7 @@ $results = $db->query($query);
                                                         <td><?php echo $counter; ?></td>
                                                         <td><?php echo $result['position']; ?></td>
                                                         <td><?php echo date('Y-m-d', strtotime($result['create_date'])); ?></td>
-                                                        <td><?php echo date('Y-m-d', strtotime($result['due_date'])); ?></td>
+                                                        <td><?php echo $result['status']; ?></td>
                                                         <td><?php echo $result['division']; ?></td>
                                                         <td><?php echo $result['location']; ?></td>
                                                         <td><?php echo $result['company']; ?></td>
@@ -185,13 +185,18 @@ $results = $db->query($query);
                                             <input type="file" class="form-control" id="flyer" name="flyer" accept=".png" required>
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label for="dueDate" class="form-label">Due Date</label>
-                                            <input type="date" class="form-control" id="dueDate" name="dueDate" required>
-                                        </div>
+
                                         <div class="mb-3">
                                             <label for="division" class="form-label">Division</label>
-                                            <input type="text" class="form-control" id="division" name="division" required>
+                                            <select class="form-control" id="divisionInput" name="division">
+                                                <option value="">Select one</option>
+                                                <option value="Operation">Operation</option>
+                                                <option value="Plant">Plant</option>
+                                                <option value="Technical">Technical</option>
+                                                <option value="Procurement">Procurement</option>
+                                                <option value="External Relation & Permit">External Relation & Permit</option>
+                                                <option value="HRGA">HRGA</option>
+                                            </select>
                                         </div>
                                         <div class="mb-3">
                                             <label for="location" class="form-label">Location</label>
@@ -200,6 +205,14 @@ $results = $db->query($query);
                                         <div class="mb-3">
                                             <label for="companyName" class="form-label">Company Name</label>
                                             <input type="text" class="form-control" id="companyName" name="companyName" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="status" class="form-label">Status</label>
+                                            <select class="form-control" name="status" required>
+                                                <option value="" disabled selected>Select one</option>
+                                                <option value="active">Active</option>
+                                                <option value="non-active">Non-Active</option>
+                                            </select>
                                         </div>
                                         <button type="submit" class="btn btn-primary" name="submit">add</button>
                                     </form>
@@ -226,21 +239,38 @@ $results = $db->query($query);
                                             <label for="jobTitleInput" class="form-label">Job Title</label>
                                             <input type="text" class="form-control" id="jobTitleInput" name="jobTitleInput" required>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="dateInput" class="form-label">Due Date</label>
-                                            <input type="date" class="form-control" id="dateInput" name="dateInput">
-                                        </div>
+
                                         <div class="mb-3">
                                             <label for="divisionInput" class="form-label">Division</label>
-                                            <input type="text" class="form-control" id="divisionInput" name="divisionInput">
+                                            <select class="form-control" id="divisionInput" name="divisionInput">
+                                                <option value="">Select one</option>
+                                                <option value="Operation">Operation</option>
+                                                <option value="Plant">Plant</option>
+                                                <option value="Technical">Technical</option>
+                                                <option value="Procurement">Procurement</option>
+                                                <option value="External Relation & Permit">External Relation & Permit</option>
+                                                <option value="HRGA">HRGA</option>
+                                            </select>
                                         </div>
+
+
                                         <div class="mb-3">
                                             <label for="locationInput" class="form-label">Location</label>
                                             <input type="text" class="form-control" id="locationInput" name="locationInput">
                                         </div>
+
+
                                         <div class="mb-3">
                                             <label for="companyNameInput" class="form-label">Company Name</label>
                                             <input type="text" class="form-control" id="companyNameInput" name="companyNameInput">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="status" class="form-label">Status</label>
+                                            <select class="form-control" id="statusInput" name="status" required>
+                                                <option value="" disabled>Select one</option>
+                                                <option value="active">Active</option>
+                                                <option value="non-active">Non-Active</option>
+                                            </select>
                                         </div>
                                         <div class="mb-3">
                                             <label for="flyer" class="form-label">Flyer or Job Poster Upload (PNG, max 5MB)</label>
@@ -249,7 +279,7 @@ $results = $db->query($query);
                                         </div>
                                         <div class="mb-3 flex row">
                                             <label for="currentFlyer" class="form-label">Current Flyer</label>
-                                            <img id="currentFlyer" style="max-width: 50%;">
+                                            <img id="currentFlyer" style="max-width: 30%;">
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -387,16 +417,18 @@ $results = $db->query($query);
             $(document).on('click', '.edit-job-button', function() {
                 var jobId = $(this).data('id');
                 var jobTitle = $(this).closest('tr').find('td:nth-child(2)').text();
-                var date = $(this).closest('tr').find('td:nth-child(4)').text();
+                var status = $(this).closest('tr').find('td:nth-child(4)').text();
                 var division = $(this).closest('tr').find('td:nth-child(5)').text();
                 var location = $(this).closest('tr').find('td:nth-child(6)').text();
                 var companyName = $(this).closest('tr').find('td:nth-child(7)').text();
                 var currentFlyerSrc = $(this).closest('tr').find('td:nth-child(8) a').attr('href');
-                console.log(currentFlyerSrc)
+                console.log(division)
                 $('#jobIdInput').val(jobId);
                 $('#jobTitleInput').val(jobTitle);
-                $('#dateInput').val(date);
-                $('#divisionInput').val(division);
+                $('#statusInput').val(status);
+                $('#divisionInput option').filter(function() {
+                    return $(this).text() === division;
+                }).attr('selected', 'selected');
                 $('#locationInput').val(location);
                 $('#companyNameInput').val(companyName);
 

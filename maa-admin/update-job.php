@@ -1,18 +1,19 @@
 <?php
 session_start();
+include '../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    include '../db.php';
 
     $jobId = $_POST['jobIdInput'];
     $jobTitle = $_POST['jobTitleInput'];
-    $dueDate = $_POST['dateInput'];
+    $status = $_POST['status'];
     $division = $_POST['divisionInput'];
     $location = $_POST['locationInput'];
     $companyName = $_POST['companyNameInput'];
 
 
-    $sql = "SELECT * FROM job_vacanacy WHERE id_job_vacanacy = $jobId";
+    $sql = "SELECT * FROM job_vacanacy WHERE id_job_vacanacy = '$jobId' ;";
+
     $result = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
 
     if ($result) {
@@ -25,8 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $updates[] = "position = '$jobTitle'";
         }
 
-        if ($dueDate != $result['due_date']) {
-            $updates[] = "due_date = '$dueDate'";
+        if ($status != $result['status']) {
+
+            $updates[] = "status = '$status'";
         }
 
         if ($division != $result['division']) {
@@ -64,8 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!empty($updates)) {
             $sql .= implode(', ', $updates);
-            $sql .= " WHERE id_job_vacanacy = $jobId";
-
+            $sql .= " WHERE id_job_vacanacy = '$jobId'";
 
             if ($db->query($sql)) {
 
@@ -75,6 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
 
                 $_SESSION['error_message'] = "Error: Update failed.";
+                header("Location: job-admin.php");
+                exit();
             }
         }
     } else {

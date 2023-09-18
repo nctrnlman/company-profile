@@ -99,7 +99,7 @@
 
 
 <body>
- 
+
   <div class="modal notification-overlay" id="notificationOverlay" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content custom-modal-content" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(100px); ">
@@ -114,7 +114,7 @@
             <strong>WASPADAI PENIPUAN REKRUTMEN KARYAWAN</strong>
           </p>
           <p style="text-align: justify; color: black">
-            PT Mineral Alam Abadi tidak memungut biaya apapun dan tidak pernah bekerja sama dengan agen perjalanan atau pihak ketiga dalam proses rekrutmen. Proses rekrutmen di perusahaan kami sepenuhnya transparan.<br><br> Hindari penipuan dengan mencermati email, pesan, dan web yang digunakan untuk lowongan pekerjaan. Jika Anda atau seseorang yang Anda kenal mengalami penipuan atau situasi tidak etis sehubungan dengan proses rekrutmen di perusahaan kami, laporkan kepada kami melalui email <strong>recruitment@mineralalamabadi.co.id</strong> dengan subject "Pelaporan" atau bisa juga melalui sosial media kami.
+            Mineral Alam Abadi Group tidak memungut biaya apapun dan tidak pernah bekerja sama dengan agen perjalanan atau pihak ketiga dalam proses rekrutmen. Proses rekrutmen di perusahaan kami sepenuhnya transparan.<br><br> Hindari penipuan dengan mencermati email, pesan, dan web yang digunakan untuk lowongan pekerjaan. Jika Anda atau seseorang yang Anda kenal mengalami penipuan atau situasi tidak etis sehubungan dengan proses rekrutmen di perusahaan kami, laporkan kepada kami melalui email <strong>recruitment@maagroup.co.id</strong> dengan subject "Pelaporan" atau bisa juga melalui sosial media kami.
           </p>
         </div>
         <div class="modal-footer custom-modal-footer" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
@@ -126,7 +126,7 @@
 
   <?php include 'navbar.php'; ?>
   <div class="body">
-    
+
 
     <div role="main" class="main">
       <section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/demos/business-consulting-3/backgrounds/OBI/MMP\ OBI-\ 20.jpg'); background-size: cover; background-position: center;">
@@ -182,7 +182,7 @@
               The Dynamic World of MAA and its Diverse Ventures
             </h3>
             <p class="text-3-5 pb-1 mb-4 mb-lg-2 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" style="text-align: justify;">
-              PT Mineral Alam Abadi is the holding company of several companies engaged in Nickel Mining, Nickel Trading, and Sea Transportation Services. We have subsidiaries located in various cities in Central Sulawesi, Southeast Sulawesi and North Maluku, we are committed to contributing to meeting the needs of the Local and Global Market by providing the best performance and quality in serving customers.
+              Mineral Alam Abadi Group is the holding company of several companies engaged in Nickel Mining, Nickel Trading, and Sea Transportation Services. We have subsidiaries located in various cities in Central Sulawesi, Southeast Sulawesi and North Maluku, we are committed to contributing to meeting the needs of the Local and Global Market by providing the best performance and quality in serving customers.
             </p>
             <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
               <a href="about.php" class="btn btn-primary custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Get to know</span></a>
@@ -205,8 +205,8 @@
                 Our Business
               </h3>
               <p class="text-3-5 pb-3 mb-4 appear-animation text-color-white" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
-                PT Mineral
-                Alam Abadi is committed to continuing to contribute in meeting the needs of local and global
+                Mineral
+                Alam Abadi Group is committed to continuing to contribute in meeting the needs of local and global
                 markets by providing the best performance and quality in providing services.
               </p>
             </div>
@@ -222,7 +222,7 @@
                   </div>
                 </div>
                 <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Discover Stone Mining at PT Mineral Alam Abadi's Source.</p>
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Discover Stone Mining at Mineral Alam Abadi Group Source.</p>
                 </div>
                 <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                   <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
@@ -242,7 +242,7 @@
                   </div>
                 </div>
                 <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Exploring Nickel Riches with PT Mineral Alam Abadi's.</p>
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Exploring Nickel Riches with Mineral Alam Abadi Group.</p>
                 </div>
                 <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                   <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
@@ -260,7 +260,7 @@
                   </div>
                 </div>
                 <div class="card card-body d-flex flex-column align-items-start justify-content-between px-4 py-3" style="padding: 20px;">
-                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Building Dreams by PT Mineral Alam Abadi.</p>
+                  <p class="card-text mb-3" style="font-size: 0.875rem; color: #777;">Building Dreams by Mineral Alam Abadi Group.</p>
                 </div>
                 <div class="card card-body d-flex custom-view-more" style="justify-content: flex-end; align-items: end; padding: 0 20px;">
                   <img width="50" height="50" class="w-auto" src="img/demos/business-consulting-3/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 50px; transition: transform 0.3s;">
@@ -288,7 +288,7 @@
             MAA PROJECTS
           </h2>
           <p class="text-4 font-weight-light">
-            Currently, PT. Mineral Alam Abadi operates in three regions in Indonesia.
+            Currently, Mineral Alam Abadi Group operates in three regions in Indonesia.
           </p>
         </div>
       </div>
@@ -386,9 +386,9 @@
       <div class="row">
         <div class="col-md-8 col-lg-6">
           <p class="text-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="600">
-            PT Mineral Alam Abadi
+            Mineral Alam Abadi Group
             has several operational locations, namely the Head Office of
-            <span class="highlight highlight-primary highlight-bg-opacity highlight-animated" data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100" data-plugin-options="{'flagClassOnly': true}"> PT Mineral Alam Abadi</span>
+            <span class="highlight highlight-primary highlight-bg-opacity highlight-animated" data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100" data-plugin-options="{'flagClassOnly': true}"> Mineral Alam Abadi Group</span>
             which is
             domiciled in Jakarta, as well as mine locations in Central Sulawesi, Southeast Sulawesi, and South
             Halmahera.
@@ -643,7 +643,7 @@
       var currentPage = window.location.href.split("/").pop();
 
       // Periksa apakah halaman saat ini adalah home.php
-      if (currentPage === "index.php" || currentPage === "") {
+      if (currentPage === "index" || currentPage === "") {
         // Menghapus nilai notificationShown saat halaman dimuat ulang
         localStorage.removeItem("notificationShown");
 

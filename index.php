@@ -203,7 +203,7 @@
                 <div class="col-md-6">
                   <!-- Right images -->
                   <img src="img/demos/business-consulting-3/assets-img-baru/20230828_070937.jpg" class="img-fluid box-shadow-5 mb-4" alt="" />
-                  <img src="img/demos/business-consulting-3/assets-img-baru/20230816_065855.jpg" style="filter: brightness(120%);" class="img-fluid box-shadow-5" alt="" />
+                  <img src="img/demos/business-consulting-3/assets-img-baru/20230816_065855.jfif" style="filter: brightness(120%);" class="img-fluid box-shadow-5" alt="" />
                 </div>
               </div>
 

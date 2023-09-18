@@ -135,11 +135,11 @@ $results = $db->query($query);
 
                     <?php foreach ($results as $result) : ?>
                         <div class="col-sm-9 col-md-6 col-lg-4 mb-4">
-                            <div style="background: rgba(139, 0, 0, 0.85); backdrop-filter: blur(10px); border-radius: 10px; padding: 10px; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 20px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="background: white; backdrop-filter: blur(10px); border-radius: 10px; padding: 10px; transition: all 0.3s; border: 1px solid #ccc;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 20px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
                                 <img src="file/news/<?php echo $result['image']; ?>" class="card-img-top" alt="Article Image">
                                 <div class="card-body">
-                                    <h4 class="font-weight-semibold text-color-light text-6 mb-1"><?php echo $result['title']; ?></h4>
-                                    <p class="card-text mb-3" style="font-size: 0.875rem; color: white;">Publication Date: <?php echo date('F j, Y', strtotime($result['create_date'])); ?></p>
+                                    <h4 class="font-weight-semibold text-color-dark text-6 mb-1"><?php echo $result['title']; ?></h4>
+                                    <p class="card-text mb-3" style="font-size: 0.875rem; color: black;">Publication Date: <?php echo date('F j, Y', strtotime($result['create_date'])); ?></p>
                                     <?php
                                     $description = $result['description'];
                                     $maxCharacters = 30;
@@ -151,7 +151,7 @@ $results = $db->query($query);
                                     <p class="card-text" style="font-size: 0.875rem; color: white;"><?php echo $description; ?></p>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <a href="news-article.php?id=<?php echo $result['id_news']; ?>" class="btn btn-primary">Read More</a>
+                                    <a href="news-article.php?id=<?php echo $result['id_news']; ?>" class="btn btn-primary" >Read More</a>
                                 </div>
                             </div>
                         </div>

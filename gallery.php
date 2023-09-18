@@ -349,14 +349,17 @@ img {
     </div>
 
 
-    <!-- Gallery Grid -->
-    <div class="gallery-grid" style="margin-top: 40px;">
-      <?php foreach ($results as $result) { ?>
-        <div class="gallery-item <?php echo 'category-' . $result['category']; ?>">
-          <img src="./file/gallery/<?php echo $result['image']; ?>" alt="Image" />
-        </div>
-      <?php } ?>
+    <div class="container" style="background-color: #af2a25; padding-top: 10px; padding-bottom: 10px;">
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" style="margin-top: 40px;">
+        <?php foreach ($results as $result) { ?>
+          <div class="gallery-item <?php echo 'category-' . $result['category']; ?>">
+            <img src="./file/gallery/<?php echo $result['image']; ?>" alt="Image" />
+          </div>
+        <?php } ?>
+      </div>
     </div>
+
 
     <!-- Pagination -->
     <div class="pagination">

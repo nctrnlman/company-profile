@@ -51,8 +51,8 @@
 </head>
 
 <body>
+  <?php include 'navbar.php'; ?>
   <div class="body">
-    <?php include 'navbar.php'; ?>
 
     <div role="main" class="main">
       <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyload" style="

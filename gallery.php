@@ -166,15 +166,42 @@ $totalPages = ceil($totalItems / $itemsPerPage);
       max-height: 100%;
       width: 100%;
       height: 100%;
-      /* Set the height to 100% to maintain aspect ratio */
+
       object-fit: cover;
-      /* Ensure images cover the entire container */
-      transition: transform 0.3s ease;
+
+      animation: hover-fade 0.5s linear;
+
+      transform-origin: center bottom;
+
+      transition: opacity 0.5s linear;
+      /* Add a smooth transition for opacity */
+
+    }
+
+    /* Define a keyframe animation */
+    @keyframes hover-fade {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+        /* Adjust the opacity as needed */
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
 
     .gallery-item:hover img {
-      transform: scale(1.1);
+      opacity: 0.5;
+      /* Adjust the opacity as needed */
+      transform-origin: center bottom;
+      /* Set the transform origin to the center bottom */
+      transform: scale(1);
     }
+
 
     .pagination {
       display: flex;
@@ -290,9 +317,9 @@ img {
         </div>
       </section>
 
-      <!-- <div style="font-weight: 600; display: flex; justify-content: center;">
-        <h1>Welcome to Mineral Alam Abadi Gallery</h1>
-      </div> -->
+      <div class="font-weight-bold text-4" style="display: flex; justify-content: center; padding-top: 100px;">
+        <h1>Welcome to Mineral Alam Abadi Group Gallery</h1>
+      </div>
 
 
       <div class="slider" style="margin-top: 100px;">
@@ -307,19 +334,19 @@ img {
             "./img/demos/business-consulting-3/backgrounds/BCPM/DJI_0351.JPG",
           ];
 
-          // Duplicate the images to create a looping effect
           $imagePaths = array_merge($imagePaths, $imagePaths);
 
           foreach ($imagePaths as $imagePath) {
           ?>
             <div class="slide">
-              <img src="<?php echo $imagePath; ?>" alt="Image" style="width: 100%; height: auto;">
+              <img src="<?php echo $imagePath; ?>" alt="Image" style="width: 100%; height: auto; border: 2px solid black; border-radius: 4px;">
             </div>
           <?php
           }
           ?>
         </div>
       </div>
+
 
 
 
@@ -354,7 +381,7 @@ img {
       <div class="gallery-grid" style="margin-top: 40px;">
         <?php foreach ($results as $result) { ?>
           <div class="gallery-item <?php echo 'category-' . $result['category']; ?>">
-            <img src="./file/gallery/<?php echo $result['image']; ?>" alt="Image" />
+            <img src="./file/gallery/<?php echo $result['image']; ?>" alt="Image" style="border: 2px solid #c6a265; border-radius: 5px;" />
           </div>
         <?php } ?>
       </div>
@@ -364,23 +391,23 @@ img {
     <!-- Pagination -->
     <div class="pagination">
       <div class="">
-        <div class="pagination-text">Showing <?php echo count($results); ?> images</div>
-        <div class="mt-4">
+        <div class="pagination-text mt-4" style="font-size: 14px; color: #777;">Showing <?php echo count($results); ?> images</div>
+        <div class="mt-2">
           <?php if ($page > 1) { ?>
-            <a class="page-btn prev-btn " href="?page=<?php echo $page - 1; ?>&category=<?php echo $filterCategory; ?>">◄</a>
+            <a class="page-btn prev-btn" href="?page=<?php echo $page - 1; ?>&category=<?php echo $filterCategory; ?>" style="display: inline-block; margin: 0 5px; padding: 5px 10px; background-color: #af2a25; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;">◄</a>
           <?php } ?>
 
           <?php for ($i = 1; $i <= $totalPages; $i++) { ?>
-            <a class="page-btn <?php echo ($page == $i) ? 'active' : ''; ?>" href="?page=<?php echo $i; ?>&category=<?php echo $filterCategory; ?>"><?php echo $i; ?></a>
+            <a class="page-btn <?php echo ($page == $i) ? 'active' : ''; ?>" href="?page=<?php echo $i; ?>&category=<?php echo $filterCategory; ?>" style="display: inline-block; margin: 0 5px; padding: 5px 10px; background-color: <?php echo ($page == $i) ? '#c6a265' : '#af2a25'; ?>; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;"><?php echo $i; ?></a>
           <?php } ?>
 
-
           <?php if ($page < $totalPages) { ?>
-            <a class="page-btn next-btn" href="?page=<?php echo $page + 1; ?>&category=<?php echo $filterCategory; ?>">►</a>
+            <a class="page-btn next-btn" href="?page=<?php echo $page + 1; ?>&category=<?php echo $filterCategory; ?>" style="display: inline-block; margin: 0 5px; padding: 5px 10px; background-color: #af2a25; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;">►</a>
           <?php } ?>
         </div>
       </div>
     </div>
+
   </section>
   </div>
   </div>

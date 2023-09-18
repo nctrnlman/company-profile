@@ -356,7 +356,6 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                   </div>
                   <input type="hidden" name="job_id" value="<?php echo $result['id_job_vacanacy']; ?>">
                 </div>
-
                 <div class="modal-footer" style="border-top: none; padding-top: 0;">
                   <button type="submit" class="btn btn-primary" name="submit">Apply</button>
                 </div>
@@ -504,7 +503,6 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#thisModal<?php echo $result['id_job_vacanacy']; ?>" data-id="<?php echo $result['id_job_vacanacy']; ?>" onclick="openApplyModal(<?php echo $result['id_job_vacanacy']; ?>)">
                               Apply Job
                             </button>
-
                           </div>
                         </div>
                       </div>

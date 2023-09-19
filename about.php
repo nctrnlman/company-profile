@@ -92,10 +92,10 @@
               Mineral Alam Abadi's Group commitment to excellence goes beyond just our operations. We are deeply dedicated to sustainability and environmental responsibility. Our mining practices adhere to the highest environmental standards, ensuring minimal ecological impact while maximizing resource utilization.
             </p>
             <p class="text-2 mb-4">
-            Furthermore, our engagement with local communities is at the heart of our ethos. We actively collaborate with local stakeholders, empowering them through employment opportunities and community development projects. By fostering strong relationships with the regions in which we operate, we aim to contribute positively to their growth and prosperity.
+              Furthermore, our engagement with local communities is at the heart of our ethos. We actively collaborate with local stakeholders, empowering them through employment opportunities and community development projects. By fostering strong relationships with the regions in which we operate, we aim to contribute positively to their growth and prosperity.
             </p>
             <p class="text-2">
-              As we continue to expand our presence in Central Sulawesi, Southeast Sulawesi, and South Halmahera, our vision remains unwavering: to be a global leader in responsible mining and diversified services, driven by innovation and a commitment to the well-being of our planet and its people. We invite you to join us on this journey toward a sustainable and thriving future.
+              As we continue to expand our presence in Central Sulawesi, Southeast Sulawesi, and North Halmahera, our vision remains unwavering: to be a global leader in responsible mining and diversified services, driven by innovation and a commitment to the well-being of our planet and its people. We invite you to join us on this journey toward a sustainable and thriving future.
             </p>
           </div>
 

@@ -87,16 +87,16 @@
                         Career
                       </a>
                     </li>
-                    <li>
+                    <!-- <li>
                       <a <?php if (basename($_SERVER['PHP_SELF']) == 'gallery.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="gallery">
                         Gallery
                       </a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                       <a <?php if (basename($_SERVER['PHP_SELF']) == 'news.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="news.php">
                         News
                       </a>
-                    </li>
+                    </li> -->
                     <li class="d-lg-none">
                       <a <?php if (basename($_SERVER['PHP_SELF']) == 'contact.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="contact">
                         Contact Us

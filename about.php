@@ -97,6 +97,9 @@
             <p class="text-2">
               As we continue to expand our presence in Central Sulawesi, Southeast Sulawesi, and North Halmahera, our vision remains unwavering: to be a global leader in responsible mining and diversified services, driven by innovation and a commitment to the well-being of our planet and its people. We invite you to join us on this journey toward a sustainable and thriving future.
             </p>
+            <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+              <a href="careers.php" class="btn btn-primary custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Join Mineral Alam Abadi Group</span></a>
+            </div>
           </div>
 
           <div class="col-lg-6">
@@ -261,7 +264,7 @@
       <div style="font-size: 15px;">
         <br>1. Jakarta, Mineral Alam Abadi Headquarter, and offices of the enterprise entity underneath.
         <br>2. Central Sulawesi site located in Morowali, South Bungku
-        <br>3. North Sulawesi site located in south Halmahera, Obi Island
+        <br>3. North Sulawesi site located in North Halmahera, Obi Island
       </div>
       </p>
     </div>

@@ -74,12 +74,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : ''; // Get the 'page' parameter f
                         <span class="menu-title">Applicant</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php if ($page == 'job') echo 'active'; ?>" href="gallery-admin.php">
-                        <i data-feather="camera"></i>
-                        <span class="menu-title">Gallery</span>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link <?php if ($page == 'job') echo 'active'; ?>" href="news-admin.php">
                         <i data-feather="file-text"></i>

@@ -32,50 +32,6 @@
                       <a <?php if (basename($_SERVER['PHP_SELF']) == 'services.php' || basename($_SERVER['PHP_SELF']) == 'trading' || basename($_SERVER['PHP_SELF']) == 'shipping' || basename($_SERVER['PHP_SELF']) == 'stone-crusher' || basename($_SERVER['PHP_SELF']) == 'stone-mining' || basename($_SERVER['PHP_SELF']) == 'nickel-mining' || basename($_SERVER['PHP_SELF']) == 'mining-contractor' || basename($_SERVER['PHP_SELF']) == 'construction-services' || basename($_SERVER['PHP_SELF']) == 'investment') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link dropdown-toggle" href="services">
                         Our Business
                       </a>
-                      <!-- <ul class="dropdown-menu">
-                              <li>
-                                <a
-                                  href="demo-business-consulting-3-services-detail.html"
-                                  class="dropdown-item"
-                                  >Sales & Marketing</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="demo-business-consulting-3-services-detail.html"
-                                  class="dropdown-item"
-                                  >Strategic Planning</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="demo-business-consulting-3-services-detail.html"
-                                  class="dropdown-item"
-                                  >Operations</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="demo-business-consulting-3-services-detail.html"
-                                  class="dropdown-item"
-                                  >Cost Transformation</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="demo-business-consulting-3-services-detail.html"
-                                  class="dropdown-item"
-                                  >Digital Marketing</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="demo-business-consulting-3-services-detail.html"
-                                  class="dropdown-item"
-                                  >Automation</a
-                                >
-                              </li>
-                            </ul> -->
                     </li>
                     <li>
                       <a <?php if (basename($_SERVER['PHP_SELF']) == 'mldp.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="mldp">
@@ -87,16 +43,11 @@
                         Career
                       </a>
                     </li>
-                    <!-- <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'gallery.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="gallery">
-                        Gallery
-                      </a>
-                    </li> -->
-                    <!-- <li>
+                    <li>
                       <a <?php if (basename($_SERVER['PHP_SELF']) == 'news.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="news.php">
                         News
                       </a>
-                    </li> -->
+                    </li>
                     <li class="d-lg-none">
                       <a <?php if (basename($_SERVER['PHP_SELF']) == 'contact.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="contact">
                         Contact Us
@@ -115,68 +66,16 @@
             <a href="contact" class="btn btn-primary custom-btn-style-1 font-weight-semibold text-3-5 btn-px-3 py-2 ws-nowrap ms-4 d-none d-lg-block" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Contact Us</span></a>
             <div class="header-nav-features header-nav-features-no-border">
               <div class="header-nav-feature header-nav-features-search d-inline-flex">
-                <!-- <a href="#" class="header-nav-features-toggle text-decoration-none" data-focus="headerSearch" aria-label="Search">
-											<i class="icons icon-magnifier header-nav-top-icon text-3-5 text-color-dark text-color-hover-primary font-weight-semibold top-3"></i>
-										</a> -->
-                <!-- <div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0" id="headerTopSearchDropdown">
-											<form role="search" action="page-search-results.html" method="get">			
-												<div class="simple-search input-group">
-													<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
-													<button class="btn" type="submit" aria-label="Search">
-														<i class="icons icon-magnifier header-nav-top-icon text-color-dark text-color-hover-primary top-2"></i>
-													</button>
-												</div>
-											</form>
-										</div> -->
+
               </div>
             </div>
-            <!-- <button class="btn header-btn-collapse-nav" data-bs-toggle="collapse" data-bs-target=".header-nav-main nav">
-                    <i class="fas fa-bars"></i>
-                  </button> -->
+
           <?php
           } else {
           ?>
             <a href="contact" class="btn btn-dark custom-btn-style-1 font-weight-semibold text-3-5 btn-px-3 py-2 ws-nowrap ms-4 d-none d-lg-block" data-cursor-effect-hover="plus" data-cursor-effect-hover-color="light"><span>Contact Us</span></a>
             <div class="header-nav-features header-nav-features-no-border">
-              <!-- <div
-              class="header-nav-feature header-nav-features-search d-inline-flex"
-            >
-              <a
-                href="#"
-                class="header-nav-features-toggle text-decoration-none"
-                data-focus="headerSearch"
-                aria-label="Search"
-              >
-                <i
-                  class="icons icon-magnifier header-nav-top-icon text-3-5 text-color-dark text-color-hover-primary font-weight-semibold top-3"
-                ></i>
-              </a> -->
-              <!-- <div
-                class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0"
-                id="headerTopSearchDropdown"
-              >
-                <form
-                  role="search"
-                  action="page-search-results.html"
-                  method="get"
-                >
-                  <div class="simple-search input-group">
-                    <input
-                      class="form-control text-1"
-                      id="headerSearch"
-                      name="q"
-                      type="search"
-                      value=""
-                      placeholder="Search..."
-                    />
-                    <button class="btn" type="submit" aria-label="Search">
-                      <i
-                        class="icons icon-magnifier header-nav-top-icon text-color-dark text-color-hover-primary top-2"
-                      ></i>
-                    </button>
-                  </div>
-                </form>
-              </div> -->
+
             </div>
         </div>
         <button class="btn header-btn-collapse-nav" data-bs-toggle="collapse" data-bs-target=".header-nav-main nav">

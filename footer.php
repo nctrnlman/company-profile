@@ -14,30 +14,32 @@
         <p class="text-3-5 text-color-white">
           Being an Integrated and Leading Mining Company in Indonesia
         </p>
-            <ul class="flex col social-icons social-icons-clean social-icons-clean-with-border social-icons-medium social-icons-icon-light">
-              <li class="social-icons-instagram mx-2">
-                <a href="https://www.instagram.com/mineralalamabadi/" target="_blank" title="Instagram" data-cursor-effect-hover="fit">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                
-              </li>
-              
-              <li class="social-icons-linkedin mx-2">
-                <a href="https://www.linkedin.com/company/pt-mineralalamabadi/" target="_blank" title="Linkedin" data-cursor-effect-hover="fit">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-                
-              </li>
+        <ul class="flex row social-icons social-icons-clean social-icons-clean-with-border social-icons-medium social-icons-icon-light">
+          <li class="social-icons-instagram mx-2" style="display: flex; align-items: center;">
+            <a href="https://www.instagram.com/mineralalamabadi/" target="_blank" title="Instagram" data-cursor-effect-hover="fit">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <div style="margin-left: 5px;"><span style="color: white;">Mineral Alam Abadi Group</span></div>
+          </li>
 
-              <li class="social-icons-instagram mx-2 flex col;">
-                <a href="https://www.instagram.com/maagroup_externalrelation/" target="_blank" title="Instagram" data-cursor-effect-hover="fit">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                
-              </li>
 
-            
-            </ul>
+          <!-- LinkedIn -->
+          <li class="social-icons-linkedin mx-2" style="display: flex; align-items: center;">
+            <a href="https://www.linkedin.com/company/pt-mineralalamabadi/" target="_blank" title="LinkedIn" data-cursor-effect-hover="fit">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <div style="margin-left: 5px;"><span style="color: white;"> Mineral Alam Abadi Group LinkedIn</span></div>
+          </li>
+
+          <li class="social-icons-instagram mx-2" style="display: flex; align-items: center;">
+            <a href="https://www.instagram.com/maagroup_externalrelation/" target="_blank" title="Instagram" data-cursor-effect-hover="fit">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <div style="margin-left: 5px;"><span style="color: white;">MAA Group External Relations</span></div>
+          </li>
+
+
+        </ul>
       </div>
 
 
@@ -66,4 +68,4 @@
         </p>
       </div>
     </div>
-  </
+    </

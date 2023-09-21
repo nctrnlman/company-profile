@@ -120,6 +120,7 @@ $results = $db->query($query);
                                                     <th>Category</th>
                                                     <th>Create Date</th>
                                                     <th>Image</th>
+                                                    <th>Video</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -138,6 +139,16 @@ $results = $db->query($query);
                                                                 echo '<a href="../file/news/' . $result['image'] . '" target="_blank">View Image</a>';
                                                             }
                                                             ?></td>
+                                                        <td>
+                                                            <?php
+                                                            if ($result['video'] === null || strtoupper($result['video']) === 'NULL') {
+                                                                echo "No Video Available";
+                                                            } else {
+                                                                echo '<a href="../file/news/videos/' . $result['video'] . '" target="_blank">View Video</a>';
+                                                            }
+                                                            ?>
+                                                        </td>
+
                                                         <td>
                                                             <button type="button" class="btn btn-primary btn-sm edit-job-button" data-toggle="modal" data-target="#editJobModal" data-category="<?php echo $result['category']; ?>" data-id="<?php echo $result['id_news']; ?>" data-title="<?php echo $result['title']; ?>" data-description="<?php echo $result['description']; ?>" data-image="<?php echo $result['image']; ?>">
                                                                 Edit
@@ -184,6 +195,10 @@ $results = $db->query($query);
                                             <input type="file" class="form-control" id="image" name="image" accept=".jpg, .jpeg, .png" required>
                                         </div>
                                         <div class="mb-3">
+                                            <label for="video" class="form-label">Video (max 50MB)</label>
+                                            <input type="file" class="form-control" id="video" name="video" accept=".mp4, .avi, .mov">
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="description" class="form-label">Description</label>
                                             <textarea class="form-control" id="ckeditor-classic" name="description"></textarea>
                                         </div>
@@ -225,6 +240,11 @@ $results = $db->query($query);
                                             <label for="image" class="form-label">Image Tumbnail (max 3MB)</label>
                                             <input type="file" class="form-control" id="image" name="image" accept=".jpg, .jpeg, .png">
                                         </div>
+                                        <div class="mb-3">
+                                            <label for="video" class="form-label">Video (max 50MB)</label>
+                                            <input type="file" class="form-control" id="video" name="video" accept=".mp4, .avi, .mov">
+                                        </div>
+
                                         <div class="mb-3 flex row">
                                             <label for="currentFlyer" class="form-label">Current Flyer</label>
                                             <img id="currentFlyer" style="max-width: 50%;">
@@ -310,7 +330,7 @@ $results = $db->query($query);
         <script>
             // Initialize DataTable with options
             $('#jobListTable').DataTable({
-                "pageLength": 5, // Tampilkan 5 baris per halaman
+                "pageLength": 6, // Tampilkan 5 baris per halaman
                 "searching": true, // Aktifkan fungsi pencarian
                 "ordering": true, // Aktifkan pengurutan
                 "info": false, // Sembunyikan informasi tentang halaman
@@ -333,6 +353,10 @@ $results = $db->query($query);
                     {
                         "data": 5
                     }, // Kolom kelima (Company Name)
+                    {
+                        "data": 6
+                    }, // Kolom keenam (Company Name)
+                    
 
                 ],
                 "language": {
@@ -361,6 +385,7 @@ $results = $db->query($query);
                 var category = $(this).data('category');
                 var description = $(this).data('description');
                 var image = $(this).data('image');
+                var video = $(this).data('video');
                 console.log(jobId);
 
                 // Isi data ke dalam form modal
@@ -374,6 +399,12 @@ $results = $db->query($query);
                     $('#currentFlyer').attr('src', '../file/news/' + image);
                 } else {
                     $('#currentFlyer').attr('src', ''); // Kosongkan gambar jika tidak ada
+                }
+
+                if (video !== null) {
+                    $('#currentVideo').attr('src', '../file/videos/' + video);
+                } else {
+                    $('#currentVideo').attr('src', ''); // Kosongkan video jika tidak ada
                 }
 
                 // Tampilkan modal

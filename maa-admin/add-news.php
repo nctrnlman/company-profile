@@ -4,6 +4,8 @@ include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $imagePath = uploadImage($_FILES['image']);
+    $videoPath = uploadVideo($_FILES['video']); // Upload video
+
     $title = $_POST['title'];
     $category = $_POST['category'];
     $description = $_POST['description'];
@@ -12,11 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         $currentDate = date("Y-m-d H:i:s");
         $unique_id = generateUniqueId();
 
-        try {
-            $stmt = $db->prepare("INSERT INTO news (id_news,title, create_date,image, description,category ) VALUES (?, ?, ?, ?,?,?)");
-            $stmt->execute([$unique_id, $title, $currentDate, $imagePath, $description, $category]);
+     
 
-            $successMessage = "News added successfully!";
+        try {
+            $stmt = $db->prepare("INSERT INTO news (id_news, title, create_date, image, description, category, video) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$unique_id, $title, $currentDate, $imagePath, $description, $category, $videoPath]); // Store video path
+
+            $successMessage = "News added successfully! .$videoPath" ;
             $_SESSION['success_message'] = $successMessage;
         } catch (PDOException $e) {
             $errorMessage = "Error: " . $e->getMessage();
@@ -43,5 +47,30 @@ function uploadImage($file)
     }
 }
 
+function uploadVideo($file)
+{
+    $uploadDirectory = "../file/news/videos/";
+    $fileName = generateUniqueId() . "_" . basename($file['name']);
+    $targetFilePath = $uploadDirectory . $fileName;
+
+    // Maximum allowed video size in bytes (50 MB)
+    $maxFileSize = 50 * 1024 * 1024; // 50 MB in bytes
+
+    // Check if the uploaded file size exceeds the maximum allowed size
+    if ($file['size'] > $maxFileSize) {
+        // Video size is too large
+        return "Video size is too large. Maximum allowed size is 50 MB.";
+    }
+
+    // Check if the file was successfully uploaded
+    if (move_uploaded_file($file['tmp_name'], $targetFilePath)) {
+        return $fileName;
+    } else {
+        return false;
+    }
+}
+
+
 header("Location: news-admin.php");
 exit();
+?>

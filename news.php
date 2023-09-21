@@ -6,7 +6,11 @@ $query = "SELECT * FROM news";
 
 
 $results = $db->query($query);
+
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -103,6 +107,7 @@ $results = $db->query($query);
         }
     </style>
 
+
 </head>
 
 
@@ -140,10 +145,9 @@ $results = $db->query($query);
                                         <img src="file/news/<?php echo $result['image']; ?>" class="card-img-top object-cover w-full h-full" alt="Article Image">
                                     </div>
 
-
                                     <div class="col-md-6">
                                         <div class="card-body">
-                                            <h4 class="font-weight-semibold text-color-dark text-6 mb-1 " style="letter-spacing: 1px;"><?php echo $result['title']; ?></h4>
+                                            <h4 class="font-weight-semibold text-color-dark text-6 mb-1" style="letter-spacing: 1px;"><?php echo $result['title']; ?></h4>
                                             <p class="card-text mb-3 pt-3" style="font-size: 0.875rem; color: black;">Publication Date: <?php echo date('F j, Y', strtotime($result['create_date'])); ?></p>
                                             <?php
                                             $description = $result['description'];
@@ -154,12 +158,33 @@ $results = $db->query($query);
                                             }
                                             ?>
                                             <p class="card-text" style="font-size: 0.875rem; color: black; max-height: 100px; overflow: hidden;"><?php echo $description; ?></p>
-                                            <div class="col-md-6">
-                                            <div class="card-footer px-6">
-                                                <a href="news-article.php?id=<?php echo $result['id_news']; ?>" class="btn btn-primary">Read More</a>
-                                            </div>
+                                            <a href="news-article.php?id=<?php echo $result['id_news']; ?>" class="btn btn-primary">Read More</a>
                                         </div>
-                                        </div>                                      
+                                        <div class="card-footer px-6 d-flex justify-content-between align-items-start">
+
+                                            <ul class="flex-column social-icons social-icons-clean social-icons-clean-with-border social-icons-medium social-icons-icon-dark mb-0">
+                                                <li class="social-icons-instagram mb-2" style="display: flex; align-items: center;">
+                                                    <a href="https://www.instagram.com/mineralalamabadi/" target="_blank" title="Instagram" data-cursor-effect-hover="fit">
+                                                        <i class="fab fa-instagram" style="color: red;"></i>
+                                                    </a>
+                                                    <div style="margin-left: 5px;"><span style="color: primary;">Mineral Alam Abadi Group</span></div>
+                                                </li>
+
+                                                <li class="social-icons-linkedin mb-2" style="display: flex; align-items: center;">
+                                                    <a href="https://www.linkedin.com/company/pt-mineralalamabadi/" target="_blank" title="LinkedIn" data-cursor-effect-hover="fit">
+                                                        <i class="fab fa-linkedin-in" style="color: blue;"></i>
+                                                    </a>
+                                                    <div style="margin-left: 5px;"><span style="color: primary;"> Mineral Alam Abadi Group LinkedIn</span></div>
+                                                </li>
+
+                                                <li class="social-icons-instagram mb-2" style="display: flex; align-items: center;">
+                                                    <a href="https://www.instagram.com/maagroup_externalrelation/" target="_blank" title="Instagram" data-cursor-effect-hover="fit">
+                                                        <i class="fab fa-instagram" style="color: blueviolet;"></i>
+                                                    </a>
+                                                    <div style="margin-left: 5px;"><span style="color: primary;">MAA Group External Relations</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +192,7 @@ $results = $db->query($query);
                     <?php endforeach; ?>
                 </div>
             </div>
-
+           
         </div>
 
     </div>
@@ -393,6 +418,9 @@ $results = $db->query($query);
             $("#googlemaps").gMap("centerAt", options);
         };
     </script>
+
+
+
 </body>
 
 </html>

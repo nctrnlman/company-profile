@@ -18,7 +18,7 @@ $results = $db->query($query);
 <head>
     <!-- Basic -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <title>Our Business | MAA GROUP</title>
 
@@ -139,29 +139,76 @@ $results = $db->query($query);
                 <div class="row justify-content-center">
                     <?php foreach ($results as $result) : ?>
                         <div class="col-md-12 mb-4">
-                            <div style="background: white; backdrop-filter: blur(10px); border-radius: 2px; padding: 10px; transition: all 0.3s; border: 1px solid #ccc;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 20px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <div style="background: white; border-radius: 2px; padding: 10px; transition: all 0.3s; border: 1px solid #ccc; max-width: 800px; margin: 0 auto; ">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="file/news/<?php echo $result['image']; ?>" class="card-img-top object-cover w-full h-full" alt="Article Image">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <img src="file/news/<?php echo $result['image']; ?>" class="card-img-top object-cover img-fluid" alt="Article Image">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card-body">
+                                                <!-- Title -->
+                                                <h4 class="font-weight-semibold text-color-dark text-4 text-sm mb-0" style="letter-spacing: 1px; margin-bottom: 20px !important;"><?php echo $result['title']; ?></h4>
+
+
+                                                <!-- Publication Date -->
+                                                <p class="card-text" style="font-size: 12px; color: black;">Publication Date: <?php echo date('F j, Y', strtotime($result['create_date'])); ?></p>
+
+                                                <!-- Description -->
+                                                <?php
+                                                $description = $result['description'];
+                                                $maxCharacters = 100;
+                                                if (strlen($description) > $maxCharacters) {
+                                                    $description = substr($description, 0, $maxCharacters);
+                                                    $description .= '...';
+                                                }
+                                                ?>
+                                                <p class="card-text" style="font-size: 0.875rem; color: black;"><?php echo $description; ?></p>
+
+                                                <!-- Read More Button -->
+                                                <a href="news-article.php?id=<?php echo $result['id_news']; ?>" class="btn btn-primary">Read More</a>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <div class="card-body">
-                                            <h4 class="font-weight-semibold text-color-dark text-6 mb-1" style="letter-spacing: 1px;"><?php echo $result['title']; ?></h4>
-                                            <p class="card-text mb-3 pt-3" style="font-size: 0.875rem; color: black;">Publication Date: <?php echo date('F j, Y', strtotime($result['create_date'])); ?></p>
-                                            <?php
-                                            $description = $result['description'];
-                                            $maxCharacters = 100; // Increase this value to make the description longer
-                                            if (strlen($description) > $maxCharacters) {
-                                                $description = substr($description, 0, $maxCharacters);
-                                                $description .= '...';
-                                            }
-                                            ?>
-                                            <p class="card-text" style="font-size: 0.875rem; color: black; max-height: 100px; overflow: hidden;"><?php echo $description; ?></p>
-                                            <a href="news-article.php?id=<?php echo $result['id_news']; ?>" class="btn btn-primary">Read More</a>
-                                        </div>
-                                        <div class="card-footer px-6 d-flex justify-content-between align-items-start">
 
+                                    <div class="row-md-12">
+                                        <div class="card-footer" style="padding-top: 20px;"> <!-- Added padding-top -->
+                                            <div class="row justify-content-center">
+                                                <!-- Social Media Links -->
+                                                <div class="text-center"> <!-- Center align the content -->
+                                                    <ul class="list-inline">
+                                                        <li class="list-inline-item">
+                                                            <a href="https://www.instagram.com/mineralalamabadi/" target="_blank" title="Instagram" style="color: gray; padding: 10px;"> <!-- Added padding -->
+                                                                <i class="fab fa-instagram" style="color: red;"></i> Mineral Alam Abadi Group
+                                                            </a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a href="https://www.linkedin.com/company/pt-mineralalamabadi/" target="_blank" title="LinkedIn" style="color: gray; padding: 10px;"> <!-- Added padding -->
+                                                                <i class="fab fa-linkedin-in" style="color: blue;"></i> Mineral Alam Abadi Group LinkedIn
+                                                            </a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a href="https://www.instagram.com/maagroup_externalrelation/" target="_blank" title="Instagram" style="color: gray; padding: 10px;"> <!-- Added padding -->
+                                                                <i class="fab fa-instagram" style="color: blueviolet;"></i> MAA Group External Relations
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+
+            <!-- <div class="card-footer px-6 d-flex justify-content-between align-items-start">
+                                            
                                             <ul class="flex-column social-icons social-icons-clean social-icons-clean-with-border social-icons-medium social-icons-icon-dark mb-0">
                                                 <li class="social-icons-instagram mb-2" style="display: flex; align-items: center;">
                                                     <a href="https://www.instagram.com/mineralalamabadi/" target="_blank" title="Instagram" data-cursor-effect-hover="fit">
@@ -184,15 +231,9 @@ $results = $db->query($query);
                                                     <div style="margin-left: 5px;"><span style="color: primary;">MAA Group External Relations</span></div>
                                                 </li>
                                             </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-           
+                                        </div> -->
+
+
         </div>
 
     </div>

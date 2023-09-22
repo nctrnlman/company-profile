@@ -93,9 +93,9 @@
           <div class="col-10 col-lg-4 ms-auto pt-4 pt-5 pt-lg-4 pb-5">
             <div class="cascading-images-wrapper p-0 mt-5 mb-5">
               <div class="cascading-images position-relative">
-                <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 13.jpg" class="box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-duration="600ms" />
+                <img src="img/demos/business-consulting-3/assets-img-baru/DJI_0843.jpg" class="box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-duration="600ms" />
                 <div class="position-absolute w-100" style="top: 61%; left: -20%">
-                  <img src="img/demos/business-consulting-3/backgrounds/OBI/MMP OBI- 12.jpg" class="box-shadow-4 appear-animation" width="285" alt="" data-appear-animation="expandIn" data-appear-animation-delay="300" data-appear-animation-duration="600ms" />
+                  <img src="img/demos/business-consulting-3/assets-img-baru/DJI_0181.jpg" class="box-shadow-4 appear-animation" width="285" alt="" data-appear-animation="expandIn" data-appear-animation-delay="300" data-appear-animation-duration="600ms" />
                 </div>
               </div>
             </div>

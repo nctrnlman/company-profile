@@ -2,14 +2,31 @@
 session_start();
 include 'db.php';
 
-$query = "SELECT * FROM news";
+// Determine the category filter (all if not specified)
+$categoryFilter = isset($_GET['category']) ? $_GET['category'] : 'all';
 
+// Calculate the offset for pagination
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$perPage = 5;
+$offset = ($page - 1) * $perPage;
 
-$results = $db->query($query);
+// Build the SQL query based on the category filter
+$queryNews = "SELECT * FROM news";
+if ($categoryFilter !== 'all') {
+    $queryNews .= " WHERE category = '$categoryFilter'";
+}
+$queryNews .= " ORDER BY create_date DESC LIMIT $offset, $perPage";
 
+$results = $db->query($queryNews);
 
+// Count total news items for pagination
+$queryTotal = "SELECT COUNT(*) FROM news";
+if ($categoryFilter !== 'all') {
+    $queryTotal .= " WHERE category = '$categoryFilter'";
+}
+$totalNews = $db->query($queryTotal)->fetchColumn();
+$totalPages = ceil($totalNews / $perPage);
 ?>
-
 
 
 
@@ -108,7 +125,36 @@ $results = $db->query($query);
         }
     </style>
 
+    <style>
+        .category-item {
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 5px;
+            margin-bottom: 5px;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
+        .category-item:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .active-category {
+            background: rgba(0, 0, 0, 0.2);
+            color: #c6a265;
+        }
+    </style>
+
+    <style>
+        .pagination-box {
+            display: inline-block;
+            padding: 8px 12px;
+            /* Adjust padding to increase size */
+            margin: 0;
+            /* Remove margin */
+            border: 1px solid #ccc;
+        }
+    </style>
 
 </head>
 
@@ -144,7 +190,7 @@ $results = $db->query($query);
                     <div class="col-md-9">
                         <div class="row justify-content-center">
                             <?php foreach ($results as $result) : ?>
-                                <div class="col-md-12 mb-4">
+                                <div class="col-md-12 mb-4" data-category="<?php echo $result['category']; ?>">
                                     <div style="background: white; border-radius: 2px; padding: 10px; transition: all 0.3s; border: 1px solid #ccc; max-width: 800px; margin-left: 5px; ">
                                         <div class="row">
                                             <div class="row">
@@ -209,43 +255,76 @@ $results = $db->query($query);
                         </div>
                     </div>
 
-                    <!-- Category list with glass morph effect on the right side -->
-                    <div class="col-md-3" style="background: rgba(255, 255, 255, 0.2); border-radius: 2px; padding: 10px; border: 5px solid rgba(255, 255, 255, 0.2);">
-                        <div style="background: rgba(0, 0, 0, 0.2); border-radius: 3px; padding: 10px; margin-bottom: 10px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
-                            <h1 style="font-size: 24px; color: white;">Categories</h1>
-                            <div class="category-item" onclick="filterNews('sports')" style="cursor: pointer; background: rgba(0, 0, 0, 0.2); border-radius: 5px; padding: 5px; margin-bottom: 5px; color: white;">Sports</div>
-                            <div class="category-item" onclick="filterNews('business')" style="cursor: pointer; background: rgba(0, 0, 0, 0.2); border-radius: 5px; padding: 5px; margin-bottom: 5px; color: white;">Business</div>
-                            <div class="category-item" onclick="filterNews('technology')" style="cursor: pointer; background: rgba(0, 0, 0, 0.2); border-radius: 5px; padding: 5px; margin-bottom: 5px; color: white;">Technology</div>
-                            <!-- Add more category items as needed -->
+                    <div class="col-md-3" style="background: rgba(255, 255, 255, 0.2); border-radius: 2px; padding: 10px;">
+                        <div style="background: #af2a25; border-radius: 1px; padding: 10px; margin-bottom: 10px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 4px solid #c6a265; box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.3);">
+                            <h1 class="text-center font-weight-semibold" style="font-size: 24px; color: ghostwhite; letter-spacing: 2px;">Categories</h1>
+                            <hr style="border-color: white; border-width: 2px;">
+                            <div class="category-item" onclick="filterNews('all')">All</div>
+                            <?php
+                            $queryCategory = "SELECT DISTINCT category FROM news";
+                            $resultCategory = $db->query($queryCategory);
+
+                            if ($resultCategory) {
+                                while ($rowCategory = $resultCategory->fetch(PDO::FETCH_ASSOC)) {
+                                    $categoryName = $rowCategory['category'];
+                                    $categoryStyle = $categoryFilter === $categoryName ? 'active-category' : '';
+                                    echo '<div class="category-item ' . $categoryStyle . '" onclick="filterNews(\'' . $categoryName . '\')" style="border-radius: 5px; padding: 5px; margin-bottom: 5px; color: white;">' . $categoryName . '</div>';
+                                }
+                            }
+                            ?>
                         </div>
                     </div>
+
                 </div>
+
+
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <?php
+                        $style = 'color: #c6a265;'; // Color style
+
+                        // Display left arrow (if not on the first page)
+                        if ($page > 1) {
+                            $prevPage = $page - 1;
+                            echo '<span class="pagination-box"><a href="news.php?page=' . $prevPage . '&category=' . $categoryFilter . '" style="' . $style . '">&larr; Previous</a></span>';
+                        }
+
+                        for ($i = 1; $i <= $totalPages; $i++) {
+                            $activeClass = ($i === $page) ? 'font-weight-bold' : '';
+                            echo '<span class="pagination-box"><a class="' . $activeClass . '" href="news.php?page=' . $i . '&category=' . $categoryFilter . '" style="' . $style . '">' . $i . '</a></span>';
+                        }
+
+                        // Display right arrow (if not on the last page)
+                        if ($page < $totalPages) {
+                            $nextPage = $page + 1;
+                            echo '<span class="pagination-box"><a href="news.php?page=' . $nextPage . '&category=' . $categoryFilter . '" style="' . $style . '">Next &rarr;</a></span>';
+                        }
+                        ?>
+                    </div>
+                </div>
+
             </div>
-
         </div>
+        <?php include 'footer.php'; ?>
 
-    </div>
-    <?php include 'footer.php'; ?>
+        <!-- Vendor -->
+        <script src="vendor/plugins/js/plugins.min.js"></script>
 
+        <!-- Theme Base, Components and Settings -->
+        <script src="js/theme.js"></script>
 
-    <!-- Vendor -->
-    <script src="vendor/plugins/js/plugins.min.js"></script>
+        <!-- Current Page Vendor and Views -->
+        <script src="js/views/view.contact.js"></script>
 
-    <!-- Theme Base, Components and Settings -->
-    <script src="js/theme.js"></script>
+        <!-- Theme Custom -->
+        <script src="js/custom.js"></script>
 
-    <!-- Current Page Vendor and Views -->
-    <script src="js/views/view.contact.js"></script>
+        <!-- Theme Initialization Files -->
+        <script src="js/theme.init.js"></script>
 
-    <!-- Theme Custom -->
-    <script src="js/custom.js"></script>
-
-    <!-- Theme Initialization Files -->
-    <script src="js/theme.init.js"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-    <script>
-        /*
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+        <script>
+            /*
 			Map Settings
 
 				Find the Latitude and Longitude of your address:
@@ -254,199 +333,215 @@ $results = $db->query($query);
 
 			*/
 
-        function initializeGoogleMaps() {
-            // Map Initial Location
-            var initLatitude = 40.75198;
-            var initLongitude = -73.96978;
+            function initializeGoogleMaps() {
+                // Map Initial Location
+                var initLatitude = 40.75198;
+                var initLongitude = -73.96978;
 
-            // Map Markers
-            var mapMarkers = [{
-                latitude: initLatitude,
-                longitude: initLongitude,
-                html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
-                icon: {
-                    image: "img/demos/business-consulting-3/map-pin.png",
-                    iconsize: [26, 27],
-                    iconanchor: [12, 27],
-                },
-            }, ];
+                // Map Markers
+                var mapMarkers = [{
+                    latitude: initLatitude,
+                    longitude: initLongitude,
+                    html: "<strong>Porto Business Consulting 3</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
+                    icon: {
+                        image: "img/demos/business-consulting-3/map-pin.png",
+                        iconsize: [26, 27],
+                        iconanchor: [12, 27],
+                    },
+                }, ];
 
-            // Map Extended Settings
-            var mapSettings = {
-                controls: {
-                    draggable: $.browser.mobile ? false : true,
-                    panControl: false,
-                    zoomControl: false,
-                    mapTypeControl: false,
-                    scaleControl: false,
-                    streetViewControl: false,
-                    overviewMapControl: false,
-                },
-                scrollwheel: false,
-                markers: mapMarkers,
-                latitude: initLatitude,
-                longitude: initLongitude,
-                zoom: 14,
-            };
+                // Map Extended Settings
+                var mapSettings = {
+                    controls: {
+                        draggable: $.browser.mobile ? false : true,
+                        panControl: false,
+                        zoomControl: false,
+                        mapTypeControl: false,
+                        scaleControl: false,
+                        streetViewControl: false,
+                        overviewMapControl: false,
+                    },
+                    scrollwheel: false,
+                    markers: mapMarkers,
+                    latitude: initLatitude,
+                    longitude: initLongitude,
+                    zoom: 14,
+                };
 
-            var map = $("#googlemaps").gMap(mapSettings),
-                mapRef = $("#googlemaps").data("gMap.reference");
+                var map = $("#googlemaps").gMap(mapSettings),
+                    mapRef = $("#googlemaps").data("gMap.reference");
 
-            // Styles from https://snazzymaps.com/
-            var styles = [{
-                    featureType: "water",
-                    elementType: "geometry",
-                    stylers: [{
-                        color: "#e9e9e9"
-                    }, {
-                        lightness: 17
-                    }],
-                },
-                {
-                    featureType: "landscape",
-                    elementType: "geometry",
-                    stylers: [{
-                        color: "#f5f5f5"
-                    }, {
-                        lightness: 20
-                    }],
-                },
-                {
-                    featureType: "road.highway",
-                    elementType: "geometry.fill",
-                    stylers: [{
-                        color: "#ffffff"
-                    }, {
-                        lightness: 17
-                    }],
-                },
-                {
-                    featureType: "road.highway",
-                    elementType: "geometry.stroke",
-                    stylers: [{
-                        color: "#ffffff"
-                    }, {
-                        lightness: 29
-                    }, {
-                        weight: 0.2
-                    }],
-                },
-                {
-                    featureType: "road.arterial",
-                    elementType: "geometry",
-                    stylers: [{
-                        color: "#ffffff"
-                    }, {
-                        lightness: 18
-                    }],
-                },
-                {
-                    featureType: "road.local",
-                    elementType: "geometry",
-                    stylers: [{
-                        color: "#ffffff"
-                    }, {
-                        lightness: 16
-                    }],
-                },
-                {
-                    featureType: "poi",
-                    elementType: "geometry",
-                    stylers: [{
-                        color: "#f5f5f5"
-                    }, {
-                        lightness: 21
-                    }],
-                },
-                {
-                    featureType: "poi.park",
-                    elementType: "geometry",
-                    stylers: [{
-                        color: "#dedede"
-                    }, {
-                        lightness: 21
-                    }],
-                },
-                {
-                    elementType: "labels.text.stroke",
-                    stylers: [{
-                            visibility: "on"
-                        },
-                        {
+                // Styles from https://snazzymaps.com/
+                var styles = [{
+                        featureType: "water",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#e9e9e9"
+                        }, {
+                            lightness: 17
+                        }],
+                    },
+                    {
+                        featureType: "landscape",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#f5f5f5"
+                        }, {
+                            lightness: 20
+                        }],
+                    },
+                    {
+                        featureType: "road.highway",
+                        elementType: "geometry.fill",
+                        stylers: [{
                             color: "#ffffff"
-                        },
-                        {
+                        }, {
+                            lightness: 17
+                        }],
+                    },
+                    {
+                        featureType: "road.highway",
+                        elementType: "geometry.stroke",
+                        stylers: [{
+                            color: "#ffffff"
+                        }, {
+                            lightness: 29
+                        }, {
+                            weight: 0.2
+                        }],
+                    },
+                    {
+                        featureType: "road.arterial",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#ffffff"
+                        }, {
+                            lightness: 18
+                        }],
+                    },
+                    {
+                        featureType: "road.local",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#ffffff"
+                        }, {
                             lightness: 16
-                        },
-                    ],
-                },
-                {
-                    elementType: "labels.text.fill",
-                    stylers: [{
-                            saturation: 36
-                        },
-                        {
-                            color: "#333333"
-                        },
-                        {
-                            lightness: 40
-                        },
-                    ],
-                },
-                {
-                    elementType: "labels.icon",
-                    stylers: [{
-                        visibility: "off"
-                    }]
-                },
-                {
-                    featureType: "transit",
-                    elementType: "geometry",
-                    stylers: [{
-                        color: "#f2f2f2"
-                    }, {
-                        lightness: 19
-                    }],
-                },
-                {
-                    featureType: "administrative",
-                    elementType: "geometry.fill",
-                    stylers: [{
-                        color: "#fefefe"
-                    }, {
-                        lightness: 20
-                    }],
-                },
-                {
-                    featureType: "administrative",
-                    elementType: "geometry.stroke",
-                    stylers: [{
-                        color: "#fefefe"
-                    }, {
-                        lightness: 17
-                    }, {
-                        weight: 1.2
-                    }],
-                },
-            ];
+                        }],
+                    },
+                    {
+                        featureType: "poi",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#f5f5f5"
+                        }, {
+                            lightness: 21
+                        }],
+                    },
+                    {
+                        featureType: "poi.park",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#dedede"
+                        }, {
+                            lightness: 21
+                        }],
+                    },
+                    {
+                        elementType: "labels.text.stroke",
+                        stylers: [{
+                                visibility: "on"
+                            },
+                            {
+                                color: "#ffffff"
+                            },
+                            {
+                                lightness: 16
+                            },
+                        ],
+                    },
+                    {
+                        elementType: "labels.text.fill",
+                        stylers: [{
+                                saturation: 36
+                            },
+                            {
+                                color: "#333333"
+                            },
+                            {
+                                lightness: 40
+                            },
+                        ],
+                    },
+                    {
+                        elementType: "labels.icon",
+                        stylers: [{
+                            visibility: "off"
+                        }]
+                    },
+                    {
+                        featureType: "transit",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#f2f2f2"
+                        }, {
+                            lightness: 19
+                        }],
+                    },
+                    {
+                        featureType: "administrative",
+                        elementType: "geometry.fill",
+                        stylers: [{
+                            color: "#fefefe"
+                        }, {
+                            lightness: 20
+                        }],
+                    },
+                    {
+                        featureType: "administrative",
+                        elementType: "geometry.stroke",
+                        stylers: [{
+                            color: "#fefefe"
+                        }, {
+                            lightness: 17
+                        }, {
+                            weight: 1.2
+                        }],
+                    },
+                ];
 
-            var styledMap = new google.maps.StyledMapType(styles, {
-                name: "Styled Map",
-            });
+                var styledMap = new google.maps.StyledMapType(styles, {
+                    name: "Styled Map",
+                });
 
-            mapRef.mapTypes.set("map_style", styledMap);
-            mapRef.setMapTypeId("map_style");
-        }
+                mapRef.mapTypes.set("map_style", styledMap);
+                mapRef.setMapTypeId("map_style");
+            }
 
-        // Initialize Google Maps when element enter on browser view
-        theme.fn.intObs("#googlemaps", "initializeGoogleMaps()", {});
+            // Initialize Google Maps when element enter on browser view
+            theme.fn.intObs("#googlemaps", "initializeGoogleMaps()", {});
 
-        // Map text-center At
-        var mapCenterAt = function(options, e) {
-            e.preventDefault();
-            $("#googlemaps").gMap("centerAt", options);
-        };
-    </script>
+            // Map text-center At
+            var mapCenterAt = function(options, e) {
+                e.preventDefault();
+                $("#googlemaps").gMap("centerAt", options);
+            };
+        </script>
+
+        <script>
+            function filterNews(category) {
+                const newsItems = document.querySelectorAll('.col-md-12');
+
+                newsItems.forEach(newsItem => {
+                    const itemCategory = newsItem.getAttribute('data-category');
+
+                    if (category === 'all' || itemCategory === category) {
+                        newsItem.style.display = 'block';
+                    } else {
+                        newsItem.style.display = 'none';
+                    }
+                });
+            }
+        </script>
 
 
 

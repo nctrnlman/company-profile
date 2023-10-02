@@ -58,67 +58,66 @@
 </head>
 
 <body>
-<?php include 'navbar.php'; ?>
-<div class="body">
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-sm-9">
-                <?php
-                try {
-                    include 'db.php';
+    <?php include 'navbar.php'; ?>
+    <div class="body">
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-sm-9">
+                    <?php
+                    try {
+                        include 'db.php';
 
-                    // Check if the 'id' parameter is set in the URL
-                    if (isset($_GET['id'])) {
-                        // Get the 'id' parameter from the URL
-                        $someId = $_GET['id'];
+                        // Check if the 'id' parameter is set in the URL
+                        if (isset($_GET['id'])) {
+                            // Get the 'id' parameter from the URL
+                            $someId = $_GET['id'];
 
-                        // Prepare the query to fetch the news article with the specified ID
-                        $query = "SELECT * FROM news WHERE id_news = :id";
+                            // Prepare the query to fetch the news article with the specified ID
+                            $query = "SELECT * FROM news WHERE id_news = :id";
 
-                        // Prepare and execute the query
-                        $stmt = $db->prepare($query);
-                        $stmt->bindParam(':id', $someId, PDO::PARAM_STR); // Assuming id_news is a string
-                        $stmt->execute();
+                            // Prepare and execute the query
+                            $stmt = $db->prepare($query);
+                            $stmt->bindParam(':id', $someId, PDO::PARAM_STR); // Assuming id_news is a string
+                            $stmt->execute();
 
-                        // Fetch the result as an associative array
-                        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                            // Fetch the result as an associative array
+                            $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                        // Check if a result was found
-                        if ($result) {
-                            // Display image
-                            echo '<img src="file/news/' . $result['image'] . '" alt="Article Image" class="large-article-image">';
+                            // Check if a result was found
+                            if ($result) {
+                                // Display image
+                                echo '<img src="file/news/' . $result['image'] . '" alt="Article Image" class="large-article-image">';
 
-                            // Display the news article details
-                            echo '<h1 style="padding-top: 20px;">' . $result['title'] . '</h1>';
-                            echo '<div class="article-content">';
-                            echo '<p class="font-weight-bold">Publication Date: ' . date('F j, Y', strtotime($result['create_date'])) . '</p>';
-                            echo '<p>' . $result['description'] . '</p>';
+                                // Display the news article details
+                                echo '<h1 style="padding-top: 20px;">' . $result['title'] . '</h1>';
+                                echo '<div class="article-content">';
+                                echo '<p class="font-weight-bold">Publication Date: ' . date('F j, Y', strtotime($result['create_date'])) . '</p>';
+                                echo '<p>' . $result['description'] . '</p>';
 
-                            // Add a video if available
-                            if (!empty($result['video'])) {
-                                echo '<div class="video-container">';
-                                echo '<video width="520" height="320" controls>';
-                                echo '<source src="file/news/videos/' . $result['video'] . '" type="video/mp4">';
-                                echo 'Your browser does not support the video tag.';
-                                echo '</video>';
+                                if (!empty($result['video'])) {
+                                    echo '<div class="video-container text-center">'; // Added 'text-center' class
+                                    echo '<video width="520" height="320" controls>';
+                                    echo '<source src="file/news/videos/' . $result['video'] . '" type="video/mp4">';
+                                    echo 'Your browser does not support the video tag.';
+                                    echo '</video>';
+                                    echo '</div>';
+                                }
+                                // You can display other details here as needed
                                 echo '</div>';
+                            } else {
+                                echo "No results found for ID $someId.";
                             }
-                            // You can display other details here as needed
-                            echo '</div>';
                         } else {
-                            echo "No results found for ID $someId.";
+                            echo "ID parameter is missing in the URL.";
                         }
-                    } else {
-                        echo "ID parameter is missing in the URL.";
+                    } catch (PDOException $e) {
+                        echo "Error: " . $e->getMessage();
                     }
-                } catch (PDOException $e) {
-                    echo "Error: " . $e->getMessage();
-                }
-                ?>
+                    ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <?php include 'footer.php'; ?>
     <!-- Vendor -->

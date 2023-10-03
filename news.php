@@ -26,6 +26,11 @@ if ($categoryFilter !== 'all') {
 }
 $totalNews = $db->query($queryTotal)->fetchColumn();
 $totalPages = ceil($totalNews / $perPage);
+
+$startArticle = ($page - 1) * $perPage + 1;
+$endArticle = min($page * $perPage, $totalNews);
+
+
 ?>
 
 
@@ -259,7 +264,7 @@ $totalPages = ceil($totalNews / $perPage);
                         <div style="background: #af2a25; border-radius: 1px; padding: 10px; margin-bottom: 10px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 4px solid #c6a265; box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.3);">
                             <h1 class="text-center font-weight-semibold" style="font-size: 24px; color: ghostwhite; letter-spacing: 2px;">Categories</h1>
                             <hr style="border-color: white; border-width: 2px;">
-                            <div class="category-item" onclick="filterNews('all')">All</div>
+                            <div class="category-item" onclick="selectCategory('all')">All</div>
                             <?php
                             $queryCategory = "SELECT DISTINCT category FROM news";
                             $resultCategory = $db->query($queryCategory);
@@ -268,22 +273,30 @@ $totalPages = ceil($totalNews / $perPage);
                                 while ($rowCategory = $resultCategory->fetch(PDO::FETCH_ASSOC)) {
                                     $categoryName = $rowCategory['category'];
                                     $categoryStyle = $categoryFilter === $categoryName ? 'active-category' : '';
-                                    echo '<div class="category-item ' . $categoryStyle . '" onclick="filterNews(\'' . $categoryName . '\')" style="border-radius: 5px; padding: 5px; margin-bottom: 5px; color: white;">' . $categoryName . '</div>';
+                                    echo '<div class="category-item ' . $categoryStyle . '" onclick="selectCategory(\'' . $categoryName . '\')" data-category="' . $categoryName . '" style="border-radius: 5px; padding: 5px; margin-bottom: 5px; color: white;">' . $categoryName . '</div>';
                                 }
                             }
                             ?>
                         </div>
                     </div>
 
-                </div>
 
+                </div>
 
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <?php
-                        $style = 'color: #c6a265;'; // Color style
+                        echo '<p>Showing ' . $startArticle . ' - ' . $endArticle . ' news out of ' . $totalNews . '</p>';
+                        ?>
+                    </div>
+                </div>
 
-                        // Display left arrow (if not on the first page)
+                <div class="row">
+                    <div class="col-md-12 text-center ">
+                        <?php
+                        $style = 'color: #c6a265; font-size: 16px; ';
+
+
                         if ($page > 1) {
                             $prevPage = $page - 1;
                             echo '<span class="pagination-box"><a href="news.php?page=' . $prevPage . '&category=' . $categoryFilter . '" style="' . $style . '">&larr; Previous</a></span>';
@@ -294,7 +307,6 @@ $totalPages = ceil($totalNews / $perPage);
                             echo '<span class="pagination-box"><a class="' . $activeClass . '" href="news.php?page=' . $i . '&category=' . $categoryFilter . '" style="' . $style . '">' . $i . '</a></span>';
                         }
 
-                        // Display right arrow (if not on the last page)
                         if ($page < $totalPages) {
                             $nextPage = $page + 1;
                             echo '<span class="pagination-box"><a href="news.php?page=' . $nextPage . '&category=' . $categoryFilter . '" style="' . $style . '">Next &rarr;</a></span>';
@@ -528,6 +540,31 @@ $totalPages = ceil($totalNews / $perPage);
         </script>
 
         <script>
+            // Define a variable to store the currently selected category
+            let selectedCategory = 'all';
+
+            // Function to update the selected category and apply styling
+            function selectCategory(category) {
+                // Remove the 'active-category' class from all category items
+                const categoryItems = document.querySelectorAll('.category-item');
+                categoryItems.forEach(item => {
+                    item.classList.remove('active-category');
+                });
+
+                // Add the 'active-category' class to the clicked category item
+                const clickedCategory = document.querySelector('.category-item[data-category="' + category + '"]');
+                if (clickedCategory) {
+                    clickedCategory.classList.add('active-category');
+                }
+
+                // Update the selected category
+                selectedCategory = category;
+
+                // Call your filterNews function here with the selected category
+                filterNews(selectedCategory);
+            }
+
+            // Your filterNews function (replace this with your actual filtering logic)
             function filterNews(category) {
                 const newsItems = document.querySelectorAll('.col-md-12');
 
@@ -541,7 +578,14 @@ $totalPages = ceil($totalNews / $perPage);
                     }
                 });
             }
+
+            // Initial call to display all news items
+            filterNews(selectedCategory);
         </script>
+
+
+
+
 
 
 

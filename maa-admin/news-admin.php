@@ -171,11 +171,6 @@ $results = $db->query($query);
                         </div>
                     </div>
 
-
-
-
-                    <!-- Job Vacancy Form -->
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
@@ -188,10 +183,15 @@ $results = $db->query($query);
                                         </div>
                                         <div class="mb-3">
                                             <label for="categoryTitle" class="form-label">Category</label>
-                                            <input type="text" class="form-control" id="categoryTitle" name="category" required>
+                                            <select class="form-select" id="categoryTitle" name="category" required>
+                                                <option value="Mining">Mining</option>
+                                                <option value="Charity">Charity</option>
+                                                <option value="Events">Events</option>
+                                                <option value="National News">National News</option>
+                                            </select>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="flyer" class="form-label">Image Tumbnail (max 3MB)</label>
+                                            <label for="flyer" class="form-label">Image Thumbnail (max 3MB)</label>
                                             <input type="file" class="form-control" id="image" name="image" accept=".jpg, .jpeg, .png" required>
                                         </div>
                                         <div class="mb-3">
@@ -203,12 +203,13 @@ $results = $db->query($query);
                                             <textarea class="form-control" id="ckeditor-classic" name="description"></textarea>
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary" name="submit">add</button>
+                                        <button type="submit" class="btn btn-primary" name="submit">Add</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
+
 
 
                     <!-- Job Vacancies Table -->
@@ -356,7 +357,7 @@ $results = $db->query($query);
                     {
                         "data": 6
                     }, // Kolom keenam (Company Name)
-                    
+
 
                 ],
                 "language": {

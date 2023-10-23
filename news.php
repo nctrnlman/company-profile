@@ -17,6 +17,13 @@ if ($categoryFilter !== 'all') {
 }
 $queryNews .= " ORDER BY create_date DESC LIMIT $offset, $perPage";
 
+// Query to fetch highlighted news (limit to 3)
+$queryHighlighted = "SELECT * FROM news WHERE highlights = '1' ORDER BY create_date DESC LIMIT 3";
+
+// Fetch the highlighted news
+$highlightedResults = $db->query($queryHighlighted);
+
+// Fetch the regular news results
 $results = $db->query($queryNews);
 
 // Count total news items for pagination
@@ -29,8 +36,6 @@ $totalPages = ceil($totalNews / $perPage);
 
 $startArticle = ($page - 1) * $perPage + 1;
 $endArticle = min($page * $perPage, $totalNews);
-
-
 ?>
 
 
@@ -67,6 +72,7 @@ $endArticle = min($page * $perPage, $totalNews);
     <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css" />
     <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css" />
+
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="css/theme.css" />
@@ -161,6 +167,112 @@ $endArticle = min($page * $perPage, $totalNews);
         }
     </style>
 
+    <style>
+        /* CSS for Highlight Card */
+        :root {
+            --clr-neutral-900: hsl(207, 19%, 9%);
+            --clr-neutral-100: hsl(0, 0%, 100%);
+            --clr-accent-400: #af2a25;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 500ms ease;
+            background: var(--clr-neutral-900);
+            /* Set the background color */
+        }
+
+        .card-content {
+            --padding: 1.5rem;
+            padding: var(--padding);
+            transform: translateY(70%);
+            transition: transform 500ms ease;
+            filter: blur(10px);
+        }
+
+        .card-content>*:not(.card-title) {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 500ms ease, transform 500ms ease;
+            transition-delay: 0.5s;
+        }
+
+        .card:hover .card-content {
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+
+        .card:hover .card-content>* {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-title {
+            position: relative;
+            width: max-content;
+        }
+
+        .card-title::after {
+            content: "";
+            position: absolute;
+            height: 2.5px;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: var(--clr-accent-400);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 500ms ease;
+        }
+
+        .card:hover .card-title::after {
+            transform: scaleX(1);
+        }
+
+        .card-body {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+
+
+    <style>
+        /* CSS for responsiveness */
+        @media (max-width: 767px) {
+
+            /* Reduce the font size of the title and description for smaller screens */
+            .card-title {
+                font-size: 14px;
+            }
+
+            .card-description {
+                font-size: 12px;
+            }
+
+            /* Adjust the image size for smaller screens */
+            .card-img-top {
+                max-width: 100%;
+                min-height: auto;
+            }
+
+            /* Ensure that the text doesn't overflow the card on small screens */
+            .card-title,
+            .card-description {
+                max-width: 100%;
+            }
+
+            /* Add padding between each card on small screens */
+            .col-md-4 {
+                margin-bottom: 20px;
+                /* Adjust the value to control the gap size */
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -192,7 +304,46 @@ $endArticle = min($page * $perPage, $totalNews);
 
             <div class="container pt-3 mt-4">
                 <div class="row">
-                    <div class="col-md-9">
+
+                    <!-- Highlights Section -->
+                    <div class="col-md-12 mb-4">
+                        <h1 style="font-size: 46px; font-weight: 600;  color:black;"> News Of the Day </h1>
+                        <p class="card-text" style="font-size: 16px; color: black;">Publication Date: <?php echo date('F j, Y'); ?></p>
+                        <div class="row justify-content-center">
+                            <!-- Display highlighted news -->
+                            <?php
+                            $todayDate = date('Y-m-d');
+                            $highlightedCount = 0;
+                            $highlightedResultsArray = $highlightedResults->fetchAll();
+                            foreach ($highlightedResultsArray as $highlighted) :
+                            ?>
+                                <div class="col-md-4" data-category="<?php echo $highlighted['category']; ?>">
+                                    <!-- Display highlighted news content here -->
+                                    <div class="card" style="position: relative;">
+                                        <img src="file/news/<?php echo $highlighted['image']; ?>" class="card-img-top" alt="Highlighted News Image" style="max-width: 400px; min-height: 250px; position: relative; opacity: 0.4;">
+                                        <div class="card-overlay"></div>
+                                        <div class="card-img-overlay">
+                                            <h4 class="card-title" style="font-size: 16px; position: absolute; bottom: 65px; left: 15px; color: white; z-index: 100; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70%;"><?php echo $highlighted['title']; ?></h4>
+                                            <p class="card-description" style="font-size: 13px; position: absolute; bottom: 30px; left: 15px; color: white; z-index: 100; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70%;"><?php echo $highlighted['description']; ?></p>
+                                        </div>
+                                        <div class="card-body" style="position: absolute; bottom: 0; left: 4px; right: 0; text-align: left; padding: 10px; height: 22%;">
+                                            <a href="news-article.php?id=<?php echo $highlighted['id_news']; ?>" class="btn btn-primary btn-sm">Read More</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                            <?php
+                                $highlightedCount++;
+                            endforeach;
+                            ?>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-9" style="padding-top: 70px;">
                         <div class="row justify-content-center">
                             <?php foreach ($results as $result) : ?>
                                 <div class="col-md-12 mb-4" data-category="<?php echo $result['category']; ?>">
@@ -205,7 +356,7 @@ $endArticle = min($page * $perPage, $totalNews);
                                                 <div class="col-md-6">
                                                     <div class="card-body">
                                                         <!-- Title -->
-                                                        <h4 class="font-weight-semibold text-color-dark text-4 text-sm mb-0" style="letter-spacing: 1px; margin-bottom: 20px !important;"><?php echo $result['title']; ?></h4>
+                                                        <h4 class="font-weight-semibold text-color-dark text-4 text-sm mb-0" style="letter-spacing: 1px; margin-bottom: 20px !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;"><?php echo $result['title']; ?></h4>
 
                                                         <!-- Publication Date -->
                                                         <p class="card-text" style="font-size: 12px; color: black;">Publication Date: <?php echo date('F j, Y', strtotime($result['create_date'])); ?></p>
@@ -219,37 +370,36 @@ $endArticle = min($page * $perPage, $totalNews);
                                                             $description .= '...';
                                                         }
                                                         ?>
-                                                        <p class="card-text" style="font-size: 0.875rem; color: black;"><?php echo $description; ?></p>
+                                                        <p class="card-text" style="font-size: 0.875rem; color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70%;"><?php echo $description; ?></p>
+                                                        <div class="col" style="display: flex; justify-content: space-between; align-items: center;">
 
-                                                        <!-- Read More Button -->
-                                                        <a href="news-article.php?id=<?php echo $result['id_news']; ?>" class="btn btn-primary">Read More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                            <!-- Read More Button -->
+                                                            <a href="news-article.php?id=<?php echo $result['id_news']; ?>" class="btn btn-primary">Read More</a>
 
-                                            <div class="row-md-12">
-                                                <div class="card-footer" style="padding-top: 20px;"> <!-- Added padding-top -->
-                                                    <div class="row justify-content-center">
-                                                        <!-- Social Media Links -->
-                                                        <div class="text-center"> <!-- Center align the content -->
-                                                            <ul class="list-inline">
-                                                                <li class="list-inline-item">
-                                                                    <a href="https://www.instagram.com/mineralalamabadi/" target="_blank" title="Instagram" style="color: gray; padding: 10px;"> <!-- Added padding -->
-                                                                        <i class="fab fa-instagram" style="color: red;"></i> Mineral Alam Abadi Group
-                                                                    </a>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <a href="https://www.linkedin.com/company/pt-mineralalamabadi/" target="_blank" title="LinkedIn" style="color: gray; padding: 10px;"> <!-- Added padding -->
-                                                                        <i class="fab fa-linkedin-in" style="color: blue;"></i> Mineral Alam Abadi Group LinkedIn
-                                                                    </a>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <a href="https://www.instagram.com/maagroup_externalrelation/" target="_blank" title="Instagram" style="color: gray; padding: 10px;"> <!-- Added padding -->
-                                                                        <i class="fab fa-instagram" style="color: blueviolet;"></i> MAA Group External Relations
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
+                                                            <!-- Social Media Links -->
+                                                            <div class="row justify-content-end" style="margin-top: 20px;">
+                                                                <div style="justify-content: right; padding-right: 2px;">
+                                                                    <ul class="list-inline">
+                                                                        <li class="list-inline-item">
+                                                                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://news-article.php/<?= $result['id_news'] ?>&title=<?= $result['title']; ?>" target="_blank">
+                                                                                <i class="fab fa-facebook-square fa-2x" aria-hidden="true" style="color: blue;"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="https://twitter.com/intent/tweet?&url=http://news-article.php/<?= $result['id_news'] ?>&title=<?= $result['title']; ?>" target="_blank">
+                                                                                <i class="fab fa-twitter-square fa-2x" aria-hidden="true" style="color: #1DA1F2;"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="https://wa.me/?text=<?= urlencode('http://news-article.php/' . $result['id_news'] . '&title=' . $result['title']) ?>" target="_blank">
+                                                                                <i class="fab fa-whatsapp-square fa-2x" aria-hidden="true" style="color: #25D366;"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -260,11 +410,13 @@ $endArticle = min($page * $perPage, $totalNews);
                         </div>
                     </div>
 
-                    <div class="col-md-3" style="background: rgba(255, 255, 255, 0.2); border-radius: 2px; padding: 10px;">
+                    <div class="col-md-3" style="background: rgba(255, 255, 255, 0.2); border-radius: 2px; padding: 10px; padding-top: 72px; position: relative;">
                         <div style="background: #af2a25; border-radius: 1px; padding: 10px; margin-bottom: 10px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 4px solid #c6a265; box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.3);">
-                            <h1 class="text-center font-weight-semibold" style="font-size: 24px; color: ghostwhite; letter-spacing: 2px;">Categories</h1>
-                            <hr style="border-color: white; border-width: 2px;">
-                            <div class="category-item" onclick="selectCategory('all')">All</div>
+                            <h1 class="text-center font-weight-semibold" style="font-family: 'Montserrat', sans-serif; font-size: 24px; color: ghostwhite; letter-spacing: 2px; margin: 0;">Categories</h1>
+                            <hr style="border-color: white; border-width: 2px; margin-top: 5px; margin-bottom: 10px;">
+                            <div class="category-item" onclick="selectCategory('all')" style="border-radius: 5px; padding: 5px; margin-bottom: 10px; color: white; cursor: pointer;">
+                                <i class="fas fa-globe" style="margin-right: 5px;"></i> All
+                            </div>
                             <?php
                             $queryCategory = "SELECT DISTINCT category FROM news";
                             $resultCategory = $db->query($queryCategory);
@@ -273,12 +425,20 @@ $endArticle = min($page * $perPage, $totalNews);
                                 while ($rowCategory = $resultCategory->fetch(PDO::FETCH_ASSOC)) {
                                     $categoryName = $rowCategory['category'];
                                     $categoryStyle = $categoryFilter === $categoryName ? 'active-category' : '';
-                                    echo '<div class="category-item ' . $categoryStyle . '" onclick="selectCategory(\'' . $categoryName . '\')" data-category="' . $categoryName . '" style="border-radius: 5px; padding: 5px; margin-bottom: 5px; color: white;">' . $categoryName . '</div>';
+                                    echo '<div class="category-item ' . $categoryStyle . '" onclick="selectCategory(\'' . $categoryName . '\')" data-category="' . $categoryName . '" style="border-radius: 5px; padding: 5px; margin-bottom: 5px; color: white; cursor: pointer; position: relative; font-family: \'Montserrat\', sans-serif;">
+                                    <i class="fas fa-chevron-right" style="margin-right: 5px;"></i>' . $categoryName . '
+                                    <hr style="border-color: white; border-width: 1px; margin: -5px 0; position: absolute; top: 100%; left: 0; right: 0; border-style: dashed;">
+                                    </div>';
                                 }
                             }
                             ?>
                         </div>
                     </div>
+
+
+
+
+
 
 
                 </div>
@@ -582,7 +742,6 @@ $endArticle = min($page * $perPage, $totalNews);
             // Initial call to display all news items
             filterNews(selectedCategory);
         </script>
-
 
 
 

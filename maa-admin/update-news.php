@@ -3,10 +3,10 @@ session_start();
 include '../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $jobId = $_POST['jobIdInput'];
     $jobTitle = $_POST['title'];
-    $category = $_POST['category'];
+    $category = isset($_POST['category']) ? $_POST['category'] : 'DefaultCategory';
+    $highlights = isset($_POST['highlights']) ? $_POST['highlights'] : '0';
     $description = $_POST['description'];
 
     $sql = "SELECT * FROM news WHERE id_news = '$jobId'";
@@ -20,14 +20,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $updates[] = "title = '$jobTitle'";
         }
 
-
-
         if ($description != $result['description']) {
             $updates[] = "description = '$description'";
         }
 
         if ($category != $result['category']) {
             $updates[] = "category = '$category'";
+        }
+
+        // Update the "highlights" column
+        if ($highlights != $result['highlights']) {
+            $updates[] = "highlights = '$highlights'";
         }
 
         // Handle file upload
@@ -69,3 +72,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['error_message'] = "News data not found.";
     }
 }
+?>

@@ -120,7 +120,7 @@ try {
                                                 <td><?php echo $result['email']; ?></td>
                                                 <td><?php echo $result['phone_number']; ?></td>
                                                 <td><a href="../file/resume/<?php echo $result['resume']; ?>.pdf" target="_blank">View Resume</a></td>
-                                                <td><?php echo $result['create_date']; ?></td>
+                                                <td><?php echo $result['apply_date']; ?></td>
                                                 <td><?php echo $result['position']; ?></td>
                                             </tr>
                                             <?php $counter++; ?>

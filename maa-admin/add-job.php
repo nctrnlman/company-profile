@@ -2,6 +2,8 @@
 session_start();
 include '../db.php';
 
+date_default_timezone_set('Asia/Jakarta');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $position = $_POST['position'];
     $status = $_POST['status'];

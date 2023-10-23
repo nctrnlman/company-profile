@@ -8,6 +8,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
+date_default_timezone_set('Asia/Jakarta');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -15,6 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $job_id = $_POST['job_id'];
+    // Create a DateTime object in the 'Asia/Jakarta' timezone (GMT+7)
+    $currentTime = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
+
+    // Format the current time as 'Y-m-d H:i:s' (e.g., '2023-10-09 11:12:53')
+    $currentDateTime = $currentTime->format('Y-m-d H:i:s');
 
     $query = "SELECT position FROM job_vacanacy WHERE id_job_vacanacy = ?";
     $stmt = $db->prepare($query);
@@ -95,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mailCompany->Password = 'emailMaaGroup';
 
         $mailCompany->setFrom('info@ptmaagroup.com', 'MAA Group');
-        $mailCompany->addAddress('recruitment@maagroup.co.id', 'Company Recipient');
+        $mailCompany->addAddress('wali@maagroup.co.id', 'Company Recipient');
         $mailCompany->Subject = 'Application Received - ' . $result['position'];
         $mailCompany->Body = "
     Hello,

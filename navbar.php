@@ -44,7 +44,7 @@
                       </a>
                     </li>
                     <li>
-                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'news.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="news.php">
+                      <a <?php if (basename($_SERVER['PHP_SELF']) == 'news.php') echo 'class="active" style="color: #c6a265;"'; ?> class="nav-link" href="news">
                         News
                       </a>
                     </li>

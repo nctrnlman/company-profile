@@ -11,6 +11,9 @@ $query = "SELECT * FROM job_vacanacy";
 
 
 $results = $db->query($query);
+
+date_default_timezone_set('Asia/Jakarta');
+
 ?>
 
 <!doctype html>

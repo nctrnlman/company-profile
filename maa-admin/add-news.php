@@ -2,25 +2,30 @@
 session_start();
 include '../db.php';
 
+if (!isset($_SESSION['username'])) {
+    header("Location: ./");
+    exit();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $imagePath = uploadImage($_FILES['image']);
-    $videoPath = uploadVideo($_FILES['video']); // Upload video
+    $videoPath = uploadVideo($_FILES['video']); 
 
     $title = $_POST['title'];
     $category = $_POST['category'];
+    $highlights = $_POST['highlights']; 
     $description = $_POST['description'];
+    
 
     if ($imagePath) {
         $currentDate = date("Y-m-d H:i:s");
         $unique_id = generateUniqueId();
 
-     
-
         try {
-            $stmt = $db->prepare("INSERT INTO news (id_news, title, create_date, image, description, category, video) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$unique_id, $title, $currentDate, $imagePath, $description, $category, $videoPath]); // Store video path
+            $stmt = $db->prepare("INSERT INTO news (id_news, title, create_date, image, description, category, highlights, video) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$unique_id, $title, $currentDate, $imagePath, $description, $category, $highlights, $videoPath]); // Store video path
 
-            $successMessage = "News added successfully! .$videoPath" ;
+            $successMessage = "News added successfully!";
             $_SESSION['success_message'] = $successMessage;
         } catch (PDOException $e) {
             $errorMessage = "Error: " . $e->getMessage();
@@ -69,7 +74,6 @@ function uploadVideo($file)
         return false;
     }
 }
-
 
 header("Location: news-admin.php");
 exit();

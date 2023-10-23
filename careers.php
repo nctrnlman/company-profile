@@ -425,9 +425,8 @@ if (empty($searchTerm) && empty($sortOption) && empty($filterOption)) {
         <section class="section section-default border-0 m-0 bg-light">
           <div class="container py-4">
 
-            <!-- search sort filter -->
             <div class="container">
-              <h1 style='font-weight: 600; text-align : center; color:black; '>Find Your Dream Job at Mineral Alam Abadi Group</h1><br />
+              <h1 style='  '>Find Your Dream Job at Mineral Alam Abadi Group</h1><br />
             </div>
 
 
